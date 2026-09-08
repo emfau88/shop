@@ -9,7 +9,7 @@
     "dev": "vinext dev",
     "build": "vinext build",
     "start": "vinext start --hostname 127.0.0.1",
-    "lint": "oxlint --threads=2 app components/navigation.tsx components/shared.tsx components/inquiry-form.tsx components/metal components/ui/button.tsx components/ui/input.tsx components/ui/textarea.tsx components/ui/native-select.tsx lib vite.config.ts next.config.ts",
+    "lint": "oxlint --threads=2 app components/navigation.tsx components/shared.tsx components/inquiry-form.tsx components/metal components/landscape components/ui/button.tsx components/ui/input.tsx components/ui/textarea.tsx components/ui/native-select.tsx lib vite.config.ts next.config.ts",
     "format": "oxfmt",
     "preview:worker": "wrangler dev --config dist/server/wrangler.json"
   },

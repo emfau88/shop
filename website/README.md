@@ -1,6 +1,6 @@
-# Webdesign, Farbform und Werkform
+# Webdesign, Farbform, Werkform und Grünraum
 
-Private Entwicklungsvorschau, Stand 8. September 2026.
+Private Entwicklungsvorschau, Stand 9. September 2026.
 
 ## Lokal starten
 
@@ -22,11 +22,15 @@ Auf diesem Windows-Rechner Build mit `$env:RAYON_NUM_THREADS="2"` ausführen, um
 - /konzept/metallbau/leistungen/
 - /konzept/metallbau/einblicke/
 - /konzept/metallbau/anfrage/ — reine Formularsimulation
+- /konzept/galabau/ — fiktive Website für Garten- und Landschaftsbau
+- /konzept/galabau/leistungen/
+- /konzept/galabau/gartenideen/
+- /konzept/galabau/anfrage/ — reine Formularsimulation
 - /impressum/ und /datenschutz/ — ehrliche Vorschauhinweise, keine vollständigen Rechtstexte
 
 ## Vor öffentlichem Verkaufsstart
 
-Bestätigte Anbieteridentität, Kontakt und steuerliche Preisdarstellung ergänzen. Versandweg mit serverseitiger Validierung, Missbrauchsschutz und tatsächlicher Zustellbestätigung einrichten. Passende Rechtstexte bereitstellen und technisch einbinden. Arbeitsnamen Farbform auf Verwechslungen prüfen oder ersetzen. Erst dann Anbieter-Noindex und Vorschauhinweise kontrolliert ändern; die Demo bleibt ausdrücklich fiktiv.
+Bestätigte Anbieteridentität, Kontakt und steuerliche Preisdarstellung ergänzen. Versandweg mit serverseitiger Validierung, Missbrauchsschutz und tatsächlicher Zustellbestätigung einrichten. Passende Rechtstexte bereitstellen und technisch einbinden. Die Arbeitsnamen Farbform, Werkform und Grünraum auf Verwechslungen prüfen oder ersetzen. Erst dann Anbieter-Noindex und Vorschauhinweise kontrolliert ändern; die Demos bleiben ausdrücklich fiktiv.
 
 ## Gestaltung
 

@@ -1,6 +1,6 @@
 # Verkaufsgrundlage für Unternehmenswebsites
 
-Stand: 8. September 2026. Schritte 1–3 sind abgeschlossen. Schritt 4 umfasst inzwischen die Anbieterwebsite sowie zwei eigenständige, mehrseitige Branchenkonzepte. Beide Varianten verwenden eigens erzeugte ImageGen-Assets und sind über feste Pfade separat aufrufbar.
+Stand: 9. September 2026. Schritte 1–3 sind abgeschlossen. Schritt 4 umfasst inzwischen die Anbieterwebsite sowie drei eigenständige, mehrseitige Branchenkonzepte. Alle Varianten verwenden eigens erzeugte ImageGen-Assets und sind über feste Pfade separat aufrufbar.
 
 - [Bestandsanalyse](docs/01-bestandsanalyse.md)
 - [Markt, Strategie und Entscheidung für die Umsetzung](docs/02-markt-und-strategie.md)
@@ -15,9 +15,11 @@ Nächster Arbeitsblock: Schritt 5 – konkrete Vertriebsunterlagen für Kleinanz
 
 - [Umsetzung und Prüfbericht](docs/04-umsetzung-und-pruefung.md)
 - [Branchenkonzept Metallverarbeitung](docs/05-metallverarbeitung.md)
+- [Branchenkonzept Garten- und Landschaftsbau](docs/06-galabau.md)
 - [Website und Startanleitung](website/README.md)
 - [ImageGen-Originale und Prompts: Farbform](design/generated/manifest.json)
 - [ImageGen-Originale und Prompts: Werkform](design/generated/metal/manifest.json)
+- [ImageGen-Originale und Prompts: Grünraum](design/generated/galabau/manifest.json)
 
 Lokale Vorschau: http://127.0.0.1:3000/
 
@@ -31,5 +33,6 @@ Separat aufrufbare Seiten:
 - `/konzepte/` — Übersicht aller Arbeitsbeispiele
 - `/konzept/maler/` — Variante 01 „Farbform“ mit vier Inhaltsseiten
 - `/konzept/metallbau/` — Variante 02 „Werkform“ mit vier Inhaltsseiten
+- `/konzept/galabau/` — Variante 03 „Grünraum“ mit vier Inhaltsseiten
 
-Künftige Varianten erhalten jeweils einen eigenen Pfad unter `/konzept/<name>/` und einen Eintrag in der Konzeptübersicht. So werden nicht mehrere lose Projekte gepflegt, sondern eine gemeinsame, erweiterbare Präsentation mit eigenständigen Homepages. Als nächste deutliche Zielgruppenvariation ist Garten- und Landschaftsbau vorgesehen.
+Künftige Varianten erhalten jeweils einen eigenen Pfad unter `/konzept/<name>/` und einen Eintrag in der Konzeptübersicht. So werden nicht mehrere lose Projekte gepflegt, sondern eine gemeinsame, erweiterbare Präsentation mit eigenständigen Homepages.

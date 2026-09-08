@@ -34,6 +34,18 @@ const concepts = [
     imageHeight: 1024,
     pages: '4 Inhaltsseiten',
   },
+  {
+    name: 'Grünraum',
+    sector: 'Garten- & Landschaftsbau',
+    status: 'Umgesetzt und geprüft',
+    description:
+      'Eine organische, projektorientierte Website mit Gartengestaltung, handwerklichen Details und vorbereiteter Gartenanfrage.',
+    href: '/konzept/galabau/',
+    image: '/images/galabau/garten.webp',
+    imageWidth: 1536,
+    imageHeight: 1024,
+    pages: '4 Inhaltsseiten',
+  },
 ];
 
 export default function ConceptsPage() {

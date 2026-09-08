@@ -1,0 +1,26 @@
+{
+  "created": "2026-09-09",
+  "generator": "OpenAI ImageGen",
+  "mode": "generate",
+  "concept": "Grünraum – fiktive Website für Garten- und Landschaftsbau",
+  "assets": [
+    {
+      "original": "garten-original.png",
+      "webDerivative": "../../../website/public/images/galabau/garten.webp",
+      "dimensions": "1536x1024",
+      "prompt": "Use case: photorealistic-natural\nAsset type: wide website hero image for a fictional premium German garden and landscape construction company\nPrimary request: a completed contemporary family garden that feels lived-in, natural and professionally built\nScene/backdrop: renovated detached house garden in Germany with a generous light natural-stone terrace, softly curving perennial beds, multi-stem serviceberry tree, clipped but not rigid shrubs and a modest lawn\nSubject: the relationship between terrace, planting and house, no people\nStyle/medium: high-end photorealistic editorial landscape architecture photography, natural and credible\nComposition/framing: wide landscape view from garden level, strong foreground planting with clear view toward terrace and house, layered depth, suitable for a 3:2 website crop\nLighting/mood: soft warm morning light after light rain, calm, welcoming, quietly premium\nColor palette: deep garden green, sage, pale limestone, warm timber, restrained flowering accents in white and muted apricot\nMaterials/textures: natural limestone with subtle variation, weathered timber, healthy foliage, damp soil, realistic lawn\nConstraints: botanically plausible central European planting, believable drainage and construction details, no readable text, no logos, no trademarks, no people, no watermarks\nAvoid: luxury mansion, tropical plants, artificial turf, exaggerated bloom, oversaturated greens, fantasy garden, CGI render, outdoor furniture catalog styling"
+    },
+    {
+      "original": "pflaster-detail-original.png",
+      "webDerivative": "../../../website/public/images/galabau/pflaster-detail.webp",
+      "dimensions": "1448x1086",
+      "prompt": "Use case: photorealistic-natural\nAsset type: website craft-detail image for a fictional German garden and landscape construction company\nPrimary request: close editorial photograph of a landscaper's gloved hands precisely setting a natural stone edge beside a permeable paved path\nScene/backdrop: active but orderly residential garden construction site with prepared gravel bed, alignment string and compact hand tools\nSubject: craftsmanship, accurate alignment, stone texture and build quality; only hands and forearms visible\nStyle/medium: photorealistic documentary craft photography\nComposition/framing: landscape close-up at ground level, stone edge leading diagonally through the frame, suitable for a 4:3 crop\nLighting/mood: diffuse daylight, focused and reassuring\nColor palette: pale granite, earth brown, olive workwear, deep green background\nMaterials/textures: rough natural stone, compacted aggregate, soil, durable fabric gloves, subtle authentic dust\nConstraints: safe and physically plausible work sequence, correct tool use, no readable text, no logos, no trademarks, no identifiable person, no watermarks\nAvoid: staged handshake, spotless tools, unsafe posture, random equipment, dramatic dirt, impossible paving geometry, CGI look"
+    },
+    {
+      "original": "regengarten-original.png",
+      "webDerivative": "../../../website/public/images/galabau/regengarten.webp",
+      "dimensions": "1536x1024",
+      "prompt": "Use case: photorealistic-natural\nAsset type: website project image for a fictional sustainable garden case study\nPrimary request: a mature climate-resilient courtyard garden with a shallow rain garden integrated beside a timber deck and gravel path\nScene/backdrop: contemporary German townhouse courtyard, modest scale, privacy walls softened by planting\nSubject: layered drought-tolerant perennials and grasses, multi-stem small tree, visible but subtle rainwater channel feeding a planted depression\nStyle/medium: photorealistic architectural and garden editorial photography\nComposition/framing: wide landscape three-quarter view showing the full spatial layout and water-management logic, suitable for a 3:2 crop\nLighting/mood: bright overcast daylight after rain, fresh, calm and usable\nColor palette: varied greens, straw-colored grasses, silver foliage, muted purple flowers, warm timber, light gravel\nMaterials/textures: timber, gravel, corten-steel edging used sparingly, wet foliage, natural stone\nConstraints: botanically and hydrologically plausible central European garden, accessible walking route, no readable text, no logos, no trademarks, no people, no watermarks\nAvoid: tropical jungle, huge luxury property, decorative pond, excessive corten steel, oversaturation, fantasy landscaping, CGI render"
+    }
+  ]
+}
