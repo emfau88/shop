@@ -18,6 +18,20 @@ const concepts = [
       'Eine ruhige, bildstarke Unternehmenswebsite mit Leistungen, zwei Farbwelten und einer simulierten Anfrage.',
     href: '/konzept/maler/',
     image: '/images/demo-desktop.webp',
+    imageWidth: 1426,
+    imageHeight: 980,
+    pages: '4 Inhaltsseiten',
+  },
+  {
+    name: 'Werkform',
+    sector: 'Metallverarbeitung & Konstruktion',
+    status: 'Umgesetzt und geprüft',
+    description:
+      'Ein technisch präziser Auftritt mit drei Leistungsfeldern, Fertigungseinblicken und einer simulierten Projektanfrage.',
+    href: '/konzept/metallbau/',
+    image: '/images/metal/werkhalle.webp',
+    imageWidth: 1536,
+    imageHeight: 1024,
     pages: '4 Inhaltsseiten',
   },
 ];
@@ -43,8 +57,8 @@ export default function ConceptsPage() {
               <a className="concept-image" href={concept.href}>
                 <img
                   src={concept.image}
-                  width="1426"
-                  height="980"
+                  width={concept.imageWidth}
+                  height={concept.imageHeight}
                   alt={`Startseite des fiktiven Konzepts ${concept.name}`}
                 />
               </a>

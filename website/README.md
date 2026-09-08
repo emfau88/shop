@@ -1,4 +1,4 @@
-# Webdesign und Farbform
+# Webdesign, Farbform und Werkform
 
 Private Entwicklungsvorschau, Stand 8. September 2026.
 
@@ -18,6 +18,10 @@ Auf diesem Windows-Rechner Build mit `$env:RAYON_NUM_THREADS="2"` ausführen, um
 - /konzept/maler/leistungen/
 - /konzept/maler/gestaltung/
 - /konzept/maler/kontakt/ — reine Formularsimulation
+- /konzept/metallbau/ — fiktive Website für Metallverarbeitung
+- /konzept/metallbau/leistungen/
+- /konzept/metallbau/einblicke/
+- /konzept/metallbau/anfrage/ — reine Formularsimulation
 - /impressum/ und /datenschutz/ — ehrliche Vorschauhinweise, keine vollständigen Rechtstexte
 
 ## Vor öffentlichem Verkaufsstart
@@ -28,7 +32,7 @@ Bestätigte Anbieteridentität, Kontakt und steuerliche Preisdarstellung ergänz
 
 Texte in app/, wiederverwendete Bestandteile in components/. Shadcn-Startkomponenten in components/ui/; verwendet werden Button, Input, Textarea und NativeSelect. CSS und lokale Schriftdefinitionen in app/globals.css. Manrope und Source Serif 4 stehen unter SIL OFL; Lizenzen liegen in public/fonts/.
 
-Drei KI-Originale und exakte Prompts liegen im gemeinsamen Repository unter ../design/generated/manifest.json. WebP-Bildableitungen werden lokal ausgeliefert. Der Screenshot in public/images/demo-desktop.webp wird ausschließlich aus der tatsächlich gerenderten Demo erstellt.
+Die KI-Originale und exakten Prompts liegen im gemeinsamen Repository unter ../design/generated/. WebP-Bildableitungen werden lokal ausgeliefert. Der Screenshot in public/images/demo-desktop.webp wird ausschließlich aus der tatsächlich gerenderten Maler-Demo erstellt.
 
 ## Struktur für weitere Homepages
 

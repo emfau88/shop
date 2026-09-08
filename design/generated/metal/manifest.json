@@ -1,0 +1,26 @@
+{
+  "created": "2026-09-08",
+  "generator": "OpenAI ImageGen",
+  "mode": "generate",
+  "concept": "Werkform – fiktive Website für Metallverarbeitung und Konstruktion",
+  "assets": [
+    {
+      "original": "werkhalle-original.png",
+      "webDerivative": "../../../website/public/images/metal/werkhalle.webp",
+      "dimensions": "1536x1024",
+      "prompt": "Use case: photorealistic-natural\nAsset type: wide website hero image for a fictional German metal fabrication company\nPrimary request: a modern medium-sized metalworking production hall focused on precision sheet-metal fabrication\nScene/backdrop: clean real industrial workshop with one unbranded CNC laser cutting machine and press brake visible, organized work area, raw sheet stock and a few finished bent components\nSubject: the production environment and precise machinery, no workers\nStyle/medium: photorealistic editorial industrial photography, credible and natural rather than glossy advertising CGI\nComposition/framing: wide landscape view from slightly below eye level, strong architectural lines, clear foreground-to-background depth, suitable for a 3:2 website crop\nLighting/mood: cool daylight from high workshop windows mixed with restrained warm task lighting, calm, capable, precise\nColor palette: graphite, steel gray, off-white, small restrained safety-orange accents\nMaterials/textures: brushed steel, galvanized sheet metal, matte machine housings, concrete floor with realistic light wear\nConstraints: physically plausible German workshop, no readable text, no logos, no trademarks, no people, no watermarks\nAvoid: excessive sparks, dramatic smoke, futuristic factory, spotless CGI render, unsafe clutter, impossible machinery"
+    },
+    {
+      "original": "bauteile-original.png",
+      "webDerivative": "../../../website/public/images/metal/bauteile.webp",
+      "dimensions": "1448x1086",
+      "prompt": "Use case: photorealistic-natural\nAsset type: website section image showing manufacturing precision\nPrimary request: close editorial photograph of several precisely bent stainless-steel and blackened-steel components arranged for dimensional inspection on a heavy workshop table\nScene/backdrop: real metalworking inspection bench with a metal caliper and technical gauge present but no readable measurements\nSubject: crisp bends, drilled holes, clean edges and varied surface finishes of the fabricated components\nStyle/medium: photorealistic industrial detail photography\nComposition/framing: landscape close-up at a shallow three-quarter angle, layered components lead through the frame, suitable for a 4:3 crop\nLighting/mood: directional window light with controlled highlights, quiet and exact\nColor palette: stainless steel, dark graphite, warm neutral workbench, one subtle orange fixture\nMaterials/textures: brushed metal grain, blackened steel, slight authentic tool marks, solid worn workbench\nConstraints: realistic fabrication tolerances and geometry, no readable text, no logos, no trademarks, no people, no watermarks\nAvoid: jewelry-like polish, random tools, dirty scrap yard, impossible parts, fake UI"
+    },
+    {
+      "original": "stahltreppe-original.png",
+      "webDerivative": "../../../website/public/images/metal/stahltreppe.webp",
+      "dimensions": "1536x1024",
+      "prompt": "Use case: photorealistic-natural\nAsset type: website project image for a fictional metal construction case study\nPrimary request: a completed custom dark-steel staircase and balustrade installed inside a contemporary light-industrial office building\nScene/backdrop: restrained concrete and timber interior with daylight, practical commercial architecture\nSubject: straight-run steel staircase with finely detailed handrail, clean junctions, believable fixings and precise fabrication\nStyle/medium: photorealistic architectural editorial photography\nComposition/framing: wide landscape three-quarter view showing the full staircase and how it meets floor and upper landing, suitable for a 3:2 crop\nLighting/mood: natural side light, calm, durable, technically refined\nColor palette: anthracite steel, pale concrete, warm oak, off-white\nMaterials/textures: powder-coated steel, concrete, oak, subtle realistic wear\nConstraints: structurally plausible, current German commercial-building aesthetic, no readable signage, no logos, no trademarks, no people, no watermarks\nAvoid: luxury mansion styling, decorative wrought iron, impossible floating structure, CGI look, dramatic color grading"
+    }
+  ]
+}
