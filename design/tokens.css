@@ -1,0 +1,40 @@
+/* Schritt 3: Gestaltungswerte, noch keine produktive Website. */
+:root {
+  --font-sans: "Manrope", "Segoe UI", Arial, sans-serif;
+  --font-editorial: "Source Serif 4", Georgia, serif;
+  --content-max: 77.5rem;
+  --gutter: clamp(1.25rem, 4vw, 4rem);
+  --space-section: clamp(3.5rem, 7vw, 6rem);
+  --text-body: 1.125rem;
+  --text-label: .875rem;
+  --line-body: 1.6;
+  --control-height: 3rem;
+  --radius: .25rem;
+  --motion-fast: 160ms;
+}
+[data-theme="provider"] {
+  --background: #ffffff;
+  --ink: #14283f;
+  --muted: #526171;
+  --surface: #eef2f7;
+  --line: #cbd3de;
+  --control-border: #738297;
+  --action: #244fcc;
+  --on-action: #ffffff;
+  --accent: #244fcc;
+  --on-accent: #ffffff;
+  --heading-font: var(--font-sans);
+}
+[data-theme="demo"] {
+  --background: #f6f2eb;
+  --ink: #352735;
+  --muted: #655b62;
+  --surface: #e9e1d6;
+  --line: #cfc3bb;
+  --control-border: #8b797e;
+  --action: #56364d;
+  --on-action: #f6f2eb;
+  --accent: #d7ae43;
+  --on-accent: #352735;
+  --heading-font: var(--font-editorial);
+}

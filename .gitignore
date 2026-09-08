@@ -1,0 +1,12 @@
+.npm-cache/
+website/node_modules/
+website/.vinext/
+website/dist/
+website/.wrangler/
+website/work/
+website/outputs/
+design/site-preview.tar.gz
+*.log
+.DS_Store
+Thumbs.db
+
