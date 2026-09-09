@@ -46,6 +46,18 @@ const concepts = [
     imageHeight: 1024,
     pages: '4 Inhaltsseiten',
   },
+  {
+    name: 'AUFSCHLAG',
+    sector: 'Tennis, Badminton & Vereinsleben',
+    status: 'Umgesetzt und geprüft',
+    description:
+      'Eine aktive Vereinswebsite mit Trainingsplan, zwei Sportarten, Gemeinschaft und einem direkten Weg zum Probetraining.',
+    href: '/konzept/sportverein/',
+    image: '/images/sportverein/badminton.webp',
+    imageWidth: 1536,
+    imageHeight: 1024,
+    pages: '4 Inhaltsseiten',
+  },
 ];
 
 export default function ConceptsPage() {

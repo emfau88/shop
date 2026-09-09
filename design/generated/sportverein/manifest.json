@@ -1,0 +1,26 @@
+{
+  "created": "2026-09-09",
+  "generator": "OpenAI ImageGen",
+  "mode": "generate",
+  "concept": "AUFSCHLAG – fiktive Website für einen Tennis- und Badmintonverein",
+  "assets": [
+    {
+      "original": "badminton-original.png",
+      "webDerivative": "../../../website/public/images/sportverein/badminton.webp",
+      "dimensions": "1536x1024",
+      "prompt": "Use case: photorealistic-natural\nAsset type: wide homepage hero for a premium but approachable German local sports club website\nPrimary request: dynamic badminton doubles rally in a modern municipal sports hall, four adult recreational club players of mixed genders and varied ages, one player in the foreground jumping for an overhead smash while teammates and opponents react naturally\nScene/backdrop: clean indoor badminton hall with pale timber floor, dark blue court markings, simple architecture and soft spectator blur, unmistakable badminton net and shuttlecock\nStyle/medium: high-end editorial sports photography, natural anatomy, credible movement, real skin and fabric texture\nComposition/framing: cinematic landscape 3:2, low sideline angle, foreground action on the right third, generous calm negative space on the left for website copy, full rackets visible\nLighting/mood: bright diffused daylight mixed with warm hall lighting, energetic, welcoming, community-focused\nColor palette: cobalt blue, warm off-white, restrained electric lime accents in sportswear\nConstraints: adults only, realistic German community sports setting, no text, no letters, no logos, no watermark, no professional tournament branding\nAvoid: distorted hands or rackets, duplicated limbs, floating shuttlecock, extreme stadium spectacle, stock-photo posing"
+    },
+    {
+      "original": "tennis-original.png",
+      "webDerivative": "../../../website/public/images/sportverein/tennis.webp",
+      "dimensions": "1448x1086",
+      "prompt": "Use case: photorealistic-natural\nAsset type: editorial feature image for tennis section of a German local sports club website\nPrimary request: two adult recreational tennis club members playing an energetic but friendly rally on a well-kept red clay court\nScene/backdrop: leafy local tennis grounds in Germany with modest clubhouse and simple benches softly out of focus\nStyle/medium: high-end candid editorial sports photography, natural body proportions, realistic clay dust and fabric\nComposition/framing: landscape 4:3, viewed diagonally along the net, both players visible in action, racket and ball clearly readable, room for responsive crop\nLighting/mood: warm early evening sunlight, fresh, active and sociable\nColor palette: red clay, deep green foliage, cobalt blue and off-white sportswear, tiny lime accent\nConstraints: adults only, authentic amateur club atmosphere, no text, no letters, no logos, no watermark, no major-brand marks\nAvoid: professional stadium, staged handshake, distorted limbs, impossible racket strings, audience spectacle"
+    },
+    {
+      "original": "gemeinschaft-original.png",
+      "webDerivative": "../../../website/public/images/sportverein/gemeinschaft.webp",
+      "dimensions": "1536x1024",
+      "prompt": "Use case: photorealistic-natural\nAsset type: community feature image for a welcoming German tennis and badminton club website\nPrimary request: diverse group of eight adult local club members, mixed genders and ages from early twenties to late sixties, relaxed conversation and laughter after training, holding a few tennis and badminton rackets naturally\nScene/backdrop: terrace beside a modest contemporary clubhouse\nStyle/medium: high-end candid editorial sports photography\nComposition/framing: landscape 3:2 group scene with natural spacing and room for responsive crop\nLighting/mood: warm early evening light, welcoming and sociable\nColor palette: cobalt blue, off-white and restrained lime accents\nConstraints: adults only, no text, no letters, no logos, no watermark, no sponsor branding\nAvoid: matching uniforms, corporate stock-photo poses, exaggerated cheering, malformed hands or rackets"
+    }
+  ]
+}

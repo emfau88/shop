@@ -3,7 +3,10 @@ import { cp, mkdir, readFile, readdir, rm, writeFile } from 'node:fs/promises';
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';
 
-const projectRoot = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
+const projectRoot = path.resolve(
+  path.dirname(fileURLToPath(import.meta.url)),
+  '..',
+);
 const outputDirectory = path.join(projectRoot, 'pages-dist');
 const clientDirectory = path.join(projectRoot, 'dist', 'client');
 const pageBase = '/shop';
@@ -26,6 +29,10 @@ const routes = [
   '/konzept/galabau/leistungen/',
   '/konzept/galabau/gartenideen/',
   '/konzept/galabau/anfrage/',
+  '/konzept/sportverein/',
+  '/konzept/sportverein/training/',
+  '/konzept/sportverein/verein/',
+  '/konzept/sportverein/probetraining/',
 ];
 
 function transformHtml(html) {
@@ -43,7 +50,9 @@ function transformHtml(html) {
 async function waitForServer(server) {
   for (let attempt = 0; attempt < 60; attempt += 1) {
     if (server.exitCode !== null) {
-      throw new Error(`Preview server exited early with code ${server.exitCode}.`);
+      throw new Error(
+        `Preview server exited early with code ${server.exitCode}.`,
+      );
     }
     try {
       const response = await fetch(origin);

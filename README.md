@@ -12,10 +12,11 @@ Die vollständige Präsentation läuft über GitHub Pages. Alle Links öffnen ei
 | Farbform · Malerbetrieb | [Homepage ansehen](https://emfau88.github.io/shop/konzept/maler/) | [Leistungen](https://emfau88.github.io/shop/konzept/maler/leistungen/) · [Gestaltung](https://emfau88.github.io/shop/konzept/maler/gestaltung/) · [Kontakt](https://emfau88.github.io/shop/konzept/maler/kontakt/) |
 | Werkform · Metallverarbeitung | [Homepage ansehen](https://emfau88.github.io/shop/konzept/metallbau/) | [Leistungen](https://emfau88.github.io/shop/konzept/metallbau/leistungen/) · [Einblicke](https://emfau88.github.io/shop/konzept/metallbau/einblicke/) · [Anfrage](https://emfau88.github.io/shop/konzept/metallbau/anfrage/) |
 | Grünraum · Garten- und Landschaftsbau | [Homepage ansehen](https://emfau88.github.io/shop/konzept/galabau/) | [Leistungen](https://emfau88.github.io/shop/konzept/galabau/leistungen/) · [Gartenideen](https://emfau88.github.io/shop/konzept/galabau/gartenideen/) · [Anfrage](https://emfau88.github.io/shop/konzept/galabau/anfrage/) |
+| AUFSCHLAG · Tennis- und Badmintonverein | [Homepage ansehen](https://emfau88.github.io/shop/konzept/sportverein/) | [Training](https://emfau88.github.io/shop/konzept/sportverein/training/) · [Verein](https://emfau88.github.io/shop/konzept/sportverein/verein/) · [Probetraining](https://emfau88.github.io/shop/konzept/sportverein/probetraining/) |
 
 Die Formulare sind bewusst als sichere Demos umgesetzt: Sie prüfen Beispieleingaben im Browser, versenden und speichern aber keine Daten. Jede Seite weist transparent auf den Konzeptstatus hin.
 
-Stand: 9. September 2026. Schritte 1–3 sind abgeschlossen. Schritt 4 umfasst inzwischen die Anbieterwebsite sowie drei eigenständige, mehrseitige Branchenkonzepte. Alle Varianten verwenden eigens erzeugte ImageGen-Assets und sind über feste Pfade separat aufrufbar.
+Stand: 9. September 2026. Schritte 1–3 sind abgeschlossen. Schritt 4 umfasst inzwischen die Anbieterwebsite sowie vier eigenständige, mehrseitige Branchenkonzepte. Alle Varianten verwenden eigens erzeugte ImageGen-Assets und sind über feste Pfade separat aufrufbar.
 
 - [Bestandsanalyse](docs/01-bestandsanalyse.md)
 - [Markt, Strategie und Entscheidung für die Umsetzung](docs/02-markt-und-strategie.md)
@@ -31,10 +32,12 @@ Nächster Arbeitsblock: Schritt 5 – konkrete Vertriebsunterlagen für Kleinanz
 - [Umsetzung und Prüfbericht](docs/04-umsetzung-und-pruefung.md)
 - [Branchenkonzept Metallverarbeitung](docs/05-metallverarbeitung.md)
 - [Branchenkonzept Garten- und Landschaftsbau](docs/06-galabau.md)
+- [Vereinskonzept Tennis und Badminton](docs/07-sportverein.md)
 - [Website und Startanleitung](website/README.md)
 - [ImageGen-Originale und Prompts: Farbform](design/generated/manifest.json)
 - [ImageGen-Originale und Prompts: Werkform](design/generated/metal/manifest.json)
 - [ImageGen-Originale und Prompts: Grünraum](design/generated/galabau/manifest.json)
+- [ImageGen-Originale und Prompts: AUFSCHLAG](design/generated/sportverein/manifest.json)
 
 Lokale Vorschau: `http://127.0.0.1:3000/`
 
@@ -51,5 +54,6 @@ Separat aufrufbare Pfade:
 - `/konzept/maler/` — Variante 01 „Farbform“ mit vier Inhaltsseiten
 - `/konzept/metallbau/` — Variante 02 „Werkform“ mit vier Inhaltsseiten
 - `/konzept/galabau/` — Variante 03 „Grünraum“ mit vier Inhaltsseiten
+- `/konzept/sportverein/` — Variante 04 „AUFSCHLAG“ mit vier Inhaltsseiten
 
 Künftige Varianten erhalten jeweils einen eigenen Pfad unter `/konzept/<name>/` und einen Eintrag in der Konzeptübersicht. So werden nicht mehrere lose Projekte gepflegt, sondern eine gemeinsame, erweiterbare Präsentation mit eigenständigen Homepages.

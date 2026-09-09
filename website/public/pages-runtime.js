@@ -3,6 +3,7 @@
     ['.menu-toggle', '.nav'],
     ['.metal-menu-toggle', '.metal-nav'],
     ['.landscape-menu-toggle', '.landscape-nav'],
+    ['.sport-menu-toggle', '.sport-nav'],
   ];
 
   for (const [buttonSelector, navigationSelector] of menus) {
@@ -20,7 +21,10 @@
       setOpen(button.getAttribute('aria-expanded') !== 'true');
     });
     document.addEventListener('keydown', (event) => {
-      if (event.key === 'Escape' && button.getAttribute('aria-expanded') === 'true') {
+      if (
+        event.key === 'Escape' &&
+        button.getAttribute('aria-expanded') === 'true'
+      ) {
         setOpen(false);
         button.focus();
       }
@@ -31,6 +35,7 @@
     ['.inquiry select[name="service"]', 'leistung'],
     ['.metal-inquiry select[name="project"]', 'projekt'],
     ['.landscape-inquiry select[name="topic"]', 'thema'],
+    ['.sport-inquiry select[name="sport"]', 'sport'],
   ];
   const search = new URLSearchParams(window.location.search);
   for (const [selector, parameter] of queryMappings) {
@@ -46,17 +51,26 @@
     {
       selector: '.inquiry',
       successClass: 'success',
-      message: 'Beispiel vollständig. Der Ablauf ist vorbereitet; in dieser Vorschau werden keine Daten versendet.',
+      message:
+        'Beispiel vollständig. Der Ablauf ist vorbereitet; in dieser Vorschau werden keine Daten versendet.',
     },
     {
       selector: '.metal-inquiry',
       successClass: 'metal-success',
-      message: 'Beispiel vollständig. In einer echten Website würde die Anfrage jetzt sicher an den Betrieb übermittelt.',
+      message:
+        'Beispiel vollständig. In einer echten Website würde die Anfrage jetzt sicher an den Betrieb übermittelt.',
     },
     {
       selector: '.landscape-inquiry',
       successClass: 'landscape-success',
-      message: 'Beispiel vollständig. In einer echten Website würde die Anfrage jetzt an den Gartenbaubetrieb übermittelt.',
+      message:
+        'Beispiel vollständig. In einer echten Website würde die Anfrage jetzt an den Gartenbaubetrieb übermittelt.',
+    },
+    {
+      selector: '.sport-inquiry',
+      successClass: 'sport-success',
+      message:
+        'Beispiel vollständig. In einer echten Vereinswebsite würde die Anfrage jetzt an das passende Trainingsteam gehen.',
     },
   ];
 
