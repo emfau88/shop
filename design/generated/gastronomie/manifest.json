@@ -1,0 +1,38 @@
+{
+  "created": "2026-09-09",
+  "generator": "OpenAI ImageGen",
+  "mode": "generate",
+  "concept": "LINDENWIRT – fiktive Website für eine moderne regionale Gaststätte",
+  "assets": [
+    {
+      "original": "gastraum-original.png",
+      "webDerivative": "../../../website/public/images/gastronomie/gastraum.webp",
+      "dimensions": "1536x1024",
+      "prompt": "Use case: photorealistic-natural. Wide 3:2 website hero for a fictional modern regional German restaurant. Warm, welcoming dining room during early evening service, open fire kitchen visible in the background, understated natural materials, dark oak tables, linen napkins, ceramic tableware, soft pendant lights, a diverse group of adult guests dining naturally, attentive service without posing. Editorial hospitality photography, cinematic but credible, warm amber and deep burgundy palette, layered depth, generous space for website copy, realistic hands and food, no readable text, no logos, no trademarks, no watermark. Avoid luxury fine-dining stiffness, empty showroom, exaggerated rustic decor, oversaturation and CGI appearance."
+    },
+    {
+      "original": "gericht-original.png",
+      "webDerivative": "../../../website/public/images/gastronomie/gericht.webp",
+      "dimensions": "1448x1086",
+      "prompt": "Use case: photorealistic-natural. Landscape 4:3 editorial food photograph for a fictional modern regional German restaurant. A seasonal plated main course with sliced beef, roasted root vegetables, mushrooms, silky sauce and restrained fresh herbs on handmade ceramic, set on a dark oak table with subtle linen and warm dining-room background blur. Natural portion, believable textures and plating, soft directional window light mixed with warm ambient light, earthy brown, burgundy and muted green palette, premium but approachable. No readable text, no logos, no cutlery errors, no watermark. Avoid molecular cuisine, excessive garnish, impossible food, greasy highlights and stock-photo gloss."
+    },
+    {
+      "original": "gesellschaft-original.png",
+      "webDerivative": "../../../website/public/images/gastronomie/gesellschaft.webp",
+      "dimensions": "1536x1024",
+      "prompt": "Use case: photorealistic-natural. Wide 3:2 hospitality feature image for a fictional regional German restaurant. A relaxed group of adult guests across several generations celebrating at a long table while a friendly waitress serves a dish naturally. Bright private dining room opening toward a leafy garden terrace, tasteful but unforced table setting, warm wood, linen and handmade ceramics. Candid editorial photography, natural gestures and realistic hands, welcoming daylight, calm premium atmosphere, space for responsive crop. No children, no readable text, no logos, no trademarks, no watermark. Avoid corporate event posing, wedding clichés, exaggerated cheering, luxury ballroom and CGI appearance."
+    },
+    {
+      "original": "gericht-original.png",
+      "webDerivative": "../../../website/public/images/gastronomie/gericht.webp",
+      "dimensions": "1448x1086",
+      "prompt": "Use case: photorealistic-natural. Editorial 4:3 food photograph for a fictional modern regional German restaurant. A refined but approachable seasonal main course: sliced medium-cooked beef, roasted root vegetables, woodland mushrooms, silky sauce and restrained fresh herbs on handmade warm-gray ceramic. Dark oak table, folded natural linen and softly blurred dining room behind. Warm directional window light, appetizing real texture, believable portion, earthy burgundy, brown and green palette. No people, no readable text, no logos, no branded objects, no watermark. Avoid Michelin-style tiny portions, excessive garnish, plastic food, overhead flat lay and CGI appearance."
+    },
+    {
+      "original": "gesellschaft-original.png",
+      "webDerivative": "../../../website/public/images/gastronomie/gesellschaft.webp",
+      "dimensions": "1536x1024",
+      "prompt": "Use case: photorealistic-natural. Wide 3:2 editorial hospitality photograph for the celebrations page of a fictional regional German restaurant. Adults of varied ages sharing a relaxed family celebration at a long beautifully but simply set table while an attentive waitress serves a dish. Bright welcoming dining room opening onto a leafy garden terrace, contemporary rural architecture, natural oak, linen and handmade ceramics. Candid conversation, warm daylight, authentic service, generous responsive crop. No children, no readable text, no logos, no trademarks, no watermark. Avoid wedding clichés, corporate posing, exaggerated cheering, luxury ballroom, distorted hands and CGI appearance."
+    }
+  ]
+}

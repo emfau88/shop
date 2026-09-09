@@ -1,0 +1,1195 @@
+[data-theme='gastro'] {
+  --gastro-ink: #251c18;
+  --gastro-wine: #742d32;
+  --gastro-wine-dark: #4d1e22;
+  --gastro-cream: #f4eee2;
+  --gastro-paper: #fffaf2;
+  --gastro-sage: #70775e;
+  --gastro-line: #cfc3b3;
+  min-height: 100vh;
+  color: var(--gastro-ink);
+  background: var(--gastro-paper);
+  font-family: Manrope, 'Segoe UI', sans-serif;
+}
+
+[data-theme='gastro'] h1,
+[data-theme='gastro'] h2,
+[data-theme='gastro'] h3 {
+  font-family: 'Source Serif 4', Georgia, serif;
+  font-weight: 400;
+  letter-spacing: -0.035em;
+}
+
+[data-theme='gastro'] h1 {
+  font-size: clamp(58px, 7vw, 108px);
+  line-height: 0.94;
+}
+
+[data-theme='gastro'] h2 {
+  font-size: clamp(42px, 5vw, 72px);
+  line-height: 1.02;
+}
+
+[data-theme='gastro'] h3 {
+  font-size: 34px;
+  line-height: 1.1;
+}
+
+[data-theme='gastro'] p {
+  color: #625650;
+}
+
+[data-theme='gastro'] a:focus-visible,
+[data-theme='gastro'] button:focus-visible,
+[data-theme='gastro'] input:focus-visible,
+[data-theme='gastro'] textarea:focus-visible,
+[data-theme='gastro'] select:focus-visible {
+  outline-color: #d79e72;
+}
+
+.gastro-wrap {
+  width: min(1280px, calc(100% - 96px));
+  margin-inline: auto;
+}
+
+.gastro-kicker {
+  margin-bottom: 20px;
+  color: var(--gastro-wine) !important;
+  font-size: 12px;
+  font-weight: 800;
+  line-height: 1.5;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+}
+
+.gastro-notice {
+  color: #f5eadc;
+  background: #1e1815;
+  font-size: 12px;
+}
+
+.gastro-notice-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+  min-height: 39px;
+}
+
+.gastro-notice a {
+  color: white;
+  text-decoration: underline;
+  text-underline-offset: 4px;
+}
+
+.gastro-header {
+  position: relative;
+  z-index: 20;
+  color: white;
+  background: #1e1815;
+}
+
+.gastro-header-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 36px;
+  min-height: 103px;
+}
+
+.gastro-brand {
+  color: white;
+  font-family: 'Source Serif 4', Georgia, serif;
+  font-size: 28px;
+  line-height: 1;
+  letter-spacing: 0.08em;
+}
+
+.gastro-brand small {
+  display: block;
+  margin-top: 8px;
+  color: #c9b9a9;
+  font-family: Manrope, sans-serif;
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0.11em;
+  text-transform: uppercase;
+}
+
+.gastro-nav {
+  display: flex;
+  align-items: center;
+  gap: 38px;
+  font-size: 13px;
+  font-weight: 700;
+}
+
+.gastro-nav a {
+  display: inline-flex;
+  align-items: center;
+  min-height: 50px;
+  color: #f7efe5;
+  border-bottom: 1px solid transparent;
+}
+
+.gastro-nav a[aria-current='page'] {
+  border-bottom-color: #d6a076;
+}
+
+.gastro-nav .gastro-nav-cta {
+  min-height: 52px;
+  padding: 0 23px;
+  border: 1px solid #a58b77;
+}
+
+.gastro-nav a:hover {
+  color: #f2bf92;
+}
+
+.gastro-menu-toggle {
+  display: none !important;
+}
+
+.gastro-link {
+  display: inline-flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 38px;
+  min-height: 56px;
+  padding: 13px 20px;
+  color: white;
+  border: 1px solid var(--gastro-wine);
+  border-radius: 0;
+  background: var(--gastro-wine);
+  font-size: 13px;
+  font-weight: 800;
+}
+
+.gastro-link:hover {
+  color: white;
+  border-color: var(--gastro-wine-dark);
+  background: var(--gastro-wine-dark);
+}
+
+.gastro-link.is-secondary {
+  padding-inline: 0;
+  color: var(--gastro-ink);
+  border: 0;
+  border-bottom: 1px solid var(--gastro-line);
+  background: transparent;
+}
+
+.gastro-link.is-secondary:hover {
+  color: var(--gastro-wine);
+  border-color: var(--gastro-wine);
+  background: transparent;
+}
+
+.gastro-photo {
+  position: relative;
+}
+
+.gastro-photo img {
+  width: 100%;
+  object-fit: cover;
+  filter: saturate(0.88) contrast(1.03);
+}
+
+.gastro-photo figcaption {
+  margin-top: 10px;
+  color: #766961;
+  font-size: 12px;
+  line-height: 1.5;
+}
+
+.gastro-hero {
+  position: relative;
+  min-height: calc(100svh - 142px);
+  display: flex;
+  align-items: flex-end;
+  overflow: hidden;
+  color: white;
+  background: #32221c;
+}
+
+.gastro-hero-photo,
+.gastro-hero-photo img,
+.gastro-hero-shade {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.gastro-hero-photo img {
+  object-position: center 54%;
+}
+
+.gastro-hero-shade {
+  z-index: 1;
+  background:
+    linear-gradient(
+      90deg,
+      rgb(23 15 12 / 86%) 0%,
+      rgb(23 15 12 / 43%) 54%,
+      rgb(23 15 12 / 16%) 100%
+    ),
+    linear-gradient(0deg, rgb(23 15 12 / 86%) 0%, transparent 38%);
+}
+
+.gastro-hero-copy {
+  position: relative;
+  z-index: 2;
+  padding: 110px 0 155px;
+}
+
+.gastro-hero-copy .gastro-kicker {
+  color: #f4c29a !important;
+}
+
+.gastro-hero-copy h1 {
+  max-width: 1020px;
+  margin-bottom: 28px;
+  color: white;
+}
+
+.gastro-hero-copy h1 em {
+  color: #edc9a9;
+  font-weight: 400;
+}
+
+.gastro-hero-copy > p:not(.gastro-kicker) {
+  max-width: 610px;
+  margin-bottom: 34px;
+  color: #f1e8df;
+  font-size: 19px;
+  line-height: 1.65;
+}
+
+.gastro-hero-copy .gastro-link {
+  color: var(--gastro-ink);
+  border-color: #f3e4d0;
+  background: #f3e4d0;
+}
+
+.gastro-hero-copy .gastro-link:hover {
+  color: white;
+  border-color: var(--gastro-wine);
+  background: var(--gastro-wine);
+}
+
+.gastro-hero-quick {
+  position: absolute;
+  z-index: 3;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  border-top: 1px solid rgb(255 255 255 / 30%);
+  background: rgb(26 18 15 / 78%);
+  backdrop-filter: blur(10px);
+}
+
+.gastro-hero-quick-grid {
+  display: grid;
+  grid-template-columns: 0.6fr 1.25fr 0.75fr;
+  align-items: stretch;
+}
+
+.gastro-hero-quick-grid > * {
+  min-height: 96px;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  padding: 20px 32px;
+}
+
+.gastro-hero-quick-grid > * + * {
+  border-left: 1px solid rgb(255 255 255 / 26%);
+}
+
+.gastro-hero-quick small {
+  margin-bottom: 5px;
+  color: #cdbdaf;
+  font-size: 12px;
+}
+
+.gastro-hero-quick b {
+  font-size: 15px;
+}
+
+.gastro-hero-quick a {
+  align-items: center;
+  justify-content: space-between;
+  flex-direction: row;
+  color: white;
+  font-size: 13px;
+  font-weight: 800;
+}
+
+.gastro-statement {
+  max-width: 980px;
+  padding-block: 130px;
+  text-align: center;
+}
+
+.gastro-statement h2 {
+  max-width: 900px;
+  margin-inline: auto;
+}
+
+.gastro-statement > p:last-child {
+  max-width: 690px;
+  margin: 34px auto 0;
+  font-size: 17px;
+  line-height: 1.75;
+}
+
+.gastro-menu-feature {
+  padding-block: 110px;
+  background: var(--gastro-cream);
+}
+
+.gastro-menu-feature-grid {
+  display: grid;
+  grid-template-columns: 0.93fr 1.07fr;
+  align-items: center;
+}
+
+.gastro-menu-feature .gastro-photo img {
+  min-height: 690px;
+  aspect-ratio: 0.88;
+}
+
+.gastro-menu-card {
+  position: relative;
+  z-index: 2;
+  margin-left: -50px;
+  padding: 70px 70px 66px;
+  background: var(--gastro-paper);
+  box-shadow: 0 24px 70px rgb(50 34 26 / 12%);
+}
+
+.gastro-menu-card h2 {
+  margin-bottom: 48px;
+}
+
+.gastro-dish-list {
+  border-top: 1px solid var(--gastro-line);
+}
+
+.gastro-dish-list > div {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  gap: 28px;
+  align-items: start;
+  padding: 21px 0;
+  border-bottom: 1px solid var(--gastro-line);
+}
+
+.gastro-dish-list b,
+.gastro-dish-list span {
+  display: block;
+}
+
+.gastro-dish-list b {
+  margin-bottom: 5px;
+  font-size: 15px;
+}
+
+.gastro-dish-list span {
+  color: #71645b;
+  font-size: 13px;
+  line-height: 1.55;
+}
+
+.gastro-dish-list strong {
+  color: var(--gastro-wine);
+  font-family: 'Source Serif 4', Georgia, serif;
+  font-size: 20px;
+  font-weight: 500;
+}
+
+.gastro-menu-card .gastro-link {
+  margin-top: 28px;
+}
+
+.gastro-full-story {
+  position: relative;
+  min-height: 760px;
+  display: flex;
+  align-items: center;
+  overflow: hidden;
+  background: #372820;
+}
+
+.gastro-full-story > .gastro-photo,
+.gastro-full-story > .gastro-photo img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.gastro-full-story::after {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    90deg,
+    rgb(33 22 18 / 74%),
+    rgb(33 22 18 / 8%) 75%
+  );
+  content: '';
+}
+
+.gastro-story-panel {
+  position: relative;
+  z-index: 2;
+}
+
+.gastro-story-panel > * {
+  max-width: 590px;
+}
+
+.gastro-story-panel .gastro-kicker {
+  color: #f1be91 !important;
+}
+
+.gastro-story-panel h2 {
+  margin-bottom: 28px;
+  color: white;
+}
+
+.gastro-story-panel > p:not(.gastro-kicker) {
+  margin-bottom: 32px;
+  color: #f4ebe3;
+  font-size: 17px;
+  line-height: 1.7;
+}
+
+.gastro-reserve-band {
+  padding-block: 100px;
+  color: white;
+  background: var(--gastro-wine);
+}
+
+.gastro-reserve-band-inner {
+  display: grid;
+  grid-template-columns: 1.05fr 0.95fr;
+  gap: 100px;
+  align-items: center;
+}
+
+.gastro-reserve-band .gastro-kicker,
+.gastro-reserve-band p {
+  color: #f1d9cb !important;
+}
+
+.gastro-reserve-band h2 {
+  color: white;
+}
+
+.gastro-reserve-band-inner > div:last-child > p {
+  margin-bottom: 25px;
+  font-size: 16px;
+  line-height: 1.7;
+}
+
+.gastro-reserve-band .gastro-link {
+  color: var(--gastro-ink);
+  border-color: white;
+  background: white;
+}
+
+.gastro-footer {
+  color: #ede2d7;
+  background: #1e1815;
+}
+
+.gastro-footer-main {
+  display: grid;
+  grid-template-columns: 1.5fr 0.75fr 0.75fr;
+  gap: 70px;
+  padding-block: 74px 60px;
+}
+
+.gastro-footer-brand {
+  color: white;
+  font-family: 'Source Serif 4', Georgia, serif;
+  font-size: 30px;
+  letter-spacing: 0.08em;
+}
+
+.gastro-footer-main p {
+  max-width: 390px;
+  margin-top: 17px;
+  color: #b9a99c;
+  font-size: 13px;
+  line-height: 1.65;
+}
+
+.gastro-footer-main b,
+.gastro-footer-main span {
+  display: block;
+  font-size: 13px;
+}
+
+.gastro-footer-main b {
+  margin-bottom: 15px;
+  color: white;
+}
+
+.gastro-footer-main span {
+  color: #b9a99c;
+  line-height: 1.7;
+}
+
+.gastro-footer-bottom {
+  min-height: 78px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 28px;
+  border-top: 1px solid #50443e;
+  color: #a8988c;
+  font-size: 12px;
+}
+
+.gastro-footer-bottom nav {
+  display: flex;
+  gap: 24px;
+}
+
+.gastro-footer-bottom a {
+  color: #ddd0c5;
+}
+
+.gastro-page-intro {
+  padding-block: 105px 95px;
+}
+
+.gastro-page-intro h1 {
+  max-width: 1050px;
+}
+
+.gastro-page-intro > p:last-child {
+  max-width: 720px;
+  margin-top: 34px;
+  font-size: 18px;
+  line-height: 1.75;
+}
+
+.gastro-menu-intro {
+  text-align: center;
+}
+
+.gastro-menu-intro h1,
+.gastro-menu-intro > p:last-child {
+  margin-inline: auto;
+}
+
+.gastro-menu-sheet {
+  max-width: 1000px;
+  padding-bottom: 120px;
+}
+
+.gastro-menu-section {
+  display: grid;
+  grid-template-columns: 0.38fr 1fr;
+  gap: 70px;
+  padding-block: 54px;
+  border-top: 1px solid var(--gastro-line);
+}
+
+.gastro-menu-section h2 {
+  font-size: 42px;
+}
+
+.gastro-menu-note {
+  margin: 42px 0 0 28%;
+  padding: 30px 34px;
+  border-left: 4px solid var(--gastro-wine);
+  background: var(--gastro-cream);
+}
+
+.gastro-menu-note b {
+  display: block;
+  margin-bottom: 9px;
+  color: var(--gastro-wine);
+  font-size: 14px;
+}
+
+.gastro-menu-note p {
+  font-size: 14px;
+  line-height: 1.7;
+}
+
+.gastro-house-hero {
+  position: relative;
+  min-height: 690px;
+  display: flex;
+  align-items: flex-end;
+  overflow: hidden;
+  color: white;
+  background: #372820;
+}
+
+.gastro-house-hero > .gastro-photo,
+.gastro-house-hero > .gastro-photo img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.gastro-house-hero::after {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(0deg, rgb(28 19 16 / 80%), transparent 65%);
+  content: '';
+}
+
+.gastro-house-title {
+  position: relative;
+  z-index: 2;
+  padding-bottom: 78px;
+}
+
+.gastro-house-title .gastro-kicker {
+  color: #efbb8f !important;
+}
+
+.gastro-house-title h1 {
+  max-width: 930px;
+  color: white;
+}
+
+.gastro-house-copy {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  padding-block: 115px;
+}
+
+.gastro-house-copy > div {
+  min-height: 350px;
+  padding: 8px 46px 0 0;
+}
+
+.gastro-house-copy > div + div {
+  padding-left: 46px;
+  border-left: 1px solid var(--gastro-line);
+}
+
+.gastro-house-copy span {
+  display: block;
+  margin-bottom: 82px;
+  color: var(--gastro-wine);
+  font-size: 13px;
+  font-weight: 800;
+}
+
+.gastro-house-copy h2 {
+  margin-bottom: 22px;
+  font-size: 43px;
+}
+
+.gastro-house-copy p {
+  font-size: 15px;
+  line-height: 1.75;
+}
+
+.gastro-celebration {
+  padding-block: 110px;
+  background: var(--gastro-cream);
+}
+
+.gastro-celebration-grid {
+  display: grid;
+  grid-template-columns: 1fr 0.8fr;
+  gap: 100px;
+  align-items: center;
+}
+
+.gastro-celebration-grid > div:last-child > p {
+  margin-bottom: 28px;
+  font-size: 16px;
+  line-height: 1.75;
+}
+
+.gastro-reservation-layout {
+  display: grid;
+  grid-template-columns: 0.88fr 1.12fr;
+  gap: 100px;
+  align-items: start;
+  padding-block: 105px 120px;
+}
+
+.gastro-reservation-layout h1 {
+  max-width: 600px;
+  margin-bottom: 31px;
+  font-size: clamp(58px, 6.2vw, 88px);
+}
+
+.gastro-reservation-layout .gastro-lead {
+  max-width: 540px;
+  font-size: 18px;
+  line-height: 1.75;
+}
+
+.gastro-opening-card {
+  margin-top: 48px;
+  padding: 29px 0;
+  border-top: 1px solid var(--gastro-line);
+  border-bottom: 1px solid var(--gastro-line);
+}
+
+.gastro-opening-card b {
+  display: block;
+  margin-bottom: 13px;
+  color: var(--gastro-wine);
+  font-size: 13px;
+}
+
+.gastro-opening-card span {
+  display: block;
+  color: #665950;
+  font-size: 14px;
+  line-height: 1.8;
+}
+
+.gastro-plain-link {
+  display: inline-flex;
+  min-height: 48px;
+  align-items: center;
+  margin-top: 22px;
+  color: var(--gastro-wine);
+  font-size: 13px;
+  font-weight: 700;
+  text-decoration: underline;
+  text-underline-offset: 4px;
+}
+
+.gastro-inquiry {
+  padding: 48px;
+  border-top: 5px solid var(--gastro-wine);
+  background: var(--gastro-cream);
+  box-shadow: 0 20px 60px rgb(50 34 26 / 10%);
+}
+
+.gastro-form-note {
+  margin-bottom: 31px;
+  padding: 15px 17px;
+  color: #5d5048 !important;
+  border: 1px solid #d1c2b0;
+  background: var(--gastro-paper);
+  font-size: 12px;
+  line-height: 1.6;
+}
+
+.gastro-form-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 18px;
+}
+
+.gastro-field {
+  margin-bottom: 24px;
+}
+
+.gastro-field label {
+  display: block;
+  margin-bottom: 9px;
+  color: var(--gastro-ink);
+  font-size: 13px;
+  font-weight: 700;
+}
+
+.gastro-field input,
+.gastro-field textarea,
+.gastro-field select {
+  display: block;
+  width: 100%;
+  min-height: 54px;
+  padding: 13px 15px;
+  color: var(--gastro-ink);
+  border: 1px solid #9e8e80;
+  border-radius: 0;
+  background: var(--gastro-paper);
+  font-size: 16px;
+}
+
+.gastro-field textarea {
+  min-height: 132px;
+  resize: vertical;
+}
+
+.gastro-field small {
+  display: block;
+  margin-top: 7px;
+  color: #766960;
+  font-size: 12px;
+}
+
+.gastro-form-bottom {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 21px;
+}
+
+.gastro-submit {
+  min-height: 56px;
+  padding: 12px 20px;
+  border-radius: 0;
+  color: white;
+  background: var(--gastro-wine);
+  font-size: 13px;
+  font-weight: 800;
+}
+
+.gastro-submit:hover {
+  background: var(--gastro-wine-dark);
+}
+
+.gastro-form-bottom > a {
+  min-height: 44px;
+  display: inline-flex;
+  align-items: center;
+  color: #665950;
+  font-size: 12px;
+  text-decoration: underline;
+  text-underline-offset: 4px;
+}
+
+.gastro-success {
+  display: block;
+  margin-top: 25px;
+  padding: 16px 18px;
+  color: #314229;
+  border-left: 4px solid var(--gastro-sage);
+  background: #dfe3d4;
+  font-size: 13px;
+  line-height: 1.6;
+}
+
+@media (max-width: 1040px) {
+  .gastro-wrap {
+    width: calc(100% - 64px);
+  }
+
+  .gastro-nav {
+    gap: 22px;
+  }
+
+  .gastro-menu-card {
+    margin-left: -30px;
+    padding: 50px;
+  }
+
+  .gastro-reserve-band-inner,
+  .gastro-celebration-grid,
+  .gastro-reservation-layout {
+    gap: 60px;
+  }
+}
+
+@media (max-width: 820px) {
+  .gastro-header-inner {
+    min-height: 92px;
+    flex-wrap: wrap;
+    padding-block: 16px;
+  }
+
+  .gastro-menu-toggle {
+    display: inline-flex !important;
+    min-width: 88px;
+    min-height: 46px;
+    color: white;
+    border: 1px solid #9e8876;
+    border-radius: 0;
+    background: transparent;
+    font-size: 12px;
+  }
+
+  .gastro-nav {
+    display: none;
+    width: 100%;
+    gap: 0;
+    padding-top: 8px;
+  }
+
+  .gastro-nav.is-open {
+    display: flex;
+    align-items: stretch;
+    flex-direction: column;
+  }
+
+  .gastro-nav a {
+    min-height: 52px;
+    border-top: 1px solid #4d413a;
+    border-bottom: 0;
+  }
+
+  .gastro-nav .gastro-nav-cta {
+    margin: 8px 0;
+    padding-left: 16px;
+    border: 1px solid #9e8876;
+  }
+
+  .gastro-hero {
+    min-height: 760px;
+  }
+
+  .gastro-hero-copy {
+    padding: 86px 0 185px;
+  }
+
+  .gastro-hero-quick-grid {
+    grid-template-columns: 0.7fr 1.3fr;
+  }
+
+  .gastro-hero-quick-grid > * {
+    min-height: 80px;
+    padding: 16px 18px;
+  }
+
+  .gastro-hero-quick-grid > a {
+    display: none;
+  }
+
+  .gastro-menu-feature-grid,
+  .gastro-reserve-band-inner,
+  .gastro-celebration-grid,
+  .gastro-reservation-layout {
+    grid-template-columns: 1fr;
+  }
+
+  .gastro-menu-feature .gastro-photo img {
+    min-height: 0;
+    aspect-ratio: 1.35;
+  }
+
+  .gastro-menu-card {
+    margin: -50px 32px 0;
+  }
+
+  .gastro-house-copy {
+    grid-template-columns: 1fr;
+  }
+
+  .gastro-house-copy > div {
+    min-height: 0;
+    padding: 35px 0;
+    border-top: 1px solid var(--gastro-line);
+  }
+
+  .gastro-house-copy > div + div {
+    padding-left: 0;
+    border-left: 0;
+  }
+
+  .gastro-house-copy span {
+    margin-bottom: 25px;
+  }
+
+  .gastro-footer-main {
+    grid-template-columns: 1.4fr 1fr;
+  }
+
+  .gastro-footer-main > div:last-child {
+    grid-column: 2;
+  }
+}
+
+@media (max-width: 620px) {
+  .gastro-wrap {
+    width: calc(100% - 40px);
+  }
+
+  .gastro-notice-inner {
+    min-height: 58px;
+    align-items: flex-start;
+    flex-direction: column;
+    justify-content: center;
+    gap: 2px;
+    padding-block: 8px;
+    font-size: 12px;
+  }
+
+  .gastro-brand {
+    font-size: 23px;
+  }
+
+  .gastro-brand small {
+    font-size: 12px;
+  }
+
+  [data-theme='gastro'] h1 {
+    font-size: 54px;
+  }
+
+  [data-theme='gastro'] h2 {
+    font-size: 40px;
+  }
+
+  .gastro-hero {
+    min-height: 755px;
+  }
+
+  .gastro-hero-shade {
+    background:
+      linear-gradient(90deg, rgb(23 15 12 / 76%), rgb(23 15 12 / 35%)),
+      linear-gradient(0deg, rgb(23 15 12 / 88%) 0%, transparent 58%);
+  }
+
+  .gastro-hero-copy {
+    padding: 72px 0 188px;
+  }
+
+  .gastro-hero-copy h1 {
+    margin-bottom: 24px;
+  }
+
+  .gastro-hero-copy > p:not(.gastro-kicker) {
+    font-size: 17px;
+  }
+
+  .gastro-hero-quick-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .gastro-hero-quick-grid > * {
+    min-height: 69px;
+    padding: 12px 0;
+  }
+
+  .gastro-hero-quick-grid > * + * {
+    border-top: 1px solid rgb(255 255 255 / 20%);
+    border-left: 0;
+  }
+
+  .gastro-statement {
+    padding-block: 82px;
+  }
+
+  .gastro-statement > p:last-child {
+    font-size: 16px;
+  }
+
+  .gastro-menu-feature {
+    padding-block: 70px;
+  }
+
+  .gastro-menu-card {
+    margin: -28px 10px 0;
+    padding: 36px 25px;
+  }
+
+  .gastro-menu-card h2 {
+    margin-bottom: 32px;
+  }
+
+  .gastro-dish-list > div {
+    gap: 14px;
+  }
+
+  .gastro-full-story {
+    min-height: 660px;
+    align-items: flex-end;
+  }
+
+  .gastro-story-panel {
+    padding-bottom: 72px;
+  }
+
+  .gastro-reserve-band,
+  .gastro-celebration {
+    padding-block: 72px;
+  }
+
+  .gastro-reserve-band-inner,
+  .gastro-celebration-grid {
+    gap: 35px;
+  }
+
+  .gastro-footer-main {
+    grid-template-columns: 1fr;
+    gap: 37px;
+    padding-block: 58px;
+  }
+
+  .gastro-footer-main > div:last-child {
+    grid-column: 1;
+  }
+
+  .gastro-footer-bottom {
+    align-items: flex-start;
+    flex-direction: column;
+    justify-content: center;
+    padding-block: 22px;
+  }
+
+  .gastro-footer-bottom nav {
+    flex-wrap: wrap;
+    gap: 12px 20px;
+  }
+
+  .gastro-page-intro {
+    padding-block: 72px 58px;
+  }
+
+  .gastro-page-intro > p:last-child {
+    font-size: 16px;
+  }
+
+  .gastro-menu-sheet {
+    padding-bottom: 76px;
+  }
+
+  .gastro-menu-section {
+    grid-template-columns: 1fr;
+    gap: 24px;
+    padding-block: 42px;
+  }
+
+  .gastro-menu-section h2 {
+    font-size: 36px;
+  }
+
+  .gastro-menu-note {
+    margin-left: 0;
+  }
+
+  .gastro-house-hero {
+    min-height: 620px;
+  }
+
+  .gastro-house-title {
+    padding-bottom: 55px;
+  }
+
+  .gastro-house-copy {
+    padding-block: 68px;
+  }
+
+  .gastro-reservation-layout {
+    gap: 45px;
+    padding-block: 72px 82px;
+  }
+
+  .gastro-reservation-layout h1 {
+    font-size: 54px;
+  }
+
+  .gastro-inquiry {
+    padding: 27px 22px;
+  }
+
+  .gastro-form-row {
+    grid-template-columns: 1fr;
+    gap: 0;
+  }
+
+  .gastro-submit {
+    width: 100%;
+  }
+}

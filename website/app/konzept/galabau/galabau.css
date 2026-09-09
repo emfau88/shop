@@ -15,6 +15,113 @@
   font-family: Manrope, 'Segoe UI', sans-serif;
 }
 
+/* Project-led homepage: a garden first, followed by the decision panel. */
+[data-theme='landscape'] .landscape-notice,
+[data-theme='landscape'] .landscape-notice-inner,
+[data-theme='landscape'] .landscape-brand small,
+[data-theme='landscape'] .landscape-kicker,
+[data-theme='landscape'] .landscape-photo figcaption,
+[data-theme='landscape'] .landscape-footer-inner,
+[data-theme='landscape'] .landscape-hero-note,
+[data-theme='landscape'] .landscape-services > a > span,
+[data-theme='landscape'] .landscape-steps li > span,
+[data-theme='landscape'] .landscape-project-copy > span,
+[data-theme='landscape'] .landscape-form-note,
+[data-theme='landscape'] .landscape-field label span,
+[data-theme='landscape'] .landscape-form-bottom > a,
+[data-theme='landscape'] .landscape-link,
+[data-theme='landscape'] .landscape-menu-toggle,
+[data-theme='landscape'] small {
+  font-size: 12px;
+}
+
+.landscape-hero-stage {
+  position: relative;
+  padding-bottom: 116px;
+  background: var(--garden-light);
+}
+
+.landscape-hero-stage > .landscape-photo .landscape-photo-frame {
+  width: 100%;
+  height: min(70vh, 760px);
+  border-radius: 0;
+}
+
+.landscape-hero-stage > .landscape-photo img {
+  width: 100%;
+  height: 100%;
+  object-position: center 58%;
+}
+
+.landscape-hero-stage > .landscape-photo figcaption {
+  position: absolute;
+  right: 20px;
+  bottom: 12px;
+  z-index: 2;
+  color: white;
+  text-shadow: 0 1px 4px #0008;
+}
+
+.landscape-hero-panel {
+  position: relative;
+  z-index: 3;
+  max-width: 780px;
+  margin-top: -210px;
+  margin-left: max(48px, calc((100vw - 1280px) / 2));
+  padding: 58px 64px 48px;
+  background: var(--garden-paper);
+  box-shadow: 0 30px 70px rgb(24 56 46 / 15%);
+}
+
+.landscape-hero-panel h1 {
+  max-width: 650px;
+  margin-bottom: 28px;
+}
+
+.landscape-hero-panel .landscape-actions {
+  margin-top: 31px;
+}
+
+.landscape-hero-panel .landscape-hero-note {
+  position: static;
+  margin-top: 40px;
+}
+
+@media (max-width: 850px) {
+  .landscape-hero-stage {
+    padding-bottom: 70px;
+  }
+
+  .landscape-hero-stage > .landscape-photo .landscape-photo-frame {
+    height: 500px;
+  }
+
+  .landscape-hero-panel {
+    width: calc(100% - 64px);
+    margin: -100px auto 0;
+    padding: 48px;
+  }
+}
+
+@media (max-width: 620px) {
+  .landscape-hero-stage > .landscape-photo .landscape-photo-frame {
+    height: 390px;
+    border-radius: 0;
+  }
+
+  .landscape-hero-panel {
+    width: calc(100% - 40px);
+    margin-top: -48px;
+    padding: 34px 25px 28px;
+  }
+
+  .landscape-hero-panel .landscape-hero-note {
+    position: static;
+    margin-top: 31px;
+    font-size: 12px;
+  }
+}
+
 [data-theme='landscape'] h1,
 [data-theme='landscape'] h2,
 [data-theme='landscape'] h3 {

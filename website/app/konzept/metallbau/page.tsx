@@ -16,29 +16,47 @@ export const metadata = {
 export default function Page() {
   return (
     <MetalShell>
-      <section className="metal-wrap metal-hero">
-        <div className="metal-hero-copy">
-          <p className="metal-kicker">Metallverarbeitung · Konstruktion</p>
-          <h1>Aus Metall wird Lösung.</h1>
-          <p className="metal-lead">
-            Präzise Bauteile, belastbare Baugruppen und Sonderkonstruktionen,
-            die für ihren Einsatz gemacht sind.
-          </p>
-          <div className="metal-actions">
-            <MetalLink href={metalBase + 'anfrage/'}>
-              Projekt anfragen
-            </MetalLink>
-            <MetalLink secondary href={metalBase + 'leistungen/'}>
-              Leistungen ansehen
-            </MetalLink>
+      <section className="metal-hero-industrial">
+        <div className="metal-wrap metal-hero-industrial-head">
+          <div className="metal-hero-copy">
+            <p className="metal-kicker">Metallverarbeitung · Konstruktion</p>
+            <h1>Aus Metall wird Lösung.</h1>
+            <p className="metal-lead">
+              Präzise Bauteile, belastbare Baugruppen und Sonderkonstruktionen,
+              die für ihren Einsatz gemacht sind.
+            </p>
+            <div className="metal-actions">
+              <MetalLink href={metalBase + 'anfrage/'}>
+                Projekt anfragen
+              </MetalLink>
+              <MetalLink secondary href={metalBase + 'leistungen/'}>
+                Leistungen ansehen
+              </MetalLink>
+            </div>
           </div>
+          <dl className="metal-hero-specs">
+            <div>
+              <dt>Werkstoffe</dt>
+              <dd>Stahl · Edelstahl · Aluminium</dd>
+            </div>
+            <div>
+              <dt>Projektarten</dt>
+              <dd>Einzelteile · Kleinserien · Baugruppen</dd>
+            </div>
+            <div>
+              <dt>Datengrundlage</dt>
+              <dd>STEP · DXF · PDF</dd>
+            </div>
+          </dl>
         </div>
-        <MetalPhoto
-          name="werkhalle"
-          alt="Moderne Metallwerkstatt mit Laserschneidanlage, Abkantpresse und vorbereiteten Blechteilen"
-          caption="KI-Werkstattvisualisierung · fiktiver Betrieb"
-          priority
-        />
+        <div className="metal-wrap metal-hero-panorama">
+          <MetalPhoto
+            name="werkhalle"
+            alt="Moderne Metallwerkstatt mit Laserschneidanlage, Abkantpresse und vorbereiteten Blechteilen"
+            caption="KI-Werkstattvisualisierung · fiktive Beispielausstattung"
+            priority
+          />
+        </div>
       </section>
 
       <section

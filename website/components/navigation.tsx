@@ -29,10 +29,10 @@ export function Navigation({
         ['Kontakt', '/konzept/maler/kontakt/'],
       ]
     : [
-        ['Konzepte', '/konzepte/'],
-        ['Leistung & Preis', '/#angebot'],
-        ['Ablauf', '/#ablauf'],
-        ['Projekt anfragen', '/#anfrage'],
+        ['Website-Beispiele', '/#konzepte'],
+        ['Paket & Preis', '/#angebot'],
+        ['So läuft es ab', '/#ablauf'],
+        ['Unverbindlich anfragen', '/#anfrage'],
       ];
   return (
     <>
@@ -44,9 +44,9 @@ export function Navigation({
           <span>
             {demo
               ? 'Fiktives Konzeptprojekt · keine realen Kundenaufträge'
-              : 'Private Vorschau · noch kein buchbares Angebot'}
+              : 'Portfolio- und Angebotsvorschau · Formulare senden keine Daten'}
           </span>
-          {demo && <a href="/">Zum Webdesign-Angebot ↗</a>}
+          {demo && <a href="/konzepte/">Alle Website-Beispiele ↗</a>}
         </div>
       </div>
       <header className="wrap header">
@@ -60,7 +60,7 @@ export function Navigation({
             </>
           ) : (
             <>
-              webdesign<span>persönlich umgesetzt</span>
+              webdesign<span>für lokale Betriebe</span>
             </>
           )}
         </a>

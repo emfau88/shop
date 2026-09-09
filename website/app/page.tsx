@@ -13,98 +13,123 @@ const included = [
   'Projektdateien und dokumentierte Übergabe',
   'Zusätzliche Einbindung bereitgestellter Rechtstexte',
 ];
+const concepts = [
+  {
+    name: 'Farbform',
+    sector: 'Maler & Raumgestaltung',
+    text: 'Ruhig, editorial und bildstark für private Wohnkunden.',
+    href: '/konzept/maler/',
+    image: '/images/demo-desktop.webp',
+    width: 1426,
+    height: 980,
+  },
+  {
+    name: 'Werkform',
+    sector: 'Metallverarbeitung',
+    text: 'Technisch, datenorientiert und auf Projektanfragen ausgerichtet.',
+    href: '/konzept/metallbau/',
+    image: '/images/metal/werkhalle.webp',
+    width: 1536,
+    height: 1024,
+  },
+  {
+    name: 'Grünraum',
+    sector: 'Garten- & Landschaftsbau',
+    text: 'Organisch, projektbezogen und auf Hausbesitzer zugeschnitten.',
+    href: '/konzept/galabau/',
+    image: '/images/galabau/garten.webp',
+    width: 1536,
+    height: 1024,
+  },
+  {
+    name: 'AUFSCHLAG',
+    sector: 'Tennis- & Badmintonverein',
+    text: 'Aktiv, terminorientiert und mit direktem Probetraining.',
+    href: '/konzept/sportverein/',
+    image: '/images/sportverein/badminton.webp',
+    width: 1536,
+    height: 1024,
+  },
+  {
+    name: 'LINDENWIRT',
+    sector: 'Gaststätte & Restaurant',
+    text: 'Atmosphärisch, menügeführt und auf Reservierungen optimiert.',
+    href: '/konzept/gastronomie/',
+    image: '/images/gastronomie/gastraum.webp',
+    width: 1536,
+    height: 1024,
+  },
+];
 export default function Page() {
   return (
     <div data-theme="provider">
       <Navigation />
       <main id="inhalt">
         <section className="wrap provider-hero">
-          <p className="eyebrow">
-            Unternehmenswebsites für Handwerk & lokale Betriebe
-          </p>
+          <p className="eyebrow">Webdesign aus einer Hand</p>
           <h1>
-            Ihre Arbeit verdient einen <span>guten Auftritt.</span>
+            Websites, die Ihren Betrieb <span>verständlich machen.</span>
           </h1>
           <p className="lead">
-            Ich gestalte und entwickle Ihre Unternehmenswebsite: mit klaren
-            Leistungen, Platz für Ihre Arbeiten und einem einfachen Weg zur
-            Anfrage.
+            Für inhabergeführte Unternehmen, die Leistungen klar zeigen,
+            Vertrauen aufbauen und Interessenten ohne Umwege zur Anfrage führen
+            möchten.
           </p>
           <div className="actions">
-            <ArrowLink href="#arbeitsbeispiel">
-              Arbeitsbeispiel ansehen
-            </ArrowLink>
+            <ArrowLink href="#konzepte">5 Websites ansehen</ArrowLink>
             <ArrowLink secondary href="#angebot">
-              Leistung & Preis
+              Paket & Preis
             </ArrowLink>
           </div>
           <p className="scope-line">
             Bis zu 4 Inhaltsseiten <span>·</span> 2 Korrekturrunden{' '}
             <span>·</span> persönliche Umsetzung
           </p>
-          <a
-            href="/konzept/maler/"
-            className="demo-preview"
-            aria-label="Fiktive Konzeptwebsite Farbform öffnen"
-          >
-            <div className="preview-bar">
-              <span>FARBFORM — EIGENES KONZEPTPROJEKT</span>
-              <span>Website erkunden ↗</span>
-            </div>
-            <img
-              src="/images/demo-desktop.webp"
-              width="1440"
-              height="980"
-              alt="Echte Ansicht der umgesetzten Farbform-Website mit Raumfotografie und dem Titel Farbe verändert Räume"
-              fetchPriority="high"
-            />
-          </a>
+          <div className="provider-promises" aria-label="Wichtige Merkmale">
+            <span>Ein fester Ansprechpartner</span>
+            <span>Klare Leistungen und Kosten</span>
+            <span>Für Smartphone und Desktop</span>
+          </div>
         </section>
-        <section className="wrap section" id="arbeitsbeispiel">
-          <div className="section-top">
+        <section className="provider-concepts section" id="konzepte">
+          <div className="wrap section-top provider-concepts-head">
             <div>
-              <p className="eyebrow">Das Arbeitsbeispiel</p>
-              <h2>So könnte Ihr Unternehmen auftreten.</h2>
+              <p className="eyebrow">Fünf vollständige Beispiele</p>
+              <h2>Wählen Sie eine Branche und testen Sie die Website.</h2>
             </div>
             <div>
-              <p className="tag">Eigenes Konzeptprojekt</p>
-              <h3>Malerarbeiten & Raumgestaltung</h3>
               <p>
-                Ein fiktiver Betrieb, eine vollständig entwickelte Website. Das
-                Beispiel zeigt Gestaltung und Bedienung; es ist kein
-                Kundenauftrag.
+                Alle Beispiele sind fiktive Konzeptprojekte. Sie zeigen, wie
+                Gestaltung, Inhalte und Nutzerführung zu verschiedenen Betrieben
+                passen können.
               </p>
-              <ArrowLink secondary href="/konzept/maler/">
-                Konzeptwebsite öffnen
+              <ArrowLink secondary href="/konzepte/">
+                Alle Seiten in der Übersicht
               </ArrowLink>
             </div>
           </div>
-          <div className="example-details">
-            {[
-              [
-                '01',
-                'Leistungen verständlich erklären',
-                'Eine klare Gliederung hilft Besuchern, das passende Angebot zu finden.',
-                'leistungen/',
-              ],
-              [
-                '02',
-                'Arbeiten sichtbar machen',
-                'Große Bilder geben der Gestaltung Raum und zeigen konkrete Details.',
-                'gestaltung/',
-              ],
-              [
-                '03',
-                'Den Kontakt erleichtern',
-                'Ein kurzer Anfrageweg führt von der ersten Idee zum Gespräch.',
-                'kontakt/',
-              ],
-            ].map(([n, title, text, path]) => (
-              <a key={n} href={'/konzept/maler/' + path}>
-                <span className="number">{n}</span>
-                <h3>{title}</h3>
-                <p>{text}</p>
-                <span aria-hidden="true">↗</span>
+          <div className="wrap provider-concept-grid">
+            {concepts.map((concept, index) => (
+              <a
+                className="provider-concept-card"
+                href={concept.href}
+                key={concept.href}
+              >
+                <img
+                  src={concept.image}
+                  width={concept.width}
+                  height={concept.height}
+                  alt={`Vorschau der Konzeptwebsite ${concept.name}`}
+                  loading={index < 2 ? 'eager' : 'lazy'}
+                />
+                <div>
+                  <span>
+                    0{index + 1} · {concept.sector}
+                  </span>
+                  <h3>{concept.name}</h3>
+                  <p>{concept.text}</p>
+                  <b>Website öffnen ↗</b>
+                </div>
               </a>
             ))}
           </div>

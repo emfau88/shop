@@ -58,20 +58,32 @@ const concepts = [
     imageHeight: 1024,
     pages: '4 Inhaltsseiten',
   },
+  {
+    name: 'LINDENWIRT',
+    sector: 'Gaststätte, Restaurant & Feiern',
+    status: 'Umgesetzt und geprüft',
+    description:
+      'Ein atmosphärischer Restaurantauftritt mit direkt sichtbaren Öffnungszeiten, lesbarer Speisekarte und kurzer Tischanfrage.',
+    href: '/konzept/gastronomie/',
+    image: '/images/gastronomie/gastraum.webp',
+    imageWidth: 1536,
+    imageHeight: 1024,
+    pages: '4 Inhaltsseiten',
+  },
 ];
 
 export default function ConceptsPage() {
   return (
     <div data-theme="provider">
-      <Navigation active="Konzepte" />
+      <Navigation active="Website-Beispiele" />
       <main id="inhalt">
         <section className="wrap page-intro concepts-intro">
           <p className="eyebrow">Arbeitsbeispiele</p>
           <h1>Eigenständige Websites. Klar als Konzepte gekennzeichnet.</h1>
           <p className="lead">
-            Hier entsteht eine Sammlung vollständig bedienbarer
-            Branchenbeispiele. Jedes Konzept hat einen eigenen Pfad und zeigt
-            eine passende Gestaltung, Inhaltsstruktur und Kontaktführung.
+            Wählen Sie eine Branche und testen Sie die vollständige Website.
+            Jedes Beispiel hat eine eigene Gestaltung, Inhaltslogik und einen
+            passenden Weg zur Anfrage, Reservierung oder Mitgliedschaft.
           </p>
         </section>
 
@@ -112,9 +124,9 @@ export default function ConceptsPage() {
               <h2>Weitere Branchen folgen gezielt.</h2>
             </div>
             <p>
-              Neue Varianten werden ergänzt, wenn sie eine andere Zielgruppe
-              oder einen anderen Verkaufsfall sinnvoll abdecken. So bleibt jedes
-              Beispiel eigenständig und die Sammlung übersichtlich.
+              Die fünf Varianten decken bewusst unterschiedliche Entscheidungen
+              ab: Wohnraum gestalten, Bauteile anfragen, einen Garten planen,
+              ein Training finden oder einen Tisch reservieren.
             </p>
           </div>
         </section>

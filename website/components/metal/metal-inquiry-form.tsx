@@ -80,17 +80,31 @@ export function MetalInquiryForm({
           />
         </div>
         <div className="metal-field">
-          <label htmlFor="metal-quantity">
-            Menge <span>(optional)</span>
+          <label htmlFor="metal-email">
+            E-Mail <span>(Pflichtfeld)</span>
           </label>
           <Input
-            id="metal-quantity"
-            name="quantity"
+            id="metal-email"
+            name="email"
+            type="email"
+            required
             autoComplete="off"
-            maxLength={80}
-            placeholder="z. B. Einzelteil oder 25 Stück"
+            maxLength={200}
+            placeholder="beispiel@betrieb.de"
           />
         </div>
+      </div>
+      <div className="metal-field">
+        <label htmlFor="metal-quantity">
+          Menge <span>(optional)</span>
+        </label>
+        <Input
+          id="metal-quantity"
+          name="quantity"
+          autoComplete="off"
+          maxLength={80}
+          placeholder="z. B. Einzelteil oder 25 Stück"
+        />
       </div>
       <div className="metal-field">
         <label htmlFor="metal-message">

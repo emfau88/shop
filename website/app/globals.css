@@ -48,6 +48,255 @@
   --radius-4xl: calc(var(--radius) * 2.6);
 }
 
+.demo-trust-line {
+  border-top: 1px solid var(--line);
+  border-bottom: 1px solid var(--line);
+  background: var(--surface);
+}
+
+.demo-trust-line .wrap {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+}
+
+.demo-trust-line span {
+  min-height: 76px;
+  display: flex;
+  align-items: center;
+  padding: 16px 28px;
+  font-size: 13px;
+  font-weight: 700;
+}
+
+.demo-trust-line span::before {
+  margin-right: 12px;
+  color: var(--action);
+  content: '•';
+}
+
+.demo-trust-line span + span {
+  border-left: 1px solid var(--line);
+}
+
+@media (max-width: 759px) {
+  .demo-trust-line .wrap {
+    grid-template-columns: 1fr;
+  }
+
+  .demo-trust-line span {
+    min-height: 56px;
+    padding-inline: 0;
+  }
+
+  .demo-trust-line span + span {
+    border-top: 1px solid var(--line);
+    border-left: 0;
+  }
+}
+
+/* Provider clarity and portfolio navigation */
+.provider-hero {
+  padding-block: 76px 84px;
+}
+
+.provider-promises {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  margin-top: 54px;
+  border-top: 1px solid var(--line);
+  border-bottom: 1px solid var(--line);
+}
+
+.provider-promises span {
+  min-height: 74px;
+  display: flex;
+  align-items: center;
+  padding: 16px 25px;
+  color: var(--ink);
+  font-size: 13px;
+  font-weight: 700;
+}
+
+.provider-promises span::before {
+  margin-right: 12px;
+  color: var(--action);
+  content: '✓';
+}
+
+.provider-promises span + span {
+  border-left: 1px solid var(--line);
+}
+
+.provider-concepts {
+  background: var(--surface);
+}
+
+.provider-concepts-head {
+  margin-bottom: 52px;
+}
+
+.provider-concept-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 28px;
+}
+
+.provider-concept-card {
+  position: relative;
+  overflow: hidden;
+  min-height: 500px;
+  display: flex;
+  align-items: flex-end;
+  color: white;
+  background: #172238;
+}
+
+.provider-concept-card:first-child {
+  grid-row: span 2;
+  min-height: 1028px;
+}
+
+.provider-concept-card img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 450ms ease;
+}
+
+.provider-concept-card::after {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(0deg, rgb(10 17 29 / 90%), transparent 68%);
+  content: '';
+}
+
+.provider-concept-card:hover img {
+  transform: scale(1.025);
+}
+
+.provider-concept-card > div {
+  position: relative;
+  z-index: 1;
+  width: 100%;
+  padding: 34px;
+}
+
+.provider-concept-card span {
+  display: block;
+  margin-bottom: 10px;
+  color: #d9e0e9;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.provider-concept-card h3 {
+  margin-bottom: 10px;
+  color: white;
+  font-size: 34px;
+}
+
+.provider-concept-card p {
+  max-width: 530px;
+  color: #edf0f4;
+  font-size: 14px;
+}
+
+.provider-concept-card b {
+  display: block;
+  margin-top: 20px;
+  color: white;
+  font-size: 13px;
+}
+
+/* Readability baseline for decision makers and end customers. */
+[data-theme='demo'] .notice,
+[data-theme='demo'] .notice-inner,
+[data-theme='demo'] .brand span,
+[data-theme='demo'] .eyebrow,
+[data-theme='demo'] .photo figcaption,
+[data-theme='demo'] small,
+[data-theme='demo'] .number,
+[data-theme='demo'] .step-number,
+[data-theme='demo'] .color-note,
+[data-theme='demo'] .footer,
+[data-theme='demo'] .action,
+[data-theme='demo'] .text-link,
+[data-theme='metal'] .metal-notice,
+[data-theme='metal'] .metal-notice-inner,
+[data-theme='metal'] .metal-brand small,
+[data-theme='metal'] .metal-kicker,
+[data-theme='metal'] .metal-photo figcaption,
+[data-theme='metal'] .metal-footer-inner,
+[data-theme='metal'] .metal-capability-line .metal-wrap,
+[data-theme='metal'] .metal-service-number,
+[data-theme='metal'] .metal-process li > span,
+[data-theme='metal'] .metal-form-note,
+[data-theme='metal'] .metal-field label span,
+[data-theme='metal'] .metal-form-bottom > a,
+[data-theme='metal'] .metal-action,
+[data-theme='metal'] .metal-text-link,
+[data-theme='metal'] .metal-menu-toggle,
+[data-theme='metal'] small,
+[data-theme='provider'] .notice-inner,
+[data-theme='provider'] .brand span,
+[data-theme='provider'] .eyebrow,
+[data-theme='provider'] .scope-line,
+[data-theme='provider'] .provider-concept-card span,
+[data-theme='provider'] .price-note,
+[data-theme='provider'] .form-note,
+[data-theme='provider'] .field label span,
+[data-theme='provider'] .form-bottom > a,
+[data-theme='provider'] .field small,
+[data-theme='provider'] small,
+[data-theme='provider'] .footer {
+  font-size: 12px;
+}
+
+@media (max-width: 900px) {
+  .provider-concept-card:first-child {
+    grid-row: auto;
+    min-height: 500px;
+  }
+}
+
+@media (max-width: 759px) {
+  .provider-hero {
+    padding-block: 46px 58px;
+  }
+
+  .provider-promises,
+  .provider-concept-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .provider-promises span {
+    min-height: 58px;
+    padding-inline: 0;
+  }
+
+  .provider-promises span + span {
+    border-top: 1px solid var(--line);
+    border-left: 0;
+  }
+
+  .provider-concept-card,
+  .provider-concept-card:first-child {
+    min-height: 430px;
+  }
+
+  .provider-concept-card > div {
+    padding: 25px;
+  }
+
+  .provider-concept-card h3 {
+    font-size: 30px;
+  }
+}
+
 body {
   font-family: var(--font-geist-sans), Arial, Helvetica, sans-serif;
 }

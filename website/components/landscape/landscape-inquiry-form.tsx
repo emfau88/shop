@@ -65,6 +65,35 @@ export function LandscapeInquiryForm({
       </div>
       <div className="landscape-form-row">
         <div className="landscape-field">
+          <label htmlFor="landscape-area">
+            Fläche <span>(optional)</span>
+          </label>
+          <Input
+            id="landscape-area"
+            name="area"
+            maxLength={80}
+            autoComplete="off"
+            placeholder="z. B. etwa 180 m²"
+          />
+        </div>
+        <div className="landscape-field">
+          <label htmlFor="landscape-postcode">
+            Postleitzahl <span>(Pflichtfeld)</span>
+          </label>
+          <Input
+            id="landscape-postcode"
+            name="postcode"
+            inputMode="numeric"
+            pattern="[0-9]{5}"
+            required
+            maxLength={5}
+            autoComplete="off"
+            placeholder="12345"
+          />
+        </div>
+      </div>
+      <div className="landscape-form-row">
+        <div className="landscape-field">
           <label htmlFor="landscape-name">
             Name <span>(Pflichtfeld)</span>
           </label>
@@ -79,15 +108,17 @@ export function LandscapeInquiryForm({
           />
         </div>
         <div className="landscape-field">
-          <label htmlFor="landscape-area">
-            Fläche <span>(optional)</span>
+          <label htmlFor="landscape-email">
+            E-Mail <span>(Pflichtfeld)</span>
           </label>
           <Input
-            id="landscape-area"
-            name="area"
-            maxLength={80}
+            id="landscape-email"
+            name="email"
+            type="email"
+            required
+            maxLength={200}
             autoComplete="off"
-            placeholder="z. B. etwa 180 m²"
+            placeholder="beispiel@example.de"
           />
         </div>
       </div>

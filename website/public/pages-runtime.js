@@ -4,6 +4,7 @@
     ['.metal-menu-toggle', '.metal-nav'],
     ['.landscape-menu-toggle', '.landscape-nav'],
     ['.sport-menu-toggle', '.sport-nav'],
+    ['.gastro-menu-toggle', '.gastro-nav'],
   ];
 
   for (const [buttonSelector, navigationSelector] of menus) {
@@ -36,6 +37,7 @@
     ['.metal-inquiry select[name="project"]', 'projekt'],
     ['.landscape-inquiry select[name="topic"]', 'thema'],
     ['.sport-inquiry select[name="sport"]', 'sport'],
+    ['.gastro-inquiry select[name="occasion"]', 'anlass'],
   ];
   const search = new URLSearchParams(window.location.search);
   for (const [selector, parameter] of queryMappings) {
@@ -71,6 +73,12 @@
       successClass: 'sport-success',
       message:
         'Beispiel vollständig. In einer echten Vereinswebsite würde die Anfrage jetzt an das passende Trainingsteam gehen.',
+    },
+    {
+      selector: '.gastro-inquiry',
+      successClass: 'gastro-success',
+      message:
+        'Reservierungsbeispiel vollständig. In einer echten Restaurantwebsite würde die Anfrage jetzt an das Team übermittelt.',
     },
   ];
 

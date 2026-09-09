@@ -61,6 +61,8 @@ export function Footer({ demo = false }: { demo?: boolean }) {
           : 'Gestaltung & Entwicklung aus einer Hand'}
       </span>
       <div>
+        {demo && <a href="/">Webdesign-Angebot</a>}
+        {demo && <a href="/konzepte/">Alle Beispiele</a>}
         <a href="/impressum/">Impressum</a>
         <a href="/datenschutz/">Datenschutz</a>
       </div>

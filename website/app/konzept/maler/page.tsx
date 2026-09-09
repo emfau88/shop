@@ -41,6 +41,13 @@ export default function Page() {
           priority
         />
       </section>
+      <section className="demo-trust-line" aria-label="Arbeitsweise">
+        <div className="wrap">
+          <span>Farbberatung vor Ort</span>
+          <span>Klare Abstimmung</span>
+          <span>Materialien passend zum Raum</span>
+        </div>
+      </section>
       <section className="wrap section">
         <div className="section-top">
           <div>

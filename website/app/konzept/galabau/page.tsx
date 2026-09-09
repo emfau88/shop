@@ -16,8 +16,14 @@ export const metadata = {
 export default function Page() {
   return (
     <LandscapeShell>
-      <section className="landscape-wrap landscape-hero">
-        <div className="landscape-hero-copy">
+      <section className="landscape-hero-stage">
+        <LandscapePhoto
+          name="garten"
+          alt="Üppig bepflanzter Wohngarten mit Natursteinterrasse, Baum und Sitzplatz"
+          caption="KI-Gartenvisualisierung · fiktives Projekt"
+          priority
+        />
+        <div className="landscape-wrap landscape-hero-panel">
           <p className="landscape-kicker">Garten- & Landschaftsbau</p>
           <h1>Draußen beginnt Zuhause.</h1>
           <p className="landscape-lead">
@@ -35,17 +41,11 @@ export default function Page() {
               Gartenideen ansehen ↘
             </a>
           </div>
-        </div>
-        <LandscapePhoto
-          name="garten"
-          alt="Üppig bepflanzter Wohngarten mit Natursteinterrasse, Baum und Sitzplatz"
-          caption="KI-Gartenvisualisierung · fiktives Projekt"
-          priority
-        />
-        <div className="landscape-hero-note">
-          <span>Planen</span>
-          <i /> <span>Bauen</span>
-          <i /> <span>Entwickeln</span>
+          <div className="landscape-hero-note">
+            <span>Planen</span>
+            <i /> <span>Bauen</span>
+            <i /> <span>Entwickeln</span>
+          </div>
         </div>
       </section>
 

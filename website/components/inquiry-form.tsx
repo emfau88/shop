@@ -82,22 +82,20 @@ export function InquiryForm({
             placeholder="Erika Beispiel"
           />
         </div>
-        {!demo && (
-          <div className="field">
-            <label htmlFor="email">
-              E-Mail <span>(Pflichtfeld)</span>
-            </label>
-            <Input
-              id="email"
-              name="email"
-              type="email"
-              autoComplete="off"
-              required
-              maxLength={200}
-              placeholder="beispiel@example.com"
-            />
-          </div>
-        )}
+        <div className="field">
+          <label htmlFor="email">
+            E-Mail <span>(Pflichtfeld)</span>
+          </label>
+          <Input
+            id="email"
+            name="email"
+            type="email"
+            autoComplete="off"
+            required
+            maxLength={200}
+            placeholder="beispiel@example.com"
+          />
+        </div>
       </div>
       {!demo && (
         <div className="field">

@@ -89,6 +89,30 @@ export function SportInquiryForm({
           placeholder="Alex Beispiel"
         />
       </div>
+      <div className="sport-form-row">
+        <div className="sport-field">
+          <label htmlFor="sport-email">
+            E-Mail <span>(Pflichtfeld)</span>
+          </label>
+          <Input
+            id="sport-email"
+            name="email"
+            type="email"
+            required
+            maxLength={200}
+            autoComplete="off"
+            placeholder="alex@example.de"
+          />
+        </div>
+        <div className="sport-field">
+          <label htmlFor="sport-age">Altersgruppe</label>
+          <NativeSelect id="sport-age" name="age" defaultValue="Erwachsene">
+            <option>Jugend</option>
+            <option>Erwachsene</option>
+            <option>60+</option>
+          </NativeSelect>
+        </div>
+      </div>
       <div className="sport-field">
         <label htmlFor="sport-message">
           Was sollten wir wissen? <span>(Pflichtfeld)</span>

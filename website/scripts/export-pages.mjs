@@ -33,6 +33,10 @@ const routes = [
   '/konzept/sportverein/training/',
   '/konzept/sportverein/verein/',
   '/konzept/sportverein/probetraining/',
+  '/konzept/gastronomie/',
+  '/konzept/gastronomie/speisekarte/',
+  '/konzept/gastronomie/haus/',
+  '/konzept/gastronomie/reservieren/',
 ];
 
 function transformHtml(html) {
