@@ -69,14 +69,19 @@ async function rewriteCss(directory) {
   );
 }
 
-const npmCommand = process.platform === 'win32' ? 'npm.cmd' : 'npm';
 const server = spawn(
-  npmCommand,
-  ['run', 'start', '--', '--port', String(port)],
+  process.execPath,
+  [
+    path.join(projectRoot, 'node_modules', 'vinext', 'dist', 'cli.js'),
+    'start',
+    '--hostname',
+    '127.0.0.1',
+    '--port',
+    String(port),
+  ],
   {
     cwd: projectRoot,
     env: { ...process.env, PORT: String(port) },
-    shell: process.platform === 'win32',
     stdio: ['ignore', 'pipe', 'pipe'],
   },
 );
@@ -112,5 +117,8 @@ try {
   console.error(serverOutput);
   throw error;
 } finally {
-  server.kill('SIGTERM');
+  if (server.exitCode === null) {
+    server.kill('SIGTERM');
+    await new Promise((resolve) => server.once('exit', resolve));
+  }
 }
