@@ -60,8 +60,8 @@ export function MetalInquiryForm({
         >
           <option>Noch offen</option>
           <option>Blechbearbeitung</option>
-          <option>Schweißbaugruppe</option>
-          <option>Sonderkonstruktion</option>
+          <option>Schweißbaugruppen</option>
+          <option>Sonderkonstruktionen</option>
         </NativeSelect>
       </div>
       <div className="metal-form-row">

@@ -1,5 +1,20 @@
 # Verkaufsgrundlage für Unternehmenswebsites
 
+[![Deploy website to GitHub Pages](https://github.com/emfau88/shop/actions/workflows/deploy-pages.yml/badge.svg)](https://github.com/emfau88/shop/actions/workflows/deploy-pages.yml)
+
+## Live-Demos
+
+Die vollständige Präsentation läuft über GitHub Pages. Alle Links öffnen eigenständige, mehrseitige Websites und können direkt im Browser getestet werden.
+
+| Bereich | Startseite | Weitere Seiten |
+| --- | --- | --- |
+| Anbieterauftritt | [Webdesign-Angebot ansehen](https://emfau88.github.io/shop/) | [Konzeptübersicht](https://emfau88.github.io/shop/konzepte/) · [Anfrage](https://emfau88.github.io/shop/#anfrage) |
+| Farbform · Malerbetrieb | [Homepage ansehen](https://emfau88.github.io/shop/konzept/maler/) | [Leistungen](https://emfau88.github.io/shop/konzept/maler/leistungen/) · [Gestaltung](https://emfau88.github.io/shop/konzept/maler/gestaltung/) · [Kontakt](https://emfau88.github.io/shop/konzept/maler/kontakt/) |
+| Werkform · Metallverarbeitung | [Homepage ansehen](https://emfau88.github.io/shop/konzept/metallbau/) | [Leistungen](https://emfau88.github.io/shop/konzept/metallbau/leistungen/) · [Einblicke](https://emfau88.github.io/shop/konzept/metallbau/einblicke/) · [Anfrage](https://emfau88.github.io/shop/konzept/metallbau/anfrage/) |
+| Grünraum · Garten- und Landschaftsbau | [Homepage ansehen](https://emfau88.github.io/shop/konzept/galabau/) | [Leistungen](https://emfau88.github.io/shop/konzept/galabau/leistungen/) · [Gartenideen](https://emfau88.github.io/shop/konzept/galabau/gartenideen/) · [Anfrage](https://emfau88.github.io/shop/konzept/galabau/anfrage/) |
+
+Die Formulare sind bewusst als sichere Demos umgesetzt: Sie prüfen Beispieleingaben im Browser, versenden und speichern aber keine Daten. Jede Seite weist transparent auf den Konzeptstatus hin.
+
 Stand: 9. September 2026. Schritte 1–3 sind abgeschlossen. Schritt 4 umfasst inzwischen die Anbieterwebsite sowie drei eigenständige, mehrseitige Branchenkonzepte. Alle Varianten verwenden eigens erzeugte ImageGen-Assets und sind über feste Pfade separat aufrufbar.
 
 - [Bestandsanalyse](docs/01-bestandsanalyse.md)
@@ -21,13 +36,15 @@ Nächster Arbeitsblock: Schritt 5 – konkrete Vertriebsunterlagen für Kleinanz
 - [ImageGen-Originale und Prompts: Werkform](design/generated/metal/manifest.json)
 - [ImageGen-Originale und Prompts: Grünraum](design/generated/galabau/manifest.json)
 
-Lokale Vorschau: http://127.0.0.1:3000/
+Lokale Vorschau: `http://127.0.0.1:3000/`
+
+Bei jedem Push auf `main` prüft GitHub Actions den Quellcode, baut alle Seiten und veröffentlicht sie automatisch über GitHub Pages. Der Workflow liegt unter `.github/workflows/deploy-pages.yml`.
 
 ## Repository- und Seitenstruktur
 
 Dieses Repository ist die gemeinsame Quelle für das gesamte Vorhaben. Die lauffähige Anwendung liegt unter `website/`; Recherche, Entscheidungen, Originalassets und Prüfberichte liegen daneben und bleiben so nachvollziehbar.
 
-Separat aufrufbare Seiten:
+Separat aufrufbare Pfade:
 
 - `/` — eigener Anbieterauftritt
 - `/konzepte/` — Übersicht aller Arbeitsbeispiele
