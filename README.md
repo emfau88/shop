@@ -37,6 +37,7 @@ Nächster Arbeitsblock: Schritt 5 – konkrete Vertriebsunterlagen für Kleinanz
 - [Design-Audit und Variationsstrategie](docs/08-design-audit.md)
 - [Branchenkonzept Gastronomie](docs/09-gastronomie.md)
 - [Showroom-Weiterentwicklung und Abschluss-Audit](docs/10-showroom-weiterentwicklung.md)
+- [Kleinanzeigen-Angebot, Preisstrategie und Wettbewerb](docs/11-kleinanzeigen-angebot-preise-und-wettbewerb.md)
 - [Website und Startanleitung](website/README.md)
 - [ImageGen-Originale und Prompts: Farbform](design/generated/manifest.json)
 - [ImageGen-Originale und Prompts: Werkform](design/generated/metal/manifest.json)

@@ -671,6 +671,126 @@
   font-size: 13px;
 }
 
+.provider-advantages-intro,
+.solution-guide-intro {
+  display: grid;
+  grid-template-columns: 1.1fr 0.9fr;
+  gap: 90px;
+  align-items: end;
+  margin-bottom: 54px;
+}
+
+.provider-advantages-intro .lead {
+  font-size: 18px;
+}
+
+.provider-advantage-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  border-top: 1px solid var(--line);
+}
+
+.provider-advantage-grid article {
+  min-height: 260px;
+  padding: 30px 32px 34px 0;
+  border-bottom: 1px solid var(--line);
+}
+
+.provider-advantage-grid article:not(:nth-child(3n + 1)) {
+  padding-left: 32px;
+  border-left: 1px solid var(--line);
+}
+
+.provider-advantage-grid article > span,
+.offer-label,
+.solution-card > span {
+  display: block;
+  margin-bottom: 36px;
+  color: var(--action);
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.provider-advantage-grid h3,
+.solution-card h3 {
+  margin-bottom: 15px;
+  font-size: 21px;
+  font-weight: 600;
+  letter-spacing: -0.02em;
+}
+
+.provider-advantage-grid p,
+.solution-guide-intro > p,
+.solution-card p,
+.solution-card li,
+.solution-note {
+  font-size: 14px;
+  line-height: 1.75;
+}
+
+.solution-guide {
+  border-bottom: 1px solid var(--line);
+}
+
+.solution-guide-intro > p {
+  max-width: 580px;
+}
+
+.solution-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 18px;
+}
+
+.solution-card {
+  min-height: 430px;
+  padding: 34px;
+  border: 1px solid var(--line);
+  background: var(--bg);
+}
+
+.solution-card-featured {
+  border-top: 5px solid var(--action);
+  padding-top: 30px;
+  background: var(--surface);
+}
+
+.solution-card > span {
+  margin-bottom: 52px;
+}
+
+.solution-card ul {
+  padding: 24px 0 0;
+  margin: 28px 0 0;
+  border-top: 1px solid var(--line);
+  list-style: none;
+}
+
+.solution-card li {
+  position: relative;
+  padding: 6px 0 6px 19px;
+  color: var(--ink);
+}
+
+.solution-card li::before {
+  position: absolute;
+  top: 16px;
+  left: 0;
+  width: 7px;
+  height: 2px;
+  background: var(--action);
+  content: '';
+}
+
+.solution-note {
+  max-width: 850px;
+  margin-top: 30px;
+  padding-left: 20px;
+  border-left: 3px solid var(--action);
+}
+
 /* Readability baseline for decision makers and end customers. */
 [data-theme='demo'] .notice,
 [data-theme='demo'] .notice-inner,
@@ -720,6 +840,26 @@
     grid-row: auto;
     min-height: 500px;
   }
+
+  .provider-advantages-intro,
+  .solution-guide-intro {
+    gap: 45px;
+  }
+
+  .provider-advantage-grid,
+  .solution-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .provider-advantage-grid article:not(:nth-child(3n + 1)) {
+    padding-left: 0;
+    border-left: 0;
+  }
+
+  .provider-advantage-grid article:nth-child(even) {
+    padding-left: 28px;
+    border-left: 1px solid var(--line);
+  }
 }
 
 @media (max-width: 759px) {
@@ -728,8 +868,43 @@
   }
 
   .provider-promises,
-  .provider-concept-grid {
+  .provider-concept-grid,
+  .provider-advantages-intro,
+  .provider-advantage-grid,
+  .solution-guide-intro,
+  .solution-grid {
     grid-template-columns: 1fr;
+  }
+
+  .provider-advantages-intro,
+  .solution-guide-intro {
+    gap: 24px;
+    margin-bottom: 36px;
+  }
+
+  .provider-advantage-grid article,
+  .provider-advantage-grid article:not(:nth-child(3n + 1)),
+  .provider-advantage-grid article:nth-child(even) {
+    min-height: 0;
+    padding: 26px 0 30px;
+    border-left: 0;
+  }
+
+  .provider-advantage-grid article > span {
+    margin-bottom: 24px;
+  }
+
+  .solution-card {
+    min-height: 0;
+    padding: 27px;
+  }
+
+  .solution-card-featured {
+    padding-top: 23px;
+  }
+
+  .solution-card > span {
+    margin-bottom: 30px;
   }
 
   .provider-promises span {
