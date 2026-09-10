@@ -1,0 +1,9 @@
+{
+  "generated_at": "2026-09-10",
+  "tool": "OpenAI built-in ImageGen",
+  "mode": "precise object edit",
+  "source": "website/public/images/raum-aubergine.webp",
+  "original_output": "design/generated/showroom/farbform-raum-vorher.png",
+  "web_output": "website/public/images/farbform-raum-vorher.webp",
+  "prompt": "Edit this interior photograph for a before-and-after comparison. Preserve the exact room composition, camera position, furniture, floor, lighting, shadows, decor, window, ceiling and image dimensions. Change only the aubergine accent wall to a slightly tired warm off-white paint with a subtle lived-in character. Keep the result photorealistic and understated; do not add, remove or move any object."
+}

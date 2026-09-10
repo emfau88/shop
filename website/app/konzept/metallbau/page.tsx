@@ -60,15 +60,90 @@ export default function Page() {
       </section>
 
       <section
-        className="metal-capability-line"
-        aria-label="Leistungsschwerpunkte"
+        className="metal-capabilities"
+        aria-labelledby="capability-title"
       >
         <div className="metal-wrap">
-          <span>Blechbearbeitung</span>
-          <i aria-hidden="true" />
-          <span>Schweißbaugruppen</span>
-          <i aria-hidden="true" />
-          <span>Sonderkonstruktionen</span>
+          <div className="metal-capabilities-head">
+            <div>
+              <p className="metal-kicker">Fertigungsmatrix</p>
+              <h2 id="capability-title">
+                Passt Ihr Projekt in unsere Fertigung?
+              </h2>
+            </div>
+            <p>
+              Die wichtigsten Eckdaten auf einen Blick. Abweichende Werkstoffe,
+              Maße oder Seriengrößen prüfen wir direkt anhand Ihrer Zeichnung.
+            </p>
+          </div>
+          <div className="metal-matrix">
+            <table>
+              <caption className="sr-only">Fertigungsmöglichkeiten</caption>
+              <thead>
+                <tr>
+                  <th>Verfahren</th>
+                  <th>Werkstoff</th>
+                  <th>Dimension</th>
+                  <th>Losgröße</th>
+                  <th>Daten</th>
+                </tr>
+              </thead>
+              <tbody>
+                {[
+                  [
+                    'Laserschneiden',
+                    'Stahl · Edelstahl',
+                    'bis 20 mm',
+                    '1–500',
+                    'DXF · STEP',
+                  ],
+                  [
+                    'Abkanten',
+                    'Stahl · Aluminium',
+                    'bis 3.000 mm',
+                    '1–250',
+                    'STEP · PDF',
+                  ],
+                  [
+                    'Schweißen',
+                    'Stahl · Edelstahl',
+                    'bis 2.500 kg',
+                    '1–100',
+                    'STEP · PDF',
+                  ],
+                  [
+                    'Baugruppen',
+                    'nach Anforderung',
+                    'projektbezogen',
+                    '1–50',
+                    'STEP · Stückliste',
+                  ],
+                ].map((row) => (
+                  <tr key={row[0]}>
+                    {row.map((value, index) => (
+                      <td
+                        data-label={
+                          [
+                            'Verfahren',
+                            'Werkstoff',
+                            'Dimension',
+                            'Losgröße',
+                            'Daten',
+                          ][index]
+                        }
+                        key={value}
+                      >
+                        {value}
+                      </td>
+                    ))}
+                  </tr>
+                ))}
+              </tbody>
+            </table>
+          </div>
+          <MetalLink href={metalBase + 'anfrage/'}>
+            Projektparameter senden
+          </MetalLink>
         </div>
       </section>
 
@@ -80,8 +155,8 @@ export default function Page() {
           </div>
           <p>
             Kurze Wege, klare Abstimmung und eine Fertigung, die sich am
-            späteren Einsatz orientiert. Die Website führt schnell zum passenden
-            Leistungsbereich.
+            späteren Einsatz orientiert. Von der Zeichnung bis zur geprüften
+            Baugruppe bleibt der technische Bedarf im Mittelpunkt.
           </p>
         </div>
         <div className="metal-service-grid">
@@ -112,12 +187,12 @@ export default function Page() {
             <p className="metal-kicker">Präzision im Detail</p>
             <h2>Saubere Kanten. Klare Geometrie.</h2>
             <p>
-              Gute Fertigung zeigt sich dort, wo Teile zusammenkommen. Deshalb
-              macht dieses Konzept Material, Verarbeitung und Anwendungsnähe
-              sichtbar, ohne mit austauschbaren Werbeversprechen zu arbeiten.
+              Gute Fertigung zeigt sich dort, wo Teile zusammenkommen. Saubere
+              Kanten, nachvollziehbare Prüfungen und dokumentierte Maße sichern
+              die Passung in der späteren Montage.
             </p>
             <MetalLink secondary href={metalBase + 'einblicke/'}>
-              Einblicke öffnen
+              Qualität ansehen
             </MetalLink>
           </div>
         </div>

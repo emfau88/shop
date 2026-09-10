@@ -20,7 +20,7 @@ const concepts = [
     image: '/images/demo-desktop.webp',
     imageWidth: 1426,
     imageHeight: 980,
-    pages: '4 Inhaltsseiten',
+    pages: '4 Inhaltsseiten · Editorial mit Vorher/Nachher',
   },
   {
     name: 'Werkform',
@@ -32,7 +32,7 @@ const concepts = [
     image: '/images/metal/werkhalle.webp',
     imageWidth: 1536,
     imageHeight: 1024,
-    pages: '4 Inhaltsseiten',
+    pages: '4 Inhaltsseiten · technische Fertigungsmatrix',
   },
   {
     name: 'Grünraum',
@@ -44,7 +44,7 @@ const concepts = [
     image: '/images/galabau/garten.webp',
     imageWidth: 1536,
     imageHeight: 1024,
-    pages: '4 Inhaltsseiten',
+    pages: '4 Inhaltsseiten · projektgeführte Gartenstudie',
   },
   {
     name: 'AUFSCHLAG',
@@ -56,7 +56,7 @@ const concepts = [
     image: '/images/sportverein/badminton.webp',
     imageWidth: 1536,
     imageHeight: 1024,
-    pages: '4 Inhaltsseiten',
+    pages: '4 Inhaltsseiten · filterbarer Wochenplan',
   },
   {
     name: 'LINDENWIRT',
@@ -68,7 +68,7 @@ const concepts = [
     image: '/images/gastronomie/gastraum.webp',
     imageWidth: 1536,
     imageHeight: 1024,
-    pages: '4 Inhaltsseiten',
+    pages: '5 Inhaltsseiten · Karte, Haus, Feiern und Reservierung',
   },
 ];
 
@@ -120,13 +120,13 @@ export default function ConceptsPage() {
         <section className="surface section concepts-next">
           <div className="wrap split">
             <div>
-              <p className="eyebrow">Ausbau</p>
-              <h2>Weitere Branchen folgen gezielt.</h2>
+              <p className="eyebrow">Der Showroom</p>
+              <h2>Fünf Branchen. Fünf eigenständige Richtungen.</h2>
             </div>
             <p>
-              Die fünf Varianten decken bewusst unterschiedliche Entscheidungen
-              ab: Wohnraum gestalten, Bauteile anfragen, einen Garten planen,
-              ein Training finden oder einen Tisch reservieren.
+              Editorial, technische Datenschnittstelle, Projektgeschichte,
+              aktiver Wochenplan und Hospitality-Erlebnis zeigen die mögliche
+              Bandbreite – jeweils passend zur Aufgabe des Betriebs.
             </p>
           </div>
         </section>

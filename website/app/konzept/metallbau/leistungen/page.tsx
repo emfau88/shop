@@ -18,7 +18,7 @@ const details = [
   },
   {
     headline: 'Bauteile werden zu belastbaren Einheiten.',
-    copy: 'Bei Schweißbaugruppen zählen vorbereitete Teile, sinnvolle Verbindungen und der spätere Einsatz. Das Konzept stellt den Bedarf in den Mittelpunkt und führt ohne Umwege zur Projektanfrage.',
+    copy: 'Bei Schweißbaugruppen zählen vorbereitete Teile, sinnvolle Verbindungen und der spätere Einsatz. Schweißfolge, Verzug und prüfbare Maße werden deshalb von Anfang an berücksichtigt.',
     image: 'werkhalle' as const,
     alt: 'Aufgeräumte Metallwerkstatt mit Maschinen und vorbereiteten Werkstücken',
   },
@@ -32,7 +32,7 @@ const details = [
 
 export default function Page() {
   return (
-    <MetalShell active="Leistungen">
+    <MetalShell active="Fertigung">
       <section className="metal-wrap metal-page-intro">
         <p className="metal-kicker">Leistungen</p>
         <h1>Was die Aufgabe braucht.</h1>

@@ -61,23 +61,73 @@ export default function Page() {
         </div>
       </section>
 
-      <section className="landscape-wrap landscape-section">
-        <div className="landscape-section-head">
-          <p className="landscape-kicker">Leistungen</p>
-          <h2>Alles, was draußen zusammengehört.</h2>
+      <section className="landscape-case">
+        <div className="landscape-wrap landscape-case-head">
+          <div>
+            <p className="landscape-kicker">Projektgeschichte</p>
+            <h2>Vom ungenutzten Hang zum Garten am Wasser.</h2>
+          </div>
+          <p>
+            Ein Familiengarten, der Regen auffängt, im Sommer Schatten spendet
+            und vom Haus bis zur Grundstücksgrenze als Ganzes funktioniert.
+          </p>
         </div>
-        <div className="landscape-services">
-          {landscapeServices.map((service) => (
-            <a
-              href={`${landscapeBase}leistungen/#${service.slug}`}
-              key={service.slug}
-            >
-              <span>{service.number}</span>
-              <h3>{service.name}</h3>
-              <p>{service.text}</p>
-              <b aria-hidden="true">↗</b>
-            </a>
-          ))}
+        <div className="landscape-wrap landscape-case-stage">
+          <LandscapePhoto
+            name="regengarten"
+            alt="Naturnaher Regengarten mit Bachlauf, Kiesweg und dichter Bepflanzung"
+          />
+          <aside className="landscape-case-facts">
+            <p>Garten 07</p>
+            <dl>
+              <div>
+                <dt>Fläche</dt>
+                <dd>420 m²</dd>
+              </div>
+              <div>
+                <dt>Ausgangslage</dt>
+                <dd>Hang · verdichteter Boden</dd>
+              </div>
+              <div>
+                <dt>Materialien</dt>
+                <dd>Naturstein · Holz · Kies</dd>
+              </div>
+              <div>
+                <dt>Schwerpunkt</dt>
+                <dd>Regenwasser · Schatten</dd>
+              </div>
+              <div>
+                <dt>Umfang</dt>
+                <dd>Planung und Ausführung</dd>
+              </div>
+            </dl>
+          </aside>
+        </div>
+        <div className="landscape-wrap landscape-case-story">
+          <article>
+            <span>01</span>
+            <h3>Ausgangssituation</h3>
+            <p>
+              Wasser lief zum Haus, der Hang war kaum nutzbar und an heißen
+              Tagen fehlte ein geschützter Sitzplatz.
+            </p>
+          </article>
+          <article>
+            <span>02</span>
+            <h3>Gestaltung</h3>
+            <p>
+              Mulden, durchlässige Wege und robuste Stauden verbinden
+              Wassermanagement mit einer ruhigen Gartenfolge.
+            </p>
+          </article>
+          <article>
+            <span>03</span>
+            <h3>Ergebnis</h3>
+            <p>
+              Neue Wege erschließen das Grundstück; Gehölze geben Schatten und
+              jeder Regen wird im Garten weitergedacht.
+            </p>
+          </article>
         </div>
       </section>
 
@@ -106,70 +156,23 @@ export default function Page() {
         </div>
       </section>
 
-      <section className="landscape-wrap landscape-section landscape-future">
-        <LandscapePhoto
-          name="regengarten"
-          alt="Naturnaher Regengarten mit Bachlauf, Kiesweg und dichter Bepflanzung"
-          caption="KI-Gartenvisualisierung · fiktives Projekt"
-        />
+      <section className="landscape-wrap landscape-service-paths">
         <div>
-          <p className="landscape-kicker">Mit Wasser gestalten</p>
-          <h2>Gärten für heiße Tage und starken Regen.</h2>
-          <p>
-            Versickerungsfähige Flächen, schattenspendende Gehölze und eine
-            passende Pflanzung können Wasser im Garten halten und zugleich neue
-            Lebensräume schaffen.
-          </p>
-          <a
-            className="landscape-quiet-link"
-            href={landscapeBase + 'gartenideen/#regengarten'}
-          >
-            Idee entdecken ↗
-          </a>
+          <p className="landscape-kicker">Was wir verbinden</p>
+          <h2>Planen, bauen und weiterentwickeln.</h2>
         </div>
-      </section>
-
-      <section className="landscape-steps">
-        <div className="landscape-wrap">
-          <div className="landscape-section-head">
-            <p className="landscape-kicker">Der Weg zum Garten</p>
-            <h2>Erst verstehen. Dann gestalten.</h2>
-          </div>
-          <ol>
-            <li>
-              <span>01</span>
-              <h3>Kennenlernen</h3>
-              <p>
-                Grundstück, Wünsche, Nutzung und Rahmenbedingungen werden
-                gemeinsam eingeordnet.
-              </p>
-            </li>
-            <li>
-              <span>02</span>
-              <h3>Idee & Angebot</h3>
-              <p>
-                Gestaltung, Materialien und Leistungsumfang erhalten eine klare
-                Richtung.
-              </p>
-            </li>
-            <li>
-              <span>03</span>
-              <h3>Umsetzung</h3>
-              <p>
-                Die Gewerke werden koordiniert und der Garten Schritt für
-                Schritt angelegt.
-              </p>
-            </li>
-            <li>
-              <span>04</span>
-              <h3>Weiterwachsen</h3>
-              <p>
-                Auf Wunsch begleitet passende Pflege die Entwicklung nach der
-                Fertigstellung.
-              </p>
-            </li>
-          </ol>
-        </div>
+        <nav aria-label="Leistungsbereiche">
+          {landscapeServices.map((service) => (
+            <a
+              href={`${landscapeBase}leistungen/#${service.slug}`}
+              key={service.slug}
+            >
+              <span>{service.number}</span>
+              <strong>{service.name}</strong>
+              <b aria-hidden="true">↗</b>
+            </a>
+          ))}
+        </nav>
       </section>
       <LandscapeContact />
     </LandscapeShell>

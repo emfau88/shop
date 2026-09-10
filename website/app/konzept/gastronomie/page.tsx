@@ -49,11 +49,11 @@ export default function Page() {
         <div className="gastro-hero-quick">
           <div className="gastro-wrap gastro-hero-quick-grid">
             <div>
-              <small>Heute · Beispielzeit</small>
+              <small>Heute geöffnet</small>
               <b>17–23 Uhr</b>
             </div>
             <div>
-              <small>Beispieladresse</small>
+              <small>Mitten in der Altstadt</small>
               <b>Marktgasse 12 · Beispielstadt</b>
             </div>
             <a href={gastroBase + 'speisekarte/'}>
@@ -67,9 +67,9 @@ export default function Page() {
         <p className="gastro-kicker">Unser Haus</p>
         <h2>Vertraute Küche, mit frischem Blick gekocht.</h2>
         <p>
-          Die Website stellt zuerst das Erlebnis und die wichtigsten
-          Entscheidungen in den Mittelpunkt: Was gibt es? Wann ist geöffnet? Wo
-          liegt das Haus? Wie bekomme ich einen Tisch?
+          Wir kochen mit dem, was die Region und die Jahreszeit hergeben. Auf
+          der Karte stehen vertraute Gerichte, klare Aromen und Zutaten, deren
+          Herkunft wir kennen.
         </p>
       </section>
 
@@ -80,7 +80,7 @@ export default function Page() {
             alt="Saisonal angerichtetes Hauptgericht mit Rind, Wurzelgemüse und Kräutern auf Keramikteller"
           />
           <div className="gastro-menu-card">
-            <p className="gastro-kicker">Kleine Abendkarte · Beispiel</p>
+            <p className="gastro-kicker">Kleine Abendkarte</p>
             <h2>Heute besonders gut.</h2>
             <div className="gastro-dish-list">
               {dishes.map(([name, description, price]) => (
@@ -94,7 +94,7 @@ export default function Page() {
               ))}
             </div>
             <GastroLink secondary href={gastroBase + 'speisekarte/'}>
-              Ganze Beispielkarte
+              Ganze Speisekarte
             </GastroLink>
           </div>
         </div>
@@ -113,8 +113,8 @@ export default function Page() {
             Geburtstag, Familienfest oder Geschäftsessen: Anlass, Raum und Menü
             werden als ein gemeinsamer Abend gedacht.
           </p>
-          <GastroLink href={gastroBase + 'haus/'}>
-            Räume kennenlernen
+          <GastroLink href={gastroBase + 'feiern/'}>
+            Feiern im LINDENWIRT
           </GastroLink>
         </div>
       </section>

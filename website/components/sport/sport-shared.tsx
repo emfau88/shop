@@ -1,6 +1,7 @@
 /* oxlint-disable nextjs/no-html-link-for-pages -- Native navigation keeps every route independently renderable. */
 /* oxlint-disable nextjs/no-img-element -- Local WebP assets are optimized offline and include dimensions. */
 import { SportNavigation } from './sport-navigation';
+import { DemoBar } from '@/components/demo-bar';
 
 export const sportBase = '/konzept/sportverein/';
 
@@ -10,17 +11,13 @@ const images = {
   gemeinschaft: { file: 'gemeinschaft.webp', width: 1536, height: 1024 },
 } as const;
 
-export function SportPhoto({
-  name,
-  alt,
-  caption = 'KI-Sportfotografie · fiktives Vereinskonzept',
-  priority = false,
-}: {
+export function SportPhoto(props: {
   name: keyof typeof images;
   alt: string;
   caption?: string;
   priority?: boolean;
 }) {
+  const { name, alt, priority = false } = props;
   const image = images[name];
   return (
     <figure className={`sport-photo sport-photo-${name}`}>
@@ -32,7 +29,6 @@ export function SportPhoto({
         loading={priority ? 'eager' : 'lazy'}
         fetchPriority={priority ? 'high' : 'auto'}
       />
-      <figcaption>{caption}</figcaption>
     </figure>
   );
 }
@@ -64,11 +60,11 @@ export function SportFooter() {
         <a className="sport-footer-brand" href={sportBase}>
           AUFSCHLAG
         </a>
-        <span>Fiktives Konzept für einen lokalen Schlägersportverein</span>
+        <span>Tennis · Badminton · Gemeinschaft</span>
         <div>
-          <a href="/konzepte/">Alle Konzepte</a>
-          <a href="/impressum/">Impressum</a>
-          <a href="/datenschutz/">Datenschutz</a>
+          <a href={sportBase + 'training/'}>Training</a>
+          <a href={sportBase + 'verein/'}>Verein</a>
+          <a href={sportBase + 'probetraining/'}>Probetraining</a>
         </div>
       </div>
     </footer>
@@ -83,11 +79,14 @@ export function SportShell({
   active?: string;
 }) {
   return (
-    <div data-theme="sport">
-      <SportNavigation active={active} />
-      <main id="inhalt">{children}</main>
-      <SportFooter />
-    </div>
+    <>
+      <DemoBar concept="AUFSCHLAG · Tennis & Badminton" />
+      <div data-theme="sport">
+        <SportNavigation active={active} />
+        <main id="inhalt">{children}</main>
+        <SportFooter />
+      </div>
+    </>
   );
 }
 
@@ -101,14 +100,14 @@ export function SportTrialStrip() {
         </div>
         <div>
           <p>
-            Wähle deine Sportart und erzähle kurz, was du schon mitbringst. Der
-            Demo-Ablauf zeigt, wie Interessierte ohne Umwege zum passenden
-            Training finden.
+            Wähle deine Sportart und erzähle kurz, was du schon mitbringst. Wir
+            finden eine Gruppe, die zu deiner Sportart, Erfahrung und
+            Altersgruppe passt.
           </p>
           <SportLink href={sportBase + 'probetraining/'}>
             Probetraining anfragen
           </SportLink>
-          <small>Formularsimulation · es werden keine Daten versendet</small>
+          <small>Schläger können beim ersten Termin ausgeliehen werden</small>
         </div>
       </div>
     </section>

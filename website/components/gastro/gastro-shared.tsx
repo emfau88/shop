@@ -1,6 +1,7 @@
 /* oxlint-disable nextjs/no-html-link-for-pages -- Native navigation keeps every route independently renderable. */
 /* oxlint-disable nextjs/no-img-element -- Local WebP assets are optimized offline and include dimensions. */
 import { GastroNavigation } from './gastro-navigation';
+import { DemoBar } from '@/components/demo-bar';
 
 export const gastroBase = '/konzept/gastronomie/';
 
@@ -10,19 +11,14 @@ const images = {
   gesellschaft: { file: 'gesellschaft.webp', width: 1536, height: 1024 },
 } as const;
 
-export function GastroPhoto({
-  name,
-  alt,
-  caption = 'KI-Fotografie · fiktives Restaurantkonzept',
-  priority = false,
-  className = '',
-}: {
+export function GastroPhoto(props: {
   name: keyof typeof images;
   alt: string;
   caption?: string;
   priority?: boolean;
   className?: string;
 }) {
+  const { name, alt, priority = false, className = '' } = props;
   const image = images[name];
   return (
     <figure className={`gastro-photo gastro-photo-${name} ${className}`}>
@@ -34,7 +30,6 @@ export function GastroPhoto({
         loading={priority ? 'eager' : 'lazy'}
         fetchPriority={priority ? 'high' : 'auto'}
       />
-      {caption && <figcaption>{caption}</figcaption>}
     </figure>
   );
 }
@@ -68,7 +63,8 @@ export function GastroFooter() {
             LINDENWIRT
           </a>
           <p>
-            Fiktives Konzept für eine moderne, regional geprägte Gaststätte.
+            Regionale Küche, offene Gastlichkeit und ein Garten für lange
+            Abende.
           </p>
         </div>
         <div>
@@ -83,11 +79,12 @@ export function GastroFooter() {
         </div>
       </div>
       <div className="gastro-wrap gastro-footer-bottom">
-        <span>Konzeptwebsite · keine echte Gastronomie</span>
-        <nav aria-label="Rechtliche Navigation">
-          <a href="/konzepte/">Alle Konzepte</a>
-          <a href="/impressum/">Impressum</a>
-          <a href="/datenschutz/">Datenschutz</a>
+        <span>Mi–Fr · 17–23 Uhr · Sa–So · 12–23 Uhr</span>
+        <nav aria-label="Restaurantnavigation">
+          <a href={gastroBase + 'speisekarte/'}>Speisekarte</a>
+          <a href={gastroBase + 'haus/'}>Unser Haus</a>
+          <a href={gastroBase + 'feiern/'}>Feiern</a>
+          <a href={gastroBase + 'reservieren/'}>Reservieren</a>
         </nav>
       </div>
     </footer>
@@ -102,11 +99,14 @@ export function GastroShell({
   active?: string;
 }) {
   return (
-    <div data-theme="gastro">
-      <GastroNavigation active={active} />
-      <main id="inhalt">{children}</main>
-      <GastroFooter />
-    </div>
+    <>
+      <DemoBar concept="LINDENWIRT · Gastronomie" />
+      <div data-theme="gastro">
+        <GastroNavigation active={active} />
+        <main id="inhalt">{children}</main>
+        <GastroFooter />
+      </div>
+    </>
   );
 }
 
@@ -120,8 +120,8 @@ export function GastroReserveBand() {
         </div>
         <div>
           <p>
-            Datum, Uhrzeit und Personenzahl genügen für den ersten Schritt. Die
-            Demo zeigt einen klaren Reservierungsweg ohne Datenübertragung.
+            Datum, Uhrzeit und Personenzahl genügen für den ersten Schritt. Für
+            Feiern oder größere Runden stimmen wir Menü und Raum persönlich ab.
           </p>
           <GastroLink href={gastroBase + 'reservieren/'}>
             Tisch anfragen

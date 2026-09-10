@@ -36,6 +36,7 @@ const routes = [
   '/konzept/gastronomie/',
   '/konzept/gastronomie/speisekarte/',
   '/konzept/gastronomie/haus/',
+  '/konzept/gastronomie/feiern/',
   '/konzept/gastronomie/reservieren/',
 ];
 

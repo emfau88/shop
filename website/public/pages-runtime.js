@@ -32,6 +32,21 @@
     });
   }
 
+  const sportFilters = document.querySelectorAll('[data-sport-filter]');
+  const sportSessions = document.querySelectorAll('[data-sport-tags]');
+  for (const button of sportFilters) {
+    button.addEventListener('click', () => {
+      const selected = button.dataset.sportFilter;
+      for (const candidate of sportFilters) {
+        candidate.setAttribute('aria-pressed', String(candidate === button));
+      }
+      for (const session of sportSessions) {
+        const tags = session.dataset.sportTags?.split(' ') || [];
+        session.hidden = selected !== 'Alle' && !tags.includes(selected);
+      }
+    });
+  }
+
   const queryMappings = [
     ['.inquiry select[name="service"]', 'leistung'],
     ['.metal-inquiry select[name="project"]', 'projekt'],

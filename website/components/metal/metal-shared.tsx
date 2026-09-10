@@ -1,6 +1,7 @@
 /* oxlint-disable nextjs/no-html-link-for-pages -- Native navigation avoids a confirmed Vinext production Link runtime failure; routes render independently. */
 /* oxlint-disable nextjs/no-img-element -- Local WebP assets are optimized offline and include explicit dimensions. */
 import { MetalNavigation } from './metal-navigation';
+import { DemoBar } from '@/components/demo-bar';
 
 export const metalBase = '/konzept/metallbau/';
 
@@ -60,17 +61,13 @@ const imageData = {
   },
 } as const;
 
-export function MetalPhoto({
-  name,
-  alt,
-  caption = 'KI-Visualisierung · fiktives Konzeptmotiv',
-  priority = false,
-}: {
+export function MetalPhoto(props: {
   name: keyof typeof imageData;
   alt: string;
   caption?: string;
   priority?: boolean;
 }) {
+  const { name, alt, priority = false } = props;
   const image = imageData[name];
   return (
     <figure className={`metal-photo metal-photo-${name}`}>
@@ -82,7 +79,6 @@ export function MetalPhoto({
         loading={priority ? 'eager' : 'lazy'}
         fetchPriority={priority ? 'high' : 'auto'}
       />
-      <figcaption>{caption}</figcaption>
     </figure>
   );
 }
@@ -94,11 +90,11 @@ export function MetalFooter() {
         <a className="metal-footer-brand" href={metalBase}>
           WERKFORM
         </a>
-        <span>Fiktives Websitekonzept für Metallverarbeitung</span>
+        <span>Stahl · Edelstahl · Aluminium</span>
         <div>
-          <a href="/konzepte/">Alle Konzepte</a>
-          <a href="/impressum/">Impressum</a>
-          <a href="/datenschutz/">Datenschutz</a>
+          <a href={metalBase + 'leistungen/'}>Fertigung</a>
+          <a href={metalBase + 'einblicke/'}>Qualität</a>
+          <a href={metalBase + 'anfrage/'}>Projektanfrage</a>
         </div>
       </div>
     </footer>
@@ -113,11 +109,14 @@ export function MetalShell({
   active?: string;
 }) {
   return (
-    <div data-theme="metal">
-      <MetalNavigation active={active} />
-      <main id="inhalt">{children}</main>
-      <MetalFooter />
-    </div>
+    <>
+      <DemoBar concept="Werkform · Metallverarbeitung" />
+      <div data-theme="metal">
+        <MetalNavigation active={active} />
+        <main id="inhalt">{children}</main>
+        <MetalFooter />
+      </div>
+    </>
   );
 }
 
@@ -137,7 +136,9 @@ export function MetalContact() {
           <MetalLink href={metalBase + 'anfrage/'}>
             Projekt beschreiben
           </MetalLink>
-          <small>Formularsimulation · es werden keine Daten versendet</small>
+          <small>
+            Antwort auf Projektanfragen in der Regel innerhalb eines Werktags
+          </small>
         </div>
       </div>
     </section>

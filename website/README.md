@@ -1,6 +1,6 @@
 # Webdesign-Portfolio mit fünf Branchenkonzepten
 
-Private Entwicklungsvorschau, Stand 9. September 2026.
+Private Entwicklungsvorschau, Stand 10. September 2026. Der Build umfasst 25 separat aufrufbare Routen.
 
 ## Lokal starten
 
@@ -33,6 +33,7 @@ Auf diesem Windows-Rechner Build mit `$env:RAYON_NUM_THREADS="2"` ausführen, um
 - /konzept/gastronomie/ — fiktive Website für Gaststätte und Restaurant
 - /konzept/gastronomie/speisekarte/
 - /konzept/gastronomie/haus/
+- /konzept/gastronomie/feiern/
 - /konzept/gastronomie/reservieren/ — reine Formularsimulation
 - /impressum/ und /datenschutz/ — ehrliche Vorschauhinweise, keine vollständigen Rechtstexte
 
@@ -48,7 +49,7 @@ Die KI-Originale und Prompts liegen im gemeinsamen Repository unter ../design/ge
 
 ## Struktur für weitere Homepages
 
-Alle Varianten bleiben in dieser Anwendung und sind separat aufrufbar. Neue Branchenkonzepte werden unter `app/konzept/<slug>/` ergänzt und auf `/konzepte/` eingetragen. Gemeinsame Bedienelemente liegen in `components/`; eine Variante darf ihre eigene Typografie, Farben und Inhaltsbausteine erhalten. Dadurch gibt es ein Repository und einen Build, aber dauerhaft eindeutige URLs pro Homepage.
+Alle Varianten bleiben in dieser Anwendung und sind separat aufrufbar. Neue Branchenkonzepte werden unter `app/konzept/<slug>/` ergänzt und auf `/konzepte/` eingetragen. Die gemeinsame Demo-Leiste liegt bewusst außerhalb der Markenwelten. Jede Variante besitzt eigene Typografie, Farben, Seitenlogik und einen branchenspezifischen Leitbaustein. Dadurch gibt es ein Repository und einen Build, aber dauerhaft eindeutige URLs pro Homepage.
 
 Formulare speichern keine Daten und senden keine Netzwerk-Anfragen. Keine Analysewerkzeuge, Cookies oder externen Schriftabrufe im Anwendungscode. Die Hosting-Infrastruktur bleibt separat zu berücksichtigen.
 

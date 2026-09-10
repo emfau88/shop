@@ -24,8 +24,8 @@ export default function Page() {
         <h1>Finde deinen Rhythmus.</h1>
         <p className="sport-lead">
           Feste Gruppen geben Orientierung. Offene Zeiten lassen Raum für
-          spontane Ballwechsel. Alle Angaben sind beispielhaft und Teil des
-          fiktiven Konzepts.
+          spontane Ballwechsel. Finde den Termin, der zu deinem Alltag und
+          deiner Spielstärke passt.
         </p>
       </section>
       <section

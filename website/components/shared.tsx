@@ -1,6 +1,7 @@
 /* oxlint-disable nextjs/no-html-link-for-pages -- Native navigation avoids a confirmed Vinext production Link runtime failure; routes render independently. */
 /* oxlint-disable nextjs/no-img-element -- WebP assets are optimized offline and served locally with dimensions and loading priorities. */
 import { Navigation } from './navigation';
+import { DemoBar } from './demo-bar';
 export const base = '/konzept/maler/';
 export function ArrowLink({
   href,
@@ -18,19 +19,15 @@ export function ArrowLink({
     </a>
   );
 }
-export function Photo({
-  name,
-  alt,
-  caption = 'KI-Raumkonzept · keine ausgeführte Kundenarbeit',
-  priority = false,
-}: {
+export function Photo(props: {
   name: string;
   alt: string;
   caption?: string;
   priority?: boolean;
 }) {
+  const { name, alt, priority = false } = props;
   const dimensions =
-    name === 'raum-aubergine'
+    name === 'raum-aubergine' || name === 'farbform-raum-vorher'
       ? [1536, 1024]
       : name === 'eingang-senf'
         ? [1448, 1086]
@@ -45,7 +42,6 @@ export function Photo({
         loading={priority ? 'eager' : 'lazy'}
         fetchPriority={priority ? 'high' : 'auto'}
       />
-      <figcaption>{caption}</figcaption>
     </figure>
   );
 }
@@ -57,14 +53,22 @@ export function Footer({ demo = false }: { demo?: boolean }) {
       </a>
       <span>
         {demo
-          ? 'Ein fiktives Gestaltungskonzept'
+          ? 'Farbe · Oberfläche · Raumwirkung'
           : 'Gestaltung & Entwicklung aus einer Hand'}
       </span>
       <div>
-        {demo && <a href="/">Webdesign-Angebot</a>}
-        {demo && <a href="/konzepte/">Alle Beispiele</a>}
-        <a href="/impressum/">Impressum</a>
-        <a href="/datenschutz/">Datenschutz</a>
+        {demo ? (
+          <>
+            <a href={base + 'leistungen/'}>Leistungen</a>
+            <a href={base + 'gestaltung/'}>Projekte</a>
+            <a href={base + 'kontakt/'}>Kontakt</a>
+          </>
+        ) : (
+          <>
+            <a href="/impressum/">Impressum</a>
+            <a href="/datenschutz/">Datenschutz</a>
+          </>
+        )}
       </div>
     </footer>
   );
@@ -77,11 +81,14 @@ export function DemoShell({
   active?: string;
 }) {
   return (
-    <div data-theme="demo">
-      <Navigation demo active={active} />
-      <main id="inhalt">{children}</main>
-      <Footer demo />
-    </div>
+    <>
+      <DemoBar concept="Farbform · Maler & Raumgestaltung" />
+      <div data-theme="demo">
+        <Navigation demo active={active} />
+        <main id="inhalt">{children}</main>
+        <Footer demo />
+      </div>
+    </>
   );
 }
 export function DemoContact() {
@@ -98,7 +105,7 @@ export function DemoContact() {
             Idee, wie es sich anfühlen soll.
           </p>
           <ArrowLink href={base + 'kontakt/'}>Vorhaben beschreiben</ArrowLink>
-          <small>Demo-Anfrage zum Ausprobieren</small>
+          <small>Unverbindliche Anfrage</small>
         </div>
       </div>
     </section>

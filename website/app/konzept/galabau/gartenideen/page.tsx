@@ -4,18 +4,17 @@ import {
   LandscapeShell,
 } from '@/components/landscape/landscape-shared';
 
-export const metadata = { title: 'Gartenideen · Grünraum Gartenbau' };
+export const metadata = { title: 'Projekte · Grünraum Gartenbau' };
 
 export default function Page() {
   return (
-    <LandscapeShell active="Gartenideen">
+    <LandscapeShell active="Projekte">
       <section className="landscape-wrap landscape-page-intro">
-        <p className="landscape-kicker">Gartenideen</p>
+        <p className="landscape-kicker">Ausgewählte Projekte</p>
         <h1>Zwei Gärten. Zwei Antworten auf den Ort.</h1>
         <p className="landscape-lead">
-          Die KI-erstellten Motive veranschaulichen die Bild- und
-          Inhaltsrichtung der Website. Sie sind keine ausgeführten
-          Kundenreferenzen.
+          Jeder Garten antwortet auf einen anderen Ort, andere Wünsche und eine
+          andere Art, draußen zu leben.
         </p>
       </section>
       <section className="landscape-wrap landscape-project">

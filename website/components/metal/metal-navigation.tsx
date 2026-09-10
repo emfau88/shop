@@ -7,8 +7,8 @@ import { Button } from '@/components/ui/button';
 const metalBase = '/konzept/metallbau/';
 
 const links = [
-  ['Leistungen', metalBase + 'leistungen/'],
-  ['Einblicke', metalBase + 'einblicke/'],
+  ['Fertigung', metalBase + 'leistungen/'],
+  ['Qualität', metalBase + 'einblicke/'],
   ['Projekt anfragen', metalBase + 'anfrage/'],
 ];
 
@@ -32,12 +32,6 @@ export function MetalNavigation({ active = '' }: { active?: string }) {
       <a className="skip" href="#inhalt">
         Zum Inhalt
       </a>
-      <div className="metal-notice">
-        <div className="metal-wrap metal-notice-inner">
-          <span>Fiktives Konzeptprojekt · keine realen Kundenaufträge</span>
-          <a href="/konzepte/">Alle Websitekonzepte ↗</a>
-        </div>
-      </div>
       <header className="metal-wrap metal-header">
         <a
           className="metal-brand"

@@ -7,7 +7,7 @@ import { Button } from '@/components/ui/button';
 const landscapeBase = '/konzept/galabau/';
 const links = [
   ['Leistungen', landscapeBase + 'leistungen/'],
-  ['Gartenideen', landscapeBase + 'gartenideen/'],
+  ['Projekte', landscapeBase + 'gartenideen/'],
   ['Garten anfragen', landscapeBase + 'anfrage/'],
 ];
 
@@ -31,12 +31,6 @@ export function LandscapeNavigation({ active = '' }: { active?: string }) {
       <a className="skip" href="#inhalt">
         Zum Inhalt
       </a>
-      <div className="landscape-notice">
-        <div className="landscape-wrap landscape-notice-inner">
-          <span>Fiktives Konzeptprojekt · keine realen Kundenaufträge</span>
-          <a href="/konzepte/">Alle Websitekonzepte ↗</a>
-        </div>
-      </div>
       <header className="landscape-wrap landscape-header">
         <a className="landscape-brand" href={landscapeBase}>
           <span className="landscape-brand-sign" aria-hidden="true">

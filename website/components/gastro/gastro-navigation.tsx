@@ -7,7 +7,8 @@ import { Button } from '@/components/ui/button';
 const gastroBase = '/konzept/gastronomie/';
 const links = [
   ['Speisekarte', gastroBase + 'speisekarte/'],
-  ['Haus & Feiern', gastroBase + 'haus/'],
+  ['Unser Haus', gastroBase + 'haus/'],
+  ['Feiern', gastroBase + 'feiern/'],
   ['Reservieren', gastroBase + 'reservieren/'],
 ];
 
@@ -31,12 +32,6 @@ export function GastroNavigation({ active = '' }: { active?: string }) {
       <a className="skip" href="#inhalt">
         Zum Inhalt
       </a>
-      <div className="gastro-notice">
-        <div className="gastro-wrap gastro-notice-inner">
-          <span>Fiktives Restaurantkonzept · keine realen Öffnungszeiten</span>
-          <a href="/konzepte/">Alle Websitekonzepte ↗</a>
-        </div>
-      </div>
       <header className="gastro-header">
         <div className="gastro-wrap gastro-header-inner">
           <a className="gastro-brand" href={gastroBase}>

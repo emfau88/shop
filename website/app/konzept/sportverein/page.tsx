@@ -5,6 +5,7 @@ import {
   SportTrialStrip,
   sportBase,
 } from '@/components/sport/sport-shared';
+import { SportWeekPlan } from '@/components/sport/sport-week-plan';
 
 export const metadata = {
   title: 'AUFSCHLAG · Tennis & Badminton',
@@ -52,28 +53,7 @@ export default function Page() {
         </div>
       </section>
 
-      <section className="sport-week">
-        <div className="sport-wrap sport-week-grid">
-          <div>
-            <span>DI</span>
-            <b>Badminton</b>
-            <small>Freies Spiel · 18:00</small>
-          </div>
-          <div>
-            <span>MI</span>
-            <b>Tennis</b>
-            <small>Einsteiger · 17:30</small>
-          </div>
-          <div>
-            <span>FR</span>
-            <b>Jugend</b>
-            <small>Beide Sportarten · 16:00</small>
-          </div>
-          <a href={sportBase + 'training/'}>
-            Alle Trainingszeiten <span>↗</span>
-          </a>
-        </div>
-      </section>
+      <SportWeekPlan />
 
       <section className="sport-wrap sport-section sport-choice">
         <div className="sport-section-head">
@@ -123,9 +103,9 @@ export default function Page() {
             <p className="sport-kicker">Einsteigen & dranbleiben</p>
             <h2>Spielstärke ist kein Eintrittsticket.</h2>
             <p>
-              Die Website führt Interessierte über Sportart, Erfahrung und
-              Altersgruppe zum passenden Angebot. So wird aus „Ich würde gern“
-              ein konkreter erster Termin.
+              Unsere Trainer ordnen Sportart, Erfahrung und Altersgruppe so
+              zusammen, dass der Einstieg weder über- noch unterfordert. Ein
+              erster Termin reicht zum Kennenlernen.
             </p>
             <SportLink secondary href={sportBase + 'training/'}>
               Gruppen entdecken

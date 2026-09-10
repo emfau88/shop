@@ -1,7 +1,7 @@
 /* oxlint-disable nextjs/no-html-link-for-pages -- Native navigation avoids a confirmed Vinext production Link runtime failure; routes render independently. */
 import { DemoShell } from '@/components/shared';
 import { InquiryForm } from '@/components/inquiry-form';
-export const metadata = { title: 'Demo-Anfrage · Farbform' };
+export const metadata = { title: 'Kontakt · Farbform' };
 export default async function Page({
   searchParams,
 }: {
@@ -26,14 +26,13 @@ export default async function Page({
             Hier können Sie den Anfrageweg ausprobieren.
           </p>
           <div className="contact-aside">
-            <p className="eyebrow">So funktioniert das Beispiel</p>
+            <p className="eyebrow">Hilfreich für den Einstieg</p>
             <p>
-              Leistung auswählen, eine kurze Idee beschreiben und die
-              Demo-Anfrage prüfen. In einem echten Betrieb kommen hier die
-              bestätigten Kontaktangaben hinzu.
+              Nennen Sie Raum, ungefähre Fläche und die gewünschte Wirkung. Ein
+              Foto der aktuellen Situation erleichtert später die Beratung.
             </p>
-            <a className="text-link" href="/">
-              Zurück zum Webdesign-Angebot ↗
+            <a className="text-link" href="/konzept/maler/gestaltung/">
+              Farbwelten ansehen ↗
             </a>
           </div>
         </div>

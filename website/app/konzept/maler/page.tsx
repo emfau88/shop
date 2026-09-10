@@ -1,4 +1,4 @@
-/* oxlint-disable nextjs/no-html-link-for-pages -- Native navigation avoids a confirmed Vinext production Link runtime failure; routes render independently. */
+/* oxlint-disable nextjs/no-html-link-for-pages -- Native navigation avoids a confirmed Vinext production Link runtime failure. */
 import {
   DemoShell,
   Photo,
@@ -7,115 +7,123 @@ import {
   services,
   base,
 } from '@/components/shared';
+
 export const metadata = { title: 'Farbform · Malerarbeiten & Raumgestaltung' };
+
 export default function Page() {
   return (
     <DemoShell>
-      <section className="wrap demo-hero">
-        <div className="hero-copy">
-          <p className="eyebrow">Malerarbeiten & Raumgestaltung</p>
-          <h1>Farbe verändert Räume.</h1>
-          <p className="lead">
-            Von ruhigen Wandflächen bis zu ausdrucksstarken Akzenten:
-            durchdachte Farben, passende Oberflächen und ein stimmiges
-            Gesamtbild.
-          </p>
-          <div className="actions">
-            <ArrowLink href={base + 'gestaltung/'}>
-              Gestaltung ansehen
-            </ArrowLink>
-            <ArrowLink secondary href={base + 'leistungen/'}>
-              Leistungen entdecken
-            </ArrowLink>
-          </div>
-          <div className="color-note">
-            <span className="swatch aubergine" />
-            <span className="swatch chalk" />
-            <span className="swatch mustard" />
-            <span>Raum für neue Perspektiven.</span>
-          </div>
-        </div>
-        <Photo
-          name="raum-aubergine"
-          alt="Auberginefarbene Wand, helles Sofa und Holzboden in einem lichtdurchfluteten Wohnzimmer"
-          priority
-        />
-      </section>
-      <section className="demo-trust-line" aria-label="Arbeitsweise">
-        <div className="wrap">
-          <span>Farbberatung vor Ort</span>
-          <span>Klare Abstimmung</span>
-          <span>Materialien passend zum Raum</span>
-        </div>
-      </section>
-      <section className="wrap section">
-        <div className="section-top">
+      <section className="farbform-masthead">
+        <div className="wrap farbform-masthead-title">
           <div>
-            <p className="eyebrow">Was einen Raum ausmacht</p>
-            <h2>
-              Die Fläche. Die Farbe.
-              <br className="wide-break" /> Das Gefühl.
-            </h2>
+            <p className="eyebrow">Farbe · Oberfläche · Raum</p>
+            <h1>
+              Räume brauchen
+              <br /> den richtigen Ton.
+            </h1>
           </div>
-          <p>
-            Manchmal braucht es nur einen anderen Ton. Manchmal eine neue
-            Oberfläche. Entscheidend ist, dass alles zusammenpasst.
-          </p>
+          <aside>
+            <span>Studiojournal 01</span>
+            <p>
+              Farbkonzepte und handwerkliche Oberflächen für Räume, die sich
+              selbstverständlich anfühlen.
+            </p>
+          </aside>
         </div>
-        <div className="service-list">
-          {services.map((s, i) => (
-            <a href={base + 'leistungen/#' + s.slug} key={s.slug}>
-              <span className="number">0{i + 1}</span>
-              <h3>{s.name}</h3>
-              <p>{s.text}</p>
-              <span className="row-arrow" aria-hidden="true">
-                ↗
+        <div className="wrap farbform-lead-image">
+          <Photo
+            name="raum-aubergine"
+            alt="Wohnraum mit matter auberginefarbener Akzentwand, hellem Sofa und Holzboden"
+            priority
+          />
+          <div className="farbform-image-note">
+            <span className="swatch aubergine" />
+            <div>
+              <b>Aubergine 42</b>
+              <span>Matt · warmes Tageslicht</span>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section className="wrap farbform-manifesto">
+        <p className="eyebrow">Unser Blick auf Räume</p>
+        <blockquote>
+          Farbe ist keine letzte Schicht. Sie entscheidet, wie Licht, Möbel und
+          Menschen in einem Raum zusammenkommen.
+        </blockquote>
+        <ArrowLink secondary href={base + 'leistungen/'}>
+          Leistungen im Überblick
+        </ArrowLink>
+      </section>
+
+      <section className="farbform-transformation">
+        <div className="wrap">
+          <div className="farbform-section-label">
+            <p className="eyebrow">Vorher / Nachher</p>
+            <p>Wohnraum · Farb- und Materialkonzept</p>
+          </div>
+          <div className="farbform-compare">
+            <div>
+              <span>Vorher</span>
+              <Photo
+                name="farbform-raum-vorher"
+                alt="Wohnraum vor der Neugestaltung mit warmer, weißer Wand"
+              />
+            </div>
+            <div>
+              <span>Nachher</span>
+              <Photo
+                name="raum-aubergine"
+                alt="Derselbe Wohnraum nach der Gestaltung mit auberginefarbener Wand"
+              />
+            </div>
+          </div>
+          <div className="farbform-concept-note">
+            <span>01</span>
+            <h2>Ruhige Tiefe.</h2>
+            <p>
+              Der satte Wandton fasst den Wohnbereich, während Kreideweiß,
+              helles Gewebe und warmes Holz das Licht im Raum halten.
+            </p>
+            <div
+              className="farbform-materials"
+              aria-label="Farb- und Materialwelt"
+            >
+              <span>
+                <i className="swatch aubergine" />
+                Aubergine
               </span>
+              <span>
+                <i className="swatch chalk" />
+                Kreideweiß
+              </span>
+              <span>
+                <i className="farbform-oak" />
+                Eiche natur
+              </span>
+            </div>
+            <ArrowLink secondary href={base + 'gestaltung/#ruhige-tiefe'}>
+              Projekt ansehen
+            </ArrowLink>
+          </div>
+        </div>
+      </section>
+
+      <section className="wrap farbform-index">
+        <div className="farbform-index-head">
+          <p className="eyebrow">Arbeitsfelder</p>
+          <h2>Drei Wege zu einem stimmigen Raum.</h2>
+        </div>
+        <div>
+          {services.map((service, index) => (
+            <a href={base + 'leistungen/#' + service.slug} key={service.slug}>
+              <span>0{index + 1}</span>
+              <h3>{service.name}</h3>
+              <b aria-hidden="true">↗</b>
             </a>
           ))}
         </div>
-      </section>
-      <section className="surface section">
-        <div className="wrap editorial">
-          <Photo
-            name="eingang-senf"
-            alt="Heller Eingangsbereich mit senfgelber Wand und schlichter Holzbank"
-          />
-          <div>
-            <p className="eyebrow">Ein Raumkonzept</p>
-            <h2>Ein heller Empfang.</h2>
-            <p>
-              Ein warmer Gelbton gibt dem Eingang eine eigene Stimmung.
-              Kreideweiße Flächen schaffen Ruhe; Holz und dunkle Details setzen
-              klare Akzente.
-            </p>
-            <ArrowLink secondary href={base + 'gestaltung/#heller-empfang'}>
-              Farbwelt entdecken
-            </ArrowLink>
-          </div>
-        </div>
-      </section>
-      <section className="wrap section editorial material">
-        <div>
-          <p className="eyebrow">Auf die Oberfläche kommt es an</p>
-          <h2>
-            Farbe sehen.
-            <br /> Material spüren.
-          </h2>
-          <p>
-            Matt, fein strukturiert oder mit sichtbarer Tiefe: Die Oberfläche
-            verändert, wie ein Farbton im Raum wirkt. Eine Materialprobe macht
-            diesen Unterschied greifbar.
-          </p>
-          <ArrowLink secondary href={base + 'leistungen/#oberflaechen'}>
-            Mehr über Oberflächen
-          </ArrowLink>
-        </div>
-        <Photo
-          name="farbmuster"
-          alt="Matte Farbmuster in Aubergine, Senfgelb und Kreideweiß auf hellem Leinen"
-          caption="KI-Materialstudie · illustrative Farbmuster"
-        />
       </section>
       <DemoContact />
     </DemoShell>

@@ -1,6 +1,7 @@
 /* oxlint-disable nextjs/no-html-link-for-pages -- Native navigation avoids a confirmed Vinext production Link runtime failure; routes render independently. */
 /* oxlint-disable nextjs/no-img-element -- Local WebP assets are optimized offline and include explicit dimensions. */
 import { LandscapeNavigation } from './landscape-navigation';
+import { DemoBar } from '@/components/demo-bar';
 
 export const landscapeBase = '/konzept/galabau/';
 
@@ -55,17 +56,13 @@ const images = {
   regengarten: { file: 'regengarten.webp', width: 1536, height: 1024 },
 } as const;
 
-export function LandscapePhoto({
-  name,
-  alt,
-  caption = 'KI-Visualisierung · fiktives Konzeptmotiv',
-  priority = false,
-}: {
+export function LandscapePhoto(props: {
   name: keyof typeof images;
   alt: string;
   caption?: string;
   priority?: boolean;
 }) {
+  const { name, alt, priority = false } = props;
   const image = images[name];
   return (
     <figure className={`landscape-photo landscape-photo-${name}`}>
@@ -79,7 +76,6 @@ export function LandscapePhoto({
           fetchPriority={priority ? 'high' : 'auto'}
         />
       </div>
-      <figcaption>{caption}</figcaption>
     </figure>
   );
 }
@@ -91,11 +87,11 @@ export function LandscapeFooter() {
         <a className="landscape-footer-brand" href={landscapeBase}>
           GRÜNRAUM
         </a>
-        <span>Fiktives Websitekonzept für Garten- & Landschaftsbau</span>
+        <span>Planung · Ausführung · Pflege</span>
         <div>
-          <a href="/konzepte/">Alle Konzepte</a>
-          <a href="/impressum/">Impressum</a>
-          <a href="/datenschutz/">Datenschutz</a>
+          <a href={landscapeBase + 'gartenideen/'}>Gärten</a>
+          <a href={landscapeBase + 'leistungen/'}>Leistungen</a>
+          <a href={landscapeBase + 'anfrage/'}>Anfrage</a>
         </div>
       </div>
     </footer>
@@ -110,11 +106,14 @@ export function LandscapeShell({
   active?: string;
 }) {
   return (
-    <div data-theme="landscape">
-      <LandscapeNavigation active={active} />
-      <main id="inhalt">{children}</main>
-      <LandscapeFooter />
-    </div>
+    <>
+      <DemoBar concept="Grünraum · Garten- & Landschaftsbau" />
+      <div data-theme="landscape">
+        <LandscapeNavigation active={active} />
+        <main id="inhalt">{children}</main>
+        <LandscapeFooter />
+      </div>
+    </>
   );
 }
 
@@ -132,7 +131,7 @@ export function LandscapeContact() {
         <LandscapeLink light href={landscapeBase + 'anfrage/'}>
           Garten beschreiben
         </LandscapeLink>
-        <small>Formularsimulation · es werden keine Daten versendet</small>
+        <small>Unverbindliche Erstaufnahme Ihres Gartenprojekts</small>
       </div>
     </section>
   );

@@ -4,18 +4,17 @@ import {
   MetalShell,
 } from '@/components/metal/metal-shared';
 
-export const metadata = { title: 'Einblicke · Werkform Metalltechnik' };
+export const metadata = { title: 'Qualität · Werkform Metalltechnik' };
 
 export default function Page() {
   return (
-    <MetalShell active="Einblicke">
+    <MetalShell active="Qualität">
       <section className="metal-wrap metal-page-intro">
-        <p className="metal-kicker">Einblicke</p>
+        <p className="metal-kicker">Qualität & Referenzen</p>
         <h1>Bauteil und Bauwerk.</h1>
         <p className="metal-lead">
-          Zwei KI-erstellte Motive zeigen, wie die Website Fertigungsqualität
-          und fertige Anwendung verbindet. Sie sind ausdrücklich keine realen
-          Kundenreferenzen.
+          Präzision muss am Einzelteil erkennbar sein und sich in der fertigen
+          Konstruktion bewähren. Zwei Projektansichten zeigen beide Seiten.
         </p>
       </section>
       <section className="metal-wrap metal-project" id="praezise-bauteile">
@@ -30,8 +29,7 @@ export default function Page() {
           <h2>Präzise vorbereitet.</h2>
           <p>
             Saubere Konturen, exakte Biegungen und nachvollziehbare Geometrien
-            vermitteln die Kernleistung unmittelbar. Der Bildstil wirkt
-            technisch, aber nicht kalt.
+            schaffen die Grundlage für eine passgenaue Weiterverarbeitung.
           </p>
         </div>
       </section>
@@ -46,9 +44,8 @@ export default function Page() {
             <p className="metal-kicker">02 / Sonderkonstruktion</p>
             <h2>Stahl im Raum.</h2>
             <p>
-              Das Anwendungsbild zeigt die Konstruktion im späteren Umfeld.
-              Material, Anschlussdetails und Architektur bleiben glaubwürdig und
-              geben Interessenten einen konkreten Bezugspunkt.
+              Konstruktion, Anschlussdetails und Oberfläche werden auf die
+              Architektur und die spätere Nutzung abgestimmt.
             </p>
           </div>
         </div>

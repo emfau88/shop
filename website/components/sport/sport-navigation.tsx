@@ -31,12 +31,6 @@ export function SportNavigation({ active = '' }: { active?: string }) {
       <a className="skip" href="#inhalt">
         Zum Inhalt
       </a>
-      <div className="sport-notice">
-        <div className="sport-wrap sport-notice-inner">
-          <span>Fiktives Vereinskonzept · keine realen Termine</span>
-          <a href="/konzepte/">Alle Websitekonzepte ↗</a>
-        </div>
-      </div>
       <header className="sport-wrap sport-header">
         <a className="sport-brand" href={sportBase}>
           <span className="sport-brand-ball" aria-hidden="true" />

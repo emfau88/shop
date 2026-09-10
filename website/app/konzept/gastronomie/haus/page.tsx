@@ -6,11 +6,11 @@ import {
   gastroBase,
 } from '@/components/gastro/gastro-shared';
 
-export const metadata = { title: 'Haus & Feiern · LINDENWIRT' };
+export const metadata = { title: 'Unser Haus · LINDENWIRT' };
 
 export default function Page() {
   return (
-    <GastroShell active="Haus & Feiern">
+    <GastroShell active="Unser Haus">
       <section className="gastro-house-hero">
         <GastroPhoto
           name="gesellschaft"
@@ -19,7 +19,7 @@ export default function Page() {
           priority
         />
         <div className="gastro-wrap gastro-house-title">
-          <p className="gastro-kicker">Haus & Feiern</p>
+          <p className="gastro-kicker">Unser Haus</p>
           <h1>Raum für einen richtig guten Abend.</h1>
         </div>
       </section>
@@ -45,8 +45,8 @@ export default function Page() {
           <span>03</span>
           <h2>Gesellschaft</h2>
           <p>
-            Beispielhaft für bis zu 30 Personen: Menü, Sitzordnung und Ablauf
-            werden passend zum Anlass besprochen.
+            Für bis zu 30 Personen: Menü, Sitzordnung und Ablauf werden passend
+            zum Anlass besprochen.
           </p>
         </div>
       </section>
@@ -54,18 +54,16 @@ export default function Page() {
       <section className="gastro-celebration">
         <div className="gastro-wrap gastro-celebration-grid">
           <div>
-            <p className="gastro-kicker">Feiern im LINDENWIRT</p>
-            <h2>Persönlich geplant. Entspannt gefeiert.</h2>
+            <p className="gastro-kicker">Ein besonderer Anlass</p>
+            <h2>Das ganze Haus für einen guten Abend.</h2>
           </div>
           <div>
             <p>
-              Eine gute Veranstaltungsseite beantwortet Kapazität, Stil und
-              nächsten Schritt, ohne Gäste mit Paketen zu überladen. Für ein
-              echtes Haus kämen Grundriss, Beispielmenüs und eine direkte
-              Ansprechperson hinzu.
+              Für Familienfeste und Geschäftsessen planen wir Raum, Menü und
+              Ablauf gemeinsam.
             </p>
-            <GastroLink href={`${gastroBase}reservieren/?anlass=Familienfeier`}>
-              Feier unverbindlich anfragen
+            <GastroLink href={gastroBase + 'feiern/'}>
+              Feiern im LINDENWIRT
             </GastroLink>
           </div>
         </div>

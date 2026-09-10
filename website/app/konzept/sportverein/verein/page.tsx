@@ -17,8 +17,9 @@ export default function Page() {
           <h1>Zusammen auf dem Court. Zusammen daneben.</h1>
         </div>
         <p className="sport-lead">
-          AUFSCHLAG ist eine fiktive Vereinsmarke. Sie zeigt, wie ein lokaler
-          Club offen, aktiv und generationenübergreifend auftreten kann.
+          Bei uns treffen Jugend, Freizeitspieler und Mannschaften aufeinander.
+          Was uns verbindet, ist die Freude am Spiel und am gemeinsamen
+          Vereinsleben.
         </p>
       </section>
       <section className="sport-wrap sport-club-photo">
@@ -91,9 +92,9 @@ export default function Page() {
         <p className="sport-kicker">Partner & Engagement</p>
         <h2>Ein Platz für lokale Unterstützer.</h2>
         <p>
-          Eine echte Vereinswebsite kann Partner sichtbar machen, ohne die
-          Mitglieder und den Sport zu überlagern. Das Konzept sieht dafür eine
-          ruhige, klar gekennzeichnete Fläche vor.
+          Lokale Unternehmen helfen bei Jugendtraining, Turnieren und der Pflege
+          unserer Anlage. Wir entwickeln Partnerschaften, die zum Verein und zur
+          Region passen.
         </p>
         <SportLink secondary href={sportBase + 'probetraining/'}>
           Mitglied werden

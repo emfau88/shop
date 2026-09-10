@@ -48,6 +48,461 @@
   --radius-4xl: calc(var(--radius) * 2.6);
 }
 
+/* Farbform: an editorial interior journal rather than a service landing page. */
+[data-theme='demo'] {
+  --heading: 'Source Serif 4', Georgia, serif;
+}
+
+[data-theme='demo'] .header {
+  min-height: 132px;
+  align-items: flex-start;
+  padding-top: 30px;
+}
+
+[data-theme='demo'] .nav {
+  border-top: 1px solid var(--line);
+}
+
+.farbform-masthead {
+  padding: 58px 0 0;
+}
+
+.farbform-masthead-title {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) 280px;
+  gap: 80px;
+  align-items: end;
+  margin-bottom: 48px;
+}
+
+.farbform-masthead h1 {
+  max-width: 1060px;
+  font-size: clamp(62px, 8.1vw, 126px);
+  font-weight: 400;
+  line-height: 0.88;
+  letter-spacing: -0.058em;
+}
+
+.farbform-masthead-title aside {
+  padding: 12px 0 4px 24px;
+  border-left: 1px solid var(--line);
+}
+
+.farbform-masthead-title aside > span {
+  display: block;
+  margin-bottom: 45px;
+  color: var(--action);
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+.farbform-masthead-title aside p {
+  font-size: 15px;
+  line-height: 1.7;
+}
+
+.farbform-lead-image {
+  position: relative;
+}
+
+.farbform-lead-image .photo img {
+  width: 100%;
+  max-height: 760px;
+  aspect-ratio: 1.9;
+  object-fit: cover;
+}
+
+.farbform-image-note {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  min-width: 280px;
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  padding: 22px 26px;
+  color: var(--ink);
+  background: var(--bg);
+}
+
+.farbform-image-note > .swatch {
+  width: 38px;
+  height: 38px;
+}
+
+.farbform-image-note b,
+.farbform-image-note div > span {
+  display: block;
+}
+
+.farbform-image-note b {
+  margin-bottom: 3px;
+  font-family: 'Source Serif 4', Georgia, serif;
+  font-size: 17px;
+  font-weight: 600;
+}
+
+.farbform-image-note div > span {
+  color: var(--muted);
+  font-size: 12px;
+}
+
+.farbform-manifesto {
+  display: grid;
+  grid-template-columns: 180px minmax(0, 1fr);
+  gap: 30px 70px;
+  padding-block: 126px;
+}
+
+.farbform-manifesto blockquote {
+  max-width: 960px;
+  margin: 0;
+  font-family: 'Source Serif 4', Georgia, serif;
+  font-size: clamp(38px, 4.6vw, 70px);
+  line-height: 1.08;
+  letter-spacing: -0.04em;
+}
+
+.farbform-manifesto .text-link {
+  grid-column: 2;
+  justify-self: start;
+}
+
+.farbform-transformation {
+  padding-block: 100px 118px;
+  background: var(--surface);
+}
+
+.farbform-section-label {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 30px;
+  padding-bottom: 22px;
+  border-bottom: 1px solid var(--line);
+}
+
+.farbform-section-label .eyebrow {
+  margin: 0;
+}
+
+.farbform-section-label > p:last-child {
+  font-size: 13px;
+}
+
+.farbform-compare {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 12px;
+  margin-top: 32px;
+}
+
+.farbform-compare > div {
+  position: relative;
+}
+
+.farbform-compare > div > span {
+  position: absolute;
+  z-index: 2;
+  top: 18px;
+  left: 18px;
+  padding: 8px 11px;
+  color: white;
+  background: rgb(27 25 26 / 82%);
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+.farbform-compare .photo img {
+  width: 100%;
+  aspect-ratio: 1.5;
+  object-fit: cover;
+}
+
+.farbform-concept-note {
+  width: min(850px, calc(100% - 80px));
+  display: grid;
+  grid-template-columns: 70px minmax(0, 1fr) minmax(260px, 0.8fr);
+  gap: 20px 34px;
+  align-items: start;
+  margin: -5px 0 0 auto;
+  padding: 44px 50px;
+  background: var(--bg);
+}
+
+.farbform-concept-note > span {
+  color: var(--action);
+  font-size: 13px;
+  font-weight: 700;
+}
+
+.farbform-concept-note h2 {
+  font-size: 48px;
+}
+
+.farbform-concept-note > p {
+  line-height: 1.75;
+}
+
+.farbform-materials {
+  grid-column: 2 / -1;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 13px 26px;
+  padding-top: 24px;
+  border-top: 1px solid var(--line);
+}
+
+.farbform-materials span {
+  display: inline-flex;
+  align-items: center;
+  gap: 9px;
+  color: var(--ink);
+  font-size: 12px;
+  font-weight: 700;
+}
+
+.farbform-materials i {
+  width: 22px;
+  height: 22px;
+  display: inline-block;
+  border: 1px solid #27232a22;
+  border-radius: 50%;
+}
+
+.farbform-oak {
+  background: #a9794f;
+}
+
+.farbform-concept-note .text-link {
+  grid-column: 2 / -1;
+  justify-self: start;
+}
+
+.farbform-index {
+  display: grid;
+  grid-template-columns: 0.72fr 1.28fr;
+  gap: 90px;
+  padding-block: 120px;
+}
+
+.farbform-index-head h2 {
+  font-size: clamp(40px, 4vw, 60px);
+}
+
+.farbform-index > div:last-child a {
+  min-height: 112px;
+  display: grid;
+  grid-template-columns: 58px 1fr auto;
+  gap: 24px;
+  align-items: center;
+  border-top: 1px solid var(--line);
+}
+
+.farbform-index > div:last-child a:last-child {
+  border-bottom: 1px solid var(--line);
+}
+
+.farbform-index a > span {
+  color: var(--action);
+  font-size: 12px;
+  font-weight: 700;
+}
+
+.farbform-index a > b {
+  font-size: 20px;
+  font-weight: 400;
+}
+
+@media (max-width: 820px) {
+  [data-theme='demo'] .header {
+    min-height: 96px;
+    align-items: center;
+    padding-top: 0;
+  }
+
+  [data-theme='demo'] .nav {
+    border-top: 0;
+  }
+
+  .farbform-masthead-title,
+  .farbform-manifesto,
+  .farbform-index {
+    grid-template-columns: 1fr;
+  }
+
+  .farbform-masthead-title {
+    gap: 34px;
+  }
+
+  .farbform-masthead-title aside {
+    max-width: 540px;
+  }
+
+  .farbform-masthead-title aside > span {
+    margin-bottom: 14px;
+  }
+
+  .farbform-manifesto .text-link {
+    grid-column: 1;
+  }
+
+  .farbform-concept-note {
+    width: calc(100% - 40px);
+    grid-template-columns: 48px 1fr;
+  }
+
+  .farbform-concept-note > p {
+    grid-column: 2;
+  }
+
+  .farbform-index {
+    gap: 48px;
+  }
+}
+
+@media (max-width: 620px) {
+  .farbform-masthead {
+    padding-top: 36px;
+  }
+
+  .farbform-masthead h1 {
+    font-size: 54px;
+  }
+
+  .farbform-lead-image {
+    width: 100%;
+  }
+
+  .farbform-lead-image .photo img {
+    min-height: 440px;
+    aspect-ratio: 0.92;
+  }
+
+  .farbform-image-note {
+    right: 20px;
+    min-width: 245px;
+  }
+
+  .farbform-manifesto {
+    gap: 20px;
+    padding-block: 82px;
+  }
+
+  .farbform-manifesto blockquote {
+    font-size: 38px;
+  }
+
+  .farbform-transformation {
+    padding-block: 72px;
+  }
+
+  .farbform-section-label,
+  .farbform-compare {
+    display: grid;
+    grid-template-columns: 1fr;
+  }
+
+  .farbform-concept-note {
+    width: 100%;
+    grid-template-columns: 1fr;
+    margin: 0;
+    padding: 34px 25px;
+  }
+
+  .farbform-concept-note > p,
+  .farbform-materials,
+  .farbform-concept-note .text-link {
+    grid-column: 1;
+  }
+
+  .farbform-index {
+    gap: 38px;
+    padding-block: 80px;
+  }
+}
+
+/* The showroom frame sits outside every simulated client website. */
+.showroom-bar {
+  position: relative;
+  z-index: 100;
+  color: #f7f7f4;
+  border-bottom: 1px solid #343840;
+  background: #16191f;
+  font-family: Manrope, 'Segoe UI', sans-serif;
+}
+
+.showroom-bar-inner {
+  width: min(1440px, calc(100% - 48px));
+  min-height: 52px;
+  display: grid;
+  grid-template-columns: 1fr auto 1fr;
+  gap: 28px;
+  align-items: center;
+  margin-inline: auto;
+}
+
+.showroom-bar a {
+  min-height: 44px;
+  display: inline-flex;
+  align-items: center;
+  gap: 9px;
+  color: #f7f7f4;
+  font-size: 12px;
+  font-weight: 700;
+  text-decoration: none;
+}
+
+.showroom-bar a:hover {
+  color: #cbd6ff;
+}
+
+.showroom-bar p {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  margin: 0;
+  color: #adb2bc;
+  font-size: 12px;
+  line-height: 1.4;
+}
+
+.showroom-bar strong {
+  color: white;
+  font-size: 12px;
+  white-space: nowrap;
+}
+
+.showroom-offer {
+  justify-self: end;
+}
+
+@media (max-width: 900px) {
+  .showroom-bar-inner {
+    grid-template-columns: 1fr auto;
+  }
+
+  .showroom-bar p {
+    display: none;
+  }
+}
+
+@media (max-width: 520px) {
+  .showroom-bar-inner {
+    width: calc(100% - 32px);
+    min-height: 48px;
+    gap: 12px;
+  }
+
+  .showroom-bar a {
+    font-size: 12px;
+  }
+}
+
 .demo-trust-line {
   border-top: 1px solid var(--line);
   border-bottom: 1px solid var(--line);
@@ -152,6 +607,10 @@
 }
 
 .provider-concept-card:first-child {
+  min-height: 500px;
+}
+
+.provider-concept-card:nth-child(2) {
   grid-row: span 2;
   min-height: 1028px;
 }
@@ -257,7 +716,7 @@
 }
 
 @media (max-width: 900px) {
-  .provider-concept-card:first-child {
+  .provider-concept-card:nth-child(2) {
     grid-row: auto;
     min-height: 500px;
   }
@@ -284,7 +743,8 @@
   }
 
   .provider-concept-card,
-  .provider-concept-card:first-child {
+  .provider-concept-card:first-child,
+  .provider-concept-card:nth-child(2) {
     min-height: 430px;
   }
 
@@ -2884,5 +3344,42 @@ small {
 
   .metal-form-bottom .metal-action {
     width: 100%;
+  }
+}
+
+/* Readable secondary copy for the target audience, including form guidance. */
+[data-theme='demo'] .form-note,
+[data-theme='demo'] .field label span,
+[data-theme='demo'] .field small,
+[data-theme='demo'] .form-bottom > a,
+[data-theme='metal'] .metal-form-note,
+[data-theme='metal'] .metal-field label span,
+[data-theme='metal'] .metal-field small,
+[data-theme='metal'] .metal-form-bottom > a {
+  font-size: 12px;
+}
+
+/* Final small-screen safeguards for the editorial Farbform concept. */
+@media (max-width: 620px) {
+  .farbform-masthead h1 {
+    font-size: 48px;
+    line-height: 0.94;
+  }
+
+  .farbform-index > *,
+  .farbform-index-head,
+  .farbform-index > div:last-child,
+  .farbform-index > div:last-child a {
+    min-width: 0;
+  }
+
+  .farbform-index-head h2 {
+    font-size: 38px;
+    overflow-wrap: break-word;
+  }
+
+  .farbform-index > div:last-child a {
+    grid-template-columns: 42px minmax(0, 1fr) auto;
+    gap: 14px;
   }
 }

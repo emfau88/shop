@@ -28,18 +28,20 @@ export default async function Page({
             <p className="gastro-kicker">Tischanfrage</p>
             <h1>Für wen dürfen wir decken?</h1>
             <p className="gastro-lead">
-              Der Ablauf ist bewusst kurz. In einem echten Restaurant würde das
-              Team die Anfrage persönlich bestätigen oder eine passende Uhrzeit
-              vorschlagen.
+              Senden Sie uns Ihren Wunschtermin. Wir bestätigen die Anfrage
+              persönlich oder schlagen eine passende Uhrzeit vor.
             </p>
             <div className="gastro-opening-card">
-              <b>Beispielzeiten & -adresse</b>
+              <b>Öffnungszeiten & Adresse</b>
               <span>Mi–Fr · 17–23 Uhr</span>
               <span>Sa–So · 12–23 Uhr</span>
               <span>Marktgasse 12 · 00000 Beispielstadt</span>
             </div>
-            <a className="gastro-plain-link" href="/">
-              Zum Webdesign-Angebot ↗
+            <a
+              className="gastro-plain-link"
+              href="/konzept/gastronomie/speisekarte/"
+            >
+              Zur Speisekarte ↗
             </a>
           </div>
           <GastroReservationForm initialOccasion={initialOccasion} />

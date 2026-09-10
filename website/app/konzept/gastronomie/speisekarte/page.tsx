@@ -37,12 +37,12 @@ export default function Page() {
   return (
     <GastroShell active="Speisekarte">
       <section className="gastro-wrap gastro-page-intro gastro-menu-intro">
-        <p className="gastro-kicker">Beispielkarte · saisonal gedacht</p>
+        <p className="gastro-kicker">Abendkarte · saisonal gedacht</p>
         <h1>Weniger Auswahl. Mehr Grund zur Vorfreude.</h1>
         <p>
-          Diese Gerichte und Preise sind rein beispielhaft. In einer echten
-          Restaurantwebsite wird die aktuelle Karte schnell erfassbar,
-          druckfreundlich und auch ohne PDF zugänglich dargestellt.
+          Unsere Karte verändert sich mit Saison, Ernte und Fang. Was bleibt,
+          ist eine kurze Auswahl aus der Küche und ein vegetarisches Gericht,
+          das für sich selbst steht.
         </p>
       </section>
 
@@ -66,9 +66,8 @@ export default function Page() {
         <aside className="gastro-menu-note">
           <b>Gut zu wissen</b>
           <p>
-            Vegetarische Gerichte und Hinweise zu Allergenen gehören sichtbar
-            direkt zur echten Karte. Das Service-Team beantwortet individuelle
-            Fragen persönlich.
+            Zu Allergenen und Unverträglichkeiten berät Sie unser Service-Team
+            persönlich. Sprechen Sie uns bitte bei der Reservierung darauf an.
           </p>
         </aside>
       </section>

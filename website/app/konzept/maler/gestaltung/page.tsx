@@ -10,8 +10,8 @@ export default function Page() {
           <br /> Zwei Farbwelten.
         </h1>
         <p className="lead">
-          Fiktive Raumkonzepte zur Veranschaulichung der Website. Die Bilder
-          wurden mit KI erstellt.
+          Zwei Räume zeigen, wie Farbton, Licht und vorhandene Materialien zu
+          einer eigenen Atmosphäre zusammenfinden.
         </p>
       </section>
       <section className="wrap project" id="ruhige-tiefe">

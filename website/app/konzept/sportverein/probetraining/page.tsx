@@ -31,8 +31,8 @@ export default async function Page({
               <li>Schläger beim ersten Termin ausleihen</li>
             </ol>
           </div>
-          <a className="sport-plain-link" href="/">
-            Zum Webdesign-Angebot ↗
+          <a className="sport-plain-link" href="/konzept/sportverein/training/">
+            Trainingszeiten ansehen ↗
           </a>
         </div>
         <SportInquiryForm initialSport={initialSport} />

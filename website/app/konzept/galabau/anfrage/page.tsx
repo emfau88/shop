@@ -36,8 +36,11 @@ export default async function Page({
               <li>Gewünschter Zeitraum und möglicher Umfang</li>
             </ul>
           </div>
-          <a className="landscape-quiet-link" href="/">
-            Zum Webdesign-Angebot ↗
+          <a
+            className="landscape-quiet-link"
+            href="/konzept/galabau/gartenideen/"
+          >
+            Ausgewählte Gärten ansehen ↗
           </a>
         </div>
         <LandscapeInquiryForm initialTopic={initialTopic} />

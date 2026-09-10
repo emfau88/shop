@@ -39,16 +39,15 @@ export function Navigation({
       <a className="skip" href="#inhalt">
         Zum Inhalt
       </a>
-      <div className="notice">
-        <div className="wrap notice-inner">
-          <span>
-            {demo
-              ? 'Fiktives Konzeptprojekt · keine realen Kundenaufträge'
-              : 'Portfolio- und Angebotsvorschau · Formulare senden keine Daten'}
-          </span>
-          {demo && <a href="/konzepte/">Alle Website-Beispiele ↗</a>}
+      {!demo && (
+        <div className="notice">
+          <div className="wrap notice-inner">
+            <span>
+              Portfolio- und Angebotsvorschau · Formulare senden keine Daten
+            </span>
+          </div>
         </div>
-      </div>
+      )}
       <header className="wrap header">
         <a
           className={'brand ' + (demo ? 'brand-demo' : '')}

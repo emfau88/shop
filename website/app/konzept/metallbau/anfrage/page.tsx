@@ -36,8 +36,8 @@ export default async function Page({
               <li>Einsatzbereich und gewünschter Termin</li>
             </ul>
           </div>
-          <a className="metal-text-link" href="/">
-            Zum Webdesign-Angebot <span aria-hidden="true">↗</span>
+          <a className="metal-text-link" href="/konzept/metallbau/leistungen/">
+            Fertigungsmöglichkeiten prüfen <span aria-hidden="true">↗</span>
           </a>
         </div>
         <MetalInquiryForm initialProject={initialProject} />
