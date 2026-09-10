@@ -47,13 +47,22 @@ const advantages = [
 ];
 const concepts = [
   {
-    name: 'Farbform',
-    sector: 'Maler & Raumgestaltung',
-    text: 'Ruhig, editorial und bildstark für private Wohnkunden.',
-    href: '/konzept/maler/',
-    image: '/images/demo-desktop.webp',
-    width: 1426,
-    height: 980,
+    name: 'LINDENWIRT',
+    sector: 'Gaststätte & Restaurant',
+    text: 'Atmosphärisch, menügeführt und auf Reservierungen optimiert.',
+    href: '/konzept/gastronomie/',
+    image: '/images/gastronomie/gastraum.webp',
+    width: 1536,
+    height: 1024,
+  },
+  {
+    name: 'AUFSCHLAG',
+    sector: 'Tennis- & Badmintonverein',
+    text: 'Aktiv, terminorientiert und mit direktem Probetraining.',
+    href: '/konzept/sportverein/',
+    image: '/images/sportverein/badminton.webp',
+    width: 1536,
+    height: 1024,
   },
   {
     name: 'Werkform',
@@ -74,22 +83,13 @@ const concepts = [
     height: 1024,
   },
   {
-    name: 'AUFSCHLAG',
-    sector: 'Tennis- & Badmintonverein',
-    text: 'Aktiv, terminorientiert und mit direktem Probetraining.',
-    href: '/konzept/sportverein/',
-    image: '/images/sportverein/badminton.webp',
-    width: 1536,
-    height: 1024,
-  },
-  {
-    name: 'LINDENWIRT',
-    sector: 'Gaststätte & Restaurant',
-    text: 'Atmosphärisch, menügeführt und auf Reservierungen optimiert.',
-    href: '/konzept/gastronomie/',
-    image: '/images/gastronomie/gastraum.webp',
-    width: 1536,
-    height: 1024,
+    name: 'Farbform',
+    sector: 'Maler & Raumgestaltung',
+    text: 'Ruhig, editorial und bildstark für private Wohnkunden.',
+    href: '/konzept/maler/',
+    image: '/images/demo-desktop.webp',
+    width: 1426,
+    height: 980,
   },
 ];
 export default function Page() {
@@ -114,8 +114,8 @@ export default function Page() {
             </ArrowLink>
           </div>
           <p className="scope-line">
-            Bis zu 4 Inhaltsseiten <span>·</span> feste Leistung{' '}
-            <span>·</span> persönliche Umsetzung
+            Bis zu 4 Inhaltsseiten <span>·</span> feste Leistung <span>·</span>{' '}
+            persönliche Umsetzung
           </p>
           <div className="provider-promises" aria-label="Wichtige Merkmale">
             <span>Texthilfe aus einem Gespräch</span>
@@ -170,12 +170,15 @@ export default function Page() {
           <div className="provider-advantages-intro">
             <div>
               <p className="eyebrow">Was die Zusammenarbeit einfacher macht</p>
-              <h2>Sie kennen Ihren Betrieb. Ich mache ihn online verständlich.</h2>
+              <h2>
+                Sie kennen Ihren Betrieb. Ich mache ihn online verständlich.
+              </h2>
             </div>
             <p className="lead">
               Eine gute Website verlangt von Ihnen keine fertige Seitenstruktur
               und keine ausgearbeiteten Werbetexte. Wir klären gemeinsam, was
-              Ihre Kunden wissen müssen – und machen daraus einen klaren Auftritt.
+              Ihre Kunden wissen müssen – und machen daraus einen klaren
+              Auftritt.
             </p>
           </div>
           <div className="provider-advantage-grid">
@@ -225,9 +228,9 @@ export default function Page() {
                     Laufende Betreuung ist optional.
                   </p>
                   <p>
-                    Sie liefern Logo, Bilder, betriebliche Fakten und erforderliche
-                    Rechtstexte. CMS-Selbstpflege, Shops und Buchungssysteme sind
-                    zusätzliche Anforderungen.
+                    Sie liefern Logo, Bilder, betriebliche Fakten und
+                    erforderliche Rechtstexte. CMS-Selbstpflege, Shops und
+                    Buchungssysteme sind zusätzliche Anforderungen.
                   </p>
                 </div>
               </div>

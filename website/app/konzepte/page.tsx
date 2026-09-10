@@ -11,16 +11,28 @@ export const metadata = {
 
 const concepts = [
   {
-    name: 'Farbform',
-    sector: 'Malerarbeiten & Raumgestaltung',
+    name: 'LINDENWIRT',
+    sector: 'Gaststätte, Restaurant & Feiern',
     status: 'Umgesetzt und geprüft',
     description:
-      'Eine ruhige, bildstarke Unternehmenswebsite mit Leistungen, zwei Farbwelten und einer simulierten Anfrage.',
-    href: '/konzept/maler/',
-    image: '/images/demo-desktop.webp',
-    imageWidth: 1426,
-    imageHeight: 980,
-    pages: '4 Inhaltsseiten · Editorial mit Vorher/Nachher',
+      'Ein atmosphärischer Restaurantauftritt mit direkt sichtbaren Öffnungszeiten, lesbarer Speisekarte und kurzer Tischanfrage.',
+    href: '/konzept/gastronomie/',
+    image: '/images/gastronomie/gastraum.webp',
+    imageWidth: 1536,
+    imageHeight: 1024,
+    pages: '5 Inhaltsseiten · Karte, Haus, Feiern und Reservierung',
+  },
+  {
+    name: 'AUFSCHLAG',
+    sector: 'Tennis, Badminton & Vereinsleben',
+    status: 'Umgesetzt und geprüft',
+    description:
+      'Eine aktive Vereinswebsite mit Trainingsplan, zwei Sportarten, Gemeinschaft und einem direkten Weg zum Probetraining.',
+    href: '/konzept/sportverein/',
+    image: '/images/sportverein/badminton.webp',
+    imageWidth: 1536,
+    imageHeight: 1024,
+    pages: '4 Inhaltsseiten · filterbarer Wochenplan',
   },
   {
     name: 'Werkform',
@@ -47,28 +59,16 @@ const concepts = [
     pages: '4 Inhaltsseiten · projektgeführte Gartenstudie',
   },
   {
-    name: 'AUFSCHLAG',
-    sector: 'Tennis, Badminton & Vereinsleben',
+    name: 'Farbform',
+    sector: 'Malerarbeiten & Raumgestaltung',
     status: 'Umgesetzt und geprüft',
     description:
-      'Eine aktive Vereinswebsite mit Trainingsplan, zwei Sportarten, Gemeinschaft und einem direkten Weg zum Probetraining.',
-    href: '/konzept/sportverein/',
-    image: '/images/sportverein/badminton.webp',
-    imageWidth: 1536,
-    imageHeight: 1024,
-    pages: '4 Inhaltsseiten · filterbarer Wochenplan',
-  },
-  {
-    name: 'LINDENWIRT',
-    sector: 'Gaststätte, Restaurant & Feiern',
-    status: 'Umgesetzt und geprüft',
-    description:
-      'Ein atmosphärischer Restaurantauftritt mit direkt sichtbaren Öffnungszeiten, lesbarer Speisekarte und kurzer Tischanfrage.',
-    href: '/konzept/gastronomie/',
-    image: '/images/gastronomie/gastraum.webp',
-    imageWidth: 1536,
-    imageHeight: 1024,
-    pages: '5 Inhaltsseiten · Karte, Haus, Feiern und Reservierung',
+      'Eine ruhige, bildstarke Unternehmenswebsite mit Leistungen, zwei Farbwelten und einer simulierten Anfrage.',
+    href: '/konzept/maler/',
+    image: '/images/demo-desktop.webp',
+    imageWidth: 1426,
+    imageHeight: 980,
+    pages: '4 Inhaltsseiten · Editorial mit Vorher/Nachher',
   },
 ];
 

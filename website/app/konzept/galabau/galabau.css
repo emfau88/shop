@@ -1487,3 +1487,406 @@
     width: 100%;
   }
 }
+
+/* Grünraum services: one project lifecycle from site reading to long-term care. */
+.landscape-services-intro {
+  display: grid;
+  grid-template-columns: minmax(0, 1.12fr) minmax(340px, 0.7fr);
+  gap: 100px;
+  align-items: end;
+  padding-block: 86px 104px;
+  border-bottom: 1px solid var(--garden-line);
+}
+
+.landscape-services-intro h1 {
+  max-width: 980px;
+}
+
+.landscape-starting-point {
+  padding-block: 104px;
+  background: var(--garden-light);
+}
+
+.landscape-starting-grid {
+  display: grid;
+  grid-template-columns: minmax(280px, 0.72fr) minmax(0, 1.28fr);
+  gap: 110px;
+}
+
+.landscape-starting-grid dl {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  margin: 0;
+  border-top: 1px solid #aebc83;
+}
+
+.landscape-starting-grid dl > div {
+  position: relative;
+  min-height: 155px;
+  padding: 26px 30px 24px 48px;
+  border-bottom: 1px solid #aebc83;
+}
+
+.landscape-starting-grid dl > div:nth-child(even) {
+  border-left: 1px solid #aebc83;
+}
+
+.landscape-starting-grid dl span {
+  position: absolute;
+  top: 29px;
+  left: 0;
+  color: var(--garden-clay);
+  font-size: 10px;
+  font-weight: 800;
+}
+
+.landscape-starting-grid dt {
+  margin-bottom: 12px;
+  font-family: Georgia, 'Times New Roman', serif;
+  font-size: 25px;
+}
+
+.landscape-starting-grid dd {
+  margin: 0;
+  color: var(--garden-muted);
+  font-size: 14px;
+  line-height: 1.65;
+}
+
+.landscape-lifecycle {
+  padding: 0;
+  margin: 0;
+  list-style: none;
+}
+
+.landscape-phase {
+  scroll-margin-top: 30px;
+}
+
+.landscape-phase-number {
+  display: block;
+  margin-bottom: 48px;
+  color: var(--garden-clay);
+  font-size: 12px;
+  font-weight: 800;
+  letter-spacing: 0.1em;
+}
+
+.landscape-phase-copy h2 {
+  margin-bottom: 28px;
+}
+
+.landscape-phase-copy > p:not(.landscape-kicker) {
+  font-size: 16px;
+  line-height: 1.75;
+}
+
+.landscape-phase-copy ul {
+  padding: 0;
+  margin: 30px 0;
+  list-style: none;
+  color: var(--garden-muted);
+  font-size: 14px;
+}
+
+.landscape-phase-copy ul li {
+  padding: 11px 0;
+  border-top: 1px solid var(--garden-line);
+}
+
+.landscape-phase-copy ul li:last-child {
+  border-bottom: 1px solid var(--garden-line);
+}
+
+.landscape-phase-copy ul li::before {
+  margin-right: 12px;
+  color: var(--garden-clay);
+  content: '•';
+}
+
+.landscape-phase-plan {
+  padding-block: 120px;
+}
+
+.landscape-phase-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 0.78fr) minmax(0, 1.22fr);
+  gap: 105px;
+  align-items: center;
+}
+
+.landscape-phase-plan .landscape-photo-frame {
+  border-radius: 9px 170px 9px 9px;
+}
+
+.landscape-phase-plan .landscape-photo img {
+  min-height: 650px;
+  object-fit: cover;
+}
+
+.landscape-phase-build {
+  padding-block: 112px;
+  background: var(--garden-paper);
+}
+
+.landscape-build-grid {
+  display: grid;
+  grid-template-columns: minmax(220px, 0.72fr) minmax(260px, 0.82fr) minmax(
+      0,
+      1.1fr
+    );
+  gap: 62px;
+  align-items: start;
+}
+
+.landscape-build-heading h2 {
+  font-size: clamp(38px, 4vw, 58px);
+}
+
+.landscape-build-copy > p {
+  font-size: 15px;
+  line-height: 1.75;
+}
+
+.landscape-build-copy dl {
+  margin: 31px 0 28px;
+}
+
+.landscape-build-copy dl > div {
+  padding: 13px 0;
+  border-top: 1px solid var(--garden-line);
+}
+
+.landscape-build-copy dl > div:last-child {
+  border-bottom: 1px solid var(--garden-line);
+}
+
+.landscape-build-copy dt {
+  margin-bottom: 3px;
+  color: var(--garden-clay);
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.landscape-build-copy dd {
+  margin: 0;
+  color: var(--garden-muted);
+  font-size: 14px;
+}
+
+.landscape-phase-build .landscape-photo-frame {
+  border-radius: 90px 8px 90px 8px;
+}
+
+.landscape-phase-build .landscape-photo img {
+  min-height: 610px;
+  object-fit: cover;
+}
+
+.landscape-phase-grow {
+  padding-block: 120px;
+  color: white;
+  background: var(--garden-green);
+}
+
+.landscape-grow-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 1.2fr) minmax(0, 0.8fr);
+  gap: 105px;
+  align-items: center;
+}
+
+.landscape-phase-grow .landscape-photo-frame {
+  border-radius: 170px 8px 8px 8px;
+}
+
+.landscape-phase-grow .landscape-photo img {
+  min-height: 680px;
+  object-fit: cover;
+}
+
+.landscape-phase-grow .landscape-phase-number,
+.landscape-phase-grow .landscape-kicker {
+  color: var(--garden-lime) !important;
+}
+
+.landscape-phase-grow h2 {
+  color: white;
+}
+
+.landscape-phase-grow .landscape-phase-copy > p:not(.landscape-kicker) {
+  color: #d6dfd2;
+}
+
+.landscape-growth-notes {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  margin-top: 35px;
+  border-top: 1px solid #668073;
+}
+
+.landscape-growth-notes span {
+  padding: 17px 18px 17px 0;
+  border-bottom: 1px solid #668073;
+  color: #d6dfd2;
+  font-size: 12px;
+}
+
+.landscape-growth-notes span:nth-child(even) {
+  padding-left: 18px;
+  border-left: 1px solid #668073;
+}
+
+.landscape-phase-care {
+  padding-block: 92px;
+  color: white;
+  background: var(--garden-clay);
+}
+
+.landscape-care-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(320px, 0.72fr);
+  gap: 100px;
+  align-items: end;
+}
+
+.landscape-phase-care .landscape-phase-number,
+.landscape-phase-care .landscape-kicker {
+  color: #f3d6c7 !important;
+}
+
+.landscape-phase-care h2 {
+  color: white;
+}
+
+.landscape-phase-care p {
+  color: #f4ded3;
+  font-size: 16px;
+  line-height: 1.75;
+}
+
+.landscape-phase-care .landscape-link {
+  margin-top: 26px;
+}
+
+@media (max-width: 1060px) {
+  .landscape-services-intro,
+  .landscape-starting-grid,
+  .landscape-phase-grid,
+  .landscape-grow-grid,
+  .landscape-care-grid {
+    gap: 60px;
+  }
+
+  .landscape-build-grid {
+    grid-template-columns: minmax(220px, 0.8fr) minmax(0, 1.2fr);
+  }
+
+  .landscape-phase-build .landscape-photo {
+    grid-column: 1 / -1;
+  }
+
+  .landscape-phase-build .landscape-photo img {
+    min-height: 0;
+    aspect-ratio: 1.9;
+  }
+}
+
+@media (max-width: 850px) {
+  .landscape-services-intro,
+  .landscape-starting-grid,
+  .landscape-phase-grid,
+  .landscape-grow-grid,
+  .landscape-care-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .landscape-services-intro,
+  .landscape-starting-grid,
+  .landscape-phase-grid,
+  .landscape-grow-grid,
+  .landscape-care-grid {
+    gap: 45px;
+  }
+
+  .landscape-phase-plan .landscape-photo img,
+  .landscape-phase-grow .landscape-photo img {
+    min-height: 0;
+    aspect-ratio: 1.45;
+  }
+
+  .landscape-phase-grow .landscape-photo {
+    order: 2;
+  }
+}
+
+@media (max-width: 620px) {
+  .landscape-services-intro {
+    gap: 28px;
+    padding-block: 50px 64px;
+  }
+
+  .landscape-services-intro h1 {
+    font-size: 46px;
+  }
+
+  .landscape-starting-point,
+  .landscape-phase-plan,
+  .landscape-phase-build,
+  .landscape-phase-grow,
+  .landscape-phase-care {
+    padding-block: 68px;
+  }
+
+  .landscape-starting-grid dl {
+    grid-template-columns: 1fr;
+  }
+
+  .landscape-starting-grid dl > div,
+  .landscape-starting-grid dl > div:nth-child(even) {
+    min-height: 0;
+    padding: 22px 0 22px 40px;
+    border-left: 0;
+  }
+
+  .landscape-starting-grid dl span {
+    top: 25px;
+  }
+
+  .landscape-build-grid {
+    grid-template-columns: 1fr;
+    gap: 38px;
+  }
+
+  .landscape-phase-build .landscape-photo {
+    grid-column: 1;
+  }
+
+  .landscape-phase-build .landscape-photo img,
+  .landscape-phase-plan .landscape-photo img,
+  .landscape-phase-grow .landscape-photo img {
+    aspect-ratio: 1.12;
+  }
+
+  .landscape-phase-plan .landscape-photo-frame,
+  .landscape-phase-build .landscape-photo-frame,
+  .landscape-phase-grow .landscape-photo-frame {
+    border-radius: 60px 6px 60px 6px;
+  }
+
+  .landscape-phase-number {
+    margin-bottom: 28px;
+  }
+
+  .landscape-growth-notes {
+    grid-template-columns: 1fr;
+  }
+
+  .landscape-growth-notes span,
+  .landscape-growth-notes span:nth-child(even) {
+    padding: 14px 0;
+    border-left: 0;
+  }
+}
