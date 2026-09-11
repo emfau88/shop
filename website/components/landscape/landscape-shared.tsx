@@ -2,6 +2,7 @@
 /* oxlint-disable nextjs/no-img-element -- Local WebP assets are optimized offline and include explicit dimensions. */
 import { LandscapeNavigation } from './landscape-navigation';
 import { DemoBar } from '@/components/demo-bar';
+import { ResponsiveImage } from '@/components/responsive-image';
 
 export const landscapeBase = '/konzept/galabau/';
 
@@ -67,11 +68,12 @@ export function LandscapePhoto(props: {
   return (
     <figure className={`landscape-photo landscape-photo-${name}`}>
       <div className="landscape-photo-frame">
-        <img
+        <ResponsiveImage
           src={`/images/galabau/${image.file}`}
-          width={image.width}
+          sourceWidth={image.width}
           height={image.height}
           alt={alt}
+          sizes="(max-width: 850px) 100vw, 68vw"
           loading={priority ? 'eager' : 'lazy'}
           fetchPriority={priority ? 'high' : 'auto'}
         />

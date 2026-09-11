@@ -2,6 +2,7 @@
 /* oxlint-disable nextjs/no-img-element -- Local WebP assets are optimized offline and include explicit dimensions. */
 import { MetalNavigation } from './metal-navigation';
 import { DemoBar } from '@/components/demo-bar';
+import { ResponsiveImage } from '@/components/responsive-image';
 
 export const metalBase = '/konzept/metallbau/';
 
@@ -71,11 +72,12 @@ export function MetalPhoto(props: {
   const image = imageData[name];
   return (
     <figure className={`metal-photo metal-photo-${name}`}>
-      <img
+      <ResponsiveImage
         src={`/images/metal/${image.file}`}
-        width={image.width}
+        sourceWidth={image.width}
         height={image.height}
         alt={alt}
+        sizes="(max-width: 820px) 100vw, 58vw"
         loading={priority ? 'eager' : 'lazy'}
         fetchPriority={priority ? 'high' : 'auto'}
       />

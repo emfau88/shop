@@ -1,0 +1,76 @@
+{
+  "capturedAt": "2026-09-11T17:52:05.753Z",
+  "breakpointChecks": [
+    {
+      "overflow": 0,
+      "route": "/",
+      "viewport": 346
+    },
+    {
+      "overflow": 0,
+      "route": "/konzepte",
+      "viewport": 346
+    },
+    {
+      "overflow": 0,
+      "route": "/konzept/metallbau",
+      "viewport": 346
+    },
+    {
+      "overflow": 0,
+      "route": "/konzept/maler",
+      "viewport": 346
+    },
+    {
+      "overflow": 0,
+      "route": "/konzept/galabau",
+      "viewport": 346
+    },
+    {
+      "overflow": 0,
+      "route": "/konzept/sportverein",
+      "viewport": 346
+    },
+    {
+      "overflow": 0,
+      "route": "/konzept/gastronomie",
+      "viewport": 346
+    },
+    {
+      "overflow": 0,
+      "route": "/",
+      "viewport": 416
+    },
+    {
+      "overflow": 0,
+      "route": "/konzepte",
+      "viewport": 416
+    },
+    {
+      "overflow": 0,
+      "route": "/konzept/metallbau",
+      "viewport": 416
+    },
+    {
+      "overflow": 0,
+      "route": "/konzept/maler",
+      "viewport": 416
+    },
+    {
+      "overflow": 0,
+      "route": "/konzept/galabau",
+      "viewport": 416
+    },
+    {
+      "overflow": 0,
+      "route": "/konzept/sportverein",
+      "viewport": 416
+    },
+    {
+      "overflow": 0,
+      "route": "/konzept/gastronomie",
+      "viewport": 416
+    }
+  ],
+  "browserLogs": []
+}

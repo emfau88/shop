@@ -2,6 +2,7 @@
 /* oxlint-disable nextjs/no-img-element -- Local WebP assets are optimized offline and include dimensions. */
 import { SportNavigation } from './sport-navigation';
 import { DemoBar } from '@/components/demo-bar';
+import { ResponsiveImage } from '@/components/responsive-image';
 
 export const sportBase = '/konzept/sportverein/';
 
@@ -21,11 +22,12 @@ export function SportPhoto(props: {
   const image = images[name];
   return (
     <figure className={`sport-photo sport-photo-${name}`}>
-      <img
+      <ResponsiveImage
         src={`/images/sportverein/${image.file}`}
-        width={image.width}
+        sourceWidth={image.width}
         height={image.height}
         alt={alt}
+        sizes="(max-width: 820px) 100vw, 64vw"
         loading={priority ? 'eager' : 'lazy'}
         fetchPriority={priority ? 'high' : 'auto'}
       />

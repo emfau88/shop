@@ -6,6 +6,7 @@ import {
   metalBase,
   metalServices,
 } from '@/components/metal/metal-shared';
+import { MetalManufacturingSequence } from '@/components/metal/metal-manufacturing-sequence';
 
 export const metadata = {
   title: 'Werkform · Metallverarbeitung & Konstruktion',
@@ -19,11 +20,11 @@ export default function Page() {
       <section className="metal-hero-industrial">
         <div className="metal-wrap metal-hero-industrial-head">
           <div className="metal-hero-copy">
-            <p className="metal-kicker">Metallverarbeitung · Konstruktion</p>
-            <h1>Aus Metall wird Lösung.</h1>
+            <p className="metal-kicker">Präzision entlang der Fertigung</p>
+            <h1>Von der Zeichnung zum Bauteil.</h1>
             <p className="metal-lead">
-              Präzise Bauteile, belastbare Baugruppen und Sonderkonstruktionen,
-              die für ihren Einsatz gemacht sind.
+              Präzise Bauteile, belastbare Baugruppen und Sonderkonstruktionen:
+              abgestimmt auf Daten, Einsatz und den nächsten Arbeitsschritt.
             </p>
             <div className="metal-actions">
               <MetalLink href={metalBase + 'anfrage/'}>
@@ -59,10 +60,9 @@ export default function Page() {
         </div>
       </section>
 
-      <section
-        className="metal-capabilities"
-        aria-labelledby="capability-title"
-      >
+      <MetalManufacturingSequence />
+
+      <section className="metal-capabilities" aria-labelledby="capability-title">
         <div className="metal-wrap">
           <div className="metal-capabilities-head">
             <div>
@@ -196,41 +196,6 @@ export default function Page() {
             </MetalLink>
           </div>
         </div>
-      </section>
-
-      <section className="metal-wrap metal-section metal-process">
-        <div className="metal-section-head">
-          <div>
-            <p className="metal-kicker">Projektablauf</p>
-            <h2>Drei Schritte. Ein klares Ergebnis.</h2>
-          </div>
-        </div>
-        <ol>
-          <li>
-            <span>01</span>
-            <h3>Anforderungen klären</h3>
-            <p>
-              Zeichnung, Material, Menge, Termin und Einsatz werden gemeinsam
-              eingeordnet.
-            </p>
-          </li>
-          <li>
-            <span>02</span>
-            <h3>Fertigung abstimmen</h3>
-            <p>
-              Der passende Weg vom Einzelteil bis zur Baugruppe wird
-              verständlich festgelegt.
-            </p>
-          </li>
-          <li>
-            <span>03</span>
-            <h3>Projekt übergeben</h3>
-            <p>
-              Bauteile und Konstruktionen werden passend zum vereinbarten Umfang
-              bereitgestellt.
-            </p>
-          </li>
-        </ol>
       </section>
 
       <MetalContact />

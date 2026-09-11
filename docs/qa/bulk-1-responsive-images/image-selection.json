@@ -1,0 +1,35 @@
+{
+  "capturedAt": "2026-09-11T17:48:59.663Z",
+  "sourceCheck": [
+    {
+      "currentSrc": "http://localhost:3000/images/gastronomie/gastraum-960.webp",
+      "sizes": "(max-width: 760px) 100vw, 50vw",
+      "src": "/images/gastronomie/gastraum.webp",
+      "srcSet": "/images/gastronomie/gastraum-480.webp 480w, /images/gastronomie/gastraum-960.webp 960w, /images/gastronomie/gastraum.webp 1536w"
+    },
+    {
+      "currentSrc": "http://localhost:3000/images/sportverein/badminton-960.webp",
+      "sizes": "(max-width: 760px) 100vw, 50vw",
+      "src": "/images/sportverein/badminton.webp",
+      "srcSet": "/images/sportverein/badminton-480.webp 480w, /images/sportverein/badminton-960.webp 960w, /images/sportverein/badminton.webp 1536w"
+    },
+    {
+      "currentSrc": "http://localhost:3000/images/metal/werkhalle-960.webp",
+      "sizes": "(max-width: 760px) 100vw, 50vw",
+      "src": "/images/metal/werkhalle.webp",
+      "srcSet": "/images/metal/werkhalle-480.webp 480w, /images/metal/werkhalle-960.webp 960w, /images/metal/werkhalle.webp 1536w"
+    },
+    {
+      "currentSrc": "",
+      "sizes": "(max-width: 760px) 100vw, 50vw",
+      "src": "/images/galabau/garten.webp",
+      "srcSet": "/images/galabau/garten-480.webp 480w, /images/galabau/garten-960.webp 960w, /images/galabau/garten.webp 1536w"
+    },
+    {
+      "currentSrc": "",
+      "sizes": "(max-width: 760px) 100vw, 50vw",
+      "src": "/images/demo-desktop.webp",
+      "srcSet": "/images/demo-desktop-480.webp 480w, /images/demo-desktop-960.webp 960w, /images/demo-desktop.webp 1426w"
+    }
+  ]
+}

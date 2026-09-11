@@ -10,11 +10,12 @@ export default function Page() {
   return (
     <MetalShell active="Qualität">
       <section className="metal-wrap metal-page-intro">
-        <p className="metal-kicker">Qualität & Referenzen</p>
+        <p className="metal-kicker">Qualität & Projektansichten</p>
         <h1>Bauteil und Bauwerk.</h1>
         <p className="metal-lead">
           Präzision muss am Einzelteil erkennbar sein und sich in der fertigen
-          Konstruktion bewähren. Zwei Projektansichten zeigen beide Seiten.
+          Konstruktion bewähren. Zwei fiktive Projektansichten zeigen beide
+          Seiten.
         </p>
       </section>
       <section className="metal-wrap metal-project" id="praezise-bauteile">

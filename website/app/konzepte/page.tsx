@@ -1,7 +1,7 @@
 /* oxlint-disable nextjs/no-html-link-for-pages -- Native navigation avoids a confirmed Vinext production Link runtime failure; routes render independently. */
-/* oxlint-disable nextjs/no-img-element -- The preview is an optimized local WebP with explicit dimensions. */
 import { Footer } from '@/components/shared';
 import { Navigation } from '@/components/navigation';
+import { ResponsiveImage } from '@/components/responsive-image';
 
 export const metadata = {
   title: 'Konzeptwebsites',
@@ -11,64 +11,69 @@ export const metadata = {
 
 const concepts = [
   {
-    name: 'LINDENWIRT',
-    sector: 'Gaststätte, Restaurant & Feiern',
-    status: 'Umgesetzt und geprüft',
-    description:
-      'Ein atmosphärischer Restaurantauftritt mit direkt sichtbaren Öffnungszeiten, lesbarer Speisekarte und kurzer Tischanfrage.',
-    href: '/konzept/gastronomie/',
-    image: '/images/gastronomie/gastraum.webp',
-    imageWidth: 1536,
-    imageHeight: 1024,
-    pages: '5 Inhaltsseiten · Karte, Haus, Feiern und Reservierung',
-  },
-  {
-    name: 'AUFSCHLAG',
-    sector: 'Tennis, Badminton & Vereinsleben',
-    status: 'Umgesetzt und geprüft',
-    description:
-      'Eine aktive Vereinswebsite mit Trainingsplan, zwei Sportarten, Gemeinschaft und einem direkten Weg zum Probetraining.',
-    href: '/konzept/sportverein/',
-    image: '/images/sportverein/badminton.webp',
-    imageWidth: 1536,
-    imageHeight: 1024,
-    pages: '4 Inhaltsseiten · filterbarer Wochenplan',
-  },
-  {
-    name: 'Werkform',
+    id: 'werkform',
+    number: '01',
+    name: 'WERKFORM',
     sector: 'Metallverarbeitung & Konstruktion',
-    status: 'Umgesetzt und geprüft',
     description:
-      'Ein technisch präziser Auftritt mit drei Leistungsfeldern, Fertigungseinblicken und einer simulierten Projektanfrage.',
+      'Ein technischer Auftritt, der Leistungsgrenzen, Fertigungstiefe und den Weg von der Zeichnung zum Bauteil lesbar macht.',
+    detail: '4 Inhaltsseiten · technische Fertigungsmatrix',
     href: '/konzept/metallbau/',
     image: '/images/metal/werkhalle.webp',
     imageWidth: 1536,
     imageHeight: 1024,
-    pages: '4 Inhaltsseiten · technische Fertigungsmatrix',
   },
   {
-    name: 'Grünraum',
-    sector: 'Garten- & Landschaftsbau',
-    status: 'Umgesetzt und geprüft',
-    description:
-      'Eine organische, projektorientierte Website mit Gartengestaltung, handwerklichen Details und vorbereiteter Gartenanfrage.',
-    href: '/konzept/galabau/',
-    image: '/images/galabau/garten.webp',
-    imageWidth: 1536,
-    imageHeight: 1024,
-    pages: '4 Inhaltsseiten · projektgeführte Gartenstudie',
-  },
-  {
-    name: 'Farbform',
+    id: 'farbform',
+    number: '02',
+    name: 'FARBFORM',
     sector: 'Malerarbeiten & Raumgestaltung',
-    status: 'Umgesetzt und geprüft',
     description:
-      'Eine ruhige, bildstarke Unternehmenswebsite mit Leistungen, zwei Farbwelten und einer simulierten Anfrage.',
+      'Ein editorialer Auftritt, in dem Raum, Oberfläche und Farbklima vor der klassischen Leistungsbeschreibung stehen.',
+    detail: '4 Inhaltsseiten · Editorial mit Vorher/Nachher',
     href: '/konzept/maler/',
     image: '/images/demo-desktop.webp',
     imageWidth: 1426,
     imageHeight: 980,
-    pages: '4 Inhaltsseiten · Editorial mit Vorher/Nachher',
+  },
+  {
+    id: 'gruenraum',
+    number: '03',
+    name: 'GRÜNRAUM',
+    sector: 'Garten- & Landschaftsbau',
+    description:
+      'Ein bildgeführtes Projektjournal für Gärten, die Haus, Gelände, Wasser und den Alltag zu einem Ganzen verbinden.',
+    detail: '4 Inhaltsseiten · projektgeführte Gartenstudie',
+    href: '/konzept/galabau/',
+    image: '/images/galabau/garten.webp',
+    imageWidth: 1536,
+    imageHeight: 1024,
+  },
+  {
+    id: 'aufschlag',
+    number: '04',
+    name: 'AUFSCHLAG',
+    sector: 'Tennis, Badminton & Vereinsleben',
+    description:
+      'Ein aktiver Vereinsauftritt, bei dem Trainingszeiten, zwei Sportarten und der direkte Weg zum Probetraining im Mittelpunkt stehen.',
+    detail: '4 Inhaltsseiten · filterbarer Wochenplan',
+    href: '/konzept/sportverein/',
+    image: '/images/sportverein/badminton.webp',
+    imageWidth: 1536,
+    imageHeight: 1024,
+  },
+  {
+    id: 'lindenwirt',
+    number: '05',
+    name: 'LINDENWIRT',
+    sector: 'Gaststätte, Restaurant & Feiern',
+    description:
+      'Ein ruhiger Restaurantauftritt, der Atmosphäre, Karte und den Weg zur Tischanfrage selbstverständlich zusammenbringt.',
+    detail: '5 Inhaltsseiten · Karte, Haus, Feiern und Reservierung',
+    href: '/konzept/gastronomie/',
+    image: '/images/gastronomie/gastraum.webp',
+    imageWidth: 1536,
+    imageHeight: 1024,
   },
 ];
 
@@ -78,39 +83,65 @@ export default function ConceptsPage() {
       <Navigation active="Website-Beispiele" />
       <main id="inhalt">
         <section className="wrap page-intro concepts-intro">
-          <p className="eyebrow">Arbeitsbeispiele</p>
-          <h1>Eigenständige Websites. Klar als Konzepte gekennzeichnet.</h1>
-          <p className="lead">
-            Wählen Sie eine Branche und testen Sie die vollständige Website.
-            Jedes Beispiel hat eine eigene Gestaltung, Inhaltslogik und einen
-            passenden Weg zur Anfrage, Reservierung oder Mitgliedschaft.
-          </p>
+          <p className="eyebrow">Der digitale Showroom</p>
+          <div className="concepts-intro-grid">
+            <h1>
+              Fünf Branchen. Fünf <em>eigene Ordnungen.</em>
+            </h1>
+            <div>
+              <p className="lead">
+                Jede Website ist als vollständiges, fiktives Konzeptprojekt
+                angelegt: mit eigener Bildsprache, Inhaltslogik und einem
+                konkreten nächsten Schritt.
+              </p>
+              <p className="concepts-disclosure">
+                Portfolio-Showroom · keine realen Unternehmensauftritte
+              </p>
+            </div>
+          </div>
+          <nav className="concepts-index" aria-label="Konzeptübersicht">
+            {concepts.map((concept) => (
+              <a href={`#${concept.id}`} key={concept.id}>
+                <span>{concept.number}</span>
+                {concept.name}
+              </a>
+            ))}
+          </nav>
         </section>
 
-        <section className="wrap concepts-grid" aria-label="Konzeptwebsites">
+        <section className="wrap concepts-showcase" aria-label="Konzeptwebsites">
           {concepts.map((concept, index) => (
-            <article className="concept-card" key={concept.href}>
-              <a className="concept-image" href={concept.href}>
-                <img
+            <article
+              className={`concept-case concept-case-${concept.id}`}
+              id={concept.id}
+              key={concept.id}
+            >
+              <a
+                className="concept-case-media"
+                href={concept.href}
+                aria-label={`${concept.name} öffnen`}
+              >
+                <ResponsiveImage
                   src={concept.image}
-                  width={concept.imageWidth}
+                  sourceWidth={concept.imageWidth}
                   height={concept.imageHeight}
-                  alt={`Startseite des fiktiven Konzepts ${concept.name}`}
+                  alt={`Vorschau des fiktiven Konzepts ${concept.name}`}
+                  sizes="(max-width: 759px) 100vw, (max-width: 1100px) 70vw, 72vw"
+                  loading={index === 0 ? 'eager' : 'lazy'}
+                  fetchPriority={index === 0 ? 'high' : 'auto'}
                 />
               </a>
-              <div className="concept-copy">
-                <div className="concept-meta">
-                  <span>0{index + 1}</span>
-                  <span>{concept.status}</span>
+              <div className="concept-case-copy">
+                <div className="concept-case-meta">
+                  <span>{concept.number}</span>
+                  <span>Fiktives Konzeptprojekt</span>
                 </div>
                 <p className="eyebrow">{concept.sector}</p>
                 <h2>{concept.name}</h2>
                 <p>{concept.description}</p>
-                <p className="concept-pages">
-                  {concept.pages} · fiktives Konzeptprojekt
-                </p>
+                <p className="concept-case-detail">{concept.detail}</p>
                 <a className="action" href={concept.href}>
-                  Website öffnen <span aria-hidden="true">↗</span>
+                  Konzept öffnen <span aria-hidden="true">↗</span>
                 </a>
               </div>
             </article>
@@ -120,13 +151,14 @@ export default function ConceptsPage() {
         <section className="surface section concepts-next">
           <div className="wrap split">
             <div>
-              <p className="eyebrow">Der Showroom</p>
-              <h2>Fünf Branchen. Fünf eigenständige Richtungen.</h2>
+              <p className="eyebrow">Nicht eine Schablone</p>
+              <h2>Die Aufgabe bestimmt den digitalen Auftritt.</h2>
             </div>
             <p>
-              Editorial, technische Datenschnittstelle, Projektgeschichte,
-              aktiver Wochenplan und Hospitality-Erlebnis zeigen die mögliche
-              Bandbreite – jeweils passend zur Aufgabe des Betriebs.
+              Fertigung braucht Präzision, Gestaltung einen editorischen Blick,
+              Vereinsleben eine schnelle Orientierung und Gastronomie einen
+              unmittelbaren Weg zum Tisch. Die Konzepte zeigen diese Unterschiede
+              nicht nur über Farbe, sondern über ihre ganze Seitenlogik.
             </p>
           </div>
         </section>

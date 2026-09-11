@@ -267,3 +267,230 @@
     line-height: 0.95;
   }
 }
+
+.metal-manufacturing-sequence {
+  padding-block: 108px;
+  background: var(--metal-paper);
+}
+
+.metal-sequence-head {
+  display: grid;
+  grid-template-columns: 1.2fr 0.8fr;
+  gap: 90px;
+  align-items: end;
+  margin-bottom: 46px;
+}
+
+.metal-sequence-head h2 {
+  max-width: 780px;
+}
+
+.metal-sequence-head > p {
+  max-width: 420px;
+  color: var(--metal-muted);
+  font-size: 15px;
+  line-height: 1.7;
+}
+
+.metal-sequence-controls {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  border-top: 1px solid var(--metal-line);
+  border-bottom: 1px solid var(--metal-line);
+}
+
+.metal-sequence-controls button {
+  display: flex;
+  min-height: 70px;
+  align-items: center;
+  gap: 14px;
+  padding: 15px 19px;
+  border: 0;
+  border-left: 1px solid var(--metal-line);
+  color: var(--metal-muted);
+  background: transparent;
+  font: 700 14px/1.2 Bahnschrift, 'Arial Narrow', Arial, sans-serif;
+  letter-spacing: 0.03em;
+  text-align: left;
+  cursor: pointer;
+  transition: color var(--motion-fast), background var(--motion-fast);
+}
+
+.metal-sequence-controls button:first-child {
+  border-left: 0;
+}
+
+.metal-sequence-controls button span {
+  color: var(--metal-action);
+  font: 700 11px/1 Consolas, 'Courier New', monospace;
+}
+
+.metal-sequence-controls button[aria-pressed='true'] {
+  color: white;
+  background: var(--metal-dark);
+}
+
+.metal-sequence-controls button:hover {
+  color: var(--metal-ink);
+  background: var(--metal-steel);
+}
+
+.metal-sequence-controls button[aria-pressed='true']:hover {
+  color: white;
+  background: var(--metal-dark);
+}
+
+.metal-sequence-stage {
+  display: grid;
+  grid-template-columns: minmax(0, 1.35fr) minmax(260px, 0.65fr);
+  gap: 70px;
+  align-items: center;
+  min-height: 430px;
+  padding: 46px 0 20px;
+}
+
+.metal-sequence-visual {
+  padding: 22px 0;
+  border-top: 1px solid var(--metal-line);
+  border-bottom: 1px solid var(--metal-line);
+}
+
+.metal-sequence-visual svg {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+.metal-sequence-visual .metal-sequence-line,
+.metal-sequence-visual .metal-sequence-node > *:not(text) {
+  fill: none;
+  stroke: #879195;
+  stroke-width: 2;
+}
+
+.metal-sequence-visual .metal-sequence-line {
+  stroke: var(--metal-line);
+  stroke-dasharray: 8 8;
+}
+
+.metal-sequence-visual text {
+  fill: var(--metal-muted);
+  font: 700 18px Consolas, 'Courier New', monospace;
+  letter-spacing: 0.04em;
+}
+
+.metal-sequence-node {
+  opacity: 0.3;
+  transform-box: fill-box;
+  transform-origin: center;
+  transition: opacity var(--motion-standard), transform var(--motion-standard);
+}
+
+.metal-sequence-node .metal-sequence-beam {
+  stroke: var(--metal-action) !important;
+  stroke-width: 6 !important;
+}
+
+.metal-sequence-stage[data-active='drawing'] .metal-sequence-node-drawing,
+.metal-sequence-stage[data-active='manufacturing'] .metal-sequence-node-manufacturing,
+.metal-sequence-stage[data-active='component'] .metal-sequence-node-component {
+  opacity: 1;
+  transform: scale(1.035);
+}
+
+.metal-sequence-stage[data-active='drawing'] .metal-sequence-node-drawing > *:not(text),
+.metal-sequence-stage[data-active='manufacturing'] .metal-sequence-node-manufacturing > *:not(text),
+.metal-sequence-stage[data-active='component'] .metal-sequence-node-component > *:not(text) {
+  stroke: var(--metal-ink);
+}
+
+.metal-sequence-stage[data-active='drawing'] .metal-sequence-node-drawing text,
+.metal-sequence-stage[data-active='manufacturing'] .metal-sequence-node-manufacturing text,
+.metal-sequence-stage[data-active='component'] .metal-sequence-node-component text {
+  fill: var(--metal-ink);
+}
+
+.metal-sequence-copy {
+  min-width: 0;
+}
+
+.metal-sequence-copy h3 {
+  max-width: 430px;
+  margin-bottom: 18px;
+  font-size: clamp(2rem, 3vw, 3.1rem);
+  line-height: 1;
+}
+
+.metal-sequence-copy > p:not(.metal-kicker) {
+  max-width: 420px;
+  color: var(--metal-muted);
+  font-size: 16px;
+  line-height: 1.7;
+}
+
+.metal-sequence-copy ul {
+  display: grid;
+  gap: 0;
+  padding: 0;
+  margin: 30px 0 0;
+  border-top: 1px solid var(--metal-line);
+  list-style: none;
+}
+
+.metal-sequence-copy li {
+  padding: 12px 0;
+  border-bottom: 1px solid var(--metal-line);
+  color: var(--metal-ink);
+  font: 700 12px/1.35 Consolas, 'Courier New', monospace;
+}
+
+@media (max-width: 820px) {
+  .metal-manufacturing-sequence {
+    padding-block: 76px;
+  }
+
+  .metal-sequence-head,
+  .metal-sequence-stage {
+    grid-template-columns: 1fr;
+    gap: 34px;
+  }
+
+  .metal-sequence-stage {
+    min-height: 0;
+  }
+
+  .metal-sequence-copy {
+    max-width: 620px;
+  }
+}
+
+@media (max-width: 560px) {
+  .metal-manufacturing-sequence {
+    padding-block: 64px;
+  }
+
+  .metal-sequence-head {
+    margin-bottom: 30px;
+  }
+
+  .metal-sequence-controls button {
+    min-height: 64px;
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 7px;
+    padding: 12px 10px;
+    font-size: 12px;
+  }
+
+  .metal-sequence-stage {
+    padding-top: 30px;
+  }
+
+  .metal-sequence-visual {
+    display: none;
+  }
+
+  .metal-sequence-copy h3 {
+    font-size: 36px;
+  }
+}

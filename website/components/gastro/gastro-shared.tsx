@@ -2,6 +2,7 @@
 /* oxlint-disable nextjs/no-img-element -- Local WebP assets are optimized offline and include dimensions. */
 import { GastroNavigation } from './gastro-navigation';
 import { DemoBar } from '@/components/demo-bar';
+import { ResponsiveImage } from '@/components/responsive-image';
 
 export const gastroBase = '/konzept/gastronomie/';
 
@@ -22,11 +23,12 @@ export function GastroPhoto(props: {
   const image = images[name];
   return (
     <figure className={`gastro-photo gastro-photo-${name} ${className}`}>
-      <img
+      <ResponsiveImage
         src={`/images/gastronomie/${image.file}`}
-        width={image.width}
+        sourceWidth={image.width}
         height={image.height}
         alt={alt}
+        sizes="(max-width: 820px) 100vw, 68vw"
         loading={priority ? 'eager' : 'lazy'}
         fetchPriority={priority ? 'high' : 'auto'}
       />

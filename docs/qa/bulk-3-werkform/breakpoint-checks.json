@@ -1,0 +1,23 @@
+[
+  {
+    "requestedViewportWidth": 360,
+    "documentClientWidth": 346,
+    "documentScrollWidth": 346,
+    "processControlCount": 3,
+    "processControlHeights": [64, 64, 64]
+  },
+  {
+    "requestedViewportWidth": 390,
+    "documentClientWidth": 376,
+    "documentScrollWidth": 376,
+    "processControlCount": 3,
+    "processControlHeights": [64, 64, 64]
+  },
+  {
+    "requestedViewportWidth": 430,
+    "documentClientWidth": 416,
+    "documentScrollWidth": 416,
+    "processControlCount": 3,
+    "processControlHeights": [64, 64, 64]
+  }
+]

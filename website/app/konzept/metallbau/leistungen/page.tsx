@@ -65,7 +65,7 @@ export default function Page() {
               welche Bearbeitung, Rückfragen und Prüfungen für das Projekt
               entscheidend werden.
             </p>
-            <MetalLink href={metalBase + 'anfrage/?projekt=Projektpruefung'}>
+            <MetalLink href={metalBase + 'anfrage/'}>
               Projektdaten übermitteln
             </MetalLink>
           </div>

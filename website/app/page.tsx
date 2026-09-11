@@ -3,6 +3,7 @@
 import { Navigation } from '@/components/navigation';
 import { ArrowLink, Footer } from '@/components/shared';
 import { InquiryForm } from '@/components/inquiry-form';
+import { ResponsiveImage } from '@/components/responsive-image';
 const included = [
   'Bis zu 4 Inhaltsseiten, eine Sprache',
   'Eine gebündelte Korrekturrunde',
@@ -147,11 +148,12 @@ export default function Page() {
                 href={concept.href}
                 key={concept.href}
               >
-                <img
+                <ResponsiveImage
                   src={concept.image}
-                  width={concept.width}
+                  sourceWidth={concept.width}
                   height={concept.height}
                   alt={`Vorschau der Konzeptwebsite ${concept.name}`}
+                  sizes="(max-width: 620px) 100vw, (max-width: 900px) 80vw, 50vw"
                   loading={index < 2 ? 'eager' : 'lazy'}
                 />
                 <div>

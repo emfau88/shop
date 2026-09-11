@@ -1,0 +1,82 @@
+{
+  "capturedAt": "2026-09-11T17:34:35.030Z",
+  "navigation": [
+    {
+      "route": "/",
+      "found": true,
+      "stateOpen": {
+        "expanded": "true",
+        "navVisible": 4
+      },
+      "stateClosed": {
+        "activeText": "Menü +",
+        "expanded": "false"
+      }
+    },
+    {
+      "route": "/konzept/maler",
+      "found": true,
+      "stateOpen": {
+        "expanded": "true",
+        "navVisible": 3
+      },
+      "stateClosed": {
+        "activeText": "Menü +",
+        "expanded": "false"
+      }
+    },
+    {
+      "route": "/konzept/metallbau",
+      "found": true,
+      "stateOpen": {
+        "expanded": "true",
+        "navVisible": 3
+      },
+      "stateClosed": {
+        "activeText": "Menü +",
+        "expanded": "false"
+      }
+    },
+    {
+      "route": "/konzept/galabau",
+      "found": true,
+      "stateOpen": {
+        "expanded": "true",
+        "navVisible": 3
+      },
+      "stateClosed": {
+        "activeText": "Menü +",
+        "expanded": "false"
+      }
+    },
+    {
+      "route": "/konzept/sportverein",
+      "found": true,
+      "stateOpen": {
+        "expanded": "true",
+        "navVisible": 3
+      },
+      "stateClosed": {
+        "activeText": "Menü +",
+        "expanded": "false"
+      }
+    },
+    {
+      "route": "/konzept/gastronomie",
+      "found": true,
+      "stateOpen": {
+        "expanded": "true",
+        "navVisible": 4
+      },
+      "stateClosed": {
+        "activeText": "Menü +",
+        "expanded": "false"
+      }
+    }
+  ],
+  "sportFilter": {
+    "before": 5,
+    "afterSelectingTennis": 4,
+    "tennisPressed": "true"
+  }
+}

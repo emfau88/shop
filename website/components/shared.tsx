@@ -2,6 +2,7 @@
 /* oxlint-disable nextjs/no-img-element -- WebP assets are optimized offline and served locally with dimensions and loading priorities. */
 import { Navigation } from './navigation';
 import { DemoBar } from './demo-bar';
+import { ResponsiveImage } from './responsive-image';
 export const base = '/konzept/maler/';
 export function ArrowLink({
   href,
@@ -34,11 +35,12 @@ export function Photo(props: {
         : [1254, 1254];
   return (
     <figure className={'photo photo-' + name}>
-      <img
+      <ResponsiveImage
         src={'/images/' + name + '.webp'}
         alt={alt}
-        width={dimensions[0]}
+        sourceWidth={dimensions[0]}
         height={dimensions[1]}
+        sizes="(max-width: 760px) 100vw, (max-width: 1100px) 80vw, 62vw"
         loading={priority ? 'eager' : 'lazy'}
         fetchPriority={priority ? 'high' : 'auto'}
       />

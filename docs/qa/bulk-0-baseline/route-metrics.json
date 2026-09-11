@@ -1,0 +1,260 @@
+{
+  "capturedAt": "2026-09-11T17:27:02.751Z",
+  "viewport": {
+    "width": 390,
+    "height": 844
+  },
+  "routes": [
+    {
+      "route": "/",
+      "bodyText": 6891,
+      "clientWidth": 376,
+      "h1": "Websites, die Ihren Betrieb verständlich machen.",
+      "h1Count": 1,
+      "overflow": 0,
+      "scrollWidth": 376,
+      "title": "Webdesign · persönlich umgesetzt"
+    },
+    {
+      "route": "/datenschutz",
+      "bodyText": 1322,
+      "clientWidth": 376,
+      "h1": "Hinweise zu dieser Vorschau.",
+      "h1Count": 1,
+      "overflow": 0,
+      "scrollWidth": 376,
+      "title": "Datenschutz · Vorschau · Webdesign"
+    },
+    {
+      "route": "/impressum",
+      "bodyText": 792,
+      "clientWidth": 376,
+      "h1": "Impressum vorbereiten.",
+      "h1Count": 1,
+      "overflow": 0,
+      "scrollWidth": 376,
+      "title": "Impressum · Vorschau · Webdesign"
+    },
+    {
+      "route": "/konzept/galabau",
+      "bodyText": 1985,
+      "clientWidth": 376,
+      "h1": "Draußen beginnt Zuhause.",
+      "h1Count": 1,
+      "overflow": 0,
+      "scrollWidth": 376,
+      "title": "Grünraum · Garten- & Landschaftsbau · Webdesign"
+    },
+    {
+      "route": "/konzept/galabau/anfrage",
+      "bodyText": 899,
+      "clientWidth": 376,
+      "h1": "Erzählen Sie von Ihrem Garten.",
+      "h1Count": 1,
+      "overflow": 0,
+      "scrollWidth": 376,
+      "title": "Garten anfragen · Grünraum Gartenbau · Webdesign"
+    },
+    {
+      "route": "/konzept/galabau/gartenideen",
+      "bodyText": 991,
+      "clientWidth": 376,
+      "h1": "Zwei Gärten. Zwei Antworten auf den Ort.",
+      "h1Count": 1,
+      "overflow": 0,
+      "scrollWidth": 376,
+      "title": "Projekte · Grünraum Gartenbau · Webdesign"
+    },
+    {
+      "route": "/konzept/galabau/leistungen",
+      "bodyText": 2450,
+      "clientWidth": 376,
+      "h1": "Ein Garten entsteht in Etappen. Und wächst danach weiter.",
+      "h1Count": 1,
+      "overflow": 0,
+      "scrollWidth": 376,
+      "title": "Leistungen · Grünraum Gartenbau · Webdesign"
+    },
+    {
+      "route": "/konzept/gastronomie",
+      "bodyText": 1517,
+      "clientWidth": 376,
+      "h1": "Regional auf dem Teller.Herzlich am Tisch.",
+      "h1Count": 1,
+      "overflow": 0,
+      "scrollWidth": 376,
+      "title": "LINDENWIRT · Küche, Haus & Garten · Webdesign"
+    },
+    {
+      "route": "/konzept/gastronomie/feiern",
+      "bodyText": 1049,
+      "clientWidth": 376,
+      "h1": "Ein Tisch, an den alle passen.",
+      "h1Count": 1,
+      "overflow": 0,
+      "scrollWidth": 376,
+      "title": "Feiern · LINDENWIRT · Webdesign"
+    },
+    {
+      "route": "/konzept/gastronomie/haus",
+      "bodyText": 1134,
+      "clientWidth": 376,
+      "h1": "Raum für einen richtig guten Abend.",
+      "h1Count": 1,
+      "overflow": 0,
+      "scrollWidth": 376,
+      "title": "Unser Haus · LINDENWIRT · Webdesign"
+    },
+    {
+      "route": "/konzept/gastronomie/reservieren",
+      "bodyText": 1010,
+      "clientWidth": 376,
+      "h1": "Für wen dürfen wir decken?",
+      "h1Count": 1,
+      "overflow": 0,
+      "scrollWidth": 376,
+      "title": "Reservieren · LINDENWIRT · Webdesign"
+    },
+    {
+      "route": "/konzept/gastronomie/speisekarte",
+      "bodyText": 1518,
+      "clientWidth": 376,
+      "h1": "Weniger Auswahl. Mehr Grund zur Vorfreude.",
+      "h1Count": 1,
+      "overflow": 0,
+      "scrollWidth": 376,
+      "title": "Speisekarte · LINDENWIRT · Webdesign"
+    },
+    {
+      "route": "/konzept/maler",
+      "bodyText": 1103,
+      "clientWidth": 376,
+      "h1": "Räume brauchen den richtigen Ton.",
+      "h1Count": 1,
+      "overflow": 0,
+      "scrollWidth": 376,
+      "title": "Farbform · Malerarbeiten & Raumgestaltung · Webdesign"
+    },
+    {
+      "route": "/konzept/maler/gestaltung",
+      "bodyText": 976,
+      "clientWidth": 376,
+      "h1": "Zwei Räume. Zwei Farbwelten.",
+      "h1Count": 1,
+      "overflow": 0,
+      "scrollWidth": 376,
+      "title": "Gestaltung · Farbform · Webdesign"
+    },
+    {
+      "route": "/konzept/maler/kontakt",
+      "bodyText": 809,
+      "clientWidth": 376,
+      "h1": "Ihr Vorhaben beginnt mit einer Idee.",
+      "h1Count": 1,
+      "overflow": 0,
+      "scrollWidth": 376,
+      "title": "Kontakt · Farbform · Webdesign"
+    },
+    {
+      "route": "/konzept/maler/leistungen",
+      "bodyText": 2384,
+      "clientWidth": 376,
+      "h1": "Nicht mit der Farbe beginnen. Mit dem Raum.",
+      "h1Count": 1,
+      "overflow": 0,
+      "scrollWidth": 376,
+      "title": "Leistungen · Farbform · Webdesign"
+    },
+    {
+      "route": "/konzept/metallbau",
+      "bodyText": 2461,
+      "clientWidth": 376,
+      "h1": "Aus Metall wird Lösung.",
+      "h1Count": 1,
+      "overflow": 0,
+      "scrollWidth": 376,
+      "title": "Werkform · Metallverarbeitung & Konstruktion · Webdesign"
+    },
+    {
+      "route": "/konzept/metallbau/anfrage",
+      "bodyText": 869,
+      "clientWidth": 376,
+      "h1": "Worum geht es?",
+      "h1Count": 1,
+      "overflow": 0,
+      "scrollWidth": 376,
+      "title": "Projekt anfragen · Werkform Metalltechnik · Webdesign"
+    },
+    {
+      "route": "/konzept/metallbau/einblicke",
+      "bodyText": 952,
+      "clientWidth": 376,
+      "h1": "Bauteil und Bauwerk.",
+      "h1Count": 1,
+      "overflow": 0,
+      "scrollWidth": 376,
+      "title": "Qualität · Werkform Metalltechnik · Webdesign"
+    },
+    {
+      "route": "/konzept/metallbau/leistungen",
+      "bodyText": 2748,
+      "clientWidth": 376,
+      "h1": "Ist das Bauteil machbar?",
+      "h1Count": 1,
+      "overflow": 0,
+      "scrollWidth": 376,
+      "title": "Leistungen · Werkform Metalltechnik · Webdesign"
+    },
+    {
+      "route": "/konzept/sportverein",
+      "bodyText": 2094,
+      "clientWidth": 376,
+      "h1": "Heute ist Spieltag.",
+      "h1Count": 1,
+      "overflow": 0,
+      "scrollWidth": 376,
+      "title": "AUFSCHLAG · Tennis & Badminton · Webdesign"
+    },
+    {
+      "route": "/konzept/sportverein/probetraining",
+      "bodyText": 844,
+      "clientWidth": 376,
+      "h1": "Komm einfach ins Spiel.",
+      "h1Count": 1,
+      "overflow": 0,
+      "scrollWidth": 376,
+      "title": "Probetraining · AUFSCHLAG · Webdesign"
+    },
+    {
+      "route": "/konzept/sportverein/training",
+      "bodyText": 1466,
+      "clientWidth": 376,
+      "h1": "Finde deinen Rhythmus.",
+      "h1Count": 1,
+      "overflow": 0,
+      "scrollWidth": 376,
+      "title": "Training · AUFSCHLAG · Webdesign"
+    },
+    {
+      "route": "/konzept/sportverein/verein",
+      "bodyText": 1457,
+      "clientWidth": 376,
+      "h1": "Zusammen auf dem Court. Zusammen daneben.",
+      "h1Count": 1,
+      "overflow": 0,
+      "scrollWidth": 376,
+      "title": "Verein · AUFSCHLAG · Webdesign"
+    },
+    {
+      "route": "/konzepte",
+      "bodyText": 2111,
+      "clientWidth": 376,
+      "h1": "Eigenständige Websites. Klar als Konzepte gekennzeichnet.",
+      "h1Count": 1,
+      "overflow": 0,
+      "scrollWidth": 376,
+      "title": "Konzeptwebsites · Webdesign"
+    }
+  ],
+  "browserErrors": []
+}
