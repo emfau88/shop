@@ -6,6 +6,7 @@ import {
   landscapeBase,
   landscapeServices,
 } from '@/components/landscape/landscape-shared';
+import { LandscapeProjectJourney } from '@/components/landscape/landscape-project-journey';
 
 export const metadata = {
   title: 'Grünraum · Garten- & Landschaftsbau',
@@ -61,75 +62,7 @@ export default function Page() {
         </div>
       </section>
 
-      <section className="landscape-case">
-        <div className="landscape-wrap landscape-case-head">
-          <div>
-            <p className="landscape-kicker">Projektgeschichte</p>
-            <h2>Vom ungenutzten Hang zum Garten am Wasser.</h2>
-          </div>
-          <p>
-            Ein Familiengarten, der Regen auffängt, im Sommer Schatten spendet
-            und vom Haus bis zur Grundstücksgrenze als Ganzes funktioniert.
-          </p>
-        </div>
-        <div className="landscape-wrap landscape-case-stage">
-          <LandscapePhoto
-            name="regengarten"
-            alt="Naturnaher Regengarten mit Bachlauf, Kiesweg und dichter Bepflanzung"
-          />
-          <aside className="landscape-case-facts">
-            <p>Garten 07</p>
-            <dl>
-              <div>
-                <dt>Fläche</dt>
-                <dd>420 m²</dd>
-              </div>
-              <div>
-                <dt>Ausgangslage</dt>
-                <dd>Hang · verdichteter Boden</dd>
-              </div>
-              <div>
-                <dt>Materialien</dt>
-                <dd>Naturstein · Holz · Kies</dd>
-              </div>
-              <div>
-                <dt>Schwerpunkt</dt>
-                <dd>Regenwasser · Schatten</dd>
-              </div>
-              <div>
-                <dt>Umfang</dt>
-                <dd>Planung und Ausführung</dd>
-              </div>
-            </dl>
-          </aside>
-        </div>
-        <div className="landscape-wrap landscape-case-story">
-          <article>
-            <span>01</span>
-            <h3>Ausgangssituation</h3>
-            <p>
-              Wasser lief zum Haus, der Hang war kaum nutzbar und an heißen
-              Tagen fehlte ein geschützter Sitzplatz.
-            </p>
-          </article>
-          <article>
-            <span>02</span>
-            <h3>Gestaltung</h3>
-            <p>
-              Mulden, durchlässige Wege und robuste Stauden verbinden
-              Wassermanagement mit einer ruhigen Gartenfolge.
-            </p>
-          </article>
-          <article>
-            <span>03</span>
-            <h3>Ergebnis</h3>
-            <p>
-              Neue Wege erschließen das Grundstück; Gehölze geben Schatten und
-              jeder Regen wird im Garten weitergedacht.
-            </p>
-          </article>
-        </div>
-      </section>
+      <LandscapeProjectJourney />
 
       <section className="landscape-craft">
         <div className="landscape-wrap landscape-craft-grid">

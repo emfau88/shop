@@ -343,6 +343,109 @@
   }
 }
 
+/* The sport choice drives the first screen and the visible training data. */
+.sport-mode-hero {
+  overflow: hidden;
+  color: white;
+  background: var(--sport-blue);
+}
+
+.sport-mode-hero.is-tennis {
+  background: #a12f22;
+}
+
+.sport-mode-hero-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 0.9fr) minmax(0, 1.1fr);
+  min-height: min(760px, calc(100svh - 142px));
+}
+
+.sport-mode-copy {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 88px 72px 88px 0;
+}
+
+.sport-mode-copy .sport-kicker,
+.sport-mode-copy > p {
+  color: white !important;
+}
+
+.sport-mode-time {
+  margin-bottom: 18px !important;
+  color: var(--sport-lime) !important;
+  font-size: clamp(28px, 4.2vw, 64px);
+  font-weight: 800;
+  letter-spacing: -0.065em;
+  line-height: 0.9;
+}
+
+.is-tennis .sport-mode-time { color: #ffcf69 !important; }
+
+.sport-mode-copy h1 {
+  max-width: 720px;
+  margin-bottom: 24px;
+  color: white;
+  font-size: clamp(46px, 5.7vw, 93px);
+}
+
+.sport-mode-copy > p:not(.sport-kicker):not(.sport-mode-time) {
+  max-width: 470px;
+  margin-bottom: 30px;
+  color: #dce5ff !important;
+  font-size: 16px;
+}
+
+.is-tennis .sport-mode-copy > p:not(.sport-kicker):not(.sport-mode-time) { color: #ffe6d6 !important; }
+
+.sport-mode-switch {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(120px, 1fr));
+  width: min(100%, 360px);
+  margin-bottom: 28px;
+  border: 1px solid rgb(255 255 255 / 50%);
+}
+
+.sport-mode-switch button {
+  min-height: 52px;
+  color: white;
+  border: 0;
+  border-left: 1px solid rgb(255 255 255 / 40%);
+  background: transparent;
+  font: 800 12px/1 Manrope, sans-serif;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  cursor: pointer;
+}
+
+.sport-mode-switch button:first-child { border-left: 0; }
+.sport-mode-switch button[aria-pressed='true'] { color: var(--sport-ink); background: var(--sport-lime); }
+.is-tennis .sport-mode-switch button[aria-pressed='true'] { background: #ffcf69; }
+
+.sport-mode-copy .sport-link { width: fit-content; color: var(--sport-ink); background: var(--sport-lime); }
+.is-tennis .sport-mode-copy .sport-link { background: #ffcf69; }
+
+.sport-mode-visual { position: relative; min-height: 100%; }
+.sport-mode-visual .sport-photo, .sport-mode-visual .sport-photo img { width: 100%; height: 100%; }
+.sport-mode-visual .sport-photo img { min-height: 680px; object-fit: cover; }
+.sport-mode-court { position: absolute; inset: 8% 8%; border: 2px solid rgb(255 255 255 / 75%); pointer-events: none; }
+.sport-mode-court::after { position: absolute; top: 0; bottom: 0; left: 50%; width: 2px; background: rgb(255 255 255 / 75%); content: ''; }
+
+@media (max-width: 840px) {
+  .sport-mode-hero-grid { grid-template-columns: 1fr; }
+  .sport-mode-copy { padding: 64px 0 46px; }
+  .sport-mode-visual .sport-photo img { min-height: 0; aspect-ratio: 1.28; }
+  .sport-mode-court { inset: 10%; }
+}
+
+@media (max-width: 620px) {
+  .sport-mode-copy { padding-top: 47px; }
+  .sport-mode-copy h1 { font-size: 48px; }
+  .sport-mode-switch { width: 100%; }
+  .sport-mode-visual { width: 100%; }
+}
+
 [data-theme='sport'] h1,
 [data-theme='sport'] h2,
 [data-theme='sport'] h3,

@@ -2,7 +2,7 @@
 
 **Stand:** 11. September 2026
 **Ausgangs-Commit:** `f490f59` (`main`)
-**Status:** Bulk 4 abgeschlossen · FARBFORM
+**Status:** Bulk 7 abgeschlossen · LINDENWIRT
 **Gestalterische Produktänderungen in Bulk 0:** keine
 
 ## Ziel und Arbeitsprinzip
@@ -215,6 +215,24 @@ FARBFORM wird von der Raumfotografie geführt: Die große Auftaktszene ist nicht
 | Responsive Bildpfade | 0 unpräfixierte `srcSet`- bzw. `imageSrcSet`-Pfade |
 | Bildbestand des Exports | 0 fehlende referenzierte Bilddateien |
 
+## Bulk 5 · GRÜNRAUM
+
+GRÜNRAUM erzählt Garten 07 jetzt als steuerbare Projekttransformation statt als Reihe gleichwertiger Projektkarten. Die vier Phasen **Bestand**, **Entwurf**, **Umsetzung** und **Ergebnis** verbinden die bekannten Projektdaten – 420 m², Hanglage, Regenwasser, Naturstein, Holz und Kies – mit jeweils einer eigenen Informationsform. Der Entwurf nutzt eine reduzierte, funktionale Planebene; die übrigen Phasen verwenden die vorhandenen Garten- und Detailmotive.
+
+Die Phasensteuerung besteht aus nativen, tastatur- und touchbedienbaren Buttons. Auf Mobilgeräten wird sie zweispaltig und die jeweilige Phase bleibt vollständig im Dokumentfluss; es gibt weder Scroll-Jacking noch Informationen, die nur im Overlay sichtbar sind.
+
+## Bulk 6 · AUFSCHLAG
+
+AUFSCHLAG beginnt jetzt mit dem nächsten konkreten Beispieltermin. Der prominente **Tennis-/Badminton-Modus** wechselt Hero-Bild, Akzent, Termin, CTA und sichtbare Einträge des Wochenplans gemeinsam. Beide Schalter sind native Buttons mit sichtbarem aktivem Zustand; der bestehende Wochenplanfilter bleibt als ergänzende direkte Trainingssuche erhalten.
+
+Der Wechsel benötigt keine Hover-Geste und bleibt auf kleinen Bildschirmen als gleich große Zweiwegsteuerung über dem Bild sichtbar. Die Court-Linie ist nur ein unterstützendes grafisches Orientierungselement und versteckt keine Information.
+
+## Bulk 7 · LINDENWIRT
+
+LINDENWIRT reduziert den ersten Blick bewusst auf Atmosphäre, Name, heutige Beispielzeit und Reservierung. Die bestehende Gaststubenfotografie bleibt das zentrale Erlebnis; neue technische Effekte oder ein nicht vorhandenes Video wurden bewusst nicht ergänzt. Die Speisekarte bleibt eine typografische Karte mit Gerichten, Beschreibungen und Preisen statt einer Card-Sammlung; ihr Bereich ist nun als ruhiger warmer Papierwechsel gefasst.
+
+Damit zeigt das Konzept bewusst die zurückhaltende Disziplin des Showrooms: Conversion und eine klare nächste Handlung stehen über einem sichtbaren Interaktionsgimmick.
+
 ### Visuelle Ausgangslage
 
 - Die fünf Startseiten besitzen bereits unterschiedliche Farben, Bildwelten und funktionale Schwerpunkte.
@@ -416,9 +434,9 @@ Lange automatisierte Vollseitenaufnahmen können fixierte oder animierte Element
 | 2 | `/konzepte/` | abgeschlossen · Desktop/Mobile, fünf unterschiedliche Case-Silhouetten, Demo-Kontext |
 | 3 | WERKFORM inklusive aller Unterseiten | abgeschlossen · Signature Feature, Matrix, Anfrage, Reduced Motion |
 | 4 | FARBFORM inklusive aller Unterseiten | abgeschlossen · Raumstimmungen, Range-Vergleich, Touch/Tastatur, responsive Bildvarianten |
-| 5 | GRÜNRAUM inklusive aller Unterseiten | vier Projektphasen, statische Mobile-/Reduced-Motion-Fassung |
-| 6 | AUFSCHLAG inklusive aller Unterseiten | Sportmodus, Wochenplanintegration, sofortige Terminfindung |
-| 7 | LINDENWIRT inklusive aller Unterseiten | Atmosphäre, typografische Karte, Reservierungsweg |
+| 5 | GRÜNRAUM inklusive aller Unterseiten | abgeschlossen · vier direkt steuerbare Projektphasen, Planebene und lineare Mobile-Fassung |
+| 6 | AUFSCHLAG inklusive aller Unterseiten | abgeschlossen · Sportmodus, Wochenplanintegration und sofortige Terminfindung |
+| 7 | LINDENWIRT inklusive aller Unterseiten | abgeschlossen · Atmosphäre, typografische Karte und klarer Reservierungsweg |
 | 8 | Anbieterhomepage | Showroom früh, klare Verkaufslogik, keine erfundenen Proof-Daten |
 | 9 | Gesamt-QA und Abschlussdokumentation | 25 Routen, Links, Formulare, Console, Overflow, A11y, Performance |
 

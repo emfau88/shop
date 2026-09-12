@@ -5,6 +5,7 @@ import { Button } from '@/components/ui/button';
 import { sportBase } from './sport-shared';
 
 const filters = ['Alle', 'Tennis', 'Badminton', 'Jugend'] as const;
+export type SportMode = 'Tennis' | 'Badminton';
 const sessions = [
   {
     day: 'DI',
@@ -43,8 +44,20 @@ const sessions = [
   },
 ];
 
-export function SportWeekPlan() {
+export function SportWeekPlan({
+  mode,
+  onModeChange,
+}: {
+  mode?: SportMode | null;
+  onModeChange?: (mode: SportMode | null) => void;
+}) {
   const [filter, setFilter] = useState<(typeof filters)[number]>('Alle');
+  const activeFilter = mode ?? filter;
+
+  function selectFilter(item: (typeof filters)[number]) {
+    setFilter(item);
+    onModeChange?.(item === 'Tennis' || item === 'Badminton' ? item : null);
+  }
 
   return (
     <section className="sport-plan" aria-labelledby="sport-plan-title">
@@ -60,8 +73,8 @@ export function SportWeekPlan() {
               variant="ghost"
               key={item}
               data-sport-filter={item}
-              aria-pressed={filter === item}
-              onClick={() => setFilter(item)}
+              aria-pressed={activeFilter === item}
+              onClick={() => selectFilter(item)}
             >
               {item}
             </Button>
@@ -70,7 +83,8 @@ export function SportWeekPlan() {
       </div>
       <div className="sport-wrap sport-plan-board">
         {sessions.map((session) => {
-          const visible = filter === 'Alle' || session.tags.includes(filter);
+          const visible =
+            activeFilter === 'Alle' || session.tags.includes(activeFilter);
           return (
             <article
               key={`${session.day}-${session.time}`}

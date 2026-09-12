@@ -191,6 +191,42 @@
   }
 }
 
+/* The first view stays intentionally quiet: atmosphere, opening time, reservation. */
+.gastro-hero-copy h1 {
+  max-width: none;
+  margin-bottom: 18px;
+  font-size: clamp(64px, 11.6vw, 164px);
+  font-weight: 500;
+  letter-spacing: 0.12em;
+  line-height: 0.82;
+}
+
+.gastro-hero-copy .gastro-hero-today {
+  max-width: none;
+  margin-bottom: 34px;
+  color: #f1e8df;
+  font-size: 14px;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  line-height: 1.6;
+  text-transform: uppercase;
+}
+
+.gastro-menu-feature {
+  position: relative;
+  background: linear-gradient(180deg, #f7f0e4 0%, #ede0ca 100%);
+}
+
+.gastro-menu-card {
+  border-top: 1px solid #b89c7e;
+  border-bottom: 1px solid #b89c7e;
+}
+
+@media (max-width: 620px) {
+  .gastro-hero-copy h1 { font-size: 58px; letter-spacing: 0.08em; }
+  .gastro-hero-copy .gastro-hero-today { font-size: 12px; }
+}
+
 [data-theme='gastro'] h1,
 [data-theme='gastro'] h2,
 [data-theme='gastro'] h3 {

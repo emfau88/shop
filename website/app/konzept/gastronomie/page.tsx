@@ -32,16 +32,9 @@ export default function Page() {
         />
         <div className="gastro-hero-shade" />
         <div className="gastro-wrap gastro-hero-copy">
-          <p className="gastro-kicker">Regionale Küche · offenes Feuer</p>
-          <h1>
-            Regional auf dem Teller.
-            <br />
-            <em>Herzlich am Tisch.</em>
-          </h1>
-          <p>
-            Eine moderne Gaststätte für gutes Essen, lange Abende und Menschen,
-            die gern wiederkommen.
-          </p>
+          <p className="gastro-kicker">Küche · Haus · Garten</p>
+          <h1>LINDENWIRT</h1>
+          <p className="gastro-hero-today">Heute 17–23 Uhr · offenes Feuer · Abendkarte</p>
           <GastroLink href={gastroBase + 'reservieren/'}>
             Tisch anfragen
           </GastroLink>

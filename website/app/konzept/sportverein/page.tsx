@@ -1,11 +1,5 @@
-import {
-  SportLink,
-  SportPhoto,
-  SportShell,
-  SportTrialStrip,
-  sportBase,
-} from '@/components/sport/sport-shared';
-import { SportWeekPlan } from '@/components/sport/sport-week-plan';
+import { SportLink, SportPhoto, SportShell, SportTrialStrip, sportBase } from '@/components/sport/sport-shared';
+import { SportModeExperience } from '@/components/sport/sport-mode-experience';
 
 export const metadata = {
   title: 'AUFSCHLAG · Tennis & Badminton',
@@ -16,44 +10,7 @@ export const metadata = {
 export default function Page() {
   return (
     <SportShell>
-      <section className="sport-hero-live">
-        <div className="sport-wrap sport-hero-live-head">
-          <div className="sport-hero-copy">
-            <p className="sport-kicker">Tennis · Badminton · Gemeinschaft</p>
-            <h1>
-              Heute ist <em>Spieltag.</em>
-            </h1>
-            <p className="sport-lead">
-              Zwei Sportarten, viele Spielstärken und ein Verein, in dem der
-              erste Ballwechsel genauso zählt wie der nächste Punkt.
-            </p>
-            <div className="sport-actions">
-              <SportLink href={sportBase + 'probetraining/'}>
-                Probetraining starten
-              </SportLink>
-              <SportLink secondary href={sportBase + 'training/'}>
-                Training finden
-              </SportLink>
-            </div>
-          </div>
-          <aside className="sport-next-session">
-            <span>Nächster Beispieltermin</span>
-            <b>DI · 18:00</b>
-            <strong>Badminton · Freies Spiel</strong>
-            <a href={sportBase + 'training/'}>Zum Wochenplan ↗</a>
-          </aside>
-        </div>
-        <div className="sport-wrap sport-hero-live-photo">
-          <SportPhoto
-            name="badminton"
-            alt="Vier erwachsene Vereinsspieler bei einem dynamischen Badminton-Doppel in einer hellen Sporthalle"
-            caption="KI-Sportfotografie · fiktives Vereinstraining"
-            priority
-          />
-        </div>
-      </section>
-
-      <SportWeekPlan />
+      <SportModeExperience />
 
       <section className="sport-wrap sport-section sport-choice">
         <div className="sport-section-head">
