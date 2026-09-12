@@ -2,7 +2,11 @@
 
 import { useState } from 'react';
 import { SportLink, SportPhoto, sportBase } from './sport-shared';
-import { SportWeekPlan, type SportMode } from './sport-week-plan';
+import {
+  SportWeekPlan,
+  type SportFilter,
+  type SportMode,
+} from './sport-week-plan';
 
 const modes = {
   Tennis: {
@@ -23,7 +27,13 @@ const modes = {
 
 export function SportModeExperience() {
   const [mode, setMode] = useState<SportMode>('Badminton');
+  const [filter, setFilter] = useState<SportFilter>('Badminton');
   const current = modes[mode];
+
+  function selectMode(nextMode: SportMode) {
+    setMode(nextMode);
+    setFilter(nextMode);
+  }
 
   return (
     <>
@@ -33,10 +43,19 @@ export function SportModeExperience() {
             <p className="sport-kicker">Heute auf dem Court</p>
             <p className="sport-mode-time">{current.time}</p>
             <h1>{current.title}</h1>
-            <p>{current.line}. Wähle deinen Sport und finde den nächsten passenden Ballwechsel.</p>
+            <p>
+              {current.line}. Wähle deinen Sport und finde den nächsten
+              passenden Ballwechsel.
+            </p>
             <div className="sport-mode-switch" aria-label="Sportart auswählen">
               {(Object.keys(modes) as SportMode[]).map((item) => (
-                <button key={item} type="button" aria-pressed={mode === item} onClick={() => setMode(item)}>
+                <button
+                  key={item}
+                  type="button"
+                  data-sport-mode={item}
+                  aria-pressed={mode === item}
+                  onClick={() => selectMode(item)}
+                >
                   {item}
                 </button>
               ))}
@@ -52,9 +71,12 @@ export function SportModeExperience() {
         </div>
       </section>
       <SportWeekPlan
-        mode={mode}
-        onModeChange={(nextMode) => {
-          if (nextMode) setMode(nextMode);
+        filter={filter}
+        onFilterChange={(nextFilter) => {
+          setFilter(nextFilter);
+          if (nextFilter === 'Tennis' || nextFilter === 'Badminton') {
+            setMode(nextFilter);
+          }
         }}
       />
     </>

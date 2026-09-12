@@ -1,8 +1,8 @@
 # High-End-Showroom-Redesign
 
-**Stand:** 11. September 2026
+**Stand:** 12. September 2026
 **Ausgangs-Commit:** `f490f59` (`main`)
-**Status:** Bulk 8 abgeschlossen · Anbieterhomepage
+**Status:** Bulk 9 abgeschlossen · Gesamt-QA und Abschlussdokumentation
 **Gestalterische Produktänderungen in Bulk 0:** keine
 
 ## Ziel und Arbeitsprinzip
@@ -241,7 +241,59 @@ Angebot, Zusammenarbeit, Betriebsmodell, FAQ und Anfrage bleiben erhalten und fo
 
 Auf Mobilgeräten ordnen sich Leistungsversprechen und Vorschau bewusst untereinander; das Bild reicht kontrolliert bis an die Bildschirmkante. Responsive Bildpfade, alle Showroom-Ziele und der vollständige 25-Routen-Export wurden erneut geprüft.
 
-### Visuelle Ausgangslage
+## Bulk 9 · Gesamt-QA und Abschlussbewertung
+
+Der direkte Desktopvergleich bei 1440 × 1000 und die mobile Abnahme bei 390 × 844 bestätigen eine klare Gesamtverbesserung. Der Fortschritt fällt bewusst unterschiedlich stark aus: Anbieter und AUFSCHLAG wurden im ersten Bildschirm deutlich neu komponiert; WERKFORM, FARBFORM und GRÜNRAUM gewinnen vor allem durch ihre eigenständige Erzähl- und Interaktionslogik; LINDENWIRT wurde gezielt reduziert statt spektakulärer gemacht.
+
+| Seite | Ergebnis des Alt/Neu-Vergleichs |
+| --- | --- |
+| Anbieter | Deutlich stärker: Showroom-Arbeit ist erstmals im Desktop-Einstieg sichtbar; Aussage und CTA sind konkreter. Mobile bleibt textgeführt, der Showroom folgt knapp unter dem ersten Bildschirm. |
+| WERKFORM | Klarer und fachlicher: Der Hero verspricht einen nachvollziehbaren Fertigungsweg statt einer generischen Metallbotschaft; die dreistufige Sequenz trägt die Differenzierung. |
+| FARBFORM | Visuell im ersten Bildschirm ähnlich stark wie zuvor, funktional deutlich besser: drei Raumstimmungen und ein nativer Vorher-/Nachher-Regler machen Gestaltung unmittelbar erlebbar. |
+| GRÜNRAUM | Der bildstarke Einstieg bleibt bewusst erhalten; die eigentliche Verbesserung liegt in der vierphasigen Projekttransformation und der funktionalen Planansicht weiter unten. |
+| AUFSCHLAG | Am stärksten verwandelt: Statt einer allgemeinen Kampagnenfläche stehen Sportmodus, nächster Termin, passendes Bild und gefilterter Wochenplan in einem gemeinsamen Zustand. |
+| LINDENWIRT | Ruhiger und conversion-näher: Name, heutige Beispielzeit und Tischanfrage sind schneller erfassbar. Dafür ist der Einstieg weniger erzählerisch als die alte Headline. |
+
+### Im Abschlusslauf behobene Fehler
+
+- Der GitHub-Pages-Export entfernt bewusst die Vinext-/React-Laufzeit. Die neuen Client-Interaktionen waren dadurch online zunächst nur statisch sichtbar. Die kleine Pages-Laufzeit bildet WERKFORM-Prozess, FARBFORM-Stimmungen und Vergleich, GRÜNRAUM-Phasen sowie AUFSCHLAG-Modus nun vollständig nach.
+- Beim AUFSCHLAG-Wochenplan konnten „Alle“ und „Jugend“ durch den gekoppelten Sportzustand überschrieben werden. Sportmodus und Planfilter sind jetzt getrennt: Ein Sportwechsel filtert passend, „Alle“ zeigt fünf und „Jugend“ einen Termin, ohne den Hero ungewollt umzuschalten.
+- `qa:export` prüft künftig automatisch alle exportierten HTML-Seiten auf Routenzahl, genau eine H1, fehlende lokale Ziele und nicht mit `/shop/` präfixierte Wurzelpfade.
+
+### Abschlussprüfung
+
+| Prüfung | Ergebnis |
+| --- | --- |
+| Build, Lint, Typecheck | erfolgreich |
+| Statischer Export | 25/25 Routen |
+| Exportierte Links und Assets | keine fehlenden lokalen Ziele; keine unpräfixierten Wurzelpfade |
+| Browser-Routensweep bei 390 × 844 | 25/25 mit genau einer H1, ohne horizontalen Overflow oder defektes sichtbares Bild |
+| Sechs Einstiegsseiten bei 1440 × 1000 und 390 × 844 | visuell geprüft; keine Überläufe; alle sichtbaren Bilder geladen |
+| Mobile Navigationen | 6/6 öffnen und schließen; Escape gibt Fokus zurück |
+| Signature-Interaktionen | 4/4 Zustandswechsel korrekt, inklusive ARIA-Zuständen |
+| Demo-Formulare | 6/6 mit lokalem Erfolgszustand; kein Versand und keine Speicherung |
+| Browserkonsole | keine Fehler im finalen lokalen Pages-Export |
+
+Die finalen Desktop- und Mobile-Aufnahmen sowie die Prüfdokumentation liegen unter `docs/qa/bulk-9-final/`.
+
+### Die stärksten Verbesserungen
+
+1. Sechs unterschiedliche Marken- und Seitensilhouetten statt sichtbar wiederholter Template-Logik.
+2. Ein konkreter, fachlich passender Signature-Moment für jedes interaktive Konzept.
+3. Showroom und Arbeitsqualität erscheinen auf der Anbieter-Desktopseite bereits im ersten Bildschirm.
+4. Bilder werden responsiv ausgeliefert und auf GitHub Pages mit korrekten Unterpfaden geladen.
+5. Mobile Bedienung, Tastaturzustände, Reduced Motion, Formulare und Demo-Transparenz bleiben trotz stärkerer Inszenierung erhalten.
+
+### Bewusste Grenzen und Trade-offs
+
+- LINDENWIRT verwendet weiterhin ein statisches Hero-Bild. Ohne geeignetes Ausgangsmaterial wäre Video nur zusätzlicher Ballast und kein Qualitätsgewinn.
+- FARBFORM benötigt durch zwei zusätzliche Raumvarianten mehr Bilddaten als zuvor; responsive 480-/960-Pixel-Dateien begrenzen den Aufpreis auf kleinen Geräten.
+- Die GitHub-Pages-Laufzeit dupliziert einen kleinen Teil der Interaktionsdaten aus React. Das ist wartungsintensiver, aber derzeit der robuste Preis für einen skriptarmen statischen Export ohne die zuvor problematische Vinext-Laufzeit.
+- Anbieter-Mobile zeigt bewusst Botschaft und zwei Handlungen vor der Vorschau. Dadurch liegt das erste Showroom-Bild knapp unterhalb eines 390 × 844 Viewports.
+- Die kürzere LINDENWIRT-Headline ist funktionaler und markenzentrierter, aber weniger erzählerisch als „Regional auf dem Teller. Herzlich am Tisch.“
+- Echte Identität, Region, Kontaktwege, Kundenarbeiten, Formularzustellung und rechtliche Produktionsdaten fehlen weiterhin und dürfen nicht erfunden werden. Der Stand ist ein hochwertiger Showroom, noch keine produktionsfertige Anbieterwebsite.
+
+### Visuelle Ausgangslage (Bulk 0)
 
 - Die fünf Startseiten besitzen bereits unterschiedliche Farben, Bildwelten und funktionale Schwerpunkte.
 - Über mehrere Seiten wird dennoch dieselbe Autorenhandschrift sichtbar: Kicker/Eyebrow, große Headline, Dreiereinheiten, dünne Linien, Pfeillinks und großer Schluss-CTA.
@@ -446,7 +498,7 @@ Lange automatisierte Vollseitenaufnahmen können fixierte oder animierte Element
 | 6 | AUFSCHLAG inklusive aller Unterseiten | abgeschlossen · Sportmodus, Wochenplanintegration und sofortige Terminfindung |
 | 7 | LINDENWIRT inklusive aller Unterseiten | abgeschlossen · Atmosphäre, typografische Karte und klarer Reservierungsweg |
 | 8 | Anbieterhomepage | abgeschlossen · Showroom im ersten Bildschirm, klare Verkaufslogik, keine erfundenen Proof-Daten |
-| 9 | Gesamt-QA und Abschlussdokumentation | 25 Routen, Links, Formulare, Console, Overflow, A11y, Performance |
+| 9 | Gesamt-QA und Abschlussdokumentation | abgeschlossen · Alt/Neu-Vergleich, 25 Routen, Links, Bilder, Interaktionen, Formulare, Console, Overflow |
 
 ## Definition of Done je Umsetzungsbulk
 

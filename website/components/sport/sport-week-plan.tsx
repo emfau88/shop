@@ -6,6 +6,7 @@ import { sportBase } from './sport-shared';
 
 const filters = ['Alle', 'Tennis', 'Badminton', 'Jugend'] as const;
 export type SportMode = 'Tennis' | 'Badminton';
+export type SportFilter = (typeof filters)[number];
 const sessions = [
   {
     day: 'DI',
@@ -45,18 +46,18 @@ const sessions = [
 ];
 
 export function SportWeekPlan({
-  mode,
-  onModeChange,
+  filter: controlledFilter,
+  onFilterChange,
 }: {
-  mode?: SportMode | null;
-  onModeChange?: (mode: SportMode | null) => void;
+  filter?: SportFilter;
+  onFilterChange?: (filter: SportFilter) => void;
 }) {
-  const [filter, setFilter] = useState<(typeof filters)[number]>('Alle');
-  const activeFilter = mode ?? filter;
+  const [localFilter, setLocalFilter] = useState<SportFilter>('Alle');
+  const activeFilter = controlledFilter ?? localFilter;
 
-  function selectFilter(item: (typeof filters)[number]) {
-    setFilter(item);
-    onModeChange?.(item === 'Tennis' || item === 'Badminton' ? item : null);
+  function selectFilter(item: SportFilter) {
+    setLocalFilter(item);
+    onFilterChange?.(item);
   }
 
   return (

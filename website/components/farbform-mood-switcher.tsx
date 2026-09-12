@@ -48,6 +48,7 @@ export function FarbformMoodSwitcher() {
           {moods.map((item, index) => (
             <button
               aria-pressed={active === index}
+              data-farbform-mood={item.id}
               key={item.id}
               onClick={() => setActive(index)}
               type="button"
