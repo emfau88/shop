@@ -47,6 +47,16 @@ function transformHtml(html) {
     .replaceAll('="/', `="${pageBase}/`)
     .replaceAll("='/", `='${pageBase}/`)
     .replace(
+      /(\b(?:srcset|imagesrcset)=)(['"])(.*?)\2/gi,
+      (_match, attribute, quote, srcSet) => {
+        const rewritten = srcSet.replace(
+          /(^|,\s*)\/(?!shop(?:\/|$))/g,
+          `$1${pageBase}/`,
+        );
+        return `${attribute}${quote}${rewritten}${quote}`;
+      },
+    )
+    .replace(
       '</body>',
       `<script src="${pageBase}/pages-runtime.js" defer></script></body>`,
     );

@@ -1,12 +1,13 @@
 /* oxlint-disable nextjs/no-html-link-for-pages -- Native navigation avoids a confirmed Vinext production Link runtime failure. */
 import {
   DemoShell,
-  Photo,
   ArrowLink,
   DemoContact,
   services,
   base,
 } from '@/components/shared';
+import { FarbformMoodSwitcher } from '@/components/farbform-mood-switcher';
+import { FarbformRoomCompare } from '@/components/farbform-room-compare';
 
 export const metadata = { title: 'Farbform · Malerarbeiten & Raumgestaltung' };
 
@@ -31,18 +32,7 @@ export default function Page() {
           </aside>
         </div>
         <div className="wrap farbform-lead-image">
-          <Photo
-            name="raum-aubergine"
-            alt="Wohnraum mit matter auberginefarbener Akzentwand, hellem Sofa und Holzboden"
-            priority
-          />
-          <div className="farbform-image-note">
-            <span className="swatch aubergine" />
-            <div>
-              <b>Aubergine 42</b>
-              <span>Matt · warmes Tageslicht</span>
-            </div>
-          </div>
+          <FarbformMoodSwitcher />
         </div>
       </section>
 
@@ -63,22 +53,7 @@ export default function Page() {
             <p className="eyebrow">Vorher / Nachher</p>
             <p>Wohnraum · Farb- und Materialkonzept</p>
           </div>
-          <div className="farbform-compare">
-            <div>
-              <span>Vorher</span>
-              <Photo
-                name="farbform-raum-vorher"
-                alt="Wohnraum vor der Neugestaltung mit warmer, weißer Wand"
-              />
-            </div>
-            <div>
-              <span>Nachher</span>
-              <Photo
-                name="raum-aubergine"
-                alt="Derselbe Wohnraum nach der Gestaltung mit auberginefarbener Wand"
-              />
-            </div>
-          </div>
+          <FarbformRoomCompare />
           <div className="farbform-concept-note">
             <span>01</span>
             <h2>Ruhige Tiefe.</h2>
