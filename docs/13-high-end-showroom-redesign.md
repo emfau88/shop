@@ -2,7 +2,7 @@
 
 **Stand:** 11. September 2026
 **Ausgangs-Commit:** `f490f59` (`main`)
-**Status:** Bulk 3 abgeschlossen · WERKFORM
+**Status:** Bulk 4 abgeschlossen · FARBFORM
 **Gestalterische Produktänderungen in Bulk 0:** keine
 
 ## Ziel und Arbeitsprinzip
@@ -186,6 +186,34 @@ Die bestehende Fertigungsmatrix, die Projektprüfung, die Materialbilder und die
 | Build, Lint und Typecheck | erfolgreich |
 
 Die Messwerte liegen unter `docs/qa/bulk-3-werkform/`.
+
+## Bulk 4 · FARBFORM
+
+### Gestalterische Entscheidung
+
+FARBFORM wird von der Raumfotografie geführt: Die große Auftaktszene ist nicht länger ein statisches Einzelmotiv, sondern eine bedienbare Farbwelt. Die bestehende Material- und Studiojournal-Sprache bleibt erhalten; der neue Vergleich macht die gestalterische Veränderung direkt erfahrbar, ohne den ruhigen Editorial-Charakter mit unnötiger Motion zu überlagern.
+
+### Signature Feature
+
+- **Raumstimmungen:** Aubergine, Salbei und Mineral wechseln die großformatige, perspektivgleiche Raumdarstellung über drei native Buttons. Die aktive Stimmung ist per `aria-pressed` erkennbar und beschreibt den gewählten Farb- und Lichtcharakter.
+- **Vorher/Nachher:** Der bisherige starre Zweibildvergleich ist ein nativer Range-Regler. Er ist mit Maus, Touch und Tastatur bedienbar und zeigt beide Zustände ohne Scroll- oder Hover-Abhängigkeit.
+- Zwei neue, gezielt erzeugte Bildvarianten ergänzen die bestehende Aubergine-Szene; alle liegen weiterhin als 480-, 960- und Original-WebP vor.
+
+### Mobile, Performance und Auslieferung
+
+- Auf schmalen Bildschirmen liegen die Stimmungssteuerungen als gut antippbare, gleich breite Buttons unter dem Bild, statt eine wichtige Bildfläche zu verdecken.
+- Der Vergleich bleibt im normalen Dokumentfluss, ohne Präzisionsdrag oder Desktop-only-Mechanik.
+- Die zentrale Pages-Exportlogik schreibt nun auch alle Einträge in `srcSet` und `imageSrcSet` mit dem GitHub-Pages-Präfix `/shop/`. Damit laden responsive Kachelbilder auf der veröffentlichten Anbieterstartseite nicht mehr vom falschen Wurzelpfad.
+
+### Bulk-4-Prüfung
+
+| Prüfung | Ergebnis |
+| --- | --- |
+| Lint, Typecheck und Build | erfolgreich |
+| Statischer GitHub-Pages-Export | 25 Routen erfolgreich exportiert |
+| Anbieterstartseite | fünf Konzept-Kacheln im Export vorhanden |
+| Responsive Bildpfade | 0 unpräfixierte `srcSet`- bzw. `imageSrcSet`-Pfade |
+| Bildbestand des Exports | 0 fehlende referenzierte Bilddateien |
 
 ### Visuelle Ausgangslage
 
@@ -387,7 +415,7 @@ Lange automatisierte Vollseitenaufnahmen können fixierte oder animierte Element
 | 1 | Technische Leitplanken: Bilder, Motion, Touch, Overflow, schrittweise CSS-Grenzen | abgeschlossen |
 | 2 | `/konzepte/` | abgeschlossen · Desktop/Mobile, fünf unterschiedliche Case-Silhouetten, Demo-Kontext |
 | 3 | WERKFORM inklusive aller Unterseiten | abgeschlossen · Signature Feature, Matrix, Anfrage, Reduced Motion |
-| 4 | FARBFORM inklusive aller Unterseiten | Raumstimmungen, Vergleich, Touch/Tastatur |
+| 4 | FARBFORM inklusive aller Unterseiten | abgeschlossen · Raumstimmungen, Range-Vergleich, Touch/Tastatur, responsive Bildvarianten |
 | 5 | GRÜNRAUM inklusive aller Unterseiten | vier Projektphasen, statische Mobile-/Reduced-Motion-Fassung |
 | 6 | AUFSCHLAG inklusive aller Unterseiten | Sportmodus, Wochenplanintegration, sofortige Terminfindung |
 | 7 | LINDENWIRT inklusive aller Unterseiten | Atmosphäre, typografische Karte, Reservierungsweg |
