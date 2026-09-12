@@ -2,7 +2,7 @@
 
 **Stand:** 11. September 2026
 **Ausgangs-Commit:** `f490f59` (`main`)
-**Status:** Bulk 7 abgeschlossen · LINDENWIRT
+**Status:** Bulk 8 abgeschlossen · Anbieterhomepage
 **Gestalterische Produktänderungen in Bulk 0:** keine
 
 ## Ziel und Arbeitsprinzip
@@ -233,6 +233,14 @@ LINDENWIRT reduziert den ersten Blick bewusst auf Atmosphäre, Name, heutige Bei
 
 Damit zeigt das Konzept bewusst die zurückhaltende Disziplin des Showrooms: Conversion und eine klare nächste Handlung stehen über einem sichtbaren Interaktionsgimmick.
 
+## Bulk 8 · Anbieterhomepage
+
+Die Anbieterhomepage führt nun unmittelbar mit sichtbarer Arbeitsqualität: Neben dem verdichteten Leistungsversprechen steht bereits im ersten Bildschirm eine großformatige Konzeptvorschau mit direktem Zugang zum Showroom. Die fünf Arbeitsbeispiele folgen direkt danach in der Reihenfolge WERKFORM, FARBFORM, GRÜNRAUM, AUFSCHLAG und LINDENWIRT und benennen jeweils die demonstrierte Disziplin statt nur die Branche.
+
+Angebot, Zusammenarbeit, Betriebsmodell, FAQ und Anfrage bleiben erhalten und folgen weiterhin einer verständlichen Verkaufslogik. Der Einstieg wurde sprachlich verkürzt, die Kernaussage geschärft und die bestehende Vertrauensbasis ohne erfundene Kundenlogos, Bewertungen, Personen- oder Standortangaben beibehalten.
+
+Auf Mobilgeräten ordnen sich Leistungsversprechen und Vorschau bewusst untereinander; das Bild reicht kontrolliert bis an die Bildschirmkante. Responsive Bildpfade, alle Showroom-Ziele und der vollständige 25-Routen-Export wurden erneut geprüft.
+
 ### Visuelle Ausgangslage
 
 - Die fünf Startseiten besitzen bereits unterschiedliche Farben, Bildwelten und funktionale Schwerpunkte.
@@ -437,7 +445,7 @@ Lange automatisierte Vollseitenaufnahmen können fixierte oder animierte Element
 | 5 | GRÜNRAUM inklusive aller Unterseiten | abgeschlossen · vier direkt steuerbare Projektphasen, Planebene und lineare Mobile-Fassung |
 | 6 | AUFSCHLAG inklusive aller Unterseiten | abgeschlossen · Sportmodus, Wochenplanintegration und sofortige Terminfindung |
 | 7 | LINDENWIRT inklusive aller Unterseiten | abgeschlossen · Atmosphäre, typografische Karte und klarer Reservierungsweg |
-| 8 | Anbieterhomepage | Showroom früh, klare Verkaufslogik, keine erfundenen Proof-Daten |
+| 8 | Anbieterhomepage | abgeschlossen · Showroom im ersten Bildschirm, klare Verkaufslogik, keine erfundenen Proof-Daten |
 | 9 | Gesamt-QA und Abschlussdokumentation | 25 Routen, Links, Formulare, Console, Overflow, A11y, Performance |
 
 ## Definition of Done je Umsetzungsbulk

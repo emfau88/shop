@@ -48,49 +48,49 @@ const advantages = [
 ];
 const concepts = [
   {
-    name: 'LINDENWIRT',
-    sector: 'Gaststätte & Restaurant',
-    text: 'Atmosphärisch, menügeführt und auf Reservierungen optimiert.',
-    href: '/konzept/gastronomie/',
-    image: '/images/gastronomie/gastraum.webp',
-    width: 1536,
-    height: 1024,
-  },
-  {
-    name: 'AUFSCHLAG',
-    sector: 'Tennis- & Badmintonverein',
-    text: 'Aktiv, terminorientiert und mit direktem Probetraining.',
-    href: '/konzept/sportverein/',
-    image: '/images/sportverein/badminton.webp',
-    width: 1536,
-    height: 1024,
-  },
-  {
-    name: 'Werkform',
-    sector: 'Metallverarbeitung',
-    text: 'Technisch, datenorientiert und auf Projektanfragen ausgerichtet.',
+    name: 'WERKFORM',
+    sector: 'High-End Engineering',
+    text: 'Präzise, prozessorientiert und auf technische Projektanfragen ausgerichtet.',
     href: '/konzept/metallbau/',
     image: '/images/metal/werkhalle.webp',
     width: 1536,
     height: 1024,
   },
   {
-    name: 'Grünraum',
-    sector: 'Garten- & Landschaftsbau',
-    text: 'Organisch, projektbezogen und auf Hausbesitzer zugeschnitten.',
+    name: 'FARBFORM',
+    sector: 'Editorial Interior',
+    text: 'Ruhig, materialbewusst und interaktiv für private Wohnkunden.',
+    href: '/konzept/maler/',
+    image: '/images/demo-desktop.webp',
+    width: 1426,
+    height: 980,
+  },
+  {
+    name: 'GRÜNRAUM',
+    sector: 'Landscape Storytelling',
+    text: 'Projektgeführt vom Bestand bis zum fertigen Garten am Wasser.',
     href: '/konzept/galabau/',
     image: '/images/galabau/garten.webp',
     width: 1536,
     height: 1024,
   },
   {
-    name: 'Farbform',
-    sector: 'Maler & Raumgestaltung',
-    text: 'Ruhig, editorial und bildstark für private Wohnkunden.',
-    href: '/konzept/maler/',
-    image: '/images/demo-desktop.webp',
-    width: 1426,
-    height: 980,
+    name: 'AUFSCHLAG',
+    sector: 'Interactive Sport',
+    text: 'Energetisch, terminorientiert und mit direktem Sportmodus.',
+    href: '/konzept/sportverein/',
+    image: '/images/sportverein/badminton.webp',
+    width: 1536,
+    height: 1024,
+  },
+  {
+    name: 'LINDENWIRT',
+    sector: 'Hospitality Experience',
+    text: 'Atmosphärisch, menügeführt und auf Reservierungen optimiert.',
+    href: '/konzept/gastronomie/',
+    image: '/images/gastronomie/gastraum.webp',
+    width: 1536,
+    height: 1024,
   },
 ];
 export default function Page() {
@@ -98,27 +98,43 @@ export default function Page() {
     <div data-theme="provider">
       <Navigation />
       <main id="inhalt">
-        <section className="wrap provider-hero">
-          <p className="eyebrow">Webdesign aus einer Hand</p>
-          <h1>
-            Websites, die Ihren Betrieb <span>verständlich machen.</span>
-          </h1>
-          <p className="lead">
-            Für inhabergeführte Unternehmen, die Leistungen klar zeigen,
-            Vertrauen aufbauen und Interessenten ohne Umwege zur Anfrage führen
-            möchten.
-          </p>
-          <div className="actions">
-            <ArrowLink href="#konzepte">5 Websites ansehen</ArrowLink>
-            <ArrowLink secondary href="#angebot">
-              Paket & Preis
-            </ArrowLink>
+        <section className="provider-hero">
+          <div className="wrap provider-hero-layout">
+            <div className="provider-hero-copy">
+              <p className="eyebrow">Webdesign aus einer Hand</p>
+              <h1>
+                Ihr Betrieb ist eigenständig. <span>Die Website sollte es auch sein.</span>
+              </h1>
+              <p className="lead">
+                Individuelle Unternehmenswebsites für inhabergeführte Betriebe – klar erklärt, hochwertig gestaltet und persönlich umgesetzt.
+              </p>
+              <div className="actions">
+                <ArrowLink href="#konzepte">Websites ausprobieren</ArrowLink>
+                <ArrowLink secondary href="#angebot">Paket & Preis</ArrowLink>
+              </div>
+              <p className="scope-line">
+                Bis zu 4 Inhaltsseiten <span>·</span> feste Leistung <span>·</span>{' '}
+                persönliche Umsetzung
+              </p>
+            </div>
+            <a className="provider-hero-showcase" href="/konzepte/">
+              <ResponsiveImage
+                src="/images/demo-desktop.webp"
+                sourceWidth={1426}
+                height={980}
+                alt="Ausschnitt des interaktiven Farbform-Websitekonzepts"
+                sizes="(max-width: 759px) 100vw, 48vw"
+                loading="eager"
+                fetchPriority="high"
+              />
+              <div>
+                <span>5 Branchen · 5 eigenständige Welten</span>
+                <strong>Showroom öffnen</strong>
+                <b aria-hidden="true">↗</b>
+              </div>
+            </a>
           </div>
-          <p className="scope-line">
-            Bis zu 4 Inhaltsseiten <span>·</span> feste Leistung <span>·</span>{' '}
-            persönliche Umsetzung
-          </p>
-          <div className="provider-promises" aria-label="Wichtige Merkmale">
+          <div className="wrap provider-promises" aria-label="Wichtige Merkmale">
             <span>Texthilfe aus einem Gespräch</span>
             <span>Zugänge und Dateien für Sie</span>
             <span>Kein verpflichtendes Wartungsabo</span>
@@ -127,14 +143,12 @@ export default function Page() {
         <section className="provider-concepts section" id="konzepte">
           <div className="wrap section-top provider-concepts-head">
             <div>
-              <p className="eyebrow">Fünf vollständige Beispiele</p>
-              <h2>Wählen Sie eine Branche und testen Sie die Website.</h2>
+              <p className="eyebrow">Der Beweis vor dem Versprechen</p>
+              <h2>Fünf Branchen. Fünf digitale Handschriften.</h2>
             </div>
             <div>
               <p>
-                Alle Beispiele sind fiktive Konzeptprojekte. Sie zeigen, wie
-                Gestaltung, Inhalte und Nutzerführung zu verschiedenen Betrieben
-                passen können.
+                Jede Website besitzt eine eigene Art Direction und eine branchengerechte Funktion. Alle Beispiele sind transparent gekennzeichnete, fiktive Konzeptprojekte.
               </p>
               <ArrowLink secondary href="/konzepte/">
                 Alle Seiten in der Übersicht
