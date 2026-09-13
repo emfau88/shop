@@ -8,13 +8,17 @@ const projectRoot = path.resolve(
 );
 const outputDirectory = path.join(projectRoot, 'pages-dist');
 const pageBase = '/shop';
-const expectedRouteCount = 25;
+const expectedRouteCount = 30;
 const errors = [];
 const htmlFiles = [];
 const metalViewerRuntime = path.join(
   outputDirectory,
   'metal-viewer-runtime.js',
 );
+const signatureRuntime = path.join(outputDirectory, 'signature-runtime.js');
+const werkformSignatureRuntime = path.join(outputDirectory, 'werkform-signature-runtime.js');
+const werkformSignatureModel = path.join(outputDirectory, 'assets', 'signature', 'werkform', 'werkform-assembly.glb');
+const werkformSignatureFallback = path.join(outputDirectory, 'assets', 'signature', 'werkform', 'werkform-assembly-fallback.webp');
 const metalViewerModel = path.join(
   outputDirectory,
   'assets',
@@ -82,6 +86,19 @@ await collectFiles(outputDirectory, '.html', htmlFiles);
 
 for (const htmlFile of htmlFiles) {
   const html = await readFile(htmlFile, 'utf8');
+  const relativeHtml = path.relative(outputDirectory, htmlFile).replaceAll('\\', '/');
+  const isSignature = relativeHtml.includes('/signature/index.html');
+  const hasSignatureRuntime = html.includes(`${pageBase}/signature-runtime.js`);
+  const hasWerkformSignatureRuntime = html.includes(`${pageBase}/werkform-signature-runtime.js`);
+  if (isSignature && !hasSignatureRuntime) {
+    errors.push(`${relativeHtml}: missing Signature runtime`);
+  }
+  if (!isSignature && hasSignatureRuntime) {
+    errors.push(`${relativeHtml}: Signature runtime leaked into Core route`);
+  }
+  const isWerkformSignature = relativeHtml === 'konzept/metallbau/signature/index.html';
+  if (isWerkformSignature && !hasWerkformSignatureRuntime) errors.push(`${relativeHtml}: missing WERKFORM 3D runtime`);
+  if (!isWerkformSignature && hasWerkformSignatureRuntime) errors.push(`${relativeHtml}: WERKFORM 3D runtime leaked into another route`);
   const h1Count = (html.match(/<h1\b/gi) ?? []).length;
   if (h1Count !== 1) {
     errors.push(
@@ -100,6 +117,19 @@ for (const htmlFile of htmlFiles) {
       );
     }
   }
+}
+
+try {
+  await access(signatureRuntime);
+} catch {
+  errors.push('missing static Signature runtime bundle');
+}
+try {
+  await access(werkformSignatureRuntime);
+  await access(werkformSignatureModel);
+  await access(werkformSignatureFallback);
+} catch {
+  errors.push('missing WERKFORM Signature runtime, GLB or fallback');
 }
 
 if (htmlFiles.length !== expectedRouteCount) {

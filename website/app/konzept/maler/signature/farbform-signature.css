@@ -1,0 +1,8 @@
+.farbform-signature { --signature-accent: #768a72; --signature-ink: #20231f; background: #efeee8; }
+.farbform-signature .signature-scrim { background: linear-gradient(90deg, rgba(246,244,237,.98) 0%, rgba(246,244,237,.88) 34%, rgba(246,244,237,.08) 70%); }
+.farbform-signature .signature-fallback img { object-position: 60% center; filter: saturate(.74) brightness(1.08); }
+.farbform-signature .signature-rail, .farbform-signature .signature-story { color: #20231f; border-color: rgba(32,35,31,.2); background: rgba(247,245,239,.72); }
+.farbform-signature .signature-rail button { border-color: rgba(32,35,31,.15); }
+.farbform-signature .signature-scroll span { border-color: rgba(32,35,31,.5); }
+@media (max-width:560px){.farbform-signature .signature-scrim{background:linear-gradient(0deg,rgba(246,244,237,.98) 0%,rgba(246,244,237,.72) 60%,rgba(246,244,237,.12) 100%)}}
+

@@ -1,0 +1,262 @@
+<!doctype html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover,user-scalable=no">
+<meta name="theme-color" content="#0e1112">
+<title>WERKFORM · 3D Technical Product Experience</title>
+<style>
+:root{
+  --bg:#0d1011;--panel:#141819;--panel2:#1a1f20;--line:rgba(255,255,255,.10);
+  --text:#f2f2ef;--muted:#aab1ad;--accent:#c9ff63;--accent2:#7e9d45;--safe:env(safe-area-inset-bottom,0px)
+}
+*{box-sizing:border-box}html,body{margin:0;width:100%;height:100%;overflow:hidden;background:var(--bg);color:var(--text);font-family:Inter,ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif}
+button,input{font:inherit}button{color:inherit}
+#app{position:relative;width:100%;height:100%;background:
+radial-gradient(circle at 70% 30%,rgba(135,159,119,.08),transparent 34%),
+linear-gradient(180deg,#101415 0,#0b0e0f 100%)}
+#stage{position:absolute;inset:0;touch-action:none;cursor:grab}
+#stage.dragging{cursor:grabbing}
+canvas{display:block;width:100%;height:100%}
+
+.topbar{position:absolute;z-index:20;left:36px;right:36px;top:24px;display:flex;justify-content:space-between;align-items:center;pointer-events:none}
+.brand,.nav{pointer-events:auto}.brand{display:flex;align-items:center;gap:14px;font-weight:800;letter-spacing:.18em;font-size:22px}
+.brand-mark{width:32px;height:32px;border:1px solid rgba(255,255,255,.45);position:relative}
+.brand-mark:before,.brand-mark:after{content:"";position:absolute;background:var(--accent)}
+.brand-mark:before{width:17px;height:2px;left:7px;top:14px}.brand-mark:after{height:17px;width:2px;left:14px;top:7px}
+.brand small{display:block;font-size:7px;letter-spacing:.38em;color:var(--muted);font-weight:600;margin-top:4px}
+.nav{display:flex;gap:28px;align-items:center;font-size:11px}.nav a{color:var(--muted);text-decoration:none}.nav .cta{border:1px solid var(--line);background:#f0f1eb;color:#111;padding:11px 17px;border-radius:999px}
+
+.copy{position:absolute;z-index:10;left:clamp(26px,5vw,76px);top:18vh;width:min(420px,35vw);pointer-events:none}
+.kicker{font-size:9px;letter-spacing:.32em;text-transform:uppercase;color:var(--accent);font-weight:800;margin-bottom:15px}
+.copy h1{font-family:Georgia,"Times New Roman",serif;font-size:clamp(42px,5.4vw,78px);line-height:.93;font-weight:500;letter-spacing:-.045em;margin:0 0 18px}
+.copy p{font-size:14px;line-height:1.65;color:var(--muted);max-width:360px}
+.specs{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;margin-top:22px;max-width:390px}
+.spec{border-top:1px solid var(--line);padding-top:9px}.spec small{display:block;color:#7c8580;font-size:8px;text-transform:uppercase;letter-spacing:.15em}.spec b{font-size:11px;font-weight:600}
+
+.statebar{position:absolute;z-index:21;left:50%;transform:translateX(-50%);bottom:calc(26px + var(--safe));width:min(860px,calc(100vw - 40px));background:rgba(17,21,22,.88);border:1px solid var(--line);border-radius:24px;padding:10px;backdrop-filter:blur(18px);box-shadow:0 18px 60px rgba(0,0,0,.34)}
+.states{display:grid;grid-template-columns:repeat(4,1fr);gap:7px}.state{border:0;background:transparent;border-radius:16px;padding:11px 9px;cursor:pointer;text-align:left;transition:.2s}
+.state:hover,.state.active{background:#202526}.state .num{font-size:9px;color:#6f7773;display:block;margin-bottom:5px}.state b{font-size:12px}.state small{display:block;color:#79817d;font-size:9px;margin-top:3px}.state.active .num{color:var(--accent)}
+.scrub{display:flex;align-items:center;gap:12px;padding:5px 8px 0}.scrub span{font-size:8px;letter-spacing:.14em;text-transform:uppercase;color:#6d7671}.scrub input{width:100%;accent-color:var(--accent)}
+
+.hotspots{position:absolute;z-index:17;inset:0;pointer-events:none}
+.hotspot{position:absolute;transform:translate(-50%,-50%);pointer-events:auto;border:1px solid rgba(255,255,255,.14);background:rgba(18,22,23,.9);border-radius:999px;padding:6px 10px 6px 6px;display:flex;align-items:center;gap:7px;cursor:pointer;box-shadow:0 8px 30px rgba(0,0,0,.25);white-space:nowrap}
+.hotspot i{width:23px;height:23px;border-radius:50%;background:var(--accent);color:#111;display:grid;place-items:center;font-style:normal;font-weight:900}.hotspot b{font-size:10px}.hotspot.hidden{opacity:0;pointer-events:none}
+
+.detail{position:absolute;z-index:25;right:36px;top:50%;transform:translateY(-50%);width:min(330px,calc(100vw - 40px));background:rgba(18,22,23,.96);border:1px solid var(--line);border-radius:22px;padding:19px;box-shadow:0 22px 70px rgba(0,0,0,.42);opacity:0;pointer-events:none;translate:14px 0;transition:.22s}
+.detail.open{opacity:1;pointer-events:auto;translate:0 0}.detail-head{display:flex;justify-content:space-between;gap:14px}.tag{font-size:8px;letter-spacing:.18em;text-transform:uppercase;color:var(--accent)}.detail h3{font-family:Georgia,serif;font-size:27px;font-weight:500;margin:7px 0 8px}.detail p{font-size:12px;line-height:1.6;color:var(--muted)}.close{border:0;background:#252b2c;border-radius:50%;width:31px;height:31px;cursor:pointer}.facts{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-top:14px}.facts span{background:#202526;padding:9px;border-radius:11px;font-size:9px;color:#b8c0bb}
+
+.tools{position:absolute;z-index:18;right:36px;bottom:146px;display:flex;gap:8px}.tool{border:1px solid var(--line);background:rgba(18,22,23,.8);border-radius:999px;padding:10px 13px;color:#d7dcd8;cursor:pointer;backdrop-filter:blur(12px);font-size:10px}.tool.active{background:var(--accent);color:#111}
+.mode-label{position:absolute;z-index:12;right:5vw;top:17vh;text-align:right;pointer-events:none}.mode-label .big{font-size:11px;letter-spacing:.25em;text-transform:uppercase;color:#717b75}.mode-label strong{display:block;margin-top:8px;font-family:Georgia,serif;font-size:29px;font-weight:500}
+
+.loading{position:absolute;z-index:50;inset:0;background:#0d1011;display:grid;place-items:center;text-align:center;transition:.4s}.loading.done{opacity:0;pointer-events:none}.loading strong{font-family:Georgia,serif;font-size:32px;font-weight:500}.loading small{display:block;color:#717b75;margin-top:7px}
+.note{position:absolute;z-index:11;left:50%;top:12%;transform:translateX(-50%);font-size:9px;color:#6f7773;letter-spacing:.12em;text-transform:uppercase;pointer-events:none}
+
+@media(max-width:780px){
+  .topbar{left:14px;right:14px;top:12px}.brand{font-size:17px;gap:9px}.brand-mark{width:25px;height:25px}.nav a{display:none}.nav .cta{padding:9px 12px;font-size:10px}
+  .copy{left:15px;right:15px;top:70px;width:78vw}.copy h1{font-size:39px}.copy p{font-size:11px;max-width:270px}.specs{display:none}
+  .mode-label{top:69px;right:15px}.mode-label .big{font-size:7px}.mode-label strong{font-size:18px}
+  .tools{right:12px;bottom:164px}.tool{padding:8px 10px;font-size:9px}
+  .statebar{bottom:calc(9px + var(--safe));width:calc(100vw - 18px);padding:7px;border-radius:19px}.states{gap:3px}.state{padding:8px 5px}.state b{font-size:9px}.state small{display:none}.state .num{font-size:7px}
+  .scrub{padding-top:1px}.scrub span{font-size:6px}
+  .detail{left:10px;right:10px;top:auto;bottom:154px;transform:none;width:auto;border-radius:18px}
+  .hotspot b{display:none}.hotspot{padding-right:6px}
+  .note{display:none}
+}
+@media(max-width:420px){.copy h1{font-size:33px}.copy p{display:none}.mode-label{top:64px}.mode-label strong{font-size:15px}.state b{font-size:8px}}
+@media(prefers-reduced-motion:reduce){*{transition:none!important;animation:none!important}}
+</style>
+</head>
+<body>
+<div id="app">
+  <div id="stage" aria-label="Interaktive 3D-Baugruppe"></div>
+
+  <header class="topbar">
+    <div class="brand"><span class="brand-mark"></span><span>WERKFORM<small>ENGINEERING · FABRICATION · ASSEMBLY</small></span></div>
+    <nav class="nav"><a href="#">Leistungen</a><a href="#">Einblicke</a><a href="#">Anfrage</a><button class="cta">Projekt anfragen ↗</button></nav>
+  </header>
+
+  <section class="copy">
+    <div class="kicker">Von der Zeichnung zum Bauteil</div>
+    <h1>Technik,<br>die man versteht.</h1>
+    <p>Interaktive 3D-Darstellung einer Baugruppe – vom technischen Entwurf über die Fertigung bis zur zerlegten Exploded View.</p>
+    <div class="specs">
+      <div class="spec"><small>Werkstoff</small><b>Edelstahl / Aluminium</b></div>
+      <div class="spec"><small>Daten</small><b>STEP · DXF · PDF</b></div>
+      <div class="spec"><small>Losgröße</small><b>1–500</b></div>
+    </div>
+  </section>
+
+  <div class="mode-label"><span class="big">Aktueller Zustand</span><strong id="modeTitle">Zeichnung</strong></div>
+  <div class="note">ziehen zum Drehen · Pinch / Mausrad zum Zoomen</div>
+
+  <div class="hotspots" id="hotspots"></div>
+  <aside class="detail" id="detail">
+    <div class="detail-head"><div><div class="tag">Technisches Detail</div><h3 id="detailTitle"></h3></div><button class="close" id="close">×</button></div>
+    <p id="detailText"></p>
+    <div class="facts" id="facts"></div>
+  </aside>
+
+  <div class="tools">
+    <button class="tool" id="auto">⟳ Auto-Rotation</button>
+    <button class="tool" id="reset">⌂ Ansicht</button>
+  </div>
+
+  <section class="statebar">
+    <div class="states">
+      <button class="state active" data-state="0"><span class="num">01</span><b>Zeichnung</b><small>CAD / Kontur</small></button>
+      <button class="state" data-state="1"><span class="num">02</span><b>Fertigung</b><small>Einzelteile</small></button>
+      <button class="state" data-state="2"><span class="num">03</span><b>Bauteil</b><small>Montierte Baugruppe</small></button>
+      <button class="state" data-state="3"><span class="num">04</span><b>Exploded View</b><small>Aufbau verstehen</small></button>
+    </div>
+    <div class="scrub"><span>CAD</span><input id="scrub" type="range" min="0" max="100" value="0"><span>Exploded</span></div>
+  </section>
+
+  <div class="loading" id="loading"><div><strong>WERKFORM</strong><small>Technische 3D-Szene wird geladen …</small></div></div>
+</div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+<script>
+(()=>{
+const T=THREE,$=s=>document.querySelector(s),stage=$("#stage"),loading=$("#loading");
+if(!T){loading.innerHTML="<div><strong>3D konnte nicht geladen werden.</strong><small>Internetverbindung erforderlich.</small></div>";return}
+const isMobile=matchMedia("(max-width:780px)").matches||/Android|iPhone|iPad|iPod/i.test(navigator.userAgent);
+const reduced=matchMedia("(prefers-reduced-motion:reduce)").matches;
+
+const scene=new T.Scene();scene.fog=new T.FogExp2(0x0d1112,.035);
+const camera=new T.PerspectiveCamera(isMobile?48:39,innerWidth/innerHeight,.1,100);
+const renderer=new T.WebGLRenderer({antialias:true,alpha:true,powerPreference:"high-performance"});
+renderer.setSize(innerWidth,innerHeight);renderer.setPixelRatio(Math.min(devicePixelRatio,isMobile?1.25:1.6));
+renderer.outputEncoding=T.sRGBEncoding;renderer.toneMapping=T.ACESFilmicToneMapping;renderer.toneMappingExposure=1.0;renderer.shadowMap.enabled=true;renderer.shadowMap.type=T.PCFSoftShadowMap;stage.appendChild(renderer.domElement);
+
+const hemi=new T.HemisphereLight(0xe7eee8,0x303631,1.25);scene.add(hemi);
+const key=new T.DirectionalLight(0xf2f6e6,2.6);key.position.set(-6,8,7);key.castShadow=true;key.shadow.mapSize.set(isMobile?1024:1536,isMobile?1024:1536);scene.add(key);
+const rim=new T.DirectionalLight(0xbaf0ff,1.25);rim.position.set(7,4,-5);scene.add(rim);
+const fill=new T.PointLight(0xc9ff63,.7,14);fill.position.set(2,5,4);scene.add(fill);
+
+const matMetal=new T.MeshStandardMaterial({color:0xb8bec1,metalness:.93,roughness:.24});
+const matMetalDark=new T.MeshStandardMaterial({color:0x555b5d,metalness:.88,roughness:.32});
+const matBolt=new T.MeshStandardMaterial({color:0x888f92,metalness:.96,roughness:.2});
+const matCAD=new T.LineBasicMaterial({color:0xd9e6da,transparent:true,opacity:.78});
+const matGreen=new T.MeshStandardMaterial({color:0xc9ff63,metalness:.18,roughness:.42});
+
+const root=new T.Group();scene.add(root);
+
+function roundedBox(w,h,d,r=.08){
+  // lightweight beveled box approximation
+  const g=new T.BoxGeometry(w,h,d,2,2,2);
+  return g;
+}
+function mesh(geo,mat,pos){const m=new T.Mesh(geo,mat);m.position.copy(pos||new T.Vector3());m.castShadow=m.receiveShadow=true;return m}
+
+const base=mesh(roundedBox(5.4,.42,3.5),matMetal,new T.Vector3(0,0,0));root.add(base);
+const upright=mesh(roundedBox(.42,4.3,3.5),matMetal,new T.Vector3(-2.49,2.15,0));root.add(upright);
+const gussetL=mesh(new T.BufferGeometry(),matMetalDark); // replaced by triangular prism below
+function triangularPrism(width,height,depth){
+  const shape=new T.Shape();shape.moveTo(0,0);shape.lineTo(width,0);shape.lineTo(0,height);shape.closePath();
+  const g=new T.ExtrudeGeometry(shape,{depth:depth,bevelEnabled:false});g.center();return g
+}
+const g1=mesh(triangularPrism(1.5,1.5,.34),matMetalDark,new T.Vector3(-1.78,.85,-1.25));g1.rotation.y=Math.PI/2;root.add(g1);
+const g2=g1.clone();g2.position.z=1.25;root.add(g2);
+
+const components=[base,upright,g1,g2];
+components.forEach((m,i)=>{m.userData.home=m.position.clone();m.userData.index=i});
+
+const bolts=[];
+function addBolt(x,y,z,rotX=0){
+  const g=new T.Group();
+  const shaft=mesh(new T.CylinderGeometry(.17,.17,.76,20),matBolt);shaft.rotation.z=Math.PI/2;g.add(shaft);
+  const head=mesh(new T.CylinderGeometry(.31,.31,.18,6),matBolt,new T.Vector3(.45,0,0));head.rotation.z=Math.PI/2;g.add(head);
+  const nut=mesh(new T.CylinderGeometry(.28,.28,.18,6),matBolt,new T.Vector3(-.45,0,0));nut.rotation.z=Math.PI/2;g.add(nut);
+  g.position.set(x,y,z);g.rotation.x=rotX;g.userData.home=g.position.clone();root.add(g);bolts.push(g);return g
+}
+addBolt(-2.48,1.2,-.9);addBolt(-2.48,3.0,-.9);addBolt(-2.48,1.2,.9);addBolt(-2.48,3.0,.9);
+addBolt(-.8,.26,-1.1);addBolt(1.25,.26,-1.1);addBolt(-.8,.26,1.1);addBolt(1.25,.26,1.1);
+
+const floor=new T.Mesh(new T.CircleGeometry(7.4,64),new T.MeshStandardMaterial({color:0x15191a,roughness:.96}));
+floor.rotation.x=-Math.PI/2;floor.position.y=-.38;floor.receiveShadow=true;scene.add(floor);
+const grid=new T.GridHelper(18,18,0x334038,0x242b28);grid.position.y=-.365;grid.material.transparent=true;grid.material.opacity=.25;scene.add(grid);
+
+// CAD edge clones.
+const cadGroup=new T.Group();scene.add(cadGroup);
+function edgeOf(m){const e=new T.LineSegments(new T.EdgesGeometry(m.geometry),matCAD.clone());e.position.copy(m.position);e.rotation.copy(m.rotation);e.scale.copy(m.scale);cadGroup.add(e);return e}
+const cadEdges=components.map(edgeOf);
+bolts.forEach(b=>{
+  b.children.forEach(ch=>{const e=new T.LineSegments(new T.EdgesGeometry(ch.geometry),matCAD.clone());e.position.copy(ch.position);e.rotation.copy(ch.rotation);const wrap=new T.Group();wrap.position.copy(b.position);wrap.add(e);cadGroup.add(wrap)})
+});
+
+// dimension lines
+const dim=new T.Group();scene.add(dim);
+function line(a,b){const g=new T.BufferGeometry().setFromPoints([a,b]);const l=new T.Line(g,new T.LineBasicMaterial({color:0xc9ff63,transparent:true,opacity:.65}));dim.add(l)}
+line(new T.Vector3(-2.7,-.1,2.2),new T.Vector3(2.7,-.1,2.2));
+line(new T.Vector3(-3.0,0,-2.0),new T.Vector3(-3.0,4.4,-2.0));
+
+// hotspot defs
+const defs={
+ material:{label:"Werkstoff",anchor:new T.Vector3(.9,.65,-1.7),text:"Die PBR-Materialdarstellung simuliert gebürstetes Metall mit kontrollierter Roughness und Reflexion.",facts:["Metalness 0.93","Roughness 0.24","PBR"]},
+ gusset:{label:"Verstärkung",anchor:new T.Vector3(-1.7,1.15,-1.25),text:"Die seitlichen Gussets versteifen die 90°-Verbindung und werden in der Exploded View separat sichtbar.",facts:["Gusset","Laserschnitt","Schweißbaugruppe"]},
+ bolts:{label:"Verschraubung",anchor:new T.Vector3(-2.55,2.3,.95),text:"Die Verbindungselemente werden als eigene Komponenten modelliert und können separat auseinandergefahren werden.",facts:["M6","separate Nodes","Exploded-ready"]},
+ base:{label:"Grundplatte",anchor:new T.Vector3(.6,.4,1.5),text:"Die Grundplatte dient als Bezug für Maßhaltigkeit, Bohrbild und Montageposition.",facts:["5.4 × 3.5","Bohrbild","Bezugskante"]}
+};
+const layer=$("#hotspots");Object.entries(defs).forEach(([k,d])=>{const b=document.createElement("button");b.className="hotspot hidden";b.dataset.key=k;b.innerHTML=`<i>+</i><b>${d.label}</b>`;b.onclick=()=>openDetail(k);layer.appendChild(b);d.el=b});
+function openDetail(k){const d=defs[k];$("#detailTitle").textContent=d.label;$("#detailText").textContent=d.text;$("#facts").innerHTML=d.facts.map(x=>`<span>${x}</span>`).join("");$("#detail").classList.add("open")}
+$("#close").onclick=()=>$("#detail").classList.remove("open");
+
+let p=0,tp=0,auto=false;
+const labels=["Zeichnung","Fertigung","Bauteil","Exploded View"],states=[...document.querySelectorAll(".state")],scrub=$("#scrub");
+function setP(v,im=false){tp=Math.max(0,Math.min(1,v));scrub.value=Math.round(tp*100);if(im)p=tp;const idx=tp<.2?0:tp<.5?1:tp<.8?2:3;states.forEach((s,i)=>s.classList.toggle("active",i===idx));$("#modeTitle").textContent=labels[idx]}
+states.forEach((s,i)=>s.onclick=()=>{auto=false;$("#auto").classList.remove("active");setP([0,.35,.68,1][i])});
+scrub.oninput=e=>{auto=false;setP(+e.target.value/100,true)};
+
+function ss(a,b,x){x=Math.max(0,Math.min(1,(x-a)/(b-a)));return x*x*(3-2*x)}
+function applyState(){
+  p+=(tp-p)*(reduced?.8:.08);
+  const solid=ss(.26,.58,p),assembled=ss(.50,.72,p),explode=ss(.72,1,p);
+  components.forEach((m,i)=>{
+    m.material.transparent=true;m.material.opacity=.08+.92*solid;m.visible=p>.12;
+    const h=m.userData.home;
+    let e=new T.Vector3();
+    if(i===0)e.set(0,-1.15,0);
+    if(i===1)e.set(-2.8,1.0,0);
+    if(i===2)e.set(-1.1,.2,-2.2);
+    if(i===3)e.set(-1.1,.2,2.2);
+    m.position.copy(h).lerp(h.clone().add(e),explode)
+  });
+  bolts.forEach((b,i)=>{
+    b.visible=p>.30;
+    const h=b.userData.home;
+    const dir=i<4?new T.Vector3(-2.0,(i%2? .35:-.15),0):new T.Vector3((i%2?1:-1)*.35,-1.6,(i<6?-1:1)*.35);
+    b.position.copy(h).lerp(h.clone().add(dir),explode);
+    b.children.forEach(ch=>{if(ch.material){ch.material.transparent=true;ch.material.opacity=.15+.85*solid}})
+  });
+  cadGroup.visible=p<.52;dim.visible=p<.42;cadGroup.children.forEach(e=>{if(e.material)e.material.opacity=.75*(1-ss(.30,.52,p))});
+  dim.children.forEach(e=>e.material.opacity=.65*(1-ss(.25,.46,p)));
+  grid.material.opacity=.22*(1-ss(.52,.80,p));
+
+  Object.entries(defs).forEach(([k,d])=>{
+    const threshold=k==="gusset"?.52:.60;
+    d.el.classList.toggle("hidden",p<threshold)
+  })
+}
+
+const cam0={yaw:-.60,pitch:.28,dist:isMobile?13.8:12.3,target:new T.Vector3(-.1,1.4,0)};
+let cam={yaw:cam0.yaw,pitch:cam0.pitch,dist:cam0.dist,target:cam0.target.clone()},des={yaw:cam0.yaw,pitch:cam0.pitch,dist:cam0.dist,target:cam0.target.clone()};
+function updateCam(){cam.yaw+=(des.yaw-cam.yaw)*.08;cam.pitch+=(des.pitch-cam.pitch)*.08;cam.dist+=(des.dist-cam.dist)*.08;cam.target.lerp(des.target,.08);const cp=Math.cos(cam.pitch);camera.position.set(cam.target.x+Math.sin(cam.yaw)*cp*cam.dist,cam.target.y+Math.sin(cam.pitch)*cam.dist,cam.target.z+Math.cos(cam.yaw)*cp*cam.dist);camera.lookAt(cam.target)}
+const pointers=new Map();let pinch=null;
+stage.onpointerdown=e=>{pointers.set(e.pointerId,{x:e.clientX,y:e.clientY});stage.setPointerCapture(e.pointerId);stage.classList.add("dragging");auto=false;$("#auto").classList.remove("active")};
+stage.onpointermove=e=>{if(!pointers.has(e.pointerId))return;const old=pointers.get(e.pointerId);pointers.set(e.pointerId,{x:e.clientX,y:e.clientY});const a=[...pointers.values()];if(a.length===1){des.yaw-=(e.clientX-old.x)*.006;des.pitch+=(e.clientY-old.y)*.004;des.pitch=Math.max(.08,Math.min(.65,des.pitch))}else if(a.length===2){const d=Math.hypot(a[0].x-a[1].x,a[0].y-a[1].y);if(pinch){des.dist*=pinch/d;des.dist=Math.max(8,Math.min(20,des.dist))}pinch=d}};
+function end(e){pointers.delete(e.pointerId);if(pointers.size<2)pinch=null;if(!pointers.size)stage.classList.remove("dragging")}stage.onpointerup=end;stage.onpointercancel=end;
+stage.addEventListener("wheel",e=>{e.preventDefault();des.dist*=1+Math.sign(e.deltaY)*.055;des.dist=Math.max(8,Math.min(20,des.dist))},{passive:false});
+stage.oncontextmenu=e=>e.preventDefault();
+
+$("#reset").onclick=()=>{des.yaw=cam0.yaw;des.pitch=cam0.pitch;des.dist=cam0.dist;des.target.copy(cam0.target)};
+$("#auto").onclick=function(){auto=!auto;this.classList.toggle("active",auto)};
+let t0=performance.now();
+function hotspotPos(){Object.values(defs).forEach(d=>{const q=d.anchor.clone();root.localToWorld(q);q.project(camera);const x=(q.x*.5+.5)*innerWidth,y=(-q.y*.5+.5)*innerHeight;d.el.style.left=x+"px";d.el.style.top=y+"px";d.el.style.visibility=(q.z>1||x<0||x>innerWidth||y<0||y>innerHeight)?"hidden":"visible"})}
+function loop(now){const dt=Math.min(.04,(now-t0)/1000);t0=now;if(auto)des.yaw-=dt*.22;applyState();updateCam();hotspotPos();renderer.render(scene,camera);requestAnimationFrame(loop)}requestAnimationFrame(loop);
+addEventListener("resize",()=>{camera.aspect=innerWidth/innerHeight;camera.updateProjectionMatrix();renderer.setSize(innerWidth,innerHeight);renderer.setPixelRatio(Math.min(devicePixelRatio,isMobile?1.25:1.6))});
+setP(0,true);setTimeout(()=>loading.classList.add("done"),350);
+})();
+</script>
+</body>
+</html>

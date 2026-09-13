@@ -4,20 +4,43 @@
 
 ## Live-Demos
 
-Die vollständige Präsentation läuft über GitHub Pages. Alle Links öffnen eigenständige, mehrseitige Websites und können direkt im Browser getestet werden.
+Die vollständige Präsentation läuft über GitHub Pages. Jedes Branchenkonzept besitzt eine vollständige **Core-Website** und zusätzlich eine separat aufrufbare **Signature-Homepage**. Die kompakte Blockdarstellung bleibt auch auf Mobilgeräten gut lesbar.
 
-| Bereich | Startseite | Weitere Seiten |
-| --- | --- | --- |
-| Anbieterauftritt | [Webdesign-Angebot ansehen](https://emfau88.github.io/shop/) | [Konzeptübersicht](https://emfau88.github.io/shop/konzepte/) · [Anfrage](https://emfau88.github.io/shop/#anfrage) |
-| Farbform · Malerbetrieb | [Homepage ansehen](https://emfau88.github.io/shop/konzept/maler/) | [Leistungen](https://emfau88.github.io/shop/konzept/maler/leistungen/) · [Gestaltung](https://emfau88.github.io/shop/konzept/maler/gestaltung/) · [Kontakt](https://emfau88.github.io/shop/konzept/maler/kontakt/) |
-| Werkform · Metallverarbeitung | [Homepage ansehen](https://emfau88.github.io/shop/konzept/metallbau/) | [Leistungen](https://emfau88.github.io/shop/konzept/metallbau/leistungen/) · [Einblicke](https://emfau88.github.io/shop/konzept/metallbau/einblicke/) · [Anfrage](https://emfau88.github.io/shop/konzept/metallbau/anfrage/) |
-| Grünraum · Garten- und Landschaftsbau | [Homepage ansehen](https://emfau88.github.io/shop/konzept/galabau/) | [Leistungen](https://emfau88.github.io/shop/konzept/galabau/leistungen/) · [Gartenideen](https://emfau88.github.io/shop/konzept/galabau/gartenideen/) · [Anfrage](https://emfau88.github.io/shop/konzept/galabau/anfrage/) |
-| AUFSCHLAG · Tennis- und Badmintonverein | [Homepage ansehen](https://emfau88.github.io/shop/konzept/sportverein/) | [Training](https://emfau88.github.io/shop/konzept/sportverein/training/) · [Verein](https://emfau88.github.io/shop/konzept/sportverein/verein/) · [Probetraining](https://emfau88.github.io/shop/konzept/sportverein/probetraining/) |
-| LINDENWIRT · Gaststätte und Restaurant | [Homepage ansehen](https://emfau88.github.io/shop/konzept/gastronomie/) | [Speisekarte](https://emfau88.github.io/shop/konzept/gastronomie/speisekarte/) · [Unser Haus](https://emfau88.github.io/shop/konzept/gastronomie/haus/) · [Feiern](https://emfau88.github.io/shop/konzept/gastronomie/feiern/) · [Reservieren](https://emfau88.github.io/shop/konzept/gastronomie/reservieren/) |
+**Anbieterauftritt:** [Webdesign-Angebot](https://emfau88.github.io/shop/) · [Alle Konzepte](https://emfau88.github.io/shop/konzepte/) · [Anfrage](https://emfau88.github.io/shop/#anfrage)
+
+### FARBFORM · Malerbetrieb
+
+- [Core-Website](https://emfau88.github.io/shop/konzept/maler/)
+- [Signature-Version](https://emfau88.github.io/shop/konzept/maler/signature/) · technisches Fundament, Ausbau in Bulk 3
+- Weitere Seiten: [Leistungen](https://emfau88.github.io/shop/konzept/maler/leistungen/) · [Gestaltung](https://emfau88.github.io/shop/konzept/maler/gestaltung/) · [Kontakt](https://emfau88.github.io/shop/konzept/maler/kontakt/)
+
+### WERKFORM · Metallverarbeitung
+
+- [Core-Website](https://emfau88.github.io/shop/konzept/metallbau/)
+- [Signature-3D-Version](https://emfau88.github.io/shop/konzept/metallbau/signature/) · vollständig interaktive Baugruppe und Exploded View
+- Weitere Seiten: [Leistungen](https://emfau88.github.io/shop/konzept/metallbau/leistungen/) · [Einblicke](https://emfau88.github.io/shop/konzept/metallbau/einblicke/) · [Anfrage](https://emfau88.github.io/shop/konzept/metallbau/anfrage/)
+
+### GRÜNRAUM · Garten- und Landschaftsbau
+
+- [Core-Website](https://emfau88.github.io/shop/konzept/galabau/)
+- [Signature-Version](https://emfau88.github.io/shop/konzept/galabau/signature/) · technisches Fundament, Ausbau in Bulk 4
+- Weitere Seiten: [Leistungen](https://emfau88.github.io/shop/konzept/galabau/leistungen/) · [Gartenideen](https://emfau88.github.io/shop/konzept/galabau/gartenideen/) · [Anfrage](https://emfau88.github.io/shop/konzept/galabau/anfrage/)
+
+### AUFSCHLAG · Tennis- und Badmintonverein
+
+- [Core-Website](https://emfau88.github.io/shop/konzept/sportverein/)
+- [Signature-Version](https://emfau88.github.io/shop/konzept/sportverein/signature/) · technisches Fundament, Ausbau in Bulk 6
+- Weitere Seiten: [Training](https://emfau88.github.io/shop/konzept/sportverein/training/) · [Verein](https://emfau88.github.io/shop/konzept/sportverein/verein/) · [Probetraining](https://emfau88.github.io/shop/konzept/sportverein/probetraining/)
+
+### LINDENWIRT · Gaststätte und Restaurant
+
+- [Core-Website](https://emfau88.github.io/shop/konzept/gastronomie/)
+- [Signature-Version](https://emfau88.github.io/shop/konzept/gastronomie/signature/) · technisches Fundament, Ausbau in Bulk 5
+- Weitere Seiten: [Speisekarte](https://emfau88.github.io/shop/konzept/gastronomie/speisekarte/) · [Unser Haus](https://emfau88.github.io/shop/konzept/gastronomie/haus/) · [Feiern](https://emfau88.github.io/shop/konzept/gastronomie/feiern/) · [Reservieren](https://emfau88.github.io/shop/konzept/gastronomie/reservieren/)
 
 Die Formulare sind bewusst als sichere Demos umgesetzt: Sie prüfen Beispieleingaben im Browser, versenden und speichern aber keine Daten. Jede Seite weist transparent auf den Konzeptstatus hin.
 
-Stand: 10. September 2026. Schritte 1–3 sind abgeschlossen. Schritt 4 umfasst inzwischen die Anbieterwebsite sowie fünf eigenständige, mehrseitige Branchenkonzepte mit insgesamt 25 Routen. Alle Varianten verwenden eigens erzeugte ImageGen-Assets und sind über feste Pfade separat aufrufbar.
+Stand: 13. September 2026. Die Anbieterwebsite, fünf mehrseitige Core-Konzepte und fünf zusätzliche Signature-Routen umfassen aktuell 30 feste Exportpfade. Das Signature-Fundament und die WERKFORM-3D-Ausarbeitung sind abgeschlossen; die vier weiteren Signature-Homepages werden nacheinander ausgebaut.
 
 - [Bestandsanalyse](docs/01-bestandsanalyse.md)
 - [Markt, Strategie und Entscheidung für die Umsetzung](docs/02-markt-und-strategie.md)
@@ -25,6 +48,8 @@ Stand: 10. September 2026. Schritte 1–3 sind abgeschlossen. Schritt 4 umfasst 
 - [Lokale Gestaltungstafel](design/gestaltungstafel.html)
 - [Drei ImageGen-Briefings](design/asset-plan.md)
 - [Gestaltungswerte](design/tokens.css)
+- [Signature-Experience-Roadmap](docs/14-signature-experience-roadmap.md)
+- [Signature-Referenzen und Art-Direction-Briefings](docs/design/signature-reference/README.md)
 
 Entscheidung: ein klar abgegrenztes Website-Angebot für inhabergeführte lokale Handwerksbetriebe, eine kompakte Anbieterwebsite und eine vollständig umgesetzte, transparent fiktive Konzeptreferenz. Kleinanzeigen wird als erster Gesprächskanal priorisiert; eBay wird ergänzend mit einem konkreten Festpreisangebot getestet. Die Präsentation bleibt auch für Empfehlungen und spätere direkte Akquise verwendbar.
 
@@ -59,9 +84,14 @@ Separat aufrufbare Pfade:
 - `/` — eigener Anbieterauftritt
 - `/konzepte/` — Übersicht aller Arbeitsbeispiele
 - `/konzept/maler/` — Variante 01 „Farbform“ mit vier Inhaltsseiten
+- `/konzept/maler/signature/` — zusätzliche Signature-Homepage
 - `/konzept/metallbau/` — Variante 02 „Werkform“ mit vier Inhaltsseiten
+- `/konzept/metallbau/signature/` — interaktive 3D-Signature-Homepage
 - `/konzept/galabau/` — Variante 03 „Grünraum“ mit vier Inhaltsseiten
+- `/konzept/galabau/signature/` — zusätzliche Signature-Homepage
 - `/konzept/sportverein/` — Variante 04 „AUFSCHLAG“ mit vier Inhaltsseiten
+- `/konzept/sportverein/signature/` — zusätzliche Signature-Homepage
 - `/konzept/gastronomie/` — Variante 05 „LINDENWIRT“ mit fünf Inhaltsseiten
+- `/konzept/gastronomie/signature/` — zusätzliche Signature-Homepage
 
 Künftige Varianten erhalten jeweils einen eigenen Pfad unter `/konzept/<name>/` und einen Eintrag in der Konzeptübersicht. So werden nicht mehrere lose Projekte gepflegt, sondern eine gemeinsame, erweiterbare Präsentation mit eigenständigen Homepages.

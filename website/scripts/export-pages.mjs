@@ -19,22 +19,27 @@ const routes = [
   '/impressum/',
   '/datenschutz/',
   '/konzept/maler/',
+  '/konzept/maler/signature/',
   '/konzept/maler/leistungen/',
   '/konzept/maler/gestaltung/',
   '/konzept/maler/kontakt/',
   '/konzept/metallbau/',
+  '/konzept/metallbau/signature/',
   '/konzept/metallbau/leistungen/',
   '/konzept/metallbau/einblicke/',
   '/konzept/metallbau/anfrage/',
   '/konzept/galabau/',
+  '/konzept/galabau/signature/',
   '/konzept/galabau/leistungen/',
   '/konzept/galabau/gartenideen/',
   '/konzept/galabau/anfrage/',
   '/konzept/sportverein/',
+  '/konzept/sportverein/signature/',
   '/konzept/sportverein/training/',
   '/konzept/sportverein/verein/',
   '/konzept/sportverein/probetraining/',
   '/konzept/gastronomie/',
+  '/konzept/gastronomie/signature/',
   '/konzept/gastronomie/speisekarte/',
   '/konzept/gastronomie/haus/',
   '/konzept/gastronomie/feiern/',
@@ -44,6 +49,12 @@ const routes = [
 function transformHtml(html) {
   const metalViewerScript = html.includes('class="metal-part-viewer"')
     ? `<script type="module" src="${pageBase}/metal-viewer-runtime.js"></script>`
+    : '';
+  const signatureScript = html.includes('data-signature-page')
+    ? `<script type="module" src="${pageBase}/signature-runtime.js"></script>`
+    : '';
+  const werkformSignatureScript = html.includes('data-signature-brand="werkform"')
+    ? `<script type="module" src="${pageBase}/werkform-signature-runtime.js"></script>`
     : '';
   return html
     .replace(/<script\b[^>]*>[\s\S]*?<\/script>/gi, '')
@@ -62,7 +73,7 @@ function transformHtml(html) {
     )
     .replace(
       '</body>',
-      `<script src="${pageBase}/pages-runtime.js" defer></script>${metalViewerScript}</body>`,
+      `<script src="${pageBase}/pages-runtime.js" defer></script>${metalViewerScript}${signatureScript}${werkformSignatureScript}</body>`,
     );
 }
 
@@ -74,6 +85,40 @@ async function buildMetalViewerRuntime() {
         entry: path.join(projectRoot, 'scripts', 'pages-metal-viewer-entry.ts'),
         formats: ['es'],
         fileName: () => 'metal-viewer-runtime.js',
+      },
+      outDir: clientDirectory,
+    },
+    configFile: false,
+    logLevel: 'warn',
+    root: projectRoot,
+  });
+}
+
+async function buildSignatureRuntime() {
+  await build({
+    build: {
+      emptyOutDir: false,
+      lib: {
+        entry: path.join(projectRoot, 'scripts', 'pages-signature-entry.ts'),
+        formats: ['es'],
+        fileName: () => 'signature-runtime.js',
+      },
+      outDir: clientDirectory,
+    },
+    configFile: false,
+    logLevel: 'warn',
+    root: projectRoot,
+  });
+}
+
+async function buildWerkformSignatureRuntime() {
+  await build({
+    build: {
+      emptyOutDir: false,
+      lib: {
+        entry: path.join(projectRoot, 'scripts', 'pages-werkform-signature-entry.ts'),
+        formats: ['es'],
+        fileName: () => 'werkform-signature-runtime.js',
       },
       outDir: clientDirectory,
     },
@@ -141,6 +186,8 @@ server.stderr.on('data', (chunk) => {
 try {
   await waitForServer(server);
   await buildMetalViewerRuntime();
+  await buildSignatureRuntime();
+  await buildWerkformSignatureRuntime();
   await rm(outputDirectory, { recursive: true, force: true });
   await mkdir(outputDirectory, { recursive: true });
   await cp(clientDirectory, outputDirectory, { recursive: true });

@@ -1,0 +1,23 @@
+{
+  "brand": "WERKFORM",
+  "assets": [
+    {
+      "file": "werkform-assembly.glb",
+      "role": "production",
+      "source": "design/signature/werkform/build_werkform_assembly.py",
+      "author": "Original project asset",
+      "license": "Repository project asset; no third-party model or texture",
+      "modifications": "Procedurally built in Blender 5.2 with named structural parts, bevels, boolean bores and PBR materials",
+      "generatedBy": "Blender 5.2 LTS"
+    },
+    {
+      "file": "werkform-assembly-fallback.webp",
+      "role": "fallback",
+      "source": "Same original Blender assembly and camera setup",
+      "author": "Original project asset",
+      "license": "Repository project asset; no third-party imagery",
+      "modifications": "EEVEE studio render, WebP quality 88",
+      "generatedBy": "Blender 5.2 LTS"
+    }
+  ]
+}

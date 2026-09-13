@@ -1,0 +1,27 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Signature asset manifest",
+  "type": "object",
+  "required": ["brand", "assets"],
+  "properties": {
+    "brand": { "type": "string" },
+    "assets": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["file", "role", "source", "author", "license", "modifications"],
+        "properties": {
+          "file": { "type": "string" },
+          "role": { "enum": ["production", "fallback", "reference"] },
+          "source": { "type": "string" },
+          "author": { "type": "string" },
+          "license": { "type": "string" },
+          "modifications": { "type": "string" },
+          "generatedBy": { "type": "string" },
+          "sha256": { "type": "string" }
+        }
+      }
+    }
+  }
+}
+

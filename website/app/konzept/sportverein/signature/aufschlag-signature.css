@@ -1,0 +1,4 @@
+.aufschlag-signature { --signature-accent: #a8c09a; --signature-ink: #f1f3ec; }
+.aufschlag-signature .signature-fallback img { object-position: 64% center; filter: saturate(.7) brightness(.63) contrast(1.08); }
+.aufschlag-signature .signature-scrim { background: linear-gradient(90deg,rgba(8,27,23,.97),rgba(8,27,23,.68) 39%,rgba(8,27,23,.08) 72%),linear-gradient(0deg,rgba(8,22,18,.76),transparent 48%); }
+

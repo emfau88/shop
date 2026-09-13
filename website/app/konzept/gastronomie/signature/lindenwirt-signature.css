@@ -1,0 +1,4 @@
+.lindenwirt-signature { --signature-accent: #d6b37c; --signature-ink: #f7f0e4; }
+.lindenwirt-signature .signature-fallback img { object-position: 60% center; filter: saturate(.78) brightness(.6) sepia(.12); }
+.lindenwirt-signature .signature-scrim { background: linear-gradient(90deg,rgba(26,15,8,.97),rgba(26,15,8,.69) 39%,rgba(26,15,8,.07) 72%),linear-gradient(0deg,rgba(23,12,6,.78),transparent 50%); }
+
