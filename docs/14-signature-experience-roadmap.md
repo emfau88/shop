@@ -252,6 +252,25 @@ Zeichnung → Fertigung → Bauteil → Exploded View
 - [x] GLB, Runtime und Environment bleiben innerhalb der bestätigten Budgets.
 - [x] Statischer GitHub-Pages-Export funktioniert interaktiv.
 
+## Ist-Stand nach der ersten Abnahme
+
+**Veröffentlicht:** Commit `5fcad63` · [WERKFORM Signature live](https://emfau88.github.io/shop/konzept/metallbau/signature/)
+
+Die funktionale Signature-Ausarbeitung ist abgeschlossen. Im direkten Vergleich mit der visuellen Referenz liegt die aktuelle Annäherung bei ungefähr **70 %**: Struktur, Typografie, Zustandsrail, Exploded View, Hotspots und Interaktionsumfang sind vorhanden; die Echtzeitfunktion übertrifft das statische Mockup. Das letzte Drittel betrifft vor allem fotorealistisches Finish und Kompositionsdetails, nicht die technische Grundlage.
+
+### Für das finale Premium-Finishing vormerken
+
+- [ ] Hybriden Werkstatt-/Studiohintergrund mit glaubwürdiger Tiefenunschärfe und Fensterlicht ergänzen.
+- [ ] Metalloberflächen um gebürstete Mikrostruktur, subtile Roughness-Variation und feinere Kontaktreflexe erweitern.
+- [ ] Schraubengewinde, Muttern, Unterlegscheiben und Kanten im Nahbereich detaillierter modellieren.
+- [ ] Kameraframing so nachziehen, dass die komplette Grundplatte bei 1440 × 1000 etwas ruhiger im sichtbaren Hero sitzt.
+- [ ] Hotspot-Kollisionen bei ungünstigen Drehwinkeln automatisch vermeiden und Führungslinien gezielter ausrichten.
+- [ ] Zustandsrail um konsistente technische Icons ergänzen.
+- [ ] Media-Teaser mit echter Vorschaugrafik statt reiner Infokarte ausarbeiten.
+- [ ] Optional eine zurückhaltende WERKFORM-Gravur und den handschriftlichen Akzent als eigenständige DOM-/SVG-Details ergänzen.
+
+Diese Punkte werden nicht durch einen Modellwechsel gelöst. Sie bauen auf dem vorhandenen Original-GLB, der routenspezifischen Runtime und dem bestehenden semantischen DOM auf und gehören in die visuelle Härtung vor Bulk 9.
+
 ---
 
 # Bulk 3 · FARBFORM Signature

@@ -41,3 +41,5 @@ Blenders Export meldete MeshOptimizer-Verfügbarkeit. Wegen der bereits sehr kle
 ## Qualitätseinordnung
 
 Gegenüber dem Core-Viewer ist die Signature-Version stärker inszeniert, zeigt eine komplexere und zerlegbare Baugruppe und erklärt reale Bauteilbeziehungen. Der Preis dafür ist ein zusätzlicher Three.js-Bundle von rund 763 KB – ausschließlich auf dieser einen Signature-Route. Ohne WebGL bleibt der 27-KB-Studio-Fallback sichtbar und die gesamte semantische Information bedienbar.
+
+Im direkten Mockupvergleich erreicht der Stand ungefähr 70 % visuelle Nähe. Layoutsprache, Typografie, dunkle Premiumwelt und Interaktionsmodell sind klar getroffen. Noch sichtbar schwächer als die Referenz sind Werkstattatmosphäre, Tiefenunschärfe, Materialmikrostruktur, Schraubendetails, finale Objektkadrierung und die kollisionsfreie Führung aller Hotspot-Labels. Diese Restpunkte sind im Roadmap-Abschnitt „Für das finale Premium-Finishing vormerken“ als offene Checkboxen festgehalten.
