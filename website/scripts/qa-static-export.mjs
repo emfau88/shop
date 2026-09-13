@@ -11,6 +11,17 @@ const pageBase = '/shop';
 const expectedRouteCount = 25;
 const errors = [];
 const htmlFiles = [];
+const metalViewerRuntime = path.join(
+  outputDirectory,
+  'metal-viewer-runtime.js',
+);
+const metalViewerModel = path.join(
+  outputDirectory,
+  'assets',
+  'metal',
+  'mech-foot',
+  'werkform-holder.glb',
+);
 
 async function collectFiles(directory, extension, target) {
   const entries = await readdir(directory, { withFileTypes: true });
@@ -95,6 +106,23 @@ if (htmlFiles.length !== expectedRouteCount) {
   errors.push(
     `expected ${expectedRouteCount} HTML routes, found ${htmlFiles.length}`,
   );
+}
+
+const metalPage = path.join(
+  outputDirectory,
+  'konzept',
+  'metallbau',
+  'index.html',
+);
+try {
+  const metalHtml = await readFile(metalPage, 'utf8');
+  if (!metalHtml.includes(`${pageBase}/metal-viewer-runtime.js`)) {
+    errors.push('metallbau: missing static 3D viewer runtime');
+  }
+  await access(metalViewerRuntime);
+  await access(metalViewerModel);
+} catch {
+  errors.push('metallbau: missing static 3D runtime or GLB model');
 }
 
 if (errors.length) {

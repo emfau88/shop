@@ -17,39 +17,12 @@ export const metadata = {
 export default function Page() {
   return (
     <MetalShell>
-      <section className="metal-hero-industrial">
-        <div className="metal-wrap metal-hero-industrial-head">
-          <div className="metal-hero-copy">
-            <p className="metal-kicker">Präzision entlang der Fertigung</p>
-            <h1>Von der Zeichnung zum Bauteil.</h1>
-            <p className="metal-lead">
-              Präzise Bauteile, belastbare Baugruppen und Sonderkonstruktionen:
-              abgestimmt auf Daten, Einsatz und den nächsten Arbeitsschritt.
-            </p>
-            <div className="metal-actions">
-              <MetalLink href={metalBase + 'anfrage/'}>
-                Projekt anfragen
-              </MetalLink>
-              <MetalLink secondary href={metalBase + 'leistungen/'}>
-                Leistungen ansehen
-              </MetalLink>
-            </div>
-          </div>
-          <dl className="metal-hero-specs">
-            <div>
-              <dt>Werkstoffe</dt>
-              <dd>Stahl · Edelstahl · Aluminium</dd>
-            </div>
-            <div>
-              <dt>Projektarten</dt>
-              <dd>Einzelteile · Kleinserien · Baugruppen</dd>
-            </div>
-            <div>
-              <dt>Datengrundlage</dt>
-              <dd>STEP · DXF · PDF</dd>
-            </div>
-          </dl>
-        </div>
+      <MetalManufacturingSequence />
+
+      <section
+        className="metal-production-proof"
+        aria-label="Fertigungsumgebung"
+      >
         <div className="metal-wrap metal-hero-panorama">
           <MetalPhoto
             name="werkhalle"
@@ -60,9 +33,10 @@ export default function Page() {
         </div>
       </section>
 
-      <MetalManufacturingSequence />
-
-      <section className="metal-capabilities" aria-labelledby="capability-title">
+      <section
+        className="metal-capabilities"
+        aria-labelledby="capability-title"
+      >
         <div className="metal-wrap">
           <div className="metal-capabilities-head">
             <div>

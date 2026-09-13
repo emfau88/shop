@@ -2,6 +2,7 @@ import { spawn } from 'node:child_process';
 import { cp, mkdir, readFile, readdir, rm, writeFile } from 'node:fs/promises';
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';
+import { build } from 'vite';
 
 const projectRoot = path.resolve(
   path.dirname(fileURLToPath(import.meta.url)),
@@ -41,6 +42,9 @@ const routes = [
 ];
 
 function transformHtml(html) {
+  const metalViewerScript = html.includes('class="metal-part-viewer"')
+    ? `<script type="module" src="${pageBase}/metal-viewer-runtime.js"></script>`
+    : '';
   return html
     .replace(/<script\b[^>]*>[\s\S]*?<\/script>/gi, '')
     .replace(/<link\b(?=[^>]*(?:rel="modulepreload"|as="script"))[^>]*>/gi, '')
@@ -58,8 +62,25 @@ function transformHtml(html) {
     )
     .replace(
       '</body>',
-      `<script src="${pageBase}/pages-runtime.js" defer></script></body>`,
+      `<script src="${pageBase}/pages-runtime.js" defer></script>${metalViewerScript}</body>`,
     );
+}
+
+async function buildMetalViewerRuntime() {
+  await build({
+    build: {
+      emptyOutDir: false,
+      lib: {
+        entry: path.join(projectRoot, 'scripts', 'pages-metal-viewer-entry.ts'),
+        formats: ['es'],
+        fileName: () => 'metal-viewer-runtime.js',
+      },
+      outDir: clientDirectory,
+    },
+    configFile: false,
+    logLevel: 'warn',
+    root: projectRoot,
+  });
 }
 
 async function waitForServer(server) {
@@ -119,6 +140,7 @@ server.stderr.on('data', (chunk) => {
 
 try {
   await waitForServer(server);
+  await buildMetalViewerRuntime();
   await rm(outputDirectory, { recursive: true, force: true });
   await mkdir(outputDirectory, { recursive: true });
   await cp(clientDirectory, outputDirectory, { recursive: true });
