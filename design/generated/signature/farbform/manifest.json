@@ -1,0 +1,22 @@
+{
+  "prepared_date": "2026-09-14",
+  "generation_mode": "OpenAI built-in image_gen precise-object-edit and background-extraction, followed by deterministic OpenCV layer generation",
+  "originals_preserved": true,
+  "reference_asset": "farbform-room-reference-source.png",
+  "generated_assets": [
+    {
+      "id": "FF-CLEAN-MASTER-01",
+      "file": "farbform-room-clean-master.png",
+      "role": "Pixel-stable room master without foreground plant or wall artwork",
+      "prompt": "Remove only the large olive tree with its stone planter and the framed artwork. Reconstruct the window edge, sage mineral-plaster wall, skirting board and pale oak floor while preserving the exact crop, camera, architecture, sofa, cushions, blanket, coffee table, decor, lighting and grading."
+    },
+    {
+      "id": "FF-PLANT-CUTOUT-01",
+      "file": "farbform-plant-cutout-source.png",
+      "role": "Shared transparent olive-tree foreground layer",
+      "prompt": "Isolate only the complete tall olive tree and stone planter from the source living-room photograph on a genuinely transparent background, preserving the full silhouette, branches, leaves, trunk and planter with clean antialiased edges."
+    }
+  ],
+  "deterministic_pipeline": "design/signature/farbform/build_farbform_states.py",
+  "pipeline_notes": "All wall colours are rendered from one master. The live comparison uses one neutral base photograph plus transparent lossless wall-colour layers; plant and artwork are shared layers above the comparison and therefore cannot shift between states."
+}

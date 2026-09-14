@@ -1,8 +1,167 @@
-.farbform-signature { --signature-accent: #768a72; --signature-ink: #20231f; background: #efeee8; }
-.farbform-signature .signature-scrim { background: linear-gradient(90deg, rgba(246,244,237,.98) 0%, rgba(246,244,237,.88) 34%, rgba(246,244,237,.08) 70%); }
-.farbform-signature .signature-fallback img { object-position: 60% center; filter: saturate(.74) brightness(1.08); }
-.farbform-signature .signature-rail, .farbform-signature .signature-story { color: #20231f; border-color: rgba(32,35,31,.2); background: rgba(247,245,239,.72); }
-.farbform-signature .signature-rail button { border-color: rgba(32,35,31,.15); }
-.farbform-signature .signature-scroll span { border-color: rgba(32,35,31,.5); }
-@media (max-width:560px){.farbform-signature .signature-scrim{background:linear-gradient(0deg,rgba(246,244,237,.98) 0%,rgba(246,244,237,.72) 60%,rgba(246,244,237,.12) 100%)}}
+.signature-page.farbform-signature {
+  --signature-accent: #768a72;
+  --signature-ink: #20231f;
+  color: var(--signature-ink);
+  background: #efeee8;
+}
 
+.farbform-signature .signature-hero { min-height: 930px; background: #efeee8; }
+.farbform-signature .signature-fallback img { object-position: 62% center; filter: saturate(.74) brightness(1.08); }
+.farbform-signature .signature-scrim {
+  background:
+    linear-gradient(90deg,rgba(247,245,239,.99) 0%,rgba(247,245,239,.97) 30%,rgba(247,245,239,.78) 38%,rgba(247,245,239,.05) 57%,transparent 100%),
+    linear-gradient(0deg,rgba(239,235,226,.8),transparent 46%);
+}
+.farbform-signature .signature-copy { align-self: start; max-width: 545px; margin-top: 34px; }
+.farbform-signature .signature-copy h1 { max-width: 560px; }
+.farbform-signature .signature-intro { opacity: .86; }
+.farbform-signature .signature-header { color: #242621; }
+.farbform-signature .signature-cta { background: rgba(247,245,239,.38); }
+
+.farbform-signature .signature-rail {
+  position: absolute;
+  grid-column: auto;
+  left: clamp(28px,4.3vw,66px);
+  bottom: 360px;
+  color: #20231f;
+  border-color: rgba(32,35,31,.19);
+  background: rgba(247,245,239,.78);
+  box-shadow: 0 10px 35px rgba(65,61,53,.07);
+}
+.farbform-signature .signature-rail button { border-color: rgba(32,35,31,.14); }
+.farbform-signature .signature-rail button span { display: inline-grid; place-items: center; width: 18px; height: 18px; margin-right: 9px; vertical-align: -4px; }
+.farbform-signature .signature-rail button span svg { width: 18px; height: 18px; fill: none; stroke: currentColor; stroke-width: 1.35; stroke-linecap: round; stroke-linejoin: round; }
+
+.farbform-signature .signature-story {
+  position: absolute;
+  grid-column: auto;
+  grid-row: auto;
+  left: clamp(28px,4.3vw,66px);
+  bottom: 78px;
+  width: 430px;
+  margin: 0;
+  color: #20231f;
+  border-color: rgba(32,35,31,.18);
+  background: rgba(247,245,239,.79);
+  box-shadow: 0 16px 40px rgba(62,57,48,.08);
+}
+.farbform-signature .signature-story:has(.signature-story-media),.farbform-signature .signature-story:has(.signature-story-video) { width: 430px; }
+.farbform-signature .signature-story-media { border-color: rgba(32,35,31,.18); filter: saturate(.76) brightness(1.04); }
+.farbform-signature .signature-metrics { bottom: 18px; transform: none; }
+.farbform-signature .signature-metrics div { border-color: rgba(32,35,31,.22); }
+.farbform-signature .signature-scroll span { border-color: rgba(32,35,31,.46); }
+
+.farbform-interior { position: absolute; z-index: 1; inset: 0; pointer-events: none; }
+.farbform-image-stage {
+  position: absolute;
+  z-index: 0;
+  inset: 0;
+  overflow: hidden;
+  pointer-events: none;
+}
+.farbform-image-stage::after { content: ""; position: absolute; z-index: 4; inset: 0; pointer-events: none; background: linear-gradient(90deg,rgba(247,245,239,.91) 0%,rgba(247,245,239,.78) 25%,rgba(247,245,239,.3) 37%,transparent 49%); }
+.farbform-room,.farbform-room-after,.farbform-room-after img { position: absolute; inset: 0; width: 100%; height: 100%; }
+.farbform-room,.farbform-room-after img { object-fit: cover; object-position: center; }
+.farbform-room { transition: filter .55s ease,opacity .45s ease; }
+.farbform-room-after { overflow: hidden; transition: width .08s linear; }
+.farbform-room-after img { width: 100vw; max-width: none; }
+.farbform-decor-layer { position: absolute; z-index: 2; inset: 0; width: 100%; height: 100%; object-fit: cover; object-position: center; pointer-events: none; }
+.farbform-decor-layer--plant { filter: drop-shadow(0 13px 11px rgba(68,55,36,.12)); }
+.farbform-interior[data-light="warm"] .farbform-room,
+.farbform-interior[data-light="warm"] .farbform-room-after img,
+.farbform-interior[data-light="warm"] .farbform-decor-layer { filter: brightness(.92) saturate(.92) sepia(.15); }
+.farbform-interior[data-light="warm"] .farbform-decor-layer--plant { filter: brightness(.92) saturate(.92) sepia(.15) drop-shadow(0 13px 11px rgba(68,55,36,.12)); }
+.farbform-floor-wash { position: absolute; z-index: 3; inset: 61% 0 0; opacity: 0; pointer-events: none; mix-blend-mode: multiply; transition: opacity .45s ease,background .45s ease; }
+.farbform-interior[data-stage="floor"] .farbform-floor-wash { opacity: .22; }
+.farbform-interior[data-floor="eiche"] .farbform-floor-wash { background: linear-gradient(0deg,rgba(161,113,67,.58),rgba(161,113,67,0)); }
+.farbform-interior[data-floor="kalk"] .farbform-floor-wash { background: linear-gradient(0deg,rgba(231,222,204,.76),rgba(231,222,204,0)); mix-blend-mode: screen; }
+
+.farbform-options { position: absolute; z-index: 6; left: clamp(28px,5.8vw,88px); bottom: 242px; min-height: 76px; pointer-events: auto; }
+.farbform-swatches { display: flex; gap: 30px; }
+.farbform-swatches button { appearance: none; display: grid; justify-items: center; gap: 8px; min-width: 70px; padding: 0; border: 0; color: #262823; background: transparent; cursor: pointer; font: 11px/1.2 inherit; }
+.farbform-swatches button span { width: 49px; height: 49px; border: 1px solid rgba(31,34,30,.13); border-radius: 50%; background: #ccc; box-shadow: 0 2px 8px rgba(44,40,34,.08); transition: box-shadow .22s ease,transform .22s ease; }
+.farbform-swatches [data-color="aubergine"] span { background: #654657; }
+.farbform-swatches [data-color="salbei"] span { background: #7c8d78; }
+.farbform-swatches [data-color="mineral"] span { background: #aaa79f; }
+.farbform-swatches [data-color="sand"] span { background: #b9aa92; }
+.farbform-swatches button[aria-pressed="true"] { font-weight: 700; }
+.farbform-swatches button[aria-pressed="true"] span { box-shadow: 0 0 0 3px #f5f3ed,0 0 0 5px #354035; transform: scale(1.03); }
+.farbform-segmented { display: flex; padding: 4px; border: 1px solid rgba(32,35,31,.18); border-radius: 999px; background: rgba(247,245,239,.84); box-shadow: 0 10px 26px rgba(61,57,49,.08); }
+.farbform-segmented button { appearance: none; padding: 12px 20px; border: 0; border-radius: 999px; color: inherit; background: transparent; cursor: pointer; font: 12px/1 inherit; }
+.farbform-segmented button[aria-pressed="true"] { color: #fff; background: #71816d; }
+.farbform-signature-compare-label { position: absolute; z-index: 5; top: 142px; width: auto; padding: 7px 10px; border-radius: 999px; color: #242621; background: rgba(248,246,240,.82); backdrop-filter: blur(10px); font-size: 9px; letter-spacing: .16em; text-transform: uppercase; }
+.farbform-signature-compare-label--after { left: 21%; }
+.farbform-signature-compare-label--before { right: 8%; }
+.farbform-divider { position: absolute; z-index: 5; top: 80px; bottom: 70px; width: 1px; color: #fff; background: rgba(255,255,255,.84); pointer-events: none; }
+.farbform-divider i { position: absolute; top: 35%; left: 50%; display: grid; place-items: center; width: 48px; height: 48px; border: 1px solid #fff; border-radius: 50%; background: rgba(105,108,96,.67); box-shadow: 0 8px 24px rgba(35,32,27,.17); font: normal 16px/1 Georgia,serif; transform: translate(-50%,-50%); }
+.farbform-signature-compare-range { position: absolute; z-index: 7; inset: 80px 0 70px; pointer-events: auto; }
+.farbform-signature-compare-range input { width: 100%; height: 100%; margin: 0; appearance: none; opacity: 0; cursor: ew-resize; }
+
+.farbform-hotspot { position: absolute; z-index: 6; width: 245px; color: #f9f7f1; filter: drop-shadow(0 3px 14px rgba(50,47,40,.3)); pointer-events: auto; }
+.farbform-hotspot--wall { top: 198px; left: 58%; }
+.farbform-hotspot--floor { right: 19%; bottom: 84px; color: #34362f; }
+.farbform-hotspot summary { display: flex; align-items: center; gap: 12px; list-style: none; cursor: pointer; }
+.farbform-hotspot summary::-webkit-details-marker { display: none; }
+.farbform-hotspot summary > span { display: grid; place-items: center; flex: 0 0 31px; width: 31px; height: 31px; border: 1px solid currentColor; border-radius: 50%; background: rgba(77,96,73,.88); color: #fff; font-size: 20px; font-weight: 300; transition: transform .25s ease,background .25s ease; }
+.farbform-hotspot summary strong { padding: 6px 9px; border-radius: 4px; background: rgba(44,49,40,.24); font-size: 13px; font-weight: 500; text-shadow: 0 1px 7px rgba(0,0,0,.45); backdrop-filter: blur(3px); }
+.farbform-hotspot summary small { display: block; margin-top: 6px; color: #eef2ea; font-size: 8px; font-weight: 500; letter-spacing: .24em; text-transform: uppercase; opacity: .84; }
+.farbform-hotspot[open] summary > span { color: #fff; background: #30382e; transform: rotate(45deg); }
+.farbform-hotspot > p { width: 230px; margin: 13px 0 0; padding: 14px 16px; border: 1px solid rgba(255,255,255,.35); color: #262823; background: rgba(247,245,239,.88); backdrop-filter: blur(16px); font-size: 11px; line-height: 1.5; }
+.farbform-hotspot > p b,.farbform-hotspot > p small { display: block; }
+.farbform-hotspot > p b { margin-bottom: 5px; color: #667362; font-size: 8px; font-weight: 600; letter-spacing: .2em; text-transform: uppercase; }
+.farbform-hotspot > p small { margin-top: 8px; color: #676b63; font-size: 8px; letter-spacing: .14em; text-transform: uppercase; }
+.farbform-interior[data-stage="wall"] .farbform-hotspot--floor,
+.farbform-interior[data-stage="floor"] .farbform-hotspot--wall { opacity: .24; }
+
+.farbform-signoff { position: absolute; z-index: 4; right: clamp(32px,4.8vw,72px); bottom: 78px; margin: 0; color: rgba(48,50,44,.64); font: italic 25px/1.04 "Segoe Script","Bradley Hand",cursive; letter-spacing: -.05em; text-align: right; transform: rotate(-7deg); }
+.farbform-signoff::after { content: ""; display: block; width: 65px; height: 1px; margin: 10px 0 0 auto; background: currentColor; transform: rotate(-5deg); }
+
+@media (max-width: 1180px) {
+  .farbform-signature .signature-copy h1 { font-size: 61px; }
+  .farbform-swatches { gap: 17px; }
+  .farbform-hotspot--wall { left: 64%; }
+  .farbform-hotspot--floor { right: 9%; }
+}
+
+@media (max-width: 920px) {
+  .farbform-signature .signature-hero { min-height: 1180px; display: block; padding-top: 120px; }
+  .farbform-signature .signature-fallback { top: 80px; height: 450px; }
+  .farbform-signature .signature-scrim { background: linear-gradient(0deg,rgba(244,241,233,.99) 0%,rgba(244,241,233,.87) 48%,rgba(244,241,233,.06) 73%); }
+  .farbform-image-stage { inset: 80px 0 auto; height: 450px; mask-image: none; }
+  .farbform-image-stage::after { display: none; }
+  .farbform-room,.farbform-room-after img { object-position: center; }
+  .farbform-room-after img { width: 100vw; }
+  .farbform-signature .signature-copy { margin-top: 435px; max-width: 650px; }
+  .farbform-signature .signature-rail { position: relative; left: auto; bottom: auto; margin-top: 28px; }
+  .farbform-options { top: 895px; bottom: auto; left: 28px; }
+  .farbform-signature .signature-story { position: relative; left: auto; bottom: auto; width: min(100%,460px); margin-top: 126px; }
+  .farbform-signature .signature-story:has(.signature-story-media),.farbform-signature .signature-story:has(.signature-story-video) { width: min(100%,460px); }
+  .farbform-signature .signature-metrics,.farbform-signoff,.farbform-hotspot--floor { display: none; }
+  .farbform-hotspot--wall { top: 405px; left: auto; right: 28px; width: 210px; }
+  .farbform-hotspot > p { width: 210px; }
+  .farbform-divider { top: 30px; bottom: 30px; }
+  .farbform-signature-compare-range { inset: 30px 0; }
+}
+
+@media (max-width: 560px) {
+  .farbform-signature .signature-hero { min-height: 1220px; padding-top: 108px; }
+  .farbform-signature .signature-fallback { top: 76px; height: 430px; }
+  .farbform-image-stage { top: 76px; height: 430px; }
+  .farbform-signature .signature-copy { margin-top: 407px; }
+  .farbform-signature .signature-copy h1 { font-size: 49px; }
+  .farbform-signature .signature-intro { max-width: 390px; }
+  .farbform-options { top: 850px; left: 20px; max-width: calc(100% - 40px); }
+  .farbform-swatches { width: calc(100vw - 40px); justify-content: space-between; gap: 6px; }
+  .farbform-swatches button { min-width: 61px; font-size: 10px; }
+  .farbform-swatches button span { width: 42px; height: 42px; }
+  .farbform-signature .signature-story { margin-top: 116px; }
+  .farbform-hotspot--wall { top: 376px; right: 20px; width: 175px; }
+  .farbform-hotspot summary strong { font-size: 11px; }
+  .farbform-hotspot summary small { display: none; }
+  .farbform-hotspot > p { position: absolute; right: 0; width: 220px; }
+  .farbform-signature-compare-label { top: 72px; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .farbform-room,.farbform-room-after,.farbform-floor-wash { transition: none; }
+}

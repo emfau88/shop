@@ -2,6 +2,7 @@
 /* oxlint-disable nextjs/no-img-element -- Local responsive fallbacks are pre-optimized WebP files. */
 import { DemoBar } from '@/components/demo-bar';
 import { SignatureRuntimeBridge } from './signature-runtime-bridge';
+import { SignatureStoryVideo } from './signature-story-video';
 
 export type SignatureStage = {
   id: string;
@@ -25,6 +26,7 @@ type SignatureShellProps = {
   image: { src: string; src480: string; src960: string; alt: string; width?: number; height?: number };
   metrics: Array<{ value: string; label: string }>;
   storyMedia?: { src: string; alt: string };
+  storyVideo?: { src: string; poster: string; label: string };
   storyHref?: string;
   storyLinkLabel?: string;
   brandTagline?: string;
@@ -47,6 +49,7 @@ export function SignatureShell({
   image,
   metrics,
   storyMedia,
+  storyVideo,
   storyHref,
   storyLinkLabel = 'Core-Website ansehen',
   brandTagline = 'Signature experience',
@@ -113,7 +116,9 @@ export function SignatureShell({
           </div>
 
           <aside className="signature-story" aria-live="polite">
-            {storyMedia && <img className="signature-story-media" src={storyMedia.src} alt={storyMedia.alt} width="120" height="88" loading="lazy" />}
+            {storyVideo
+              ? <SignatureStoryVideo {...storyVideo} />
+              : storyMedia && <img className="signature-story-media" src={storyMedia.src} alt={storyMedia.alt} width="120" height="88" loading="lazy" />}
             <div>
               <p data-signature-stage-eyebrow>{activeStage.eyebrow}</p>
               <strong data-signature-stage-description>{activeStage.description}</strong>

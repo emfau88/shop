@@ -1,0 +1,42 @@
+{
+  "brand": "FARBFORM",
+  "prepared": "2026-09-14",
+  "assets": [
+    {
+      "files": [
+        "farbform-room-vorher.webp",
+        "farbform-room-vorher-mobile.webp",
+        "farbform-fallback-salbei.webp",
+        "farbform-fallback-salbei-mobile.webp",
+        "farbform-wall-aubergine.webp",
+        "farbform-wall-salbei.webp",
+        "farbform-wall-mineral.webp",
+        "farbform-wall-sand.webp"
+      ],
+      "role": "Single neutral room base and transparent wall-colour layers",
+      "source": "design/generated/signature/farbform/farbform-room-clean-master.png",
+      "author": "OpenAI built-in ImageGen and deterministic repository pipeline",
+      "license": "Original generated project assets; no third-party photograph",
+      "modifications": "Pixel-locked LAB wall recolouring, responsive crops and lossless alpha WebP layers"
+    },
+    {
+      "files": [
+        "farbform-plant-layer.webp",
+        "farbform-plant-layer-mobile.webp",
+        "farbform-artwork-layer.webp",
+        "farbform-artwork-layer-mobile.webp"
+      ],
+      "role": "Shared foreground decor rendered unchanged above every slider state",
+      "source": "design/generated/signature/farbform/farbform-plant-cutout-source.png and farbform-room-reference-source.png",
+      "author": "OpenAI built-in ImageGen and deterministic repository pipeline",
+      "license": "Original generated project assets; no third-party photograph"
+    },
+    {
+      "files": ["farbform-before-after.mp4"],
+      "role": "Short optional before-after story clip",
+      "source": "Original generated FARBFORM room states",
+      "author": "OpenAI built-in ImageGen and FFmpeg",
+      "license": "Original generated project asset"
+    }
+  ]
+}

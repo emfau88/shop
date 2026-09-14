@@ -131,7 +131,7 @@ Diese Werte sind Zielbudgets und werden in Bulk 0 gegen den realen Bestand kalib
 - [x] Bulk 0 · Scope, Baseline und technische Entscheidungen
 - [x] Bulk 1 · Signature-Fundament, Routen und Export-Runtime
 - [x] Bulk 2 · WERKFORM Signature
-- [ ] Bulk 3 · FARBFORM Signature
+- [x] Bulk 3 · FARBFORM Signature
 - [ ] Bulk 4 · GRÜNRAUM Signature
 - [x] Bulk 5 · LINDENWIRT Signature
 - [ ] Bulk 6 · AUFSCHLAG Signature
@@ -289,35 +289,44 @@ Wandfarbe + Boden + Lichtpreset + Vorher/Nachher
 
 ## Asset-Pipeline
 
-- [ ] Entscheiden, ob ein einfacher echter 3D-Raum mit gebackener Beleuchtung die Mockup-Qualität erreicht.
-- [ ] Falls nicht: verbindliche Hybridlösung aus photorealem Clean Hero und gezielter 3D-/Materialinteraktion verwenden.
-- [ ] Clean Hero ohne Text, Logo, UI oder Hotspots erstellen.
-- [ ] Perspektivisch identischen Vorher-Zustand erstellen.
-- [ ] Wand-, Boden-, Decken- und Sockelgeometrie sauber trennen.
-- [ ] Salbei-, Aubergine-, Mineral- und Sandmaterial kalibrieren.
-- [ ] Eichenboden und Putzoberfläche als optimierte PBR-Materialien vorbereiten.
-- [ ] Hochwertigen statischen Fallback für Mobile und WebGL-Fehler erstellen.
+- [x] Entscheiden, ob ein einfacher echter 3D-Raum mit gebackener Beleuchtung die Mockup-Qualität erreicht. Entscheidung: Nein; Fotolayer sind sichtbar hochwertiger und erheblich leichter.
+- [x] Verbindliche Hybridlösung aus photorealem Clean Hero und gezielter DOM-/Materialinteraktion verwenden.
+- [x] Clean Hero ohne Text, Logo, UI oder Hotspots bereitstellen.
+- [x] Perspektivisch identischen Vorher-Zustand bereitstellen.
+- [x] Separate 3D-Geometrie verworfen; Wandzustände werden als deckungsgleiche Fotolayer, Bodenwirkung als isolierte CSS-Ebene geführt.
+- [x] Salbei-, Aubergine-, Mineral- und Sandzustand kalibrieren.
+- [x] Eichenboden und Putzwirkung mit optimierten Fotoebenen und leichten CSS-Overlays umsetzen; kein PBR-Payload erforderlich.
+- [x] Hochwertigen statischen Fallback für Mobile bereitstellen; WebGL wird für diese Experience nicht benötigt.
 
 ## Seite und Interaktion
 
-- [ ] Helle, ruhige Desktop-Komposition anhand des FARBFORM-Mockups umsetzen.
-- [ ] UI, Farbauswahl und Hotspots als echtes DOM umsetzen.
-- [ ] Wandfarben ohne Szenenneuladung wechseln.
-- [ ] Bodenvarianten ohne Szenenneuladung wechseln.
-- [ ] Warmes und neutrales Lichtpreset umsetzen.
-- [ ] Vorher-/Nachher-Regler mit Maus, Touch und Tastatur umsetzen.
-- [ ] Direkte Manipulation und Sliderzustand synchronisieren.
-- [ ] Wechsel mit kurzen, ruhigen Materialübergängen gestalten.
-- [ ] Mobile Reihenfolge Hero → Auswahl → Vergleich → Details umsetzen.
-- [ ] Bestehende Core-FARBFORM-Seite und deren aktuellen Vergleich vollständig erhalten.
+- [x] Helle, ruhige Desktop-Komposition anhand des FARBFORM-Mockups umsetzen.
+- [x] UI, Farbauswahl und Hotspots als echtes DOM umsetzen.
+- [x] Wandfarben ohne Szenenneuladung wechseln.
+- [x] Bodenvarianten ohne Szenenneuladung wechseln.
+- [x] Warmes und neutrales Lichtpreset umsetzen.
+- [x] Vorher-/Nachher-Regler mit Maus, Touch und Tastatur umsetzen.
+- [x] Direkte Manipulation und Sliderzustand synchronisieren.
+- [x] Wechsel mit kurzen, ruhigen Materialübergängen gestalten.
+- [x] Mobile Reihenfolge Hero → Auswahl → Vergleich → Details umsetzen.
+- [x] Bestehende Core-FARBFORM-Seite und deren aktuellen Vergleich vollständig erhalten.
 
 ## Abnahme
 
-- [ ] Materialwechsel verursachen keinen vollständigen Reload und kein sichtbares Flackern.
-- [ ] Vorher/Nachher funktioniert mit Pfeiltasten sowie Touch.
-- [ ] Farben bleiben bei unterschiedlichen Displays visuell unterscheidbar.
-- [ ] Raum wirkt nicht wie eine technische 3D-Demo oder ein Computerspiel.
-- [ ] Hybrid- und Fallbackzustand bleiben gestalterisch gleichwertig.
+- [x] Materialwechsel verursachen keinen vollständigen Reload und kein sichtbares Flackern.
+- [x] Vorher/Nachher funktioniert über einen nativen Range-Regler mit Pfeiltasten sowie Touch.
+- [x] Farben bleiben bei unterschiedlichen Displays visuell unterscheidbar.
+- [x] Raum wirkt nicht wie eine technische 3D-Demo oder ein Computerspiel.
+- [x] Hybrid- und Fallbackzustand bleiben gestalterisch gleichwertig.
+
+## Ist-Stand · 2026-09-14
+
+- Vier Wandfarben, zwei Bodenwirkungen und zwei Lichtpresets sind kombiniert bedienbar.
+- Der Vorher-/Nachher-Regler ist ein natives Formelement und bleibt mit Maus, Touch und Tastatur steuerbar.
+- Der Regler verwendet ein einziges neutrales Raumfoto mit transparenten, verlustfreien Wandebenen. Sofa, Fenster, Tisch und Boden werden nie zwischen Vollbildern ausgetauscht.
+- Olive und Wandbild liegen als gemeinsame Dekorebenen über allen Zuständen und bleiben dadurch beim Ziehen pixelstabil.
+- Ein neuer Clean Master und ein separater Pflanzen-Cutout wurden mit der eingebauten OpenAI-Bilderzeugung erstellt; Prompt und Pipeline sind im Asset-Manifest dokumentiert.
+- Desktop (1440 × 960) und Mobile (390 × 844) sind unter `docs/qa/signature-bulk-3-farbform/` visuell dokumentiert.
 
 ---
 

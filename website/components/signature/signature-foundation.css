@@ -26,8 +26,11 @@
 .signature-rail button span { opacity: .48; margin-right: 8px; font-size: 9px; }
 .signature-rail button[aria-pressed="true"] { color: #fff; background: color-mix(in srgb, var(--signature-accent) 35%, rgba(18,24,20,.78)); }
 .signature-story { z-index: 3; grid-column: 2; grid-row: 2; justify-self: start; align-self: end; width: min(320px, 31vw); padding: 20px 24px; margin-left: 7%; border: 1px solid rgba(255,255,255,.18); background: rgba(10,13,12,.6); backdrop-filter: blur(18px); }
-.signature-story:has(.signature-story-media) { display: grid; grid-template-columns: 112px minmax(0,1fr); gap: 18px; width: min(430px,38vw); padding: 10px; }
+.signature-story:has(.signature-story-media), .signature-story:has(.signature-story-video) { display: grid; grid-template-columns: 112px minmax(0,1fr); gap: 18px; width: min(430px,38vw); padding: 10px; }
 .signature-story-media { width: 112px; height: 92px; object-fit: cover; border: 1px solid rgba(255,255,255,.22); filter: saturate(.55) contrast(1.08); }
+.signature-story-video { position: relative; width: 112px; height: 92px; padding: 0; overflow: hidden; border: 1px solid rgba(255,255,255,.22); color: white; background: #252723; cursor: pointer; }
+.signature-story-video video { display: block; width: 100%; height: 100%; object-fit: cover; }
+.signature-story-video span { position: absolute; inset: 50% auto auto 50%; display: grid; place-items: center; width: 38px; height: 38px; padding-left: 2px; border: 1px solid rgba(255,255,255,.86); border-radius: 50%; background: rgba(25,29,24,.52); font-size: 12px; transform: translate(-50%,-50%); backdrop-filter: blur(5px); }
 .signature-story p { margin: 0 0 8px; text-transform: uppercase; letter-spacing: .3em; font-size: 9px; opacity: .65; }
 .signature-story strong { display: block; min-height: 2.8em; font: 400 20px/1.28 Georgia, serif; }
 .signature-story a { display: inline-block; margin-top: 15px; color: inherit; text-decoration: none; font-size: 12px; border-bottom: 1px solid var(--signature-accent); padding-bottom: 4px; }
@@ -52,7 +55,7 @@
   .signature-rail { grid-column: 1; grid-row: 2; width: 100%; overflow-x: auto; border-radius: 16px; }
   .signature-rail button { flex: 1 0 auto; }
   .signature-story { grid-column: 1; grid-row: 3; width: min(100%, 430px); margin: 18px 0 0; }
-  .signature-story:has(.signature-story-media) { width: min(100%,430px); }
+  .signature-story:has(.signature-story-media), .signature-story:has(.signature-story-video) { width: min(100%,430px); }
   .signature-scroll { display: none; }
 }
 
