@@ -1,7 +1,7 @@
 # Signature Experiences · Umsetzungsplan
 
-**Stand:** 13. September 2026  
-**Status:** Bulk 0–2 abgeschlossen · Bulk 3 als nächster Ausbau  
+**Stand:** 14. September 2026
+**Status:** Bulk 0–2 einschließlich WERKFORM Premium Fidelity Pass abgeschlossen · Bulk 3 als nächster Ausbau
 **Ausgangs-Commit:** `c3e0fc5` (`main`)  
 **Ziel:** Die fünf bestehenden Konzeptwebsites bleiben als Core-Versionen erhalten und erhalten jeweils eine zusätzliche, separat aufrufbare Premium-/Signature-Homepage.
 
@@ -252,24 +252,26 @@ Zeichnung → Fertigung → Bauteil → Exploded View
 - [x] GLB, Runtime und Environment bleiben innerhalb der bestätigten Budgets.
 - [x] Statischer GitHub-Pages-Export funktioniert interaktiv.
 
-## Ist-Stand nach der ersten Abnahme
+## Ist-Stand nach Premium Fidelity Pass
 
 **Veröffentlicht:** Commit `5fcad63` · [WERKFORM Signature live](https://emfau88.github.io/shop/konzept/metallbau/signature/)
 
-Die funktionale Signature-Ausarbeitung ist abgeschlossen. Im direkten Vergleich mit der visuellen Referenz liegt die aktuelle Annäherung bei ungefähr **70 %**: Struktur, Typografie, Zustandsrail, Exploded View, Hotspots und Interaktionsumfang sind vorhanden; die Echtzeitfunktion übertrifft das statische Mockup. Das letzte Drittel betrifft vor allem fotorealistisches Finish und Kompositionsdetails, nicht die technische Grundlage.
+Die funktionale Signature-Ausarbeitung und der erste visuelle Premium-Pass sind abgeschlossen. Die vorherige abstrakte Kastenbaugruppe wurde nach Nutzerfeedback durch einen technisch lesbaren Umlenkrollen-/Lagerbock ersetzt: Rolle, Achse, Lagerkartuschen, Distanzringe, Seitenwangen, Kreuzstrebe und Fußverschraubung besitzen einen nachvollziehbaren Last- und Montageweg. Werkstattbühne, Materialfinish, Kamerakomposition und Zustandsdarstellung liegen näher an der Referenz, ohne deren UI als Bild zu übernehmen.
 
-### Für das finale Premium-Finishing vormerken
+### Premium-Finishing
 
-- [ ] Hybriden Werkstatt-/Studiohintergrund mit glaubwürdiger Tiefenunschärfe und Fensterlicht ergänzen.
-- [ ] Metalloberflächen um gebürstete Mikrostruktur, subtile Roughness-Variation und feinere Kontaktreflexe erweitern.
-- [ ] Schraubengewinde, Muttern, Unterlegscheiben und Kanten im Nahbereich detaillierter modellieren.
-- [ ] Kameraframing so nachziehen, dass die komplette Grundplatte bei 1440 × 1000 etwas ruhiger im sichtbaren Hero sitzt.
-- [ ] Hotspot-Kollisionen bei ungünstigen Drehwinkeln automatisch vermeiden und Führungslinien gezielter ausrichten.
-- [ ] Zustandsrail um konsistente technische Icons ergänzen.
-- [ ] Media-Teaser mit echter Vorschaugrafik statt reiner Infokarte ausarbeiten.
-- [ ] Optional eine zurückhaltende WERKFORM-Gravur und den handschriftlichen Akzent als eigenständige DOM-/SVG-Details ergänzen.
+- [x] Hybriden Werkstatt-/Studiohintergrund mit glaubwürdiger Tiefenunschärfe und Fensterlicht ergänzen.
+- [x] Metalloberflächen um gebürstete Mikrostruktur, subtile Roughness-Variation und feinere Kontaktreflexe erweitern.
+- [x] Schraubengewinde, Innensechskant, offene Scheiben und Lagerdetails im Nahbereich modellieren.
+- [x] Technisch unklare Demo-Baugruppe durch einen funktional lesbaren Rollenbock ersetzen.
+- [x] Kameraframing so nachziehen, dass die komplette Grundplatte bei 1440 × 1000 ruhig im sichtbaren Hero sitzt.
+- [x] Hotspots auf feste kollisionsarme Labelzonen routen und mit geknickten SVG-Führungslinien anbinden.
+- [x] Zustandsrail um konsistente technische Icons ergänzen.
+- [x] Media-Teaser mit echter Vorschaugrafik statt reiner Infokarte ausarbeiten.
+- [x] Handschriftlichen Markenakzent als eigenständiges DOM-Detail ergänzen.
+- [x] Eine zurückhaltende bündige WERKFORM-Gravur auf der Grundplatte ergänzen.
 
-Diese Punkte werden nicht durch einen Modellwechsel gelöst. Sie bauen auf dem vorhandenen Original-GLB, der routenspezifischen Runtime und dem bestehenden semantischen DOM auf und gehören in die visuelle Härtung vor Bulk 9.
+Das 3D-Modell, die routenspezifische Runtime und das semantische DOM bleiben vollständig reproduzierbar und getrennt von der Core-Seite.
 
 ---
 

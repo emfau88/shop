@@ -8,6 +8,7 @@ export type SignatureStage = {
   label: string;
   eyebrow: string;
   description: string;
+  icon?: React.ReactNode;
 };
 
 type SignatureShellProps = {
@@ -23,6 +24,7 @@ type SignatureShellProps = {
   stages: SignatureStage[];
   image: { src: string; src480: string; src960: string; alt: string; width?: number; height?: number };
   metrics: Array<{ value: string; label: string }>;
+  storyMedia?: { src: string; alt: string };
   initialStage?: string;
   children?: React.ReactNode;
 };
@@ -40,6 +42,7 @@ export function SignatureShell({
   stages,
   image,
   metrics,
+  storyMedia,
   initialStage,
   children,
 }: SignatureShellProps) {
@@ -95,16 +98,19 @@ export function SignatureShell({
                 aria-pressed={stage.id === activeStage.id}
                 tabIndex={stage.id === activeStage.id ? 0 : -1}
               >
-                <span aria-hidden="true">{String(index + 1).padStart(2, '0')}</span>
+                <span aria-hidden="true">{stage.icon ?? String(index + 1).padStart(2, '0')}</span>
                 {stage.label}
               </button>
             ))}
           </div>
 
           <aside className="signature-story" aria-live="polite">
-            <p data-signature-stage-eyebrow>{activeStage.eyebrow}</p>
-            <strong data-signature-stage-description>{activeStage.description}</strong>
-            <a href={coreBase}>Core-Website ansehen <span aria-hidden="true">→</span></a>
+            {storyMedia && <img className="signature-story-media" src={storyMedia.src} alt={storyMedia.alt} width="120" height="88" loading="lazy" />}
+            <div>
+              <p data-signature-stage-eyebrow>{activeStage.eyebrow}</p>
+              <strong data-signature-stage-description>{activeStage.description}</strong>
+              <a href={coreBase}>Core-Website ansehen <span aria-hidden="true">→</span></a>
+            </div>
           </aside>
 
           <dl className="signature-metrics">

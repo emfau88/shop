@@ -7,7 +7,7 @@
       "source": "design/signature/werkform/build_werkform_assembly.py",
       "author": "Original project asset",
       "license": "Repository project asset; no third-party model or texture",
-      "modifications": "Procedurally built in Blender 5.2 with named structural parts, bevels, boolean bores and PBR materials",
+      "modifications": "Procedurally built in Blender 5.2 with 30 named structural parts, bevels, boolean bores, threaded fasteners, open washers and nuts, a flush WERKFORM surface inlay, and PBR materials",
       "generatedBy": "Blender 5.2 LTS"
     },
     {
@@ -18,6 +18,24 @@
       "license": "Repository project asset; no third-party imagery",
       "modifications": "EEVEE studio render, WebP quality 88",
       "generatedBy": "Blender 5.2 LTS"
+    },
+    {
+      "file": "werkform-studio-background.webp",
+      "role": "desktop environment plate",
+      "source": "design/generated/signature/werkform/werkform-studio-background-source.png",
+      "author": "OpenAI image generation for this repository",
+      "license": "Original generated project asset; no third-party photograph",
+      "modifications": "WebP conversion and resize to 1680 × 946, quality 82",
+      "generatedBy": "OpenAI image_gen and FFmpeg"
+    },
+    {
+      "file": "werkform-studio-background-mobile.webp",
+      "role": "mobile environment plate",
+      "source": "design/generated/signature/werkform/werkform-studio-background-source.png",
+      "author": "OpenAI image generation for this repository",
+      "license": "Original generated project asset; no third-party photograph",
+      "modifications": "Focal crop and WebP conversion to 720 × 640, quality 80",
+      "generatedBy": "OpenAI image_gen and FFmpeg"
     }
   ]
 }

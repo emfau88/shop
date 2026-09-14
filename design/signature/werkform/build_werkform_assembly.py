@@ -93,7 +93,23 @@ def join_as(name, objects, mat=None):
     PARTS.append(result)
     return result
 
-def bolt(name, location, length=1.25, axis="Z"):
+def washer(name, location, axis="Z", radius=.32, hole=.19):
+    rotation = (0,0,0) if axis == "Z" else (0,math.pi/2,0) if axis == "X" else (math.pi/2,0,0)
+    result = cylinder(name, location, radius, .09, BRIGHT, 36, rotation=rotation, bevel=.02)
+    if axis == "Z":
+        cut_holes(result, [(location[0], location[1], hole)], "Z")
+    elif axis == "X":
+        cut_holes(result, [(location[1], location[2], hole)], "X")
+    else:
+        cut_holes(result, [(location[0], location[2], hole)], "Y")
+    return result
+
+def nut(name, location):
+    result = cylinder(name, location, .34, .27, DARK, 6, bevel=.035)
+    cut_holes(result, [(location[0], location[1], .18)], "Z")
+    return result
+
+def bolt(name, location, length=1.25, axis="Z", direction=1):
     rotation = (0,0,0) if axis == "Z" else (0, math.pi/2, 0)
     pieces = []
     shaft = cylinder(name + "_shaft", location, .17, length, BRIGHT, 24, rotation=rotation, bevel=.025, track=False)
@@ -101,53 +117,104 @@ def bolt(name, location, length=1.25, axis="Z"):
     if axis == "Z":
         head_loc = (location[0], location[1], location[2] + length/2 + .11)
     else:
-        head_loc = (location[0] + length/2 + .11, location[1], location[2])
+        head_loc = (location[0] + direction * (length/2 + .11), location[1], location[2])
     head = cylinder(name + "_head", head_loc, .34, .22, BRIGHT, 6, rotation=rotation, bevel=.035, track=False)
+    if axis == "Z":
+        cut_holes(head, [(head_loc[0], head_loc[1], .115)], "Z")
+    else:
+        cut_holes(head, [(head_loc[1], head_loc[2], .115)], "X")
     pieces.append(head)
+    for index in range(7):
+        offset = -length * .39 + index * length * .09
+        thread_location = (location[0], location[1], location[2] + offset) if axis == "Z" else (location[0] + offset, location[1], location[2])
+        bpy.ops.mesh.primitive_torus_add(
+            major_radius=.163,
+            minor_radius=.018,
+            major_segments=24,
+            minor_segments=6,
+            location=thread_location,
+            rotation=rotation,
+        )
+        thread = bpy.context.object
+        thread.name = f"{name}_thread_{index}"
+        thread.data.materials.append(BRIGHT)
+        smooth(thread)
+        pieces.append(thread)
     return join_as(name, pieces)
 
-# Main load-bearing structure.
-base = box("Base_Plate", (0, 0, .22), (6.4, 4.8, .44), STEEL, .15)
-cut_holes(base, [(-2.35,-1.55,.24),(2.35,-1.55,.24),(-2.35,1.55,.24),(2.35,1.55,.24),(0,-1.55,.28),(0,1.55,.28)])
+def engrave_text(target, body, location, size=.34):
+    bpy.ops.object.text_add(location=location)
+    inset = bpy.context.object
+    inset.name = "Engraving_Inlay"
+    inset.data.body = body
+    inset.data.align_x = "CENTER"
+    inset.data.align_y = "CENTER"
+    inset.data.size = size
+    inset.data.extrude = .006
+    inset.data.bevel_depth = .002
+    inset.data.bevel_resolution = 1
+    bpy.ops.object.convert(target="MESH")
+    inset.data.materials.clear()
+    inset.data.materials.append(BLACK)
+    bpy.ops.object.select_all(action="DESELECT")
+    target.select_set(True)
+    inset.select_set(True)
+    bpy.context.view_layer.objects.active = target
+    bpy.ops.object.join()
+    target.name = "Base_Plate"
 
-left = box("Upright_Left", (-2.78, .35, 2.25), (.48, 3.95, 4.05), DARK, .14)
-right = box("Upright_Right", (2.78, .35, 2.25), (.48, 3.95, 4.05), DARK, .14)
-cut_holes(left, [(-.6,1.55,.31),(.75,2.65,.31),(-.6,3.35,.31)], "X")
-cut_holes(right, [(-.6,1.55,.31),(.75,2.65,.31),(-.6,3.35,.31)], "X")
+# Functional idler-roller bearing bracket: the base transfers loads into the
+# machine frame, two cheeks carry a serviceable axle, and the rear brace plus
+# gussets prevent the cheeks from spreading under radial load.
+base = box("Base_Plate", (0, 0, .24), (6.4, 4.8, .48), STEEL, .15)
+cut_holes(base, [(-2.35,-1.55,.25),(2.35,-1.55,.25),(-2.35,1.55,.25),(2.35,1.55,.25)])
 
-rear = box("Rear_Bridge", (0, 2.05, 2.05), (5.25, .42, 3.4), STEEL, .12)
-cut_holes(rear, [(-1.75,1.35,.25),(0,2.55,.30),(1.75,1.35,.25)], "Y")
+roller_y = -.42
+roller_z = 2.35
+left = box("Side_Cheek_Left", (-2.15, .25, 2.15), (.48, 3.75, 3.8), DARK, .14)
+right = box("Side_Cheek_Right", (2.15, .25, 2.15), (.48, 3.75, 3.8), DARK, .14)
+for cheek in (left, right):
+    cut_holes(cheek, [(roller_y,roller_z,.58),(roller_y,roller_z-.92,.20),(roller_y,roller_z+.92,.20)], "X")
 
-top = box("Top_Plate", (0, .15, 4.58), (6.25, 4.45, .46), BRIGHT, .14)
-cut_holes(top, [(-2.35,-1.45,.23),(2.35,-1.45,.23),(-2.35,1.45,.23),(2.35,1.45,.23),(0,0,.42)])
+rear = box("Rear_Cross_Brace", (0, 1.88, 2.78), (3.85, .42, 1.45), STEEL, .12)
+cut_holes(rear, [(-1.35,2.52,.22),(1.35,2.52,.22)], "Y")
 
-carriage = box("Inner_Carriage", (0, -.28, 2.45), (4.55, 3.15, .72), STEEL, .16)
-cut_holes(carriage, [(-1.55,-.85,.25),(1.55,-.85,.25),(-1.55,.85,.25),(1.55,.85,.25)])
+gusset_l = box("Gusset_Left", (-1.62, 1.42, 1.02), (.84, .72, 1.32), DARK, .12)
+gusset_l.rotation_euler.y = math.radians(-14)
+gusset_r = box("Gusset_Right", (1.62, 1.42, 1.02), (.84, .72, 1.32), DARK, .12)
+gusset_r.rotation_euler.y = math.radians(14)
 
-front_clamp = box("Front_Clamp", (0, -1.78, 2.45), (3.4, .48, 1.42), DARK, .12)
-cut_holes(front_clamp, [(-1.08,2.45,.24),(1.08,2.45,.24)], "Y")
+# Replaceable steel roller with two bearing cartridges on a shoulder axle.
+roller_pieces = [
+    cylinder("roller_core", (0,roller_y,roller_z), 1.02, 2.9, STEEL, 48, rotation=(0,math.pi/2,0), bevel=.09, track=False),
+    cylinder("roller_flange_l", (-1.34,roller_y,roller_z), 1.13, .18, DARK, 48, rotation=(0,math.pi/2,0), bevel=.04, track=False),
+    cylinder("roller_flange_r", (1.34,roller_y,roller_z), 1.13, .18, DARK, 48, rotation=(0,math.pi/2,0), bevel=.04, track=False),
+]
+roller = join_as("Idler_Roller", roller_pieces)
+cut_holes(roller, [(roller_y,roller_z,.34)], "X")
+shaft = cylinder("Roller_Shaft", (0,roller_y,roller_z), .28, 5.25, BRIGHT, 40, rotation=(0,math.pi/2,0), bevel=.045)
 
-gusset_l = box("Gusset_Left", (-2.14, 1.45, 1.08), (.92, .68, 1.5), DARK, .12)
-gusset_l.rotation_euler.y = math.radians(-16)
-gusset_r = box("Gusset_Right", (2.14, 1.45, 1.08), (.92, .68, 1.5), DARK, .12)
-gusset_r.rotation_euler.y = math.radians(16)
+for side, x, direction in (("Left",-2.43,-1),("Right",2.43,1)):
+    housing = cylinder(f"Bearing_Housing_{side}", (x,roller_y,roller_z), .86, .22, DARK, 40, rotation=(0,math.pi/2,0), bevel=.055)
+    cut_holes(housing, [(roller_y,roller_z,.51)], "X")
+    bearing = cylinder(f"Bearing_Cartridge_{side}", (x + direction*.14,roller_y,roller_z), .54, .28, BRIGHT, 48, rotation=(0,math.pi/2,0), bevel=.035)
+    cut_holes(bearing, [(roller_y,roller_z,.30)], "X")
+    cylinder(f"Spacer_{side}", (direction*1.62,roller_y,roller_z), .43, .22, BRIGHT, 36, rotation=(0,math.pi/2,0), bevel=.03)
+    washer(f"Retaining_Washer_{side}", (direction*2.68,roller_y,roller_z), "X", .42, .30)
+    bolt(f"Shaft_End_Bolt_{side}", (direction*2.62,roller_y,roller_z), .52, "X", direction)
 
-# Central precision spindle and bearing stack.
-spindle = cylinder("Precision_Spindle", (0, -.25, 2.38), .30, 3.9, BRIGHT, 40, rotation=(0,math.pi/2,0), bevel=.05)
-for side, x in (("Left",-2.12),("Right",2.12)):
-    cylinder(f"Bearing_{side}", (x,-.25,2.38), .58, .32, DARK, 40, rotation=(0,math.pi/2,0), bevel=.05)
-    cylinder(f"Spacer_{side}", (x + (.32 if side=="Left" else -.32),-.25,2.38), .43, .20, BRIGHT, 36, rotation=(0,math.pi/2,0), bevel=.035)
+# Four anchors secure the base to the machine bed.
+for label, x, y in (("FL",-2.35,-1.55),("FR",2.35,-1.55),("RL",-2.35,1.55),("RR",2.35,1.55)):
+    bolt(f"Base_Bolt_{label}", (x,y,.34), .86)
+    washer(f"Base_Washer_{label}", (x,y,.52))
 
-# Four removable top fasteners with separate washers and nuts.
-for label, x, y in (("FL",-2.35,-1.45),("FR",2.35,-1.45),("RL",-2.35,1.45),("RR",2.35,1.45)):
-    bolt(f"Bolt_Top_{label}", (x,y,4.72), 1.22)
-    cylinder(f"Washer_Top_{label}", (x,y,4.49), .32, .09, BRIGHT, 36, bevel=.02)
-    cylinder(f"Nut_Under_{label}", (x,y,4.18), .32, .27, DARK, 6, bevel=.035)
+# Two service bolts per cheek retain the bearing housings.
+for side, x, direction in (("L",-2.22,-1),("R",2.22,1)):
+    for position, z in (("Lower",roller_z-.92),("Upper",roller_z+.92)):
+        bolt(f"Housing_Bolt_{side}_{position}", (x,roller_y,z), .72, "X", direction)
 
-# Front clamp fasteners.
-for label, x in (("L",-1.08),("R",1.08)):
-    bolt(f"Bolt_Front_{label}", (x,-1.86,2.45), .78, "X")
-    cylinder(f"Washer_Front_{label}", (x,-1.53,2.45), .31, .09, BRIGHT, 36, rotation=(math.pi/2,0,0), bevel=.02)
+# Shallow recessed brand mark on the machine-facing top surface.
+engrave_text(base, "WERKFORM", (0,-2.03,.478), .34)
 
 # Metadata makes the node purpose inspectable in the GLB.
 for index, obj in enumerate(PARTS):

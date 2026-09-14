@@ -1,0 +1,24 @@
+{
+  "generated_date": "2026-09-14",
+  "generation_mode": "Built-in image_gen.imagegen, new generation, no reference images",
+  "call_count": 2,
+  "originals_preserved": true,
+  "assets": [
+    {
+      "id": "WF-STUDIO-01",
+      "filename": "werkform-studio-background-source.png",
+      "path": "design/generated/signature/werkform/werkform-studio-background-source.png",
+      "format": "PNG",
+      "width": 1672,
+      "height": 941,
+      "bytes": 1667863,
+      "prompt": "Use case: product-mockup. Asset type: clean website hero background plate for a premium German metal-engineering brand. Primary request: Create a photorealistic dark industrial studio / precision metal workshop environment with no product in it, designed to sit behind a separately rendered interactive 3D mechanical assembly. Scene/backdrop: charcoal-black workbench or dark brushed metal floor in the lower third; a modern precision workshop in the far background with extremely soft, defocused vertical machinery silhouettes and a large frosted industrial window on the far right. Style/medium: cinematic high-end industrial product photography, restrained and realistic, not concept art. Composition/framing: wide landscape hero, eye-level slightly low camera, completely empty center-right foreground reserved for a large mechanical product, darker generous negative space on the left for white headline typography. Lighting/mood: controlled warm key reflection from upper left, cool soft window/rim light from right, deep blacks with subtle readable detail, natural highlight roll-off, shallow background depth of field. Color palette: graphite, black steel, muted warm gray, very subtle desaturated green-gray; no orange accent. Materials/textures: clean new workshop, subtle brushed steel and matte floor, no dirt, no heavy scratches. Constraints: background plate only; no product, no machine part, no people, no logo, no text, no UI, no labels, no watermark. The foreground surface and perspective must support placing a 3D object around the right-center. Keep the left 38 percent visually quiet and dark.",
+      "visual_review": "Geprüft: fotorealistische CNC-Werkstatt, dunkle ruhige Textzone links, heller industrieller Fensterrand rechts, freie Werkbank als glaubwürdige Bühne. Keine Personen, Produkte, Schrift, Logos oder UI.",
+      "derived_assets": [
+        "website/public/assets/signature/werkform/werkform-studio-background.webp",
+        "website/public/assets/signature/werkform/werkform-studio-background-mobile.webp"
+      ],
+      "alt_text": "Dunkle moderne Präzisionswerkstatt mit metallischer Werkbank und diffusem Fensterlicht."
+    }
+  ]
+}
