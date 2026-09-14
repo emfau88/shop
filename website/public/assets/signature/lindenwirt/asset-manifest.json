@@ -1,0 +1,23 @@
+{
+  "brand": "LINDENWIRT",
+  "assets": [
+    {
+      "file": "lindenwirt-event-room.webp",
+      "role": "desktop and tablet hero",
+      "source": "design/generated/signature/lindenwirt/lindenwirt-event-room-source.png",
+      "author": "OpenAI image generation for this repository",
+      "license": "Original generated project asset; no third-party photograph",
+      "modifications": "WebP conversion and resize to 1680 × 1260, quality 84",
+      "generatedBy": "OpenAI image_gen and Sharp"
+    },
+    {
+      "file": "lindenwirt-event-room-mobile.webp",
+      "role": "mobile hero and story teaser",
+      "source": "design/generated/signature/lindenwirt/lindenwirt-event-room-source.png",
+      "author": "OpenAI image generation for this repository",
+      "license": "Original generated project asset; no third-party photograph",
+      "modifications": "Focal crop and WebP conversion to 720 × 1028, quality 82",
+      "generatedBy": "OpenAI image_gen and Sharp"
+    }
+  ]
+}

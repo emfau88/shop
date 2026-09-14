@@ -133,7 +133,7 @@ Diese Werte sind Zielbudgets und werden in Bulk 0 gegen den realen Bestand kalib
 - [x] Bulk 2 · WERKFORM Signature
 - [ ] Bulk 3 · FARBFORM Signature
 - [ ] Bulk 4 · GRÜNRAUM Signature
-- [ ] Bulk 5 · LINDENWIRT Signature
+- [x] Bulk 5 · LINDENWIRT Signature
 - [ ] Bulk 6 · AUFSCHLAG Signature
 - [ ] Bulk 7 · Variantenwahl im Showroom
 - [ ] Bulk 8 · Gesamtperformance, Accessibility und Pages-Härtung
@@ -377,30 +377,37 @@ Eine stark atmosphärische Restaurant- und Eventseite erreicht Premiumwirkung du
 
 ## Asset-Pipeline
 
-- [ ] Clean Hero ohne UI oder eingebrannten Text erzeugen oder auswählen.
-- [ ] Desktop-, Tablet- und Mobile-Crops definieren.
-- [ ] Optional einen kurzen, stummen und loopfähigen Ambient-Clip prüfen.
-- [ ] Posterbild und statischen Fallback bereitstellen.
-- [ ] Alle Medien lokal optimieren und lizenzieren.
+- [x] Clean Hero ohne UI oder eingebrannten Text erzeugen oder auswählen.
+- [x] Desktop-, Tablet- und Mobile-Crops definieren.
+- [x] Optional einen kurzen, stummen und loopfähigen Ambient-Clip prüfen. Entscheidung: kein Video; das ruhige Standbild ist atmosphärisch vollständig und spart Payload.
+- [x] Posterbild und statischen Fallback bereitstellen.
+- [x] Alle Medien lokal optimieren und lizenzieren.
 
 ## Seite und Interaktion
 
-- [ ] Desktop-Komposition anhand des LINDENWIRT-Mockups umsetzen.
-- [ ] Familienfeier, Hochzeit, Firmenabend und Räume als native Zustände umsetzen.
-- [ ] Zustand wechselt Copy, Kapazität, Bildausschnitt und relevante Hotspots.
-- [ ] Hotspots für Ambiente, Bestuhlung und Kapazität umsetzen.
-- [ ] Media-Teaser als echte bedienbare Komponente umsetzen.
-- [ ] Animationen langsam, ruhig und unterbrechbar halten.
-- [ ] Reservierungs- und Anfragewege auf bestehende Core-Seiten führen.
-- [ ] Mobile Fokusreihenfolge auf CTA, Zustände und Kerndetails reduzieren.
-- [ ] Bestehende Core-LINDENWIRT-Seite vollständig erhalten.
+- [x] Desktop-Komposition anhand des LINDENWIRT-Mockups umsetzen.
+- [x] Familienfeier, Hochzeit, Firmenabend und Räume als native Zustände umsetzen.
+- [x] Zustand wechselt Copy, Kapazität und Bildausschnitt; Hotspots reagieren dezent auf den Kontext.
+- [x] Hotspots für Ambiente, Bestuhlung und Kapazität umsetzen.
+- [x] Media-Teaser als echte bedienbare Komponente umsetzen.
+- [x] Animationen langsam, ruhig und unterbrechbar halten.
+- [x] Reservierungs- und Anfragewege auf bestehende Core-Seiten führen.
+- [x] Mobile Fokusreihenfolge auf CTA, Zustände und Kerndetails reduzieren.
+- [x] Bestehende Core-LINDENWIRT-Seite vollständig erhalten.
 
 ## Abnahme
 
-- [ ] Die Seite wirkt auch mit statischem Bild vollständig und hochwertig.
-- [ ] Video ist optional und blockiert niemals den Seitenstart.
-- [ ] Keine fiktive Verfügbarkeit wird als Live-Datum ausgegeben.
-- [ ] Warme Lichtwirkung behält ausreichenden Textkontrast.
+- [x] Die Seite wirkt auch mit statischem Bild vollständig und hochwertig.
+- [x] Video ist optional und blockiert niemals den Seitenstart; aktuell wird bewusst kein Video geladen.
+- [x] Keine fiktive Verfügbarkeit wird als Live-Datum ausgegeben.
+- [x] Warme Lichtwirkung behält ausreichenden Textkontrast.
+
+## Ist-Stand · 2026-09-14
+
+- Premium-Hero und mobiler Fokus-Crop liegen lokal samt Erzeugungs- und Asset-Manifest vor.
+- Vier Anlass-Zustände, native Detail-Hotspots und Beispielkapazitäten sind umgesetzt.
+- Desktop (1440 × 1000) und Mobile (390 × 844) wurden ohne horizontalen Overflow geprüft.
+- Die Seite ist lokal zur Abnahme bereit; Commit und Veröffentlichung folgen nach Freigabe.
 
 ---
 

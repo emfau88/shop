@@ -1,4 +1,310 @@
-.lindenwirt-signature { --signature-accent: #d6b37c; --signature-ink: #f7f0e4; }
-.lindenwirt-signature .signature-fallback img { object-position: 60% center; filter: saturate(.78) brightness(.6) sepia(.12); }
-.lindenwirt-signature .signature-scrim { background: linear-gradient(90deg,rgba(26,15,8,.97),rgba(26,15,8,.69) 39%,rgba(26,15,8,.07) 72%),linear-gradient(0deg,rgba(23,12,6,.78),transparent 50%); }
+.lindenwirt-signature {
+  --signature-accent: #d9b77e;
+  --signature-ink: #f8f1e7;
+  background: #160d08;
+}
 
+.lindenwirt-signature .signature-hero {
+  min-height: 930px;
+  background: #160d08;
+}
+
+.lindenwirt-signature .signature-fallback {
+  opacity: 1;
+  transform: scale(1.015);
+  transition: transform 1.2s cubic-bezier(.2,.65,.2,1), filter .8s ease;
+}
+
+.lindenwirt-signature .signature-fallback img {
+  object-position: 54% center;
+  filter: saturate(.86) brightness(.72) contrast(1.08) sepia(.08);
+  transition: object-position 1.2s cubic-bezier(.2,.65,.2,1), filter .8s ease;
+}
+
+.lindenwirt-signature[data-signature-state="family"] .signature-fallback img { object-position: 50% center; }
+.lindenwirt-signature[data-signature-state="wedding"] .signature-fallback img { object-position: 58% 48%; filter: saturate(.9) brightness(.76) contrast(1.06) sepia(.12); }
+.lindenwirt-signature[data-signature-state="business"] .signature-fallback img { object-position: 64% center; filter: saturate(.72) brightness(.68) contrast(1.11) sepia(.06); }
+.lindenwirt-signature[data-signature-state="rooms"] .signature-fallback img { object-position: 54% center; }
+
+.lindenwirt-signature .signature-scrim {
+  background:
+    linear-gradient(90deg,rgba(20,11,6,.98) 0%,rgba(20,11,6,.88) 31%,rgba(20,11,6,.5) 44%,rgba(20,11,6,.05) 70%,rgba(20,11,6,.2) 100%),
+    linear-gradient(0deg,rgba(20,10,5,.9) 0%,transparent 49%),
+    radial-gradient(circle at 75% 20%,rgba(200,143,74,.1),transparent 25%);
+}
+
+.lindenwirt-signature .signature-copy {
+  align-self: start;
+  margin-top: 35px;
+  max-width: 600px;
+}
+
+.lindenwirt-signature .signature-copy h1 { max-width: 650px; }
+.lindenwirt-signature .signature-intro { color: #f4e8d9; opacity: .82; }
+.lindenwirt-signature .signature-kicker { color: #ead9c3; }
+
+.lindenwirt-signature .signature-rail {
+  position: absolute;
+  grid-column: auto;
+  left: clamp(28px,4.3vw,66px);
+  bottom: 300px;
+  border-color: rgba(238,215,186,.24);
+  background: rgba(28,16,9,.62);
+}
+
+.lindenwirt-signature .signature-rail button span {
+  display: inline-grid;
+  place-items: center;
+  width: 18px;
+  height: 18px;
+  margin-right: 9px;
+  vertical-align: -4px;
+}
+
+.lindenwirt-signature .signature-rail button span svg {
+  width: 18px;
+  height: 18px;
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 1.35;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+.lindenwirt-signature .signature-story {
+  position: absolute;
+  grid-column: auto;
+  grid-row: auto;
+  left: clamp(28px,4.3vw,66px);
+  bottom: 126px;
+  width: 430px;
+  margin: 0;
+  border-color: rgba(238,215,186,.22);
+  background: rgba(26,14,7,.66);
+}
+
+.lindenwirt-signature .signature-story:has(.signature-story-media) { width: 430px; }
+.lindenwirt-signature .signature-story-media { filter: saturate(.72) brightness(.82) contrast(1.08); }
+.lindenwirt-signature .signature-metrics { bottom: 38px; transform: none; }
+
+.lindenwirt-glow {
+  position: absolute;
+  z-index: 1;
+  inset: 0;
+  overflow: hidden;
+  pointer-events: none;
+}
+
+.lindenwirt-glow i {
+  position: absolute;
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  background: #ffd38d;
+  box-shadow: 0 0 25px 9px rgba(255,167,70,.23);
+  opacity: .42;
+  animation: lindenwirt-candle 4.8s ease-in-out infinite alternate;
+}
+
+.lindenwirt-glow i:nth-child(1) { left: 68%; top: 62%; }
+.lindenwirt-glow i:nth-child(2) { left: 78%; top: 58%; animation-delay: -1.7s; transform: scale(.68); }
+.lindenwirt-glow i:nth-child(3) { left: 88%; top: 66%; animation-delay: -3.1s; transform: scale(.78); }
+
+@keyframes lindenwirt-candle {
+  0% { opacity: .25; filter: blur(1px); }
+  55% { opacity: .5; filter: blur(2px); }
+  100% { opacity: .34; filter: blur(.5px); }
+}
+
+.lindenwirt-hotspots {
+  position: absolute;
+  z-index: 5;
+  inset: 0;
+  pointer-events: none;
+}
+
+.lindenwirt-hotspot {
+  position: absolute;
+  z-index: 5;
+  width: 250px;
+  color: #fbf3e8;
+  filter: drop-shadow(0 4px 14px rgba(0,0,0,.72));
+  pointer-events: auto;
+}
+
+.lindenwirt-hotspot--ambience { top: 222px; left: 57%; }
+.lindenwirt-hotspot--seating { top: 398px; right: 5%; }
+
+.lindenwirt-hotspot summary {
+  position: relative;
+  display: flex;
+  align-items: center;
+  gap: 13px;
+  list-style: none;
+  cursor: pointer;
+}
+
+.lindenwirt-hotspot summary::-webkit-details-marker { display: none; }
+
+.lindenwirt-hotspot summary::before {
+  content: "";
+  position: absolute;
+  right: calc(100% + 10px);
+  top: 16px;
+  width: 54px;
+  height: 1px;
+  background: rgba(248,230,205,.57);
+  transform: rotate(-45deg);
+  transform-origin: right center;
+}
+
+.lindenwirt-hotspot summary > span {
+  display: grid;
+  place-items: center;
+  flex: 0 0 31px;
+  width: 31px;
+  height: 31px;
+  border: 1px solid #f4d5a7;
+  border-radius: 50%;
+  background: rgba(92,55,25,.8);
+  font-size: 20px;
+  font-weight: 300;
+  transition: transform .28s ease, background .28s ease, box-shadow .28s ease;
+}
+
+.lindenwirt-hotspot summary strong {
+  font-size: 13px;
+  font-weight: 500;
+  line-height: 1.2;
+}
+
+.lindenwirt-hotspot summary small {
+  display: block;
+  margin-top: 6px;
+  font-size: 8px;
+  font-weight: 400;
+  letter-spacing: .25em;
+  text-transform: uppercase;
+  opacity: .72;
+}
+
+.lindenwirt-hotspot[open] summary > span {
+  color: #2c180d;
+  background: #e5c18b;
+  box-shadow: 0 0 0 7px rgba(221,181,122,.1);
+  transform: rotate(45deg);
+}
+
+.lindenwirt-hotspot > p {
+  width: 238px;
+  margin: 14px 0 0;
+  padding: 15px 17px;
+  border: 1px solid rgba(244,213,167,.2);
+  background: rgba(27,15,8,.84);
+  backdrop-filter: blur(18px);
+  font-size: 11px;
+  line-height: 1.55;
+}
+
+.lindenwirt-capacity {
+  position: absolute;
+  z-index: 4;
+  left: 48%;
+  bottom: 170px;
+  min-width: 230px;
+  padding: 14px 18px;
+  border-left: 1px solid rgba(239,209,168,.58);
+  color: #f7eadb;
+  background: linear-gradient(90deg,rgba(25,13,6,.6),transparent);
+}
+
+.lindenwirt-capacity span {
+  display: block;
+  margin-bottom: 7px;
+  color: #dabc91;
+  font-size: 8px;
+  letter-spacing: .24em;
+  text-transform: uppercase;
+}
+
+.lindenwirt-capacity strong {
+  display: none;
+  font: 400 18px/1.25 Georgia,serif;
+}
+
+.lindenwirt-signature[data-signature-state="family"] [data-capacity="family"],
+.lindenwirt-signature[data-signature-state="wedding"] [data-capacity="wedding"],
+.lindenwirt-signature[data-signature-state="business"] [data-capacity="business"],
+.lindenwirt-signature[data-signature-state="rooms"] [data-capacity="rooms"] { display: block; }
+
+.lindenwirt-signature[data-signature-state="business"] .lindenwirt-hotspot--ambience { opacity: .55; }
+.lindenwirt-signature[data-signature-state="family"] .lindenwirt-hotspot--seating,
+.lindenwirt-signature[data-signature-state="wedding"] .lindenwirt-hotspot--ambience { transform: translateY(-7px); }
+
+.lindenwirt-signoff {
+  position: absolute;
+  z-index: 4;
+  right: clamp(34px,5vw,76px);
+  bottom: 83px;
+  margin: 0;
+  color: rgba(252,238,218,.76);
+  font: italic 28px/1.02 "Segoe Script","Bradley Hand",cursive;
+  letter-spacing: -.05em;
+  text-align: right;
+  transform: rotate(-7deg);
+  filter: drop-shadow(0 2px 8px rgba(0,0,0,.7));
+}
+
+.lindenwirt-signoff::after {
+  content: "";
+  display: block;
+  width: 66px;
+  height: 1px;
+  margin: 10px 0 0 auto;
+  background: currentColor;
+  transform: rotate(-5deg);
+}
+
+@media (max-width: 1180px) {
+  .lindenwirt-signature .signature-copy h1 { font-size: 62px; }
+  .lindenwirt-hotspot--ambience { left: 61%; }
+  .lindenwirt-hotspot--seating { right: 2%; }
+  .lindenwirt-capacity { left: 53%; }
+}
+
+@media (max-width: 920px) {
+  .lindenwirt-signature .signature-hero { min-height: 1120px; display: block; padding-top: 120px; }
+  .lindenwirt-signature .signature-fallback { top: 80px; height: 460px; transform: none; }
+  .lindenwirt-signature .signature-fallback img { object-position: center 48%; }
+  .lindenwirt-signature .signature-scrim { background: linear-gradient(0deg,rgba(20,10,5,.99) 0%,rgba(20,10,5,.88) 48%,rgba(20,10,5,.1) 73%); }
+  .lindenwirt-signature .signature-copy { margin-top: 445px; max-width: 650px; }
+  .lindenwirt-signature .signature-rail { position: relative; left: auto; bottom: auto; margin-top: 28px; }
+  .lindenwirt-signature .signature-story { position: relative; left: auto; bottom: auto; width: min(100%,460px); margin-top: 18px; }
+  .lindenwirt-signature .signature-story:has(.signature-story-media) { width: min(100%,460px); }
+  .lindenwirt-signature .signature-metrics,
+  .lindenwirt-signoff,
+  .lindenwirt-capacity,
+  .lindenwirt-hotspot--seating { display: none; }
+  .lindenwirt-hotspot--ambience { top: 370px; left: auto; right: 28px; width: 210px; }
+  .lindenwirt-hotspot summary::before { display: none; }
+  .lindenwirt-hotspot > p { width: 210px; }
+}
+
+@media (max-width: 560px) {
+  .lindenwirt-signature .signature-hero { min-height: 1050px; padding-top: 108px; }
+  .lindenwirt-signature .signature-fallback { top: 76px; height: 430px; }
+  .lindenwirt-signature .signature-fallback img { object-position: center 42%; }
+  .lindenwirt-signature .signature-copy { margin-top: 403px; }
+  .lindenwirt-signature .signature-copy h1 { font-size: 49px; }
+  .lindenwirt-signature .signature-intro { max-width: 390px; }
+  .lindenwirt-hotspot--ambience { top: 348px; right: 20px; width: 175px; }
+  .lindenwirt-hotspot summary strong { font-size: 11px; }
+  .lindenwirt-hotspot summary small { display: none; }
+  .lindenwirt-hotspot > p { position: absolute; right: 0; width: 220px; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .lindenwirt-signature .signature-fallback,
+  .lindenwirt-signature .signature-fallback img { transition: none; }
+  .lindenwirt-glow i { animation: none; }
+}

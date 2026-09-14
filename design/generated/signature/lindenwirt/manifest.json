@@ -1,0 +1,24 @@
+{
+  "generated_date": "2026-09-14",
+  "generation_mode": "Built-in image_gen.imagegen, new generation with one repository reference image",
+  "call_count": 1,
+  "originals_preserved": true,
+  "assets": [
+    {
+      "id": "LW-EVENT-ROOM-01",
+      "filename": "lindenwirt-event-room-source.png",
+      "path": "design/generated/signature/lindenwirt/lindenwirt-event-room-source.png",
+      "format": "PNG",
+      "width": 1448,
+      "height": 1086,
+      "prompt": "Use case: ads-marketing. Asset type: clean, UI-free desktop hero photograph for a premium fictional German country restaurant and private-events website. Primary request: Create an exceptionally photorealistic, warm evening interior of an elegant but believable regional restaurant prepared for a private celebration. Scene/backdrop: Dark timber ceiling beams, warm plaster and natural stone walls, restrained contemporary-rustic dining room, a softly glowing circular pendant chandelier in the upper right, candlelight and distant tables fading into deep atmospheric blur. Subject: One long solid-oak dining table extending from center-right toward the foreground, formally but naturally set with neutral ceramic plates, folded linen napkins, crystal wine glasses, small candles, and one tasteful arrangement of cream flowers and green branches. No people. Style/medium: cinematic high-end hospitality interior photography, authentic architectural geometry and table settings, natural photographic depth, premium German editorial art direction rather than CGI. Composition/framing: wide 4:3 landscape. Keep the left 40 percent dark and visually quiet for large ivory headline typography. Preserve the table and flower arrangement in the right-center. Leave clean areas around right-side wall and table for separate DOM hotspot labels. Important objects remain coherent in a centered vertical mobile crop. Lighting/mood: intimate amber candlelight with controlled highlights, subtle cool ambient shadow separation, rich blacks with readable detail, shallow depth of field, elegant and welcoming. Color palette: walnut, dark umber, warm limestone, candle amber, muted cream and olive green. Materials/textures: credible aged oak, woven linen, clear glass, matte ceramic, lime plaster and natural stone; detailed without looking distressed. Constraints: background photograph only. No logo, no text, no signage, no letters, no UI, no icons, no border, no watermark, no people, no distorted tableware, no excessive flowers, no fantasy architecture. Do not imitate a real restaurant or identifiable brand.",
+      "reference": "docs/design/signature-reference/lindenwirt-signature-reference.png",
+      "visual_review": "Geprüft: glaubwürdige gehobene Restaurantatmosphäre, ruhige dunkle Textzone links, festlich gedeckte Tafel rechts und kohärenter mobiler Hochformat-Crop. Keine Personen, Logos, Schrift oder UI.",
+      "derived_assets": [
+        "website/public/assets/signature/lindenwirt/lindenwirt-event-room.webp",
+        "website/public/assets/signature/lindenwirt/lindenwirt-event-room-mobile.webp"
+      ],
+      "alt_text": "Festlich gedeckte Eichentafel in einem warm beleuchteten Restaurant."
+    }
+  ]
+}

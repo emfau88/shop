@@ -25,6 +25,10 @@ type SignatureShellProps = {
   image: { src: string; src480: string; src960: string; alt: string; width?: number; height?: number };
   metrics: Array<{ value: string; label: string }>;
   storyMedia?: { src: string; alt: string };
+  storyHref?: string;
+  storyLinkLabel?: string;
+  brandTagline?: string;
+  ctaLabel?: string;
   initialStage?: string;
   children?: React.ReactNode;
 };
@@ -43,6 +47,10 @@ export function SignatureShell({
   image,
   metrics,
   storyMedia,
+  storyHref,
+  storyLinkLabel = 'Core-Website ansehen',
+  brandTagline = 'Signature experience',
+  ctaLabel = 'Projekt anfragen',
   initialStage,
   children,
 }: SignatureShellProps) {
@@ -60,7 +68,7 @@ export function SignatureShell({
         <header className="signature-header">
           <a className="signature-brand" href={coreBase} aria-label={`${brand} Core-Website`}>
             <strong>{brand}</strong>
-            <span>Signature experience</span>
+            <span>{brandTagline}</span>
           </a>
           <nav aria-label={`${brand} Navigation`}>
             {nav.map((item) => (
@@ -68,7 +76,7 @@ export function SignatureShell({
             ))}
           </nav>
           <a className="signature-cta" href={`${coreBase}${cta}`}>
-            Projekt anfragen <span aria-hidden="true">→</span>
+            {ctaLabel} <span aria-hidden="true">→</span>
           </a>
         </header>
 
@@ -109,7 +117,7 @@ export function SignatureShell({
             <div>
               <p data-signature-stage-eyebrow>{activeStage.eyebrow}</p>
               <strong data-signature-stage-description>{activeStage.description}</strong>
-              <a href={coreBase}>Core-Website ansehen <span aria-hidden="true">→</span></a>
+              <a href={storyHref ?? coreBase}>{storyLinkLabel} <span aria-hidden="true">→</span></a>
             </div>
           </aside>
 
