@@ -53,8 +53,15 @@ function transformHtml(html) {
   const signatureScript = html.includes('data-signature-page')
     ? `<script type="module" src="${pageBase}/signature-runtime.js"></script>`
     : '';
-  const werkformSignatureScript = html.includes('data-signature-brand="werkform"')
+  const werkformSignatureScript = html.includes(
+    'data-signature-brand="werkform"',
+  )
     ? `<script type="module" src="${pageBase}/werkform-signature-runtime.js"></script>`
+    : '';
+  const aufschlagSignatureScript = html.includes(
+    'data-signature-brand="aufschlag"',
+  )
+    ? `<script type="module" src="${pageBase}/aufschlag-signature-runtime.js"></script>`
     : '';
   return html
     .replace(/<script\b[^>]*>[\s\S]*?<\/script>/gi, '')
@@ -73,7 +80,7 @@ function transformHtml(html) {
     )
     .replace(
       '</body>',
-      `<script src="${pageBase}/pages-runtime.js" defer></script>${metalViewerScript}${signatureScript}${werkformSignatureScript}</body>`,
+      `<script src="${pageBase}/pages-runtime.js" defer></script>${metalViewerScript}${signatureScript}${werkformSignatureScript}${aufschlagSignatureScript}</body>`,
     );
 }
 
@@ -116,9 +123,34 @@ async function buildWerkformSignatureRuntime() {
     build: {
       emptyOutDir: false,
       lib: {
-        entry: path.join(projectRoot, 'scripts', 'pages-werkform-signature-entry.ts'),
+        entry: path.join(
+          projectRoot,
+          'scripts',
+          'pages-werkform-signature-entry.ts',
+        ),
         formats: ['es'],
         fileName: () => 'werkform-signature-runtime.js',
+      },
+      outDir: clientDirectory,
+    },
+    configFile: false,
+    logLevel: 'warn',
+    root: projectRoot,
+  });
+}
+
+async function buildAufschlagSignatureRuntime() {
+  await build({
+    build: {
+      emptyOutDir: false,
+      lib: {
+        entry: path.join(
+          projectRoot,
+          'scripts',
+          'pages-aufschlag-signature-entry.ts',
+        ),
+        formats: ['es'],
+        fileName: () => 'aufschlag-signature-runtime.js',
       },
       outDir: clientDirectory,
     },
@@ -188,6 +220,7 @@ try {
   await buildMetalViewerRuntime();
   await buildSignatureRuntime();
   await buildWerkformSignatureRuntime();
+  await buildAufschlagSignatureRuntime();
   await rm(outputDirectory, { recursive: true, force: true });
   await mkdir(outputDirectory, { recursive: true });
   await cp(clientDirectory, outputDirectory, { recursive: true });

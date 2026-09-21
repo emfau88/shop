@@ -17,6 +17,10 @@ const metalViewerRuntime = path.join(
 );
 const signatureRuntime = path.join(outputDirectory, 'signature-runtime.js');
 const werkformSignatureRuntime = path.join(outputDirectory, 'werkform-signature-runtime.js');
+const aufschlagSignatureRuntime = path.join(
+  outputDirectory,
+  'aufschlag-signature-runtime.js',
+);
 const werkformSignatureModel = path.join(outputDirectory, 'assets', 'signature', 'werkform', 'werkform-assembly.glb');
 const werkformSignatureFallback = path.join(outputDirectory, 'assets', 'signature', 'werkform', 'werkform-assembly-fallback.webp');
 const metalViewerModel = path.join(
@@ -90,6 +94,9 @@ for (const htmlFile of htmlFiles) {
   const isSignature = relativeHtml.includes('/signature/index.html');
   const hasSignatureRuntime = html.includes(`${pageBase}/signature-runtime.js`);
   const hasWerkformSignatureRuntime = html.includes(`${pageBase}/werkform-signature-runtime.js`);
+  const hasAufschlagSignatureRuntime = html.includes(
+    `${pageBase}/aufschlag-signature-runtime.js`,
+  );
   if (isSignature && !hasSignatureRuntime) {
     errors.push(`${relativeHtml}: missing Signature runtime`);
   }
@@ -99,6 +106,14 @@ for (const htmlFile of htmlFiles) {
   const isWerkformSignature = relativeHtml === 'konzept/metallbau/signature/index.html';
   if (isWerkformSignature && !hasWerkformSignatureRuntime) errors.push(`${relativeHtml}: missing WERKFORM 3D runtime`);
   if (!isWerkformSignature && hasWerkformSignatureRuntime) errors.push(`${relativeHtml}: WERKFORM 3D runtime leaked into another route`);
+  const isAufschlagSignature =
+    relativeHtml === 'konzept/sportverein/signature/index.html';
+  if (isAufschlagSignature && !hasAufschlagSignatureRuntime)
+    errors.push(`${relativeHtml}: missing AUFSCHLAG Signature runtime`);
+  if (!isAufschlagSignature && hasAufschlagSignatureRuntime)
+    errors.push(
+      `${relativeHtml}: AUFSCHLAG Signature runtime leaked into another route`,
+    );
   const h1Count = (html.match(/<h1\b/gi) ?? []).length;
   if (h1Count !== 1) {
     errors.push(
@@ -123,6 +138,11 @@ try {
   await access(signatureRuntime);
 } catch {
   errors.push('missing static Signature runtime bundle');
+}
+try {
+  await access(aufschlagSignatureRuntime);
+} catch {
+  errors.push('missing static AUFSCHLAG Signature runtime bundle');
 }
 try {
   await access(werkformSignatureRuntime);
