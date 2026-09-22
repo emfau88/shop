@@ -274,74 +274,6 @@
   content: '';
   pointer-events: none;
 }
-.as-court-lines {
-  position: absolute;
-  z-index: 2;
-  inset: 7% 6% 12%;
-  border: 2px solid rgb(255 255 255 / 80%);
-  pointer-events: none;
-}
-.as-court-lines::before,
-.as-court-lines::after,
-.as-court-lines span::before {
-  position: absolute;
-  background: rgb(255 255 255 / 76%);
-  content: '';
-}
-.as-court-lines::before {
-  top: 50%;
-  right: 0;
-  left: 0;
-  height: 2px;
-}
-.as-court-lines::after {
-  top: 0;
-  bottom: 0;
-  left: 50%;
-  width: 2px;
-}
-.as-court-lines span::before {
-  top: 22%;
-  bottom: 22%;
-  left: 27%;
-  width: 46%;
-  border-right: 2px solid rgb(255 255 255 / 76%);
-  border-left: 2px solid rgb(255 255 255 / 76%);
-  background: transparent;
-}
-.as-flight {
-  position: absolute;
-  z-index: 3;
-  inset: 8% 4% auto 5%;
-  color: var(--as-lime);
-  pointer-events: none;
-}
-.as-trajectory {
-  width: 100%;
-  height: auto;
-  overflow: visible;
-}
-.as-trajectory g > path:first-child {
-  fill: none;
-  stroke: currentColor;
-  stroke-width: 4;
-  stroke-dasharray: 8 12;
-}
-.as-trajectory circle,
-.as-trajectory .as-shuttle {
-  fill: var(--as-lime);
-  stroke: var(--as-ink);
-  stroke-width: 3;
-}
-.as-trajectory-badminton {
-  display: none;
-}
-[data-mode='badminton'] .as-trajectory-tennis {
-  display: none;
-}
-[data-mode='badminton'] .as-trajectory-badminton {
-  display: block;
-}
 .as-visual-label {
   position: absolute;
   z-index: 4;
@@ -1240,12 +1172,6 @@
   }
   [data-mode='badminton'] .as-hero-visual img {
     object-position: 60% center;
-  }
-  .as-court-lines {
-    inset: 7%;
-  }
-  .as-flight {
-    top: 12%;
   }
   .as-visual-label {
     top: 15px;

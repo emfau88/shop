@@ -29,7 +29,7 @@ Die vollständige Präsentation läuft über GitHub Pages. Jedes Branchenkonzept
 ### AUFSCHLAG · Tennis- und Badmintonverein
 
 - [Core-Website](https://emfau88.github.io/shop/konzept/sportverein/)
-- [Signature-Version](https://emfau88.github.io/shop/konzept/sportverein/signature/) · technisches Fundament, Ausbau in Bulk 6
+- [Signature-Version](https://emfau88.github.io/shop/konzept/sportverein/signature/) · veröffentlicht · interaktiver Tennis-/Badminton-Modus und Trainingswoche
 - Weitere Seiten: [Training](https://emfau88.github.io/shop/konzept/sportverein/training/) · [Verein](https://emfau88.github.io/shop/konzept/sportverein/verein/) · [Probetraining](https://emfau88.github.io/shop/konzept/sportverein/probetraining/)
 
 ### LINDENWIRT · Gaststätte und Restaurant

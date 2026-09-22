@@ -132,21 +132,6 @@ function SportPicture({
   );
 }
 
-function Trajectory() {
-  return (
-    <svg className="as-trajectory" viewBox="0 0 620 260" aria-hidden="true">
-      <g className="as-trajectory-tennis">
-        <path d="M18 214 C 158 34, 312 36, 392 198 C 440 260, 510 174, 602 112" />
-        <circle cx="392" cy="198" r="9" />
-      </g>
-      <g className="as-trajectory-badminton">
-        <path d="M24 212 C 162 80, 302 18, 430 42 C 502 56, 552 112, 598 206" />
-        <path className="as-shuttle" d="m598 206 -17 -24 28 -4 z" />
-      </g>
-    </svg>
-  );
-}
-
 export function AufschlagSignatureExperience() {
   const [mode, setMode] = useState<Mode>('tennis');
   const [filter, setFilter] = useState<ScheduleFilter>('alle');
@@ -227,12 +212,6 @@ export function AufschlagSignatureExperience() {
               height={current.imageHeight}
               eager
             />
-            <div className="as-court-lines" aria-hidden="true">
-              <span />
-            </div>
-            <div className="as-flight" aria-hidden="true">
-              <Trajectory />
-            </div>
             <p className="as-visual-label" data-as-visual-label>
               {mode === 'tennis' ? 'Sand · Außenplatz' : 'Parkett · Sporthalle'}
             </p>
