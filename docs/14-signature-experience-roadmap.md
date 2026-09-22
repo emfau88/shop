@@ -389,16 +389,16 @@ Eine stark atmosphärische Restaurant- und Eventseite erreicht Premiumwirkung du
 - [x] Clean Hero ohne UI oder eingebrannten Text erzeugen oder auswählen.
 - [x] Desktop-, Tablet- und Mobile-Crops definieren.
 - [x] Optional einen kurzen, stummen und loopfähigen Ambient-Clip prüfen. Entscheidung: kein Video; das ruhige Standbild ist atmosphärisch vollständig und spart Payload.
-- [x] Posterbild und statischen Fallback bereitstellen.
+- [x] Statische, responsive Bildquellen als belastbaren Fallback bereitstellen.
 - [x] Alle Medien lokal optimieren und lizenzieren.
 
 ## Seite und Interaktion
 
 - [x] Desktop-Komposition anhand des LINDENWIRT-Mockups umsetzen.
 - [x] Familienfeier, Hochzeit, Firmenabend und Räume als native Zustände umsetzen.
-- [x] Zustand wechselt Copy, Kapazität und Bildausschnitt; Hotspots reagieren dezent auf den Kontext.
-- [x] Hotspots für Ambiente, Bestuhlung und Kapazität umsetzen.
-- [x] Media-Teaser als echte bedienbare Komponente umsetzen.
+- [x] Zustand wechselt Copy, Beispielkonfiguration, Bildquelle beziehungsweise Bildausschnitt und CTA.
+- [x] Anlassdetails für Raum und Abend als semantische Definitionen statt dekorativer Hotspots umsetzen.
+- [x] Karte, Küche, Anlass, Materialität und Gemeinschaft als eigenständige redaktionelle Screens komponieren.
 - [x] Animationen langsam, ruhig und unterbrechbar halten.
 - [x] Reservierungs- und Anfragewege auf bestehende Core-Seiten führen.
 - [x] Mobile Fokusreihenfolge auf CTA, Zustände und Kerndetails reduzieren.
@@ -411,12 +411,14 @@ Eine stark atmosphärische Restaurant- und Eventseite erreicht Premiumwirkung du
 - [x] Keine fiktive Verfügbarkeit wird als Live-Datum ausgegeben.
 - [x] Warme Lichtwirkung behält ausreichenden Textkontrast.
 
-## Ist-Stand · 2026-09-14
+## Ist-Stand · 2026-09-22
 
-- Premium-Hero und mobiler Fokus-Crop liegen lokal samt Erzeugungs- und Asset-Manifest vor.
-- Vier Anlass-Zustände, native Detail-Hotspots und Beispielkapazitäten sind umgesetzt.
-- Desktop (1440 × 1000) und Mobile (390 × 844) wurden ohne horizontalen Overflow geprüft.
-- Die Seite ist lokal zur Abnahme bereit; Commit und Veröffentlichung folgen nach Freigabe.
+- Der helle Ankommens-Hero zeigt Gastraum, Öffnungszeit, Adresse, Abendkarte und Reservierungsweg ohne dunkle generische Signature-Bühne.
+- Sieben eigenständige Screens übersetzen **Ankommen → Teilen → Bleiben** in Karte, Feuerküche, Anlasswahl, Materialität, Gesellschaft und Reservierungsabschluss.
+- Familienfeier, Hochzeit, Firmenabend und Räume wechseln als native Button-Zustände Bild, Copy, Beispielkonfiguration und CTA; der statische Export erhält dafür eine kleine routenspezifische Runtime.
+- Desktop (1440 × 900), Tablet (768 × 900) und Mobile (390 × 844) wurden ohne horizontalen Overflow geprüft.
+- Die Seite verwendet ausschließlich lokale responsive WebP-Medien und lädt weder WebGL noch Video, Animationsframework oder permanenten Render-Loop.
+- Die Core-LINDENWIRT-Seiten bleiben unverändert. Lint, Typecheck, Build, Pages-Export und Export-QA werden vor der lokalen Abnahme vollständig protokolliert; Commit und Veröffentlichung folgen erst nach Freigabe.
 
 ---
 

@@ -21,6 +21,10 @@ const aufschlagSignatureRuntime = path.join(
   outputDirectory,
   'aufschlag-signature-runtime.js',
 );
+const lindenwirtSignatureRuntime = path.join(
+  outputDirectory,
+  'lindenwirt-signature-runtime.js',
+);
 const werkformSignatureModel = path.join(outputDirectory, 'assets', 'signature', 'werkform', 'werkform-assembly.glb');
 const werkformSignatureFallback = path.join(outputDirectory, 'assets', 'signature', 'werkform', 'werkform-assembly-fallback.webp');
 const metalViewerModel = path.join(
@@ -97,6 +101,9 @@ for (const htmlFile of htmlFiles) {
   const hasAufschlagSignatureRuntime = html.includes(
     `${pageBase}/aufschlag-signature-runtime.js`,
   );
+  const hasLindenwirtSignatureRuntime = html.includes(
+    `${pageBase}/lindenwirt-signature-runtime.js`,
+  );
   if (isSignature && !hasSignatureRuntime) {
     errors.push(`${relativeHtml}: missing Signature runtime`);
   }
@@ -113,6 +120,14 @@ for (const htmlFile of htmlFiles) {
   if (!isAufschlagSignature && hasAufschlagSignatureRuntime)
     errors.push(
       `${relativeHtml}: AUFSCHLAG Signature runtime leaked into another route`,
+    );
+  const isLindenwirtSignature =
+    relativeHtml === 'konzept/gastronomie/signature/index.html';
+  if (isLindenwirtSignature && !hasLindenwirtSignatureRuntime)
+    errors.push(`${relativeHtml}: missing LINDENWIRT Signature runtime`);
+  if (!isLindenwirtSignature && hasLindenwirtSignatureRuntime)
+    errors.push(
+      `${relativeHtml}: LINDENWIRT Signature runtime leaked into another route`,
     );
   const h1Count = (html.match(/<h1\b/gi) ?? []).length;
   if (h1Count !== 1) {
@@ -143,6 +158,11 @@ try {
   await access(aufschlagSignatureRuntime);
 } catch {
   errors.push('missing static AUFSCHLAG Signature runtime bundle');
+}
+try {
+  await access(lindenwirtSignatureRuntime);
+} catch {
+  errors.push('missing static LINDENWIRT Signature runtime bundle');
 }
 try {
   await access(werkformSignatureRuntime);

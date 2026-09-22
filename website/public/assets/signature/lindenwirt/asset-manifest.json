@@ -19,5 +19,29 @@
       "modifications": "Focal crop and WebP conversion to 720 × 1028, quality 82",
       "generatedBy": "OpenAI image_gen and Sharp"
     }
+  ],
+  "reusedAssets": [
+    {
+      "file": "../../images/gastronomie/gastraum.webp",
+      "role": "bright opening hero, kitchen and business occasion",
+      "sourceManifest": "design/generated/gastronomie/manifest.json"
+    },
+    {
+      "file": "../../images/gastronomie/gericht.webp",
+      "role": "menu and close-to-the-table editorial photography",
+      "sourceManifest": "design/generated/gastronomie/manifest.json"
+    },
+    {
+      "file": "../../images/gastronomie/gesellschaft.webp",
+      "role": "family occasion and human gathering sequence",
+      "sourceManifest": "design/generated/gastronomie/manifest.json"
+    }
+  ],
+  "futurePhotoMotifs": [
+    "hands folding a natural linen napkin beside handmade ceramics",
+    "bread and whipped butter arriving at the table",
+    "cook plating seasonal vegetables at the open pass",
+    "quiet garden table shortly before evening service",
+    "last glasses and candlelight after the final course"
   ]
 }

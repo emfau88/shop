@@ -63,6 +63,11 @@ function transformHtml(html) {
   )
     ? `<script type="module" src="${pageBase}/aufschlag-signature-runtime.js"></script>`
     : '';
+  const lindenwirtSignatureScript = html.includes(
+    'data-signature-brand="lindenwirt"',
+  )
+    ? `<script type="module" src="${pageBase}/lindenwirt-signature-runtime.js"></script>`
+    : '';
   return html
     .replace(/<script\b[^>]*>[\s\S]*?<\/script>/gi, '')
     .replace(/<link\b(?=[^>]*(?:rel="modulepreload"|as="script"))[^>]*>/gi, '')
@@ -80,7 +85,7 @@ function transformHtml(html) {
     )
     .replace(
       '</body>',
-      `<script src="${pageBase}/pages-runtime.js" defer></script>${metalViewerScript}${signatureScript}${werkformSignatureScript}${aufschlagSignatureScript}</body>`,
+      `<script src="${pageBase}/pages-runtime.js" defer></script>${metalViewerScript}${signatureScript}${werkformSignatureScript}${aufschlagSignatureScript}${lindenwirtSignatureScript}</body>`,
     );
 }
 
@@ -160,6 +165,27 @@ async function buildAufschlagSignatureRuntime() {
   });
 }
 
+async function buildLindenwirtSignatureRuntime() {
+  await build({
+    build: {
+      emptyOutDir: false,
+      lib: {
+        entry: path.join(
+          projectRoot,
+          'scripts',
+          'pages-lindenwirt-signature-entry.ts',
+        ),
+        formats: ['es'],
+        fileName: () => 'lindenwirt-signature-runtime.js',
+      },
+      outDir: clientDirectory,
+    },
+    configFile: false,
+    logLevel: 'warn',
+    root: projectRoot,
+  });
+}
+
 async function waitForServer(server) {
   for (let attempt = 0; attempt < 60; attempt += 1) {
     if (server.exitCode !== null) {
@@ -221,6 +247,7 @@ try {
   await buildSignatureRuntime();
   await buildWerkformSignatureRuntime();
   await buildAufschlagSignatureRuntime();
+  await buildLindenwirtSignatureRuntime();
   await rm(outputDirectory, { recursive: true, force: true });
   await mkdir(outputDirectory, { recursive: true });
   await cp(clientDirectory, outputDirectory, { recursive: true });
