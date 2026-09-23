@@ -1,0 +1,25 @@
+{
+  "brand": "GRÜNRAUM",
+  "created": "2026-09-15",
+  "tool": "OpenAI built-in ImageGen",
+  "source": "gruenraum-garden-source.png",
+  "useCase": "photorealistic-natural",
+  "role": "Clean production hero and source for responsive derivatives",
+  "license": "Original generated project asset; no third-party photograph",
+  "prompt": "Create a clean, ultra-realistic editorial photograph of a contemporary residential garden at golden hour: modern white-and-charcoal house on the right, generous stone terrace, low natural-stone retaining wall, gently curving large-format stepping-stone path, layered perennial beds and a sculptural multi-stem tree. Use a very wide human-eye-height composition, preserve calmer dark space on the left for live website copy, and keep the path legible through the lower centre. Use premium architectural and garden photography, deep forest green, warm limestone, muted sage and golden amber. No text, logo, signage, buttons, icons, hotspot graphics, people or watermark; no CGI or game look.",
+  "derivatives": [
+    {
+      "file": "website/public/assets/signature/gruenraum/gruenraum-garden-hero.webp",
+      "dimensions": "1536 × 1024",
+      "format": "WebP",
+      "quality": 84
+    },
+    {
+      "file": "website/public/assets/signature/gruenraum/gruenraum-garden-hero-mobile.webp",
+      "dimensions": "720 × 980",
+      "format": "WebP",
+      "quality": 82,
+      "crop": "Focal crop around tree, terrace, retaining wall, path and planting"
+    }
+  ]
+}

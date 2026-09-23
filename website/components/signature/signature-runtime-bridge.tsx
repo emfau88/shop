@@ -1,6 +1,7 @@
 'use client';
 
 import { useEffect } from 'react';
+import { bindGruenraumExperience } from './gruenraum/gruenraum-experience';
 import { bindSignatureState } from './signature-state-controller';
 
 export function SignatureRuntimeBridge() {
@@ -8,6 +9,10 @@ export function SignatureRuntimeBridge() {
     const root = document.querySelector<HTMLElement>('[data-signature-page]');
     if (!root) return undefined;
     const disposeState = bindSignatureState(root);
+    const disposeGruenraum =
+      root.dataset.signatureBrand === 'grünraum'
+        ? bindGruenraumExperience(root)
+        : undefined;
     let disposeScene: undefined | (() => void);
     let cancelled = false;
     if (root.dataset.signatureBrand === 'werkform') {
@@ -22,6 +27,7 @@ export function SignatureRuntimeBridge() {
     return () => {
       cancelled = true;
       disposeScene?.();
+      disposeGruenraum?.();
       disposeState();
     };
   }, []);

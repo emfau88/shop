@@ -1,0 +1,23 @@
+{
+  "brand": "GRÜNRAUM",
+  "prepared": "2026-09-15",
+  "assets": [
+    {
+      "files": [
+        "gruenraum-garden-hero.webp",
+        "gruenraum-garden-hero-mobile.webp"
+      ],
+      "role": "Golden-hour hero, responsive fallback and pixel-locked source for the four project-phase layers",
+      "source": "design/generated/signature/gruenraum/gruenraum-garden-source.png",
+      "author": "OpenAI built-in ImageGen for this repository",
+      "license": "Original generated project asset; no third-party photograph or plant model",
+      "modifications": "Desktop resize to 1536 × 1024 and focal mobile crop to 720 × 980; WebP quality 84/82",
+      "generatedBy": "OpenAI built-in ImageGen and Sharp"
+    }
+  ],
+  "runtime": {
+    "strategy": "DOM/CSS hybrid over one photographic source",
+    "webgl": false,
+    "notes": "Plan contours, build reveals, progress and hotspots are semantic/vector browser layers; vegetation remains photographic and adds no separate model payload."
+  }
+}

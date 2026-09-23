@@ -16,7 +16,10 @@ const metalViewerRuntime = path.join(
   'metal-viewer-runtime.js',
 );
 const signatureRuntime = path.join(outputDirectory, 'signature-runtime.js');
-const werkformSignatureRuntime = path.join(outputDirectory, 'werkform-signature-runtime.js');
+const werkformSignatureRuntime = path.join(
+  outputDirectory,
+  'werkform-signature-runtime.js',
+);
 const aufschlagSignatureRuntime = path.join(
   outputDirectory,
   'aufschlag-signature-runtime.js',
@@ -25,8 +28,34 @@ const lindenwirtSignatureRuntime = path.join(
   outputDirectory,
   'lindenwirt-signature-runtime.js',
 );
-const werkformSignatureModel = path.join(outputDirectory, 'assets', 'signature', 'werkform', 'werkform-assembly.glb');
-const werkformSignatureFallback = path.join(outputDirectory, 'assets', 'signature', 'werkform', 'werkform-assembly-fallback.webp');
+const werkformSignatureModel = path.join(
+  outputDirectory,
+  'assets',
+  'signature',
+  'werkform',
+  'werkform-assembly.glb',
+);
+const werkformSignatureFallback = path.join(
+  outputDirectory,
+  'assets',
+  'signature',
+  'werkform',
+  'werkform-assembly-fallback.webp',
+);
+const gruenraumSignatureHero = path.join(
+  outputDirectory,
+  'assets',
+  'signature',
+  'gruenraum',
+  'gruenraum-garden-hero.webp',
+);
+const gruenraumSignatureHeroMobile = path.join(
+  outputDirectory,
+  'assets',
+  'signature',
+  'gruenraum',
+  'gruenraum-garden-hero-mobile.webp',
+);
 const metalViewerModel = path.join(
   outputDirectory,
   'assets',
@@ -94,10 +123,14 @@ await collectFiles(outputDirectory, '.html', htmlFiles);
 
 for (const htmlFile of htmlFiles) {
   const html = await readFile(htmlFile, 'utf8');
-  const relativeHtml = path.relative(outputDirectory, htmlFile).replaceAll('\\', '/');
+  const relativeHtml = path
+    .relative(outputDirectory, htmlFile)
+    .replaceAll('\\', '/');
   const isSignature = relativeHtml.includes('/signature/index.html');
   const hasSignatureRuntime = html.includes(`${pageBase}/signature-runtime.js`);
-  const hasWerkformSignatureRuntime = html.includes(`${pageBase}/werkform-signature-runtime.js`);
+  const hasWerkformSignatureRuntime = html.includes(
+    `${pageBase}/werkform-signature-runtime.js`,
+  );
   const hasAufschlagSignatureRuntime = html.includes(
     `${pageBase}/aufschlag-signature-runtime.js`,
   );
@@ -110,9 +143,14 @@ for (const htmlFile of htmlFiles) {
   if (!isSignature && hasSignatureRuntime) {
     errors.push(`${relativeHtml}: Signature runtime leaked into Core route`);
   }
-  const isWerkformSignature = relativeHtml === 'konzept/metallbau/signature/index.html';
-  if (isWerkformSignature && !hasWerkformSignatureRuntime) errors.push(`${relativeHtml}: missing WERKFORM 3D runtime`);
-  if (!isWerkformSignature && hasWerkformSignatureRuntime) errors.push(`${relativeHtml}: WERKFORM 3D runtime leaked into another route`);
+  const isWerkformSignature =
+    relativeHtml === 'konzept/metallbau/signature/index.html';
+  if (isWerkformSignature && !hasWerkformSignatureRuntime)
+    errors.push(`${relativeHtml}: missing WERKFORM 3D runtime`);
+  if (!isWerkformSignature && hasWerkformSignatureRuntime)
+    errors.push(
+      `${relativeHtml}: WERKFORM 3D runtime leaked into another route`,
+    );
   const isAufschlagSignature =
     relativeHtml === 'konzept/sportverein/signature/index.html';
   if (isAufschlagSignature && !hasAufschlagSignatureRuntime)
@@ -170,6 +208,12 @@ try {
   await access(werkformSignatureFallback);
 } catch {
   errors.push('missing WERKFORM Signature runtime, GLB or fallback');
+}
+try {
+  await access(gruenraumSignatureHero);
+  await access(gruenraumSignatureHeroMobile);
+} catch {
+  errors.push('missing GRÜNRAUM Signature desktop or mobile hero');
 }
 
 if (htmlFiles.length !== expectedRouteCount) {

@@ -1,4 +1,5 @@
 import { bindSignatureState } from '../components/signature/signature-state-controller';
+import { bindGruenraumExperience } from '../components/signature/gruenraum/gruenraum-experience';
 
 type FarbformStage = 'wall' | 'floor' | 'light' | 'atmosphere';
 
@@ -120,4 +121,5 @@ function bindFarbform(root: HTMLElement) {
 for (const root of document.querySelectorAll<HTMLElement>('[data-signature-page]')) {
   bindSignatureState(root);
   if (root.dataset.signatureBrand === 'farbform') bindFarbform(root);
+  if (root.dataset.signatureBrand === 'grünraum') bindGruenraumExperience(root);
 }

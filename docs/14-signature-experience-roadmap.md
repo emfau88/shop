@@ -1,7 +1,7 @@
 # Signature Experiences · Umsetzungsplan
 
-**Stand:** 14. September 2026
-**Status:** Bulk 0–2 einschließlich WERKFORM Premium Fidelity Pass abgeschlossen · Bulk 3 als nächster Ausbau
+**Stand:** 15. September 2026
+**Status:** Bulk 0–5 abgeschlossen · GRÜNRAUM Signature lokal zur Abnahme bereit
 **Ausgangs-Commit:** `c3e0fc5` (`main`)  
 **Ziel:** Die fünf bestehenden Konzeptwebsites bleiben als Core-Versionen erhalten und erhalten jeweils eine zusätzliche, separat aufrufbare Premium-/Signature-Homepage.
 
@@ -9,22 +9,22 @@
 
 Der Showroom soll künftig pro Branche zwei Qualitäts- und Erlebnisstufen demonstrieren:
 
-| Stufe | Rolle |
-| --- | --- |
-| **Core** | Bestehende vollständige, mehrseitige und produktionsnahe Unternehmenswebsite |
+| Stufe         | Rolle                                                                                                          |
+| ------------- | -------------------------------------------------------------------------------------------------------------- |
+| **Core**      | Bestehende vollständige, mehrseitige und produktionsnahe Unternehmenswebsite                                   |
 | **Signature** | Zusätzliche stark inszenierte Homepage mit hochwertiger Art Direction, gezielter Interaktion und selektivem 3D |
 
 Die Signature-Seiten ersetzen nichts. Sie ergänzen die bestehenden Seiten als zweites, sichtbar höher positioniertes Angebot.
 
 ### Verbindliche Routen
 
-| Konzept | Bestehende Core-Homepage | Neue Signature-Homepage |
-| --- | --- | --- |
-| WERKFORM | `/konzept/metallbau/` | `/konzept/metallbau/signature/` |
-| FARBFORM | `/konzept/maler/` | `/konzept/maler/signature/` |
-| GRÜNRAUM | `/konzept/galabau/` | `/konzept/galabau/signature/` |
-| AUFSCHLAG | `/konzept/sportverein/` | `/konzept/sportverein/signature/` |
-| LINDENWIRT | `/konzept/gastronomie/` | `/konzept/gastronomie/signature/` |
+| Konzept    | Bestehende Core-Homepage | Neue Signature-Homepage           |
+| ---------- | ------------------------ | --------------------------------- |
+| WERKFORM   | `/konzept/metallbau/`    | `/konzept/metallbau/signature/`   |
+| FARBFORM   | `/konzept/maler/`        | `/konzept/maler/signature/`       |
+| GRÜNRAUM   | `/konzept/galabau/`      | `/konzept/galabau/signature/`     |
+| AUFSCHLAG  | `/konzept/sportverein/`  | `/konzept/sportverein/signature/` |
+| LINDENWIRT | `/konzept/gastronomie/`  | `/konzept/gastronomie/signature/` |
 
 ### Bewusste Umfangsgrenze
 
@@ -99,32 +99,32 @@ Jeder visuelle Bulk gilt erst als abgeschlossen, wenn:
 
 Diese Werte sind Zielbudgets und werden in Bulk 0 gegen den realen Bestand kalibriert:
 
-| Bereich | Ziel |
-| --- | --- |
-| HTML/CSS | sofort sichtbar, unabhängig vom Laden des 3D-Mediums |
-| Hero-Fallback | Mobile möglichst ≤ 300 KB, Desktop möglichst ≤ 700 KB |
-| WERKFORM-GLB | möglichst ≤ 1,5 MB |
-| FARBFORM-3D | initial möglichst ≤ 3 MB, Props/Lichtdaten nachladen |
-| GRÜNRAUM-3D | initial möglichst ≤ 4 MB, Vegetation instanziert und gestuft laden |
+| Bereich       | Ziel                                                                         |
+| ------------- | ---------------------------------------------------------------------------- |
+| HTML/CSS      | sofort sichtbar, unabhängig vom Laden des 3D-Mediums                         |
+| Hero-Fallback | Mobile möglichst ≤ 300 KB, Desktop möglichst ≤ 700 KB                        |
+| WERKFORM-GLB  | möglichst ≤ 1,5 MB                                                           |
+| FARBFORM-3D   | initial möglichst ≤ 3 MB, Props/Lichtdaten nachladen                         |
+| GRÜNRAUM-3D   | initial möglichst ≤ 4 MB, Vegetation instanziert und gestuft laden           |
 | 3D-JavaScript | geteilter oder routenspezifischer Lazy-Bundle; kein Download auf Core-Seiten |
-| DPR | Desktop begrenzen; Mobile niedrigeres Profil |
-| Animation | kein dauerhaftes Rendering außerhalb sichtbarer oder aktiver Animationen |
-| Mobile | brauchbare Interaktion ab stabilen ungefähr 30 FPS auf einem mittleren Gerät |
+| DPR           | Desktop begrenzen; Mobile niedrigeres Profil                                 |
+| Animation     | kein dauerhaftes Rendering außerhalb sichtbarer oder aktiver Animationen     |
+| Mobile        | brauchbare Interaktion ab stabilen ungefähr 30 FPS auf einem mittleren Gerät |
 
 ## 6. Bulk-Übersicht
 
-| Bulk | Inhalt | Komplexität | Abhängigkeit |
-| --- | --- | --- | --- |
-| 0 | Scope, Baseline und technische Entscheidungen | M | keine |
-| 1 | Signature-Fundament, Routen und Export-Runtime | L | Bulk 0 |
-| 2 | WERKFORM Signature | L | Bulk 1 |
-| 3 | FARBFORM Signature | L–XL | Bulk 1–2 |
-| 4 | GRÜNRAUM Signature | XL | Bulk 1–3 |
-| 5 | LINDENWIRT Signature | M | Bulk 1 |
-| 6 | AUFSCHLAG Signature | M–L | Bulk 1 |
-| 7 | Variantenwahl auf `/konzepte/` und Anbieterhomepage | M | Bulk 2–6 |
-| 8 | Gesamtperformance, Accessibility und Pages-Härtung | L | Bulk 2–7 |
-| 9 | Abschlussvergleich, Dokumentation und Veröffentlichung | M | Bulk 8 |
+| Bulk | Inhalt                                                 | Komplexität | Abhängigkeit |
+| ---- | ------------------------------------------------------ | ----------- | ------------ |
+| 0    | Scope, Baseline und technische Entscheidungen          | M           | keine        |
+| 1    | Signature-Fundament, Routen und Export-Runtime         | L           | Bulk 0       |
+| 2    | WERKFORM Signature                                     | L           | Bulk 1       |
+| 3    | FARBFORM Signature                                     | L–XL        | Bulk 1–2     |
+| 4    | GRÜNRAUM Signature                                     | XL          | Bulk 1–3     |
+| 5    | LINDENWIRT Signature                                   | M           | Bulk 1       |
+| 6    | AUFSCHLAG Signature                                    | M–L         | Bulk 1       |
+| 7    | Variantenwahl auf `/konzepte/` und Anbieterhomepage    | M           | Bulk 2–6     |
+| 8    | Gesamtperformance, Accessibility und Pages-Härtung     | L           | Bulk 2–7     |
+| 9    | Abschlussvergleich, Dokumentation und Veröffentlichung | M           | Bulk 8       |
 
 ### Gesamtfortschritt
 
@@ -132,7 +132,7 @@ Diese Werte sind Zielbudgets und werden in Bulk 0 gegen den realen Bestand kalib
 - [x] Bulk 1 · Signature-Fundament, Routen und Export-Runtime
 - [x] Bulk 2 · WERKFORM Signature
 - [x] Bulk 3 · FARBFORM Signature
-- [ ] Bulk 4 · GRÜNRAUM Signature
+- [x] Bulk 4 · GRÜNRAUM Signature
 - [x] Bulk 5 · LINDENWIRT Signature
 - [ ] Bulk 6 · AUFSCHLAG Signature
 - [ ] Bulk 7 · Variantenwahl im Showroom
@@ -348,33 +348,45 @@ Der Hero darf fotografisch bzw. vorgerendert sein. Die Projekttransformation wir
 
 ## Asset-Pipeline
 
-- [ ] Clean Hero ohne eingebrannte UI erzeugen oder auswählen.
-- [ ] Terrain, Hauskörper, Terrasse, Weg, Mauer und Beet als getrennte Geometrie definieren.
-- [ ] Pflaster-, Stein-, Holz- und Erdmaterialien vorbereiten.
-- [ ] Wenige hochwertige Pflanzenmodelle auswählen und Lizenz dokumentieren.
-- [ ] Vegetation per Instancing und Qualitätsstufen planen.
-- [ ] Statische Zustandsbilder für schwache Geräte und WebGL-Ausfall erzeugen.
+- [x] Clean Hero ohne eingebrannte UI erzeugen oder auswählen.
+- [x] Terrain, Hauskörper, Terrasse, Weg, Mauer und Beet als getrennte Projektzonen definieren. Entscheidung: pixelstabile Foto-, Masken- und SVG-Ebenen statt schwacher Echtzeitgeometrie.
+- [x] Pflaster-, Stein-, Holz- und Erdmaterialien vorbereiten. Entscheidung: Materialien bleiben im fotografischen Master; gezielte Reveal-Masken übernehmen den Baufortschritt.
+- [x] Wenige hochwertige Pflanzenmodelle auswählen und Lizenz dokumentieren. Entscheidung: keine externen Pflanzenmodelle; Vegetation ist Bestandteil des original generierten Hero-Assets.
+- [x] Vegetation per Instancing und Qualitätsstufen planen. Nicht erforderlich, da kein Vegetations- oder WebGL-Modell geladen wird.
+- [x] Statische Zustandsbilder für schwache Geräte und WebGL-Ausfall erzeugen. Desktop- und mobiler Clean Hero sind das vollständige Fallback; die Experience benötigt kein WebGL.
 
 ## Seite und Interaktion
 
-- [ ] Golden-Hour-Komposition anhand des GRÜNRAUM-Mockups umsetzen.
-- [ ] Terrasse, Mauer, Weg und Beet mit echten DOM-Hotspots erklären.
-- [ ] Vier Projektphasen als native Buttons umsetzen.
-- [ ] Bestand reduziert und ohne fertige Gartenelemente darstellen.
-- [ ] Entwurf mit Planlinien und markierten Konturen darstellen.
-- [ ] Umsetzung als kontrollierten Aufbau der Bauteile zeigen.
-- [ ] Ergebnis mit finalen Materialien und ergänzender Vegetation darstellen.
-- [ ] Transformationen per Sichtbarkeit, Position, Skalierung und Material interpolieren.
-- [ ] Auf Mobile maximal einen aktiven Hotspot gleichzeitig zeigen.
-- [ ] Bestehende Core-GRÜNRAUM-Seite vollständig erhalten.
+- [x] Golden-Hour-Komposition anhand des GRÜNRAUM-Mockups umsetzen.
+- [x] Terrasse, Mauer, Weg und Beet mit echten DOM-Hotspots erklären.
+- [x] Vier Projektphasen als native Buttons umsetzen.
+- [x] Bestand reduziert und ohne hervorgehobene fertige Gartenelemente darstellen.
+- [x] Entwurf mit Planlinien und markierten Konturen darstellen.
+- [x] Umsetzung als kontrollierten Aufbau der Bauteile zeigen.
+- [x] Ergebnis mit finalen Materialien und ergänzender Vegetation darstellen.
+- [x] Transformationen per Sichtbarkeit, Position, Skalierung und Materialwirkung interpolieren.
+- [x] Auf Mobile maximal einen aktiven Hotspot gleichzeitig zeigen.
+- [x] Bestehende Core-GRÜNRAUM-Seite vollständig erhalten.
 
 ## Abnahme
 
-- [ ] Die vier Phasen sind ohne Erklärung unterscheidbar.
-- [ ] Vegetation dominiert weder Payload noch Bildrate.
-- [ ] Keine Szene benötigt Scroll-Jacking.
-- [ ] Der fotografische Hero und der Projektviewer wirken wie eine gemeinsame Marke.
-- [ ] Mittlere Mobilgeräte erreichen das bestätigte Performanceziel.
+- [x] Die vier Phasen sind ohne Erklärung unterscheidbar.
+- [x] Vegetation dominiert weder Payload noch Bildrate.
+- [x] Keine Szene benötigt Scroll-Jacking.
+- [x] Der fotografische Hero und der Projektviewer wirken wie eine gemeinsame Marke.
+- [x] Mittlere Mobilgeräte erreichen das bestätigte Performanceziel.
+
+## Ist-Stand · 2026-09-23
+
+- Die finale Experience umgeht die generische SignatureShell und übersetzt **„Vom Ort zum Lebensraum“** in sieben eigenständige Bereiche: Hero, Ortsanalyse, Projektentwicklung, Handwerk, Pflanzentwicklung, Gartenalltag und Anfrage.
+- Ein original generierter Clean Hero verbindet Golden-Hour-Architektur, Terrasse, Natursteinmauer, Weg und Staudenbeet ohne eingebrannte UI.
+- Die zentrale Transformation nutzt einen einzigen pixelstabilen Bildraum: Bestands-Veil und Vermessungsraster, echte SVG-Entwurfskonturen, gestaffelte CSS-Reveals für Terrasse, Mauer, Weg und Beet sowie das freie fotografische Ergebnis.
+- Vier native Phasenbuttons funktionieren mit Maus, Touch und Pfeiltasten. Terrasse, Mauer, Weg und Beet sind als semantische DOM-Details bedienbar und per Escape schließbar.
+- Handwerk, Jahreszeiten, Alltagssituationen und Leistungswege besitzen eigene visuelle Rhythmen statt weiterer Varianten derselben Hero-Komposition.
+- Mobile ist vollständig neu komponiert: Projektanfrage und Projektweg bleiben früh sichtbar, die Phasensteuerung wird verdichtet und je Projektphase erscheint höchstens ein Hotspot.
+- Desktop (1440 × 900/1000), Mobile (390 × 844) und die Breiten 360, 430, 768 sowie 1920 wurden ohne horizontalen Overflow geprüft.
+- Der Hero liegt mit 279.912 B Desktop und 165.534 B Mobile innerhalb der Zielbudgets. Es gibt keinen WebGL-, Modell- oder externen Vegetations-Payload.
+- Lint, Typecheck, Build, 30-Routen-Pages-Export und Export-QA sind erfolgreich. Die Seite ist lokal zur Abnahme bereit; Commit und Veröffentlichung folgen erst nach Freigabe.
 
 ---
 
@@ -601,18 +613,18 @@ Notiz:
 
 # 8. Risiken und Gegenmaßnahmen
 
-| Risiko | Gegenmaßnahme |
-| --- | --- |
-| Mockups enthalten eingebrannte UI | Clean Assets separat erzeugen; UI ausschließlich als DOM |
-| Photorealismus wird im Echtzeit-3D nicht erreicht | Hybrid oder hochwertiger statischer Fallback statt schwacher Voll-3D-Szene |
-| Mobile GPU wird überlastet | reduzierte DPR, Schatten und Hotspots; LOD/Instancing; statischer Fallback |
-| GitHub Pages aktiviert React nicht | eigenständige browserneutrale Runtime pro benötigter Route |
-| Doppelte Seiten führen zu Inhaltsdrift | nur Homepages duplizieren; Unterseiten zunächst gemeinsam verwenden |
-| 3D-Assets sind nicht zerlegbar | Node- und Pivot-Anforderungen vor Assetübernahme prüfen |
-| Lizenz oder Urheber ist unklar | Asset erst nach dokumentierter Quelle und Lizenz ins Repository übernehmen |
-| Signature wird überall gleich | nur Mechanik teilen; Layout, Typografie, Bildsprache und Bewegungscharakter markenspezifisch halten |
-| Fiktive Daten wirken real | unmittelbare Kennzeichnung als Demonstrationsinhalt |
-| Bundle wächst auf Core-Seiten | routenspezifisches Laden automatisiert kontrollieren |
+| Risiko                                            | Gegenmaßnahme                                                                                       |
+| ------------------------------------------------- | --------------------------------------------------------------------------------------------------- |
+| Mockups enthalten eingebrannte UI                 | Clean Assets separat erzeugen; UI ausschließlich als DOM                                            |
+| Photorealismus wird im Echtzeit-3D nicht erreicht | Hybrid oder hochwertiger statischer Fallback statt schwacher Voll-3D-Szene                          |
+| Mobile GPU wird überlastet                        | reduzierte DPR, Schatten und Hotspots; LOD/Instancing; statischer Fallback                          |
+| GitHub Pages aktiviert React nicht                | eigenständige browserneutrale Runtime pro benötigter Route                                          |
+| Doppelte Seiten führen zu Inhaltsdrift            | nur Homepages duplizieren; Unterseiten zunächst gemeinsam verwenden                                 |
+| 3D-Assets sind nicht zerlegbar                    | Node- und Pivot-Anforderungen vor Assetübernahme prüfen                                             |
+| Lizenz oder Urheber ist unklar                    | Asset erst nach dokumentierter Quelle und Lizenz ins Repository übernehmen                          |
+| Signature wird überall gleich                     | nur Mechanik teilen; Layout, Typografie, Bildsprache und Bewegungscharakter markenspezifisch halten |
+| Fiktive Daten wirken real                         | unmittelbare Kennzeichnung als Demonstrationsinhalt                                                 |
+| Bundle wächst auf Core-Seiten                     | routenspezifisches Laden automatisiert kontrollieren                                                |
 
 # 9. Nicht Bestandteil dieses Programms
 

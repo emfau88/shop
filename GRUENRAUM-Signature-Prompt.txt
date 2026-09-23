@@ -1,0 +1,1070 @@
+Du arbeitest im Repository:
+
+C:\Users\madde\Documents\Ebay Websites
+
+Repository:
+https://github.com/emfau88/shop
+
+## Ziel
+
+Erstelle die endgültige Premium-/Signature-Version von GRÜNRAUM.
+
+Route:
+
+/konzept/galabau/signature/
+
+GRÜNRAUM ist eine fiktive, hochwertige Marke für Garten- und Landschaftsbau. Die Signature-Seite soll deutlich über einer gewöhnlichen Handwerker- oder Gartenbauwebsite liegen und wie eine eigenständige digitale Marke für anspruchsvoll geplante Außenräume wirken.
+
+Die Seite soll Gartenplanung, handwerkliche Ausführung, Materialität, Bepflanzung und langfristige Entwicklung zu einer zusammenhängenden räumlichen Erfahrung verbinden.
+
+Das Ergebnis darf hochwertig, atmosphärisch und editorial sein, soll aber nicht in austauschbare Architektur-Luxusästhetik, Immobilienmarketing, Wellness-Design oder ein typisches Awwwards-/Framer-Template abrutschen.
+
+Die Seite muss innerhalb weniger Sekunden verständlich machen:
+
+- Was ist GRÜNRAUM?
+- Welche Gärten und Außenräume plant und baut das Unternehmen?
+- Wie entsteht aus einem Grundstück ein zusammenhängender Lebensraum?
+- Welche Rolle spielen Haus, Nutzung, Boden, Licht, Wasser, Material und Pflanze?
+- Wie läuft ein Projekt von der ersten Idee bis zur langfristigen Entwicklung ab?
+- Wo finde ich Leistungen und Gartenideen?
+- Wie kann ich ein Projekt anfragen?
+
+---
+
+# ABSOLUTE REGEL: GRÜNRAUM-CORE NICHT VERÄNDERN
+
+Die bestehende Core-Seite unter:
+
+website/app/konzept/galabau/
+
+ist READ ONLY – mit Ausnahme des darin enthaltenen Signature-Unterordners:
+
+website/app/konzept/galabau/signature/
+
+Nur die Signature-Version darf bearbeitet, überschrieben oder vollständig ersetzt werden.
+
+Du darfst die Core-Seite und ihre Unterseiten gründlich analysieren und daraus ableiten:
+
+- Inhalte
+- Markenlogik
+- Farben
+- Typografie
+- Leistungen
+- Projektphasen
+- Bildsprache
+- Informationsarchitektur
+- Anfragewege
+- Material- und Pflanzenkonzept
+- Gartenideen und Beispielprojekte
+
+Du darfst aber keine bestehenden Core-Dateien verändern.
+
+Insbesondere NICHT verändern:
+
+- website/app/konzept/galabau/page.tsx
+- website/app/konzept/galabau/galabau.css
+- website/app/konzept/galabau/layout.tsx
+- website/app/konzept/galabau/leistungen/page.tsx
+- website/app/konzept/galabau/gartenideen/page.tsx
+- website/app/konzept/galabau/anfrage/page.tsx
+- bestehende Dateien unter website/components/landscape/
+- Core-Navigation
+- Core-Formulare
+- bestehende Shared-Komponenten
+
+Die GRÜNRAUM-Core-Seite und sämtliche Core-Unterseiten müssen nach der Arbeit funktional und visuell identisch bleiben.
+
+Code-Deduplication ist kein Grund, Core-Dateien anzufassen. Inhalte dürfen innerhalb des Signature-Scopes lokal dupliziert werden.
+
+---
+
+# ERLAUBTER WRITE-SCOPE
+
+Bevorzugt ausschließlich:
+
+website/app/konzept/galabau/signature/
+
+Die dort vorhandenen Dateien dürfen vollständig überarbeitet oder ersetzt werden, insbesondere:
+
+- website/app/konzept/galabau/signature/page.tsx
+- website/app/konzept/galabau/signature/gruenraum-signature.css
+
+Falls Komponenten benötigt werden, dürfen die vorhandenen GRÜNRAUM-Signature-Komponenten bearbeitet, ersetzt oder ergänzt werden:
+
+website/components/signature/gruenraum/
+
+Neue Signature-Assets dürfen ausschließlich unter folgendem Pfad liegen:
+
+website/public/assets/signature/gruenraum/
+
+Die allgemeine Architektur unter:
+
+website/components/signature/
+
+darf außerhalb des GRÜNRAUM-Unterordners nicht verändert werden.
+
+Die generische SignatureShell darf verwendet werden, ist aber keine Pflicht. Wenn sie die neue Art Direction einschränkt, soll sie auf der GRÜNRAUM-Signature-Route vollständig umgangen werden.
+
+Andere Core- und Signature-Seiten dürfen nicht beeinflusst werden.
+
+Falls eine Anpassung an Export-, Runtime-, Lint- oder QA-Skripten zwingend erforderlich ist, muss sie:
+
+- minimal
+- ausschließlich auf die GRÜNRAUM-Signature-Route begrenzt
+- rückwärtskompatibel
+- ohne Auswirkungen auf andere Marken
+
+sein.
+
+Vor Beginn `git status` prüfen. Vorhandene fremde oder noch nicht freigegebene Änderungen erhalten, nicht zurücksetzen, nicht überschreiben und nicht in einen GRÜNRAUM-Commit aufnehmen.
+
+---
+
+# ZUERST VOLLSTÄNDIG LESEN
+
+Vor der Umsetzung vollständig lesen:
+
+1. docs/14-signature-experience-roadmap.md
+2. mockup-to-production-signature-playbook.md
+3. 3d-implementation-playbook-shop.md
+4. docs/design/signature-reference/README.md
+5. docs/06-galabau.md
+6. docs/qa/signature-bulk-4-gruenraum/README.md
+7. bestehende GRÜNRAUM-Core-Seite und alle zugehörigen Unterseiten
+8. vorhandene GRÜNRAUM-Signature-Implementierung
+9. vorhandene GRÜNRAUM-Signature-Komponenten
+10. vorhandene GRÜNRAUM-Asset-Manifeste
+11. docs/design/signature-reference/gruenraum-signature-reference.png
+
+Das GRÜNRAUM-Referenzmockup ist ausschließlich Art Direction. Es darf niemals als eingebranntes UI-Hintergrundbild verwendet werden.
+
+---
+
+# BESTEHENDE GRÜNRAUM-SIGNATURE-VERSION
+
+Die aktuelle GRÜNRAUM-Signature-Seite ist eine frühere Ausarbeitung auf Basis des generischen Signature-Systems.
+
+Die bestehende Signature-Seite darf vollständig überschrieben, umgebaut oder ersetzt werden.
+
+Das vorhandene Muster aus:
+
+- SignatureShell
+- großem Hintergrundbild mit Scrim
+- Glass-/Storybox
+- nummerierter Stage-Navigation
+- allgemeinen Hotspots
+- generischer Kennzahlenleiste
+
+ist nicht automatisch die gestalterische Vorgabe für die endgültige Seite.
+
+Baue eine eigenständige GRÜNRAUM-Signature-Erfahrung, wenn die vorhandene Struktur die neue Art Direction einschränkt.
+
+Vorhandene gute Inhalte, Assets oder technische Ansätze dürfen weiterverwendet werden. Schwache oder generische UI-Muster müssen nicht bewahrt werden.
+
+---
+
+# BESTEHENDE GRÜNRAUM-DNA
+
+Folgende Eigenschaften bilden die verbindliche Grundlage:
+
+- Garten- und Landschaftsbau als Verbindung von Gestaltung und Ausführung
+- Garten als Lebensraum statt als dekorative Fläche
+- Planen, Bauen und Weiterentwickeln als zusammenhängender Prozess
+- tiefes Gartengrün `#1f4c3c`
+- dunkles Ink-Grün `#18382e`
+- warmes Naturpapier `#f4f1e8`
+- helles Papier `#fcfaf4`
+- gedämpftes Grün `#5c6a61`
+- helle Pflanzenfarbe `#dce7b2`
+- lebendiger Pflanzenakzent `#cbd94f`
+- zurückhaltender Tonakzent `#a75736`
+- Naturstein, Holz, Kies, Wasser, Stauden, Gräser und Gehölze
+- standortgerechte Bepflanzung
+- sorgfältige Übergänge zwischen Haus, Terrasse, Weg und Beet
+- ehrliche handwerkliche Ausführung
+- Umgang mit Licht, Boden, Gefälle, Wasser und Bestand
+- saisonale Veränderung statt statischer Dekoration
+- Pflege und Entwicklung als Teil der Planung
+- konkrete Leistungen und klarer Weg zur Projektanfrage
+- ruhig, natürlich, kompetent und persönlich statt exklusiv oder elitär
+
+Die Signature-Version soll mehr GRÜNRAUM sein als die Core-Seite – nicht eine andere Marke.
+
+Sie darf nicht wie ein Architekturbüro, ein Immobilienprojekt, ein Wellnessresort, ein Möbelkatalog oder eine beliebige Luxusmarke wirken.
+
+---
+
+# ZENTRALE ART DIRECTION
+
+Die leitende Idee lautet:
+
+# VOM ORT ZUM LEBENSRAUM
+
+## Lesen. Ordnen. Wachsen lassen.
+
+Die Seite soll den Weg eines guten Gartenprojekts abbilden:
+
+Ort und Bestand verstehen
+→ Nutzung und Wünsche ordnen
+→ Räume und Blickachsen entwickeln
+→ Material und Höhen fügen
+→ standortgerecht pflanzen
+→ den Garten im Alltag erleben
+→ Wachstum langfristig begleiten
+
+Diese Dramaturgie soll sich durchziehen durch:
+
+- Seitenrhythmus
+- Typografie
+- Linien und Konturen
+- Bildmaßstab
+- Materialwechsel
+- Pflanzstruktur
+- saisonale Zustände
+- Projektphasen
+- Anfrageweg
+- ruhige Übergänge
+
+Nicht einfach ein großes Gartenfoto mit Serifenschrift, dunklem Overlay und grünen Buttons bauen und es „Signature“ nennen.
+
+---
+
+# LINIE, SCHICHT UND WACHSTUM ALS DESIGN-SYSTEM
+
+Das gestalterische System darf aus folgenden Motiven entstehen:
+
+- Grundstücksgrenze
+- Höhenlinie
+- Wegführung
+- Terrassenkante
+- Pflanzplan
+- Materialfuge
+- Beetstaffelung
+- Baumkrone
+- Licht- und Schattenverlauf
+- Übergang von Planzeichnung zu eingewachsenem Garten
+
+Diese Elemente dürfen beeinflussen:
+
+- Grid
+- Spalten
+- Bildausschnitte
+- Typografie
+- Abschnittsübergänge
+- Projektphasen
+- Interaktion
+- Navigation
+
+Aber:
+
+Nicht jede Section als Lageplan gestalten.
+Nicht überall Konturlinien, Blätter, organische Masken oder grüne Verläufe einsetzen.
+Die Gestaltung muss wie eine glaubwürdige Garten- und Landschaftsbaumarke wirken, nicht wie ein Natur-Themenpark.
+
+---
+
+# GEPLANTE SEITENDRAMATURGIE
+
+Die Seite soll ungefähr sieben deutlich unterschiedliche visuelle Zustände besitzen.
+
+Nicht jede Section muss 100vh hoch sein.
+
+Der Rhythmus ist wichtiger als die Anzahl der Effekte.
+
+---
+
+## SCREEN 01 — DER ERSTE BLICK
+
+Aufgabe:
+
+Sofortige Markenidentität und praktische Orientierung.
+
+Der Hero darf fotografisch und atmosphärisch sein, aber nicht nur aus Hintergrundbild, dunklem Overlay und zentriertem Text bestehen.
+
+Er soll unmittelbar zeigen:
+
+- GRÜNRAUM
+- Garten- & Landschaftsbau
+- Planen · Bauen · Entwickeln
+- eine klare Aussage über individuell geplante Außenräume
+- Zugang zu Leistungen
+- Zugang zu Gartenideen
+- deutlich sichtbare Projektanfrage
+
+Mögliche Hauptaussage:
+
+AUSSENRÄUME,
+DIE MIT DEM LEBEN WACHSEN.
+
+oder:
+
+VOM ORT
+ZUM LEBENSRAUM.
+
+Die konkrete Ausformulierung darf nach visueller Prüfung angepasst werden.
+
+Der Hero soll natürlich, räumlich und einladend beginnen. Kein fast schwarzer Ersteindruck, bei dem Garten, Material und Inhalt verschwinden.
+
+Keine erfundenen Projektzahlen, Betriebsjahre, Bewertungen, Auszeichnungen oder Verfügbarkeiten.
+
+---
+
+## SCREEN 02 — DEN ORT LESEN
+
+Bewusster Wechsel von Atmosphäre zu konkreter Planungslogik.
+
+Bevor die erste Linie entsteht, geben folgende Faktoren die Richtung vor:
+
+- Alltag: Wer nutzt den Garten und zu welchen Zeiten?
+- Bestand: Was bleibt, was stört und was soll weiterwachsen?
+- Standort: Wie verhalten sich Licht, Boden, Gefälle und Wasser?
+- Entwicklung: Wie viel Pflege passt langfristig zum Garten?
+
+Diese Inhalte sollen keine Ansammlung kleiner Standard-Cards werden.
+
+Besser:
+
+- eine ruhige räumliche Analyse
+- präzise Begriffe
+- eine erkennbare Beziehung zwischen Haus, Grundstück und Nutzung
+- wechselnde Maßstäbe zwischen Gesamtgrundstück und Detail
+- Plan- oder Vermessungsmotive nur dort, wo sie Inhalt erklären
+
+Keine erfundenen Vermessungsdaten, Bodenwerte oder konkreten Grundstücksangaben als reale Fakten darstellen.
+
+---
+
+## SCREEN 03 — RÄUME ENTWICKELN
+
+Dies ist die zentrale Signature-Interaktion.
+
+Thema:
+
+Aus einem vorhandenen Grundstück entsteht Schritt für Schritt ein zusammenhängender Garten.
+
+Verbindliche Zustände:
+
+- Bestand
+- Entwurf
+- Umsetzung
+- Ergebnis
+
+Beim Wechsel sollen sich sinnvoll verändern:
+
+- Bild oder Bildausschnitt
+- Planlinien und räumliche Konturen
+- kurze Copy
+- sichtbare Materialien oder Bauteile
+- Fokus auf Terrasse, Weg, Mauer, Beet oder Baum
+- Projektstatus und Orientierung
+- passende Hinweise oder Detailinformationen
+
+Nicht nur Text austauschen und dieselbe Bühne stehen lassen.
+
+Die vier Zustände müssen eine nachvollziehbare Transformation zeigen:
+
+Bestand
+→ Ort und vorhandene Strukturen lesen
+
+Entwurf
+→ Räume, Wege, Höhen und Blickachsen ordnen
+
+Umsetzung
+→ Unterbau, Kanten, Flächen und Pflanzbereiche herstellen
+
+Ergebnis
+→ Haus, Material und Pflanze als zusammenhängenden Lebensraum erleben
+
+Die Interaktion darf mit fotografischen Ebenen, präzisen SVG-Konturen, Masken, Material-Reveals oder kleinen DOM-basierten Detailpunkten arbeiten.
+
+Alle Zustände müssen mit Maus, Tastatur und Touch funktionieren.
+
+Keine kleinen Pills als Hauptgestaltung.
+Keine Standard-Hover-Cards.
+Keine vorgetäuschte frei drehbare 3D-Szene.
+Keine erfundenen Live-Projektdaten.
+
+---
+
+## SCREEN 04 — MATERIAL, DAS DEN ORT TRÄGT
+
+Thema:
+
+Die handwerkliche Seite von GRÜNRAUM.
+
+Nicht nur fertige Gartenbilder zeigen. Sichtbar machen, dass dauerhafte Außenräume aus unsichtbarer Vorbereitung und präzisen Übergängen entstehen.
+
+Glaubwürdig erzählen:
+
+- Unterbau und Tragfähigkeit
+- Gefälle und Wasserführung
+- Anschlüsse an Haus, Beet und vorhandene Höhen
+- Naturstein, Pflaster, Holz oder Kies passend zum Ort
+- saubere Kanten und Übergänge
+- Baufolge vor sichtbarer Oberfläche
+
+Dieser Bereich darf technischer, heller und präziser werden.
+
+Keine erfundenen Materialhersteller, Zertifikate oder Nachhaltigkeitssiegel.
+Keine pseudo-technischen Messwerte ohne Grundlage.
+Keine Materialmuster als beliebige Luxus-Swatches inszenieren.
+
+---
+
+## SCREEN 05 — WAS HEUTE GESETZT WIRD
+
+Der stillste, lebendigste und zeitlichste Screen.
+
+Thema:
+
+Pflanzung verändert sich. Ein Garten wird nicht an einem Tag fertig, sondern gewinnt über Jahreszeiten und Jahre an Struktur.
+
+Geeignete Inhalte:
+
+- Stauden, Gräser und Gehölze
+- Wuchshöhen und räumliche Staffelung
+- Blüte, Schatten und Rückzug
+- standortgerechte Auswahl
+- Wasserbedarf
+- Pflegeumfang
+- Frühjahr · Aufbau
+- Sommer · Blüte und Schatten
+- Herbst · Struktur und Farbe
+- Winter · Gerüst und Ruhe
+
+Sehr wenig Text.
+
+Eine dezente Jahreszeiten- oder Wachstumsinteraktion ist möglich, wenn sie einen echten inhaltlichen Zweck erfüllt. Sie darf nicht zur dekorativen Bildfilter-Spielerei werden.
+
+Falls passende Assets fehlen, keine künstliche CSS-Pflanzenillustration als Ersatz bauen. Vorhandene Fotografie sinnvoll komponieren und fehlende Premium-Motive konkret dokumentieren.
+
+---
+
+## SCREEN 06 — GARTEN IM ALLTAG
+
+Übergang von Planung und Material zu Nutzung und Lebensqualität.
+
+Der Garten soll nicht als unberührtes Prestigeobjekt erscheinen, sondern als Außenraum für konkrete Situationen:
+
+- der erste Kaffee auf der Terrasse
+- Schatten unter einem mehrstämmigen Baum
+- ein Weg, der selbstverständlich zum Sitzplatz führt
+- Wasser, das nach Regen im Garten bleiben darf
+- ein Garten, der Kindern, Gästen und Rückzug Raum gibt
+- Pflanzen, die sich im Jahreslauf verändern
+- ein Platz, der nach einigen Jahren besser statt beliebiger wirkt
+
+Keine generischen Aussagen wie:
+
+„Ihr persönliches Paradies für unvergessliche Momente.“
+
+Besser konkret und glaubwürdig:
+
+Morgensonne auf der Terrasse.
+
+Schatten, wenn der Sommer bleibt.
+
+Wasser, das nicht nur abgeleitet wird.
+
+Pflanzen, die mit jedem Jahr mehr Raum bilden.
+
+Solche Aussagen sind gestalterische Alltagsszenen, keine behaupteten Projektreferenzen.
+
+---
+
+## SCREEN 07 — DER ERSTE SCHRITT
+
+Klarer, ruhiger Abschluss.
+
+Mögliche Hauptaussage:
+
+WAS DARF
+DRAUSSEN ENTSTEHEN?
+
+oder:
+
+IHR GARTEN
+BEGINNT MIT DEM ORT.
+
+Darunter nur das Wesentliche:
+
+- Gartenprojekt kurz beschreiben
+- Leistungen ansehen
+- Gartenideen ansehen
+- unverbindliche Erstaufnahme
+- Hinweis auf hilfreiche Angaben wie Ort, Grundstücksgröße, Nutzung, Zeitraum und vorhandene Elemente
+
+Keine riesige Sales-Section.
+Keine künstliche Dringlichkeit.
+Keine erfundenen freien Termine.
+Keine simulierte Beratung oder Kostenberechnung.
+
+Die bestehende Core-Anfrageseite bleibt das Ziel des primären CTA.
+
+---
+
+# SEITENRHYTHMUS
+
+Die sieben Bereiche dürfen sich nicht identisch anfühlen.
+
+Angestrebter Rhythmus:
+
+weit
+→ analytisch
+→ interaktiv
+→ präzise
+→ lebendig
+→ menschlich
+→ klar
+
+Oder:
+
+Atmosphäre
+→ Ort
+→ Entwurf
+→ Handwerk
+→ Pflanze
+→ Alltag
+→ Anfrage
+
+Nicht jede Section dunkel gestalten.
+Nicht jedes Foto mit einem dunklen Overlay versehen.
+Helle Naturpapierflächen, tiefes Gartengrün, fotografische Gartenräume und präzise technische Bereiche sollen sich gezielt abwechseln.
+
+---
+
+# TYPOGRAFIE
+
+Die Typografie darf eine hochwertige Serifenschrift für wenige räumliche oder editoriale Aussagen nutzen, aber nicht pauschal jede Überschrift in eine generische Luxury-Serif verwandeln.
+
+Definiere klare Rollen:
+
+### Display
+
+Eigenständig, ruhig und räumlich für wenige große Aussagen.
+
+### Planung
+
+Präzise und gut lesbar für Projektphasen, Standortfaktoren und Prozessinformationen.
+
+### Editorial
+
+Ruhiger Fließtext für Garten, Material, Pflanze und Alltag.
+
+### Information
+
+Leistungen, Anfragehinweise, Beispielkennzeichnungen und konkrete Orientierung.
+
+### Micro
+
+Nur für echte Orientierung wie „Bestand“, „Entwurf“, „Umsetzung“, „Ergebnis“ oder saisonale Zustände.
+
+Nicht jede Headline riesig setzen.
+Keine immer gleiche Kombination aus großer Serifenschrift, kleinem Absatz und viel leerem Raum.
+
+---
+
+# FARBSYSTEM
+
+Die Core-Farben als Basis weiterentwickeln:
+
+Gartengrün:
+#1f4c3c
+
+Ink-Grün:
+#18382e
+
+Naturpapier:
+#f4f1e8
+
+Helles Papier:
+#fcfaf4
+
+Gedämpftes Grün:
+#5c6a61
+
+Pflanzenhell:
+#dce7b2
+
+Pflanzenakzent:
+#cbd94f
+
+Ton:
+#a75736
+
+Zusätzlich nur wenige materialbezogene Nuancen:
+
+- warmes Kalksteinbeige
+- verwittertes Holzbraun
+- gedämpftes Salbei
+- Wasserblau in sehr kleiner Dosis
+- tiefes Schattenlaub
+
+Gold darf nicht zur Standardlösung werden.
+
+Helle Pflanzen- oder Materialakzente sollen vorzugsweise signalisieren:
+
+- aktiver Projektzustand
+- ausgewähltes Detail
+- Wachstum
+- Wegführung
+- CTA
+
+Kein permanenter Grünfilter.
+Kein fast schwarzer Ersteindruck.
+Ausreichender Kontrast bleibt Pflicht.
+
+---
+
+# BILDREGIE
+
+Fotografie nicht als austauschbaren Hintergrund behandeln.
+
+Fünf Bildtypen bewusst verteilen:
+
+## Gesamtort
+
+Haus, Grundstück, Topografie und Garten als Zusammenhang.
+
+## Raum
+
+Terrasse, Weg, Sitzplatz, Regengarten oder bepflanzter Übergang.
+
+## Handwerk
+
+Unterbau, Natursteinkante, Pflaster, Fuge, Gefälle oder Materialanschluss.
+
+## Pflanze
+
+Stauden, Gräser, Gehölze, Blattstruktur, Blüte oder jahreszeitliche Veränderung.
+
+## Nutzung
+
+Garten im Alltag, Schatten, Aufenthalt, Bewegung oder ruhige Spuren von Menschen.
+
+Vermeiden:
+
+- immer gleich große Bilder
+- ständige 50/50-Bild-Text-Komposition
+- dunkles Overlay über jedem Motiv
+- Text über jedem Foto
+- identische Crops
+- künstlich luxuriöse Immobilienästhetik
+- sterile, menschenleere Architektur über die gesamte Seite
+- generische Stockbilder von Händen mit Pflanzen
+- beliebige Blatt-Makros ohne räumlichen Zusammenhang
+
+Vorhandene Assets zunächst intelligent einsetzen:
+
+- eingewachsener Wohngarten
+- handwerkliches Pflaster-/Natursteindetail
+- klimaorientierter Regengarten
+- GRÜNRAUM-Signature-Garten bei warmem Abendlicht
+- vorhandene responsive Varianten
+
+Alle KI-generierten Gartenmotive weiterhin ehrlich als Visualisierung oder Konzeptstudie kennzeichnen, wo dies inhaltlich erforderlich ist.
+
+Keine externen Hotlink-Bilder verwenden.
+
+---
+
+# MOTION
+
+Motion soll aus dem Charakter eines Gartenprojekts entstehen:
+
+- langsamer Übergang von Bestand zu Entwurf
+- präzises Zeichnen einzelner Planlinien
+- gestaffeltes Sichtbarwerden von Materialschichten
+- ruhiger Wechsel zwischen Projektphasen
+- dezente Veränderung von Licht, Pflanzstruktur oder Jahreszeit
+- ein einzelner kontrollierter Übergang vom Plan zum eingewachsenen Garten
+
+Keine generischen Reveal-Animationen für jedes Element.
+
+Für jede Animation prüfen:
+
+1. Was erklärt sie?
+2. Was verbessert sie?
+3. Wäre eine statische Lösung ruhiger und hochwertiger?
+4. Wie funktioniert sie auf Mobile?
+5. Was passiert bei `prefers-reduced-motion`?
+
+Vermeiden:
+
+- Scroll-Jacking
+- Smooth-Scroll-Zwang
+- Custom Cursor
+- Partikel
+- fliegende Blätter
+- künstliche Windanimationen
+- permanente Licht- oder Schattenbewegung
+- Parallax auf jeder Fotografie
+- WebGL ohne echten Mehrwert
+- Text, der aus allen Richtungen einfliegt
+
+3D ist für GRÜNRAUM nicht erforderlich.
+
+Eine fotografische DOM-/CSS-/SVG-Hybridlösung ist vorzuziehen, wenn sie glaubwürdiger, leichter und robuster ist.
+
+---
+
+# INTERAKTION
+
+Die zentrale Interaktion ist die Projektentwicklung:
+
+Bestand
+→ Entwurf
+→ Umsetzung
+→ Ergebnis
+
+Sie muss den Planungs- und Bauprozess verständlich machen und darf nicht nur eine dekorative Bühne umschalten.
+
+Zusätzliche Interaktionen nur, wenn sie wirklich helfen:
+
+- Projektphase auswählen
+- räumliches Detail öffnen
+- Material- oder Pflanzschicht fokussieren
+- Jahreszeit vergleichen
+- Anfrageweg wählen
+
+Alle Interaktionen müssen funktionieren mit:
+
+- Maus
+- Tastatur
+- Touch
+
+und sichtbare Focus States besitzen.
+
+Keine ausschließlich über Hover erreichbaren Informationen.
+
+---
+
+# MOBILE
+
+Mobile darf keine geschrumpfte Desktopversion sein.
+
+Mindestens bei 390 × 844 prüfen.
+
+Auf Mobile darfst du:
+
+- Hero und Projektanfrage neu ordnen
+- die Projektphasen vertikal oder horizontal kompakt komponieren
+- Bildausschnitte gezielt wechseln
+- Plan- und Materialebenen reduzieren
+- höchstens ein räumliches Detail gleichzeitig zeigen
+- dekorative Konturlinien reduzieren
+- Motion weiter zurücknehmen
+- Leistungen und Anfrage früher sichtbar machen
+
+Die mobile Seite muss weiterhin eindeutig GRÜNRAUM sein.
+
+Wichtige Informationen dürfen nicht erst nach mehreren Bildschirmhöhen erscheinen:
+
+- Garten- & Landschaftsbau
+- Leistungen
+- Gartenideen
+- Projektanfrage
+- Projektphasen
+
+---
+
+# ACCESSIBILITY
+
+Mindestens umsetzen und prüfen:
+
+- semantische HTML-Struktur
+- genau eine H1
+- korrekte Überschriftenhierarchie
+- sinnvolle Alt-Texte
+- native Buttons für Zustandswechsel
+- `aria-pressed`, Tabs oder passend semantischer Zustand
+- Keyboard-Steuerung
+- Escape-Verhalten für geöffnete Details
+- sichtbares `:focus-visible`
+- ausreichender Kontrast
+- `prefers-reduced-motion`
+- ausreichend große Touch Targets
+- keine rein farblich kommunizierten Zustände
+- keine ausschließlich über Hover erreichbaren Inhalte
+- klare Kennzeichnung fiktiver beziehungsweise KI-visualisierter Projektmotive
+- keine irreführend realen Referenz-, Leistungs- oder Verfügbarkeitsangaben
+
+---
+
+# PERFORMANCE
+
+Keine unnötig schweren Libraries.
+
+Bevorzuge:
+
+CSS
+→ SVG
+→ kleines React-State-System
+
+vor:
+
+Canvas
+→ WebGL
+→ Animationsframeworks
+
+Keine permanenten Render-Loops.
+
+Responsive Images verwenden.
+
+Hero-Bild priorisieren.
+
+Spätere Bilder lazy laden.
+
+Breite und Höhe der Bilder angeben.
+
+Layout Shift vermeiden.
+
+Die GitHub-Pages-Version muss die Interaktionen ohne React-Hydration zuverlässig nachbilden. Falls eine eigene statische Runtime nötig ist, eine kleine routenspezifische GRÜNRAUM-Runtime erstellen und nur auf dieser Route injizieren.
+
+Keine GRÜNRAUM-Runtime auf Core- oder anderen Signature-Seiten laden.
+
+---
+
+# KEINE KI-/TEMPLATE-MUSTER
+
+Strikt vermeiden:
+
+- drei identische Karten
+- Bento Grid ohne inhaltlichen Grund
+- Pill-Button-Inflation
+- Glassmorphism
+- Gradient-Orbs
+- Neon
+- generische goldene Luxury-Linien
+- Schwarz plus Serif als alleinige Premiumidee
+- nummerierte Stage-Navigation als alleinige Hauptgestaltung
+- pseudo-technische Labels
+- Marquee
+- riesige Headline in jeder Section
+- jede Section exakt 100vh
+- ständig Bild links und Text rechts
+- dunkles Foto plus zentrierte Serifenschrift in jeder Ansicht
+- abstrakte CSS-Blätter oder Pflanzenformen als Ersatz für gute Fotografie
+- erfundene Auszeichnungen, Referenzen oder Projektzahlen
+- künstliche Nachhaltigkeitsbehauptungen
+- austauschbare Aussagen über „Traumgärten“ oder „persönliche Paradiese“
+
+Wenn eine Gestaltung genauso gut für ein Spa, Hotel, Weingut, Architekturbüro oder eine Immobilienseite funktionieren würde, prüfen, ob sie spezifisch genug für GRÜNRAUM ist.
+
+---
+
+# ASSET-SITUATION
+
+Aktuell existieren insbesondere:
+
+- Gesamtansicht eines eingewachsenen Wohngartens
+- handwerkliches Pflaster-/Natursteindetail
+- Regengarten-Konzept
+- Signature-Garten bei warmem Abendlicht
+- responsive Varianten
+- Asset-Manifeste mit Herkunft und Ableitungen
+
+Diese Assets reichen für einen starken ersten Build, aber möglicherweise nicht für die perfekte finale Bilddramaturgie.
+
+Wenn zusätzliche Motive fehlen:
+
+- Core-Seite nicht verändern
+- keine zufälligen externen Bilder einbauen
+- keine schwachen CSS-Fakes erzeugen
+- bestehende Assets zunächst professionell komponieren
+- am Ende maximal 4–6 zusätzliche Motive dokumentieren, die einen echten qualitativen Unterschied machen würden
+
+Sinnvolle fehlende Motive könnten beispielsweise sein:
+
+- glaubwürdige Bestandsaufnahme vor der Planung
+- präziser Materialanschluss an Haus oder Terrasse
+- Pflanzdetail über mehrere Jahreszeiten
+- Garten im tatsächlichen Alltag
+- Wasserführung oder versickerungsfähige Fläche
+- eingewachsener Garten einige Jahre nach der Anlage
+
+Nur dokumentieren, wenn sie tatsächlich fehlen. Nicht vorsorglich neue Assets erzeugen.
+
+---
+
+# IMPLEMENTIERUNGSSTRATEGIE
+
+1. Repository- und Git-Status prüfen.
+2. GRÜNRAUM-Core-Seite und Unterseiten vollständig analysieren.
+3. Signature-Referenz und vorhandene Signature-Version analysieren.
+4. Vorhandene Assets und Manifeste prüfen.
+5. GRÜNRAUM-spezifische Architektur und Seitendramaturgie festlegen.
+6. Generische SignatureShell umgehen, falls sie die Art Direction einschränkt.
+7. Signature-Seite vollständig umsetzen.
+8. Statische GitHub-Pages-Runtime ergänzen oder anpassen, falls erforderlich.
+9. Desktop visuell prüfen.
+10. Tablet visuell prüfen.
+11. Mobile visuell prüfen.
+12. Interaktionen und Tastaturbedienung testen.
+13. Accessibility und Reduced Motion prüfen.
+14. Nur schwache Screens gezielt nacharbeiten.
+15. Lint, Typecheck, Build, Pages-Export und Export-QA ausführen.
+16. Ergebnis zunächst lokal zeigen.
+
+Nach der ersten Umsetzung nicht die komplette Seite spontan redesignen.
+
+Nur Screens nacharbeiten, die in der visuellen Prüfung tatsächlich abfallen.
+
+---
+
+# VISUELLE VERIFIKATION IST PFLICHT
+
+Die Seite nach der Implementierung im echten Browser öffnen.
+
+Mindestens prüfen:
+
+### Desktop
+
+1440 × 900 beziehungsweise 1440 × 1000
+
+### Tablet
+
+768 px Breite
+
+### Mobile
+
+390 × 844
+
+Über die gesamte Seite prüfen:
+
+- erster Eindruck und Helligkeit
+- GRÜNRAUM-Markenidentität
+- schnelle Verständlichkeit des Angebots
+- Zugang zu Leistungen und Gartenideen
+- Sichtbarkeit der Projektanfrage
+- Projektphasenwechsel
+- Bildwechsel und Cropping
+- Planlinien und Materialebenen
+- Typografie
+- Natur- und Materialwirkung
+- Pflanzen- und Wachstumsbereich
+- Alltagssituationen
+- Abschluss-CTA
+- Mobile-Komposition
+- horizontaler Overflow
+- Console Errors
+- Focus States
+- Reduced Motion
+
+Build und Lint allein reichen nicht.
+
+---
+
+# TECHNISCHE PRÜFUNGEN
+
+Nach Fertigstellung ausführen:
+
+- Lint
+- Typecheck
+- Produktionsbuild
+- GitHub-Pages-Export
+- Export-QA
+- `git diff --check`
+
+Zusätzlich prüfen:
+
+- genau eine H1
+- keine fehlenden lokalen Assets
+- keine unpräfixierten Root-Pfade im Export
+- Signature-Runtime nur auf der GRÜNRAUM-Signature-Route
+- GRÜNRAUM-Core unverändert
+- andere Signature-Seiten unverändert
+- keine Browserfehler
+- kein horizontaler Overflow
+- keine irreführenden Referenzbehauptungen
+- korrekte Kennzeichnung von KI-Visualisierungen und Konzeptstudien
+
+---
+
+# QUALITÄTSCHECK NACH IMPLEMENTIERUNG
+
+Anschließend selbstkritisch beantworten:
+
+1. Welche drei Screens sind am stärksten?
+2. Welcher Screen fällt qualitativ ab?
+3. Was ist eindeutig GRÜNRAUM und nicht bloß „Premium-Gartenbau“?
+4. Was könnte noch wie ein Template aussehen?
+5. Wo hilft Bewegung tatsächlich?
+6. Wo wurde bewusst auf Animation verzichtet?
+7. Ist irgendein Bereich nur anders als der Core, aber nicht besser?
+8. Sind Angebot, Projektablauf, Leistungen, Gartenideen und Anfrage schnell verständlich?
+9. Wirkt die Seite zu dunkel, zu luxuriös, zu technisch oder zu inszeniert?
+10. Wirkt der Garten lebendig und entwicklungsfähig oder wie ein statisches Immobilienmotiv?
+11. Sind Planung und Handwerk ebenso glaubwürdig wie das fertige Ergebnis?
+12. Welche maximal 4–6 zusätzlichen Fotomotive würden die Seite deutlich verbessern?
+
+Wenn eine Antwort zeigt, dass eine Section nur anders statt besser ist, ausschließlich diese Section korrigieren.
+
+---
+
+# ERFOLGSKRITERIUM
+
+Das Ergebnis soll nicht primär wirken wie:
+
+„eine besonders schicke Gartenbauwebsite“.
+
+Es soll wirken wie:
+
+eine eigenständige digitale Marke namens GRÜNRAUM, deren Website aus dem Weg vom vorhandenen Ort zum langfristig wachsenden Lebensraum entstanden ist.
+
+Die Seite soll:
+
+- natürlich
+- räumlich
+- glaubwürdig
+- konkret
+- handwerklich
+- hochwertig
+- ruhig
+- lebendig
+- langfristig gedacht
+- praktisch nutzbar
+
+wirken.
+
+Nicht:
+
+- elitär
+- künstlich luxuriös
+- fast vollständig schwarz
+- wie ein Wellnessresort
+- wie ein Immobilien-Exposé
+- wie ein generisches Architektur-Template
+- wie ein Pflanzen-Onlineshop
+- agenturhaft um jeden Preis
+
+Wenn du zwischen spektakulärer und klarer Lösung wählen musst:
+
+klar.
+
+Wenn du zwischen generischem Premium-Effekt und einer GRÜNRAUM-spezifischen Idee wählen musst:
+
+GRÜNRAUM.
+
+Wenn eine neue Lösung ein starkes bestehendes Prinzip verschlechtert:
+
+nicht verwenden.
+
+Und vor allem:
+
+DIE GRÜNRAUM-CORE-SEITE BLEIBT VOLLSTÄNDIG UNANGETASTET.
+
+---
+
+# ABNAHME UND GIT
+
+Nach Fertigstellung:
+
+- Desktop, Tablet und Mobile visuell prüfen
+- technische Prüfungen vollständig ausführen
+- Asset-Manifeste und GRÜNRAUM-Signature-Dokumentation aktualisieren, falls sich Assets oder technische Umsetzung ändern
+- Ergebnis zunächst lokal zeigen
+- meine Abnahme abwarten
+- erst nach meiner ausdrücklichen Freigabe committen und pushen
+
+Beim Commit ausschließlich GRÜNRAUM-Signature-bezogene Änderungen aufnehmen. Vorhandene Core-Änderungen, Arbeiten anderer Marken oder sonstige fremde Änderungen nicht stageen.
